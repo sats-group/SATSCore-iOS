@@ -2,14 +2,7 @@ import XCTest
 @testable import SatsCore
 
 final class SatsCoreTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SatsCore().text, "Hello, World!")
+    func testTruth() {
+        XCTAssert(1 == 1)
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }

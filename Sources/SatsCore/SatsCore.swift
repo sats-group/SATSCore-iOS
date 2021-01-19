@@ -1,3 +1,1 @@
-struct SatsCore {
-    var text = "Hello, World!"
-}
+struct SatsCore {}
