@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
 		9B2BFBE125B719AD00383193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */; };
+		9B2BFBF525B71A3800383193 /* SatsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B2BFBF425B71A3800383193 /* SatsCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		9B2BFBDD25B719AD00383193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B2BFBE225B719AD00383193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B2BFBF125B71A2800383193 /* SatsCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SatsCore; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B2BFBF525B71A3800383193 /* SatsCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,8 +39,10 @@
 		9B2BFBCD25B719AC00383193 = {
 			isa = PBXGroup;
 			children = (
+				9B2BFBF125B71A2800383193 /* SatsCore */,
 				9B2BFBD825B719AD00383193 /* DemoApp */,
 				9B2BFBD725B719AD00383193 /* Products */,
+				9B2BFBF325B71A3800383193 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +74,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9B2BFBF325B71A3800383193 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +97,9 @@
 			dependencies = (
 			);
 			name = DemoApp;
+			packageProductDependencies = (
+				9B2BFBF425B71A3800383193 /* SatsCore */,
+			);
 			productName = DemoApp;
 			productReference = 9B2BFBD625B719AD00383193 /* DemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -328,6 +343,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B2BFBF425B71A3800383193 /* SatsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SatsCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B2BFBCE25B719AC00383193 /* Project object */;
 }
