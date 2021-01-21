@@ -1,3 +1,3 @@
-# SatsCore
+# SATSCore
 
-A description of this package.
+A base UI framework.

@@ -2,23 +2,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "SatsCore",
+    name: "SATSCore",
     platforms: [.iOS(.v12)],
     products: [
         .library(
-            name: "SatsCore",
-            targets: ["SatsCore"]
+            name: "SATSCore",
+            targets: ["SATSCore"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SatsCore",
-            dependencies: []
+            name: "SATSCore",
+            dependencies: [],
+            resources: [
+                .process("Assets/Fonts"),
+            ]
         ),
         .testTarget(
-            name: "SatsCoreTests",
-            dependencies: ["SatsCore"]
+            name: "SATSCoreTests",
+            dependencies: ["SATSCore"]
         ),
     ]
 )
