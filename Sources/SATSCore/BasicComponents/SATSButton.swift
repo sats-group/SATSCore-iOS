@@ -51,11 +51,10 @@ public class RoundedButton: BaseButton {
     }
 }
 
-import UIKit
+public class SATSButton: RoundedButton {
 
-class SATSButton: RoundedButton {
     /// Specifies a visual theme of the button
-    enum DisplayStyle {
+    public enum DisplayStyle {
         case positiveMain
         case negativeMain
         case positiveSecondary
@@ -64,14 +63,14 @@ class SATSButton: RoundedButton {
     }
 
     /// Specifies visual representation / a theme of the button, what it should look like.
-    var displayStyle: DisplayStyle = .positiveMain {
+    public var displayStyle: DisplayStyle = .positiveMain {
         didSet {
             updateDisplayStyle()
         }
     }
 
     /// Specifies a resizing behaviour of the button
-    enum LayoutStyle {
+    public enum LayoutStyle {
         /// Tall primary button, can grow horizontally.
         case large
         /// Small height but allowed to grow horizontally.
@@ -81,14 +80,14 @@ class SATSButton: RoundedButton {
     }
 
     /// Specifiec a resizing behaviour of the button, whether it is allowed to grow or hugs its title.
-    var layoutStyle: LayoutStyle = .large {
+    public var layoutStyle: LayoutStyle = .large {
         didSet {
             updateLayoutStyle()
         }
     }
 
     /// Specifies the spacing between the image and title.
-    var contentSpacing: CGFloat = 0 {
+    public var contentSpacing: CGFloat = 0 {
         didSet {
             updateLayoutStyle()
         }
@@ -101,7 +100,7 @@ class SATSButton: RoundedButton {
         return spinnerView
     }()
 
-    func showLoader(userInteraction: Bool = false) {
+    public func showLoader(userInteraction: Bool = false) {
         guard !subviews.contains(loaderView) else { return }
 
         addSubview(loaderView)
@@ -113,7 +112,7 @@ class SATSButton: RoundedButton {
         loaderView.startAnimating()
     }
 
-    func hideLoader() {
+    public func hideLoader() {
         guard subviews.contains(loaderView) else { return }
 
         isUserInteractionEnabled = true
@@ -123,7 +122,7 @@ class SATSButton: RoundedButton {
         imageView?.alpha = 1
     }
 
-    override func setup() {
+    public override func setup() {
         super.setup()
 
         shouldCaptureTouchInDisabledState = true
