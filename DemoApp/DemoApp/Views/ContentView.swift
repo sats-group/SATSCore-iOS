@@ -19,9 +19,10 @@ struct ContentView: View {
 
                 Section(header: Text("Basic Components")) {
                     NavigationLink("Labels", destination: SATSLabelDemoView())
-                    Text("Buttons")
+                    NavigationLink("Buttons", destination: SATSButtonDemoView())
                 }
-            }.navigationTitle("SATS Core Demo")
+            }
+            .navigationTitle("SATS Core Demo")
         }
     }
 }

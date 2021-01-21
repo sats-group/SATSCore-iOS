@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
+		9B00E28625B9B3A200533641 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B00E28525B9B3A200533641 /* SATSButtonDemoView.swift */; };
 		9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoAppApp.swift */; };
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B00E28525B9B3A200533641 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
 		9B2BFBDB25B719AD00383193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
+				9B00E28525B9B3A200533641 /* SATSButtonDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				9B2BFC0125B725EC00383193 /* ColorsView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
+				9B00E28625B9B3A200533641 /* SATSButtonDemoView.swift in Sources */,
 				9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
