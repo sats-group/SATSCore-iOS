@@ -1,0 +1,48 @@
+import UIKit
+
+extension UIColor {
+
+    /// Creates an UIColor from HEX string in '#363636' format
+    ///
+    /// - Parameter hexString: HEX string in '#363636' format
+    /// - returns: UIColor from HexString
+    convenience init(hexString: String) {
+        let hexString: String = (hexString as NSString).trimmingCharacters(in: .whitespacesAndNewlines)
+        let scanner = Scanner(string: hexString)
+
+        if hexString.hasPrefix("#") {
+            scanner.scanLocation = 1
+        }
+
+        var color: UInt32 = 0
+        scanner.scanHexInt32(&color)
+
+        let mask = 0x000000FF
+        let r = Int(color >> 16) & mask
+        let g = Int(color >> 8) & mask
+        let b = Int(color) & mask
+
+        let red = CGFloat(r) / 255.0
+        let green = CGFloat(g) / 255.0
+        let blue = CGFloat(b) / 255.0
+
+        self.init(red: red, green: green, blue: blue, alpha: 1)
+    }
+
+    /// Creates an UIColor Object based on provided rgb value in integer
+    ///
+    /// - Parameters:
+    ///   - red: red value in integer (0 - 255)
+    ///   - green: green value in integer(0 - 255)
+    ///   - blue: blue value in integer(0 - 255)
+    ///   - alpha: alpha value in CGFloat (0 - 1)
+    /// - returns: UIColor with specified RGB values
+    convenience init(red: Int, green: Int, blue: Int, alpha: CGFloat = 1) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        self.init(red: CGFloat(red) / 255.0,
+                  green: CGFloat(green) / 255.0,
+                  blue: CGFloat(blue) / 255.0, alpha: alpha)
+    }
+}
