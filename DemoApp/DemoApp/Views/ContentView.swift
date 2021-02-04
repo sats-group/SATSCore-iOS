@@ -17,7 +17,7 @@ struct ContentView: View {
                     Text("Spacing")
                 }
 
-                Section(header: Text("Basic Components")) {
+                Section(header: Text("UIKit Basics")) {
                     NavigationLink("Labels", destination: SATSLabelDemoView())
                     NavigationLink("Buttons", destination: SATSButtonDemoView())
                 }

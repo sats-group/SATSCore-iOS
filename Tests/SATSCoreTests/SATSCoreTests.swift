@@ -1,7 +1,7 @@
 import XCTest
-@testable import SatsCore
+@testable import SATSCore
 
-final class SatsCoreTests: XCTestCase {
+final class SATSCoreTests: XCTestCase {
     func testTruth() {
         XCTAssert(1 == 1)
     }
