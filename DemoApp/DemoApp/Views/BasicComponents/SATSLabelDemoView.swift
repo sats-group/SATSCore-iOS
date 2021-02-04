@@ -8,14 +8,7 @@ struct SATSLabelDemoView: View {
 
     var body: some View {
         VStack {
-            Picker("Variant", selection: $fontVariant) {
-                Text(FontVariation.default.name).tag(FontVariation.default)
-                Text(FontVariation.medium.name).tag(FontVariation.medium)
-                Text(FontVariation.emphasis.name).tag(FontVariation.emphasis)
-                Text(FontVariation.satsFeeling.name).tag(FontVariation.satsFeeling)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
+            FontVariantPicker(fontVariant: $fontVariant)
 
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 16) {

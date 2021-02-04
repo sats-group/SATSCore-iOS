@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  DemoApp
-//
-//  Created by Felipe Espinoza on 19/01/2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -12,7 +5,7 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section(header: Text("DNA")) {
-                    Text("Fonts")
+                    NavigationLink("Fonts", destination: SwiftUIFontsDemoView())
                     NavigationLink("Spacing", destination: EmptyView())
                 }
 
