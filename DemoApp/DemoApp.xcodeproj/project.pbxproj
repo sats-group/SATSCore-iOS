@@ -46,8 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				9B2BFBDD25B719AD00383193 /* Assets.xcassets */,
-				9B2BFBDF25B719AD00383193 /* Preview Content */,
 				9B00E29625B9D12900533641 /* Demo.xcassets */,
+				9B2BFBDF25B719AD00383193 /* Preview Content */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
