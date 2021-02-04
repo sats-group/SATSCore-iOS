@@ -12,14 +12,12 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section(header: Text("DNA")) {
-                    NavigationLink("Fonts", destination: EmptyView())
-                    NavigationLink("Colors", destination: ColorsView())
-                    Text("Spacing")
+                    Text("Fonts")
+                    NavigationLink("Spacing", destination: EmptyView())
                 }
 
                 Section(header: Text("UIKit Basics")) {
                     NavigationLink("Labels", destination: SATSLabelDemoView())
-                    NavigationLink("Buttons", destination: SATSButtonDemoView())
                 }
             }
             .navigationTitle("SATS Core Demo")

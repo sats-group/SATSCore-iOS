@@ -1,66 +1,75 @@
 import SwiftUI
 import SATSCore
 
-extension TextType {
-    public var name: String {
-        switch self {
-        case .h1: return "h1"
-        case .h2: return "h2"
-        case .h3: return "h3"
-        case .h1Medium: return "h1Medium"
-        case .h2Medium: return "h2Medium"
-        case .h3Medium: return "h3Medium"
-        case .h1Emphasis: return "h1Emphasis"
-        case .h2Emphasis: return "h2Emphasis"
-        case .h3Emphasis: return "h3Emphasis"
-        case .h1SatsFeeling: return "h1SatsFeeling"
-        case .h2SatsFeeling: return "h2SatsFeeling"
-        case .h3SatsFeeling: return "h3SatsFeeling"
-        case .large: return "large"
-        case .basic: return "basic"
-        case .small: return "small"
-        case .largeMedium: return "largeMedium"
-        case .basicMedium: return "basicMedium"
-        case .smallMedium: return "smallMedium"
-        case .largeEmphasis: return "largeEmphasis"
-        case .basicEmphasis: return "basicEmphasis"
-        case .smallEmphasis: return "smallEmphasis"
-        case .largeSatsFeeling: return "largeSatsFeeling"
-        case .basicSatsFeeling: return "basicSatsFeeling"
-        case .smallSatsFeeling: return "smallSatsFeeling"
-        case .section: return "section"
-        case .button: return "button"
-        case .navigationTitle: return "navigationTitle"
-        case .extraSmall: return "extraSmall"
+typealias FontVariation = SATSFont.FontVariation
+
+struct SATSLabelDemoView: View {
+    @State var fontVariant: FontVariation = .default
+
+    var body: some View {
+        VStack {
+            Picker("Variant", selection: $fontVariant) {
+                Text(FontVariation.default.name).tag(FontVariation.default)
+                Text(FontVariation.medium.name).tag(FontVariation.medium)
+                Text(FontVariation.emphasis.name).tag(FontVariation.emphasis)
+                Text(FontVariation.satsFeeling.name).tag(FontVariation.satsFeeling)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+
+            ScrollView(.vertical) {
+                VStack(alignment: .leading, spacing: 16) {
+                    ForEach(SATSFont.TextStyle.allCases, content: wrappedSATSLabel(for:))
+                }
+                .id(fontVariant.name)
+            }
+            .padding()
+        }
+        .navigationTitle("UIKit Labels")
+        .background(
+            Color(UIColor.systemBackground)
+                .ignoresSafeArea()
+        )
+    }
+
+    func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
+        let text = fontVariant == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
+
+        let label = SATSLabel(style: textStyle, variant: fontVariant)
+        label.text = text
+
+        return DemoWrapperView(view: label)
+    }
+}
+
+// MARK: - Preview
+
+struct SATSLabelDemoView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            NavigationView {
+                SATSLabelDemoView(fontVariant: .medium)
+            }
+
+            NavigationView {
+                SATSLabelDemoView()
+            }
+            .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
+
+            NavigationView {
+                SATSLabelDemoView()
+            }
+            .environment(\.colorScheme, .dark)
         }
     }
 }
 
-extension TextType: CaseIterable {
-    public typealias AllCases = [TextType]
+// MARK: - Extensions for demo
 
-    public static var allCases: [TextType] = [
-        .h1, .h2, .h3,
-        .h1Medium, .h2Medium, .h3Medium,
-        .h1Emphasis, .h2Emphasis, .h3Emphasis,
-        .h1SatsFeeling, .h2SatsFeeling, .h3SatsFeeling,
-        .large, .basic, .small,
-        .largeMedium, .basicMedium, .smallMedium,
-        .largeEmphasis, .basicEmphasis, .smallEmphasis,
-        .largeSatsFeeling, .basicSatsFeeling, .smallSatsFeeling,
-        .section,
-        .button,
-        .navigationTitle,
-        .extraSmall,
-    ]
-}
-
-extension TextType: Identifiable {
+extension SATSFont.TextStyle: Identifiable {
     public var id: String { name }
-}
 
-extension TextType {
-    public static var semanticCases: [TextType] = [
+    static let allCases: [SATSFont.TextStyle] = [
         .h1,
         .h2,
         .h3,
@@ -70,22 +79,16 @@ extension TextType {
         .section,
         .button,
         .navigationTitle,
-        .extraSmall,
     ]
 }
 
-struct SATSLabelDemoView: View {
-    var body: some View {
-        List {
-            ForEach(TextType.semanticCases) { type in
-                DemoWrapperView(view: SATSLabel(type, color: .primary, text: type.name))
-            }
-        }
-    }
-}
+extension SATSFont.FontVariation: Identifiable {
+    public var id: String { name }
 
-struct SATSLabelDemoView_Previews: PreviewProvider {
-    static var previews: some View {
-        SATSLabelDemoView()
-    }
+    static let allCases: [SATSFont.FontVariation] = [
+        .default,
+        .medium,
+        .emphasis,
+        .satsFeeling,
+    ]
 }
