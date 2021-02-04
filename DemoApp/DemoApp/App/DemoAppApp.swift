@@ -1,12 +1,5 @@
-//
-//  DemoAppApp.swift
-//  DemoApp
-//
-//  Created by Felipe Espinoza on 19/01/2021.
-//
-
 import SwiftUI
-import SATSCore
+@_exported import SATSCore
 
 @main
 struct DemoAppApp: App {
