@@ -13,7 +13,7 @@ public struct SATSFont {
 
         let fontName = "Inter-\(variant.fontName)"
         guard let font = UIFont(name: fontName, size: style.size) else {
-            assertionFailure("❌ \(fontName) should be available, you should call SATSFont.registerCustomFonts()")
+//            assertionFailure("❌ \(fontName) should be available, you should call SATSFont.registerCustomFonts()")
             return UIFont.preferredFont(forTextStyle: style.nativeStyle)
         }
 
