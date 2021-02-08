@@ -1,53 +1,53 @@
 import XCTest
-import SATSCore
+@testable import SATSCore
 
 class ColorsTests: XCTestCase {
-    func testColorsCanBeFound() {
-        let checkColors: () -> Bool = {
-            let colors: [UIColor] = [
-                .backgroundPrimary,
-                .backgroundSecondary,
-                .backgroundShimmer,
-                .backgroundTabbar,
-                .backgroundSurfaceStart,
-                .backgroundSurfaceEnd,
+    /// To ensure we expose the named colors as easy to access class variables in UIColor
+    /// Then a color like `ColorName.backgroundPrimary` is available as `UIColor.backgroundPrimary`
+    func testAllNamedColorsAreExposedAsClassVariables() {
+        XCTAssertEqual(colorConstants().count, ColorName.allCases.count)
+    }
 
-                .buttonPrimary,
-                .buttonPrimaryHighlight,
-                .buttonPrimaryDisabled,
-                .buttonSecondary,
-                .buttonSecondaryHighlight,
-                .buttonSecondaryDisabled,
-                .buttonCta,
-                .buttonCtaHighlight,
-                .buttonCtaDisabled,
+    private func colorConstants() -> [UIColor] {
+        [
+            .backgroundPrimary,
+            .backgroundSecondary,
+            .backgroundShimmer,
+            .backgroundTabbar,
+            .backgroundSurfaceStart,
+            .backgroundSurfaceEnd,
 
-                .onButtonPrimary,
-                .onButtonPrimarySecondary,
-                .onButtonSecondary,
-                .onButtonSecondarySecondary,
-                .onButtonCta,
-                .onButtonCtaSecondary,
-                .onBackgroundSurface,
-                .onBackgroundSurfaceSecondary,
-                .onBackgroundPrimary,
-                .onBackgroundPrimarySecondary,
+            .buttonPrimary,
+            .buttonPrimaryHighlight,
+            .buttonPrimaryDisabled,
+            .buttonSecondary,
+            .buttonSecondaryHighlight,
+            .buttonSecondaryDisabled,
+            .buttonCta,
+            .buttonCtaHighlight,
+            .buttonCtaDisabled,
 
-                .waitlist,
+            .onButtonPrimary,
+            .onButtonPrimarySecondary,
+            .onButtonSecondary,
+            .onButtonSecondarySecondary,
+            .onButtonCta,
+            .onButtonCtaSecondary,
+            .onBackgroundSurface,
+            .onBackgroundSurfaceSecondary,
+            .onBackgroundPrimary,
+            .onBackgroundPrimarySecondary,
 
-                .link,
+            .waitlist,
 
-                .signalSuccess,
-                .signalWarning,
-                .signalDelete,
-                .signalError,
+            .link,
 
-                .border,
-            ]
+            .signalSuccess,
+            .signalWarning,
+            .signalDelete,
+            .signalError,
 
-            return !colors.isEmpty
-        }
-
-        XCTAssertNoThrow(checkColors())
+            .border,
+        ]
     }
 }

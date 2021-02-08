@@ -4,70 +4,70 @@ public extension UIColor {
 
     // MARK: Background
 
-    static var backgroundPrimary: UIColor { color(named: "backgroundPrimary") }
-    static var backgroundSecondary: UIColor { color(named: "backgroundSecondary") }
-    static var backgroundShimmer: UIColor { color(named: "backgroundShimmer") }
-    static var backgroundTabbar: UIColor { color(named: "backgroundTabbar") }
-    static var backgroundSurfaceStart: UIColor { color(named: "backgroundSurfaceStart") }
-    static var backgroundSurfaceEnd: UIColor { color(named: "backgroundSurfaceEnd") }
+    static var backgroundPrimary: UIColor { color(.backgroundPrimary) }
+    static var backgroundSecondary: UIColor { color(.backgroundSecondary) }
+    static var backgroundShimmer: UIColor { color(.backgroundShimmer) }
+    static var backgroundTabbar: UIColor { color(.backgroundTabbar) }
+    static var backgroundSurfaceStart: UIColor { color(.backgroundSurfaceStart) }
+    static var backgroundSurfaceEnd: UIColor { color(.backgroundSurfaceEnd) }
 
     // MARK: Button
 
-    static var buttonPrimary: UIColor { color(named: "buttonPrimary") }
-    static var buttonPrimaryHighlight: UIColor { color(named: "buttonPrimaryHighlight") }
-    static var buttonPrimaryDisabled: UIColor { color(named: "buttonPrimaryDisabled") }
+    static var buttonPrimary: UIColor { color(.buttonPrimary) }
+    static var buttonPrimaryHighlight: UIColor { color(.buttonPrimaryHighlight) }
+    static var buttonPrimaryDisabled: UIColor { color(.buttonPrimaryDisabled) }
 
-    static var buttonSecondary: UIColor { color(named: "buttonSecondary") }
-    static var buttonSecondaryHighlight: UIColor { color(named: "buttonSecondaryHighlight") }
-    static var buttonSecondaryDisabled: UIColor { color(named: "buttonSecondaryDisabled") }
+    static var buttonSecondary: UIColor { color(.buttonSecondary) }
+    static var buttonSecondaryHighlight: UIColor { color(.buttonSecondaryHighlight) }
+    static var buttonSecondaryDisabled: UIColor { color(.buttonSecondaryDisabled) }
 
-    static var buttonCta: UIColor { color(named: "buttonCta") }
-    static var buttonCtaHighlight: UIColor { color(named: "buttonCtaHighlight") }
-    static var buttonCtaDisabled: UIColor { color(named: "buttonCtaDisabled") }
+    static var buttonCta: UIColor { color(.buttonCta) }
+    static var buttonCtaHighlight: UIColor { color(.buttonCtaHighlight) }
+    static var buttonCtaDisabled: UIColor { color(.buttonCtaDisabled) }
 
     // MARK: "On" colors
     // "On" colors are used for text and icons, they are related on where this text/icon
     // is presented "on top of", like a backgroundPrimary, etc.
 
-    static var onButtonPrimary: UIColor { color(named: "onButtonPrimary")}
-    static var onButtonPrimarySecondary: UIColor { color(named: "onButtonPrimarySecondary")}
+    static var onButtonPrimary: UIColor { color(.onButtonPrimary) }
+    static var onButtonPrimarySecondary: UIColor { color(.onButtonPrimarySecondary) }
 
-    static var onButtonSecondary: UIColor { color(named: "onButtonSecondary")}
-    static var onButtonSecondarySecondary: UIColor { color(named: "onButtonSecondarySecondary")}
+    static var onButtonSecondary: UIColor { color(.onButtonSecondary) }
+    static var onButtonSecondarySecondary: UIColor { color(.onButtonSecondarySecondary) }
 
-    static var onButtonCta: UIColor { color(named: "onButtonCta")}
-    static var onButtonCtaSecondary: UIColor { color(named: "onButtonCtaSecondary")}
+    static var onButtonCta: UIColor { color(.onButtonCta) }
+    static var onButtonCtaSecondary: UIColor { color(.onButtonCtaSecondary) }
 
-    static var onBackgroundSurface: UIColor { color(named: "onBackgroundSurface")}
-    static var onBackgroundSurfaceSecondary: UIColor { color(named: "onBackgroundSurfaceSecondary")}
+    static var onBackgroundSurface: UIColor { color(.onBackgroundSurface)}
+    static var onBackgroundSurfaceSecondary: UIColor { color(.onBackgroundSurfaceSecondary) }
 
-    static var onBackgroundPrimary: UIColor { color(named: "onBackgroundPrimary")}
-    static var onBackgroundPrimarySecondary: UIColor { color(named: "onBackgroundPrimarySecondary")}
+    static var onBackgroundPrimary: UIColor { color(.onBackgroundPrimary)}
+    static var onBackgroundPrimarySecondary: UIColor { color(.onBackgroundPrimarySecondary) }
 
     // MARK: Waitlist
 
-    static var waitlist: UIColor { color(named: "waitlist") }
+    static var waitlist: UIColor { color(.waitlist) }
 
     // MARK: Link
 
-    static var link: UIColor { color(named: "link") }
+    static var link: UIColor { color(.link) }
 
     // MARK: Signal
 
-    static var signalSuccess: UIColor { color(named: "signalSuccess") }
-    static var signalWarning: UIColor { color(named: "signalWarning") }
-    static var signalDelete: UIColor { color(named: "signalDelete") }
-    static var signalError: UIColor { color(named: "signalError") }
+    static var signalSuccess: UIColor { color(.signalSuccess) }
+    static var signalWarning: UIColor { color(.signalWarning) }
+    static var signalDelete: UIColor { color(.signalDelete) }
+    static var signalError: UIColor { color(.signalError) }
 
     // MARK: Other UI
 
-    static var border: UIColor { color(named: "border") }
+    static var border: UIColor { color(.border) }
 
     // MARK: Private
 
-    private static func color(named: String) -> UIColor {
-        guard let color = UIColor(named: named, in: .module, compatibleWith: nil) else {
-            preconditionFailure("❌ \(named) color not found!")
+    private static func color(_ name: ColorName) -> UIColor {
+        guard let color = UIColor(named: name.rawValue, in: .module, compatibleWith: nil) else {
+            preconditionFailure("❌ \(name.rawValue) color not found!")
         }
 
         return color
@@ -115,7 +115,7 @@ public extension UIColor {
 
  ---
 
- ## On "Colors", take 2
+ ## On "UIColors", take 2
 
  textPrimary
  textSecondary
@@ -175,7 +175,7 @@ public extension UIColor {
 
  --------
 
- ### Color names UIColor
+ ### UIColor names UIUIColor
 
  buttonPrimary
  buttonPrimaryHighlight
