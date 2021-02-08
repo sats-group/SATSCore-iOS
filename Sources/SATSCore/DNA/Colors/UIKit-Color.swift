@@ -47,10 +47,12 @@ public extension UIColor {
     // MARK: Waitlist
 
     static var waitlist: UIColor { color(.waitlist) }
+    static var waitlistHighlight: UIColor { color(.waitlistHighlight) }
 
     // MARK: Link
 
     static var link: UIColor { color(.link) }
+    static var linkHighlight: UIColor { color(.linkHighlight) }
 
     // MARK: Signal
 
