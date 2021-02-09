@@ -14,10 +14,6 @@ public extension Color {
 
     // MARK: Button
 
-    static var buttonPrimary: Color { color(.buttonPrimary) }
-    static var buttonPrimaryHighlight: Color { color(.buttonPrimaryHighlight) }
-    static var buttonPrimaryDisabled: Color { color(.buttonPrimaryDisabled) }
-
     static var buttonSecondary: Color { color(.buttonSecondary) }
     static var buttonSecondaryHighlight: Color { color(.buttonSecondaryHighlight) }
     static var buttonSecondaryDisabled: Color { color(.buttonSecondaryDisabled) }
@@ -65,6 +61,17 @@ public extension Color {
     // MARK: Other UI
 
     static var border: Color { color(.border) }
+
+    // MARK: Theme dependant colors
+
+    static var backgroundTopStart: Color { Color(ColorTheme.current.backgroundTopStart) }
+    static var backgroundTopEnd: Color { Color(ColorTheme.current.backgroundTopEnd) }
+
+    static var buttonPrimary: Color { Color(ColorTheme.current.buttonPrimary) }
+    static var buttonPrimaryHighlight: Color { Color(ColorTheme.current.buttonPrimaryHighlight) }
+    static var buttonPrimaryDisabled: Color { Color(ColorTheme.current.buttonPrimaryDisabled) }
+
+    static var selection: Color { Color(ColorTheme.current.selection) }
 
     // MARK: Private
 

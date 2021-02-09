@@ -13,10 +13,6 @@ public extension UIColor {
 
     // MARK: Button
 
-    static var buttonPrimary: UIColor { color(.buttonPrimary) }
-    static var buttonPrimaryHighlight: UIColor { color(.buttonPrimaryHighlight) }
-    static var buttonPrimaryDisabled: UIColor { color(.buttonPrimaryDisabled) }
-
     static var buttonSecondary: UIColor { color(.buttonSecondary) }
     static var buttonSecondaryHighlight: UIColor { color(.buttonSecondaryHighlight) }
     static var buttonSecondaryDisabled: UIColor { color(.buttonSecondaryDisabled) }
@@ -64,6 +60,17 @@ public extension UIColor {
     // MARK: Other UI
 
     static var border: UIColor { color(.border) }
+
+    // MARK: Theme dependant colors
+
+    static var backgroundTopStart: UIColor { ColorTheme.current.backgroundTopStart }
+    static var backgroundTopEnd: UIColor { ColorTheme.current.backgroundTopEnd }
+
+    static var buttonPrimary: UIColor { ColorTheme.current.buttonPrimary }
+    static var buttonPrimaryHighlight: UIColor { ColorTheme.current.buttonPrimaryHighlight }
+    static var buttonPrimaryDisabled: UIColor { ColorTheme.current.buttonPrimaryDisabled }
+
+    static var selection: UIColor { ColorTheme.current.selection }
 
     // MARK: Private
 

@@ -8,10 +8,6 @@ enum ColorName: String, CaseIterable {
     case backgroundSurfaceStart
     case backgroundSurfaceEnd
 
-    case buttonPrimary
-    case buttonPrimaryHighlight
-    case buttonPrimaryDisabled
-
     case buttonSecondary
     case buttonSecondaryHighlight
     case buttonSecondaryDisabled
@@ -47,4 +43,15 @@ enum ColorName: String, CaseIterable {
     case signalError
 
     case border
+
+    // Theme colors
+
+    case buttonPrimary
+    case buttonPrimaryHighlight
+    case buttonPrimaryDisabled
+
+    case selection
+
+    case backgroundTopStart
+    case backgroundTopEnd
 }
