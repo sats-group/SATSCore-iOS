@@ -17,9 +17,6 @@ class ColorsTests: XCTestCase {
             .backgroundSurfaceStart,
             .backgroundSurfaceEnd,
 
-            .buttonPrimary,
-            .buttonPrimaryHighlight,
-            .buttonPrimaryDisabled,
             .buttonSecondary,
             .buttonSecondaryHighlight,
             .buttonSecondaryDisabled,
@@ -50,6 +47,15 @@ class ColorsTests: XCTestCase {
             .signalError,
 
             .border,
+
+            .buttonPrimary,
+            .buttonPrimaryHighlight,
+            .buttonPrimaryDisabled,
+
+            .selection,
+
+            .backgroundTopStart,
+            .backgroundTopEnd,
         ]
     }
 }
