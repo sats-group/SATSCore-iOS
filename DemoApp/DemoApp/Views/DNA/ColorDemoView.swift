@@ -70,8 +70,67 @@ struct ColorDemoView: View {
             name: "Others",
             colors: [
                 ColorDemo(name: "waitlist", color: .waitlist),
+                ColorDemo(name: "waitlistHighlight", color: .waitlistHighlight),
                 ColorDemo(name: "link", color: .link),
+                ColorDemo(name: "linkHighlight", color: .linkHighlight),
                 ColorDemo(name: "border", color: .border),
+            ]
+        ),
+        ColorSection(
+            name: "🔵 Blue Theme",
+            colors: [
+                ColorDemo(name: "blueButtonPrimary", color: Color(ColorTheme.blue.buttonPrimary)),
+                ColorDemo(name: "blueButtonPrimaryHighlight", color: Color(ColorTheme.blue.buttonPrimaryHighlight)),
+                ColorDemo(name: "blueButtonPrimaryDisabled", color: Color(ColorTheme.blue.buttonPrimaryDisabled)),
+
+                ColorDemo(name: "blueSelection", color: Color(ColorTheme.blue.selection)),
+
+                ColorDemo(name: "blueGradientStart", color: Color(ColorTheme.blue.backgroundTopStart)),
+                ColorDemo(name: "blueGradientEnd", color: Color(ColorTheme.blue.backgroundTopEnd)),
+            ]
+        ),
+        ColorSection(
+            name: "🥈 Silver Theme",
+            colors: [
+                ColorDemo(name: "silverButtonPrimary", color: Color(ColorTheme.silver.buttonPrimary)),
+                ColorDemo(name: "silverButtonPrimaryHighlight", color: Color(ColorTheme.silver.buttonPrimaryHighlight)),
+                ColorDemo(name: "silverButtonPrimaryDisabled", color: Color(ColorTheme.silver.buttonPrimaryDisabled)),
+
+                ColorDemo(name: "silverSelection", color: Color(ColorTheme.silver.selection)),
+
+                ColorDemo(name: "silverGradientStart", color: Color(ColorTheme.silver.backgroundTopStart)),
+                ColorDemo(name: "silverGradientEnd", color: Color(ColorTheme.silver.backgroundTopEnd)),
+            ]
+        ),
+        ColorSection(
+            name: "🥇 Gold Theme",
+            colors: [
+                ColorDemo(name: "goldButtonPrimary", color: Color(ColorTheme.gold.buttonPrimary)),
+                ColorDemo(name: "goldButtonPrimaryHighlight", color: Color(ColorTheme.gold.buttonPrimaryHighlight)),
+                ColorDemo(name: "goldButtonPrimaryDisabled", color: Color(ColorTheme.gold.buttonPrimaryDisabled)),
+
+                ColorDemo(name: "goldSelection", color: Color(ColorTheme.gold.selection)),
+
+                ColorDemo(name: "goldGradientStart", color: Color(ColorTheme.gold.backgroundTopStart)),
+                ColorDemo(name: "goldGradientEnd", color: Color(ColorTheme.gold.backgroundTopEnd)),
+            ]
+        ),
+        ColorSection(
+            name: "🏆 Platinum Theme",
+            colors: [
+                ColorDemo(name: "platinumButtonPrimary", color: Color(ColorTheme.platinum.buttonPrimary)),
+                ColorDemo(
+                    name: "platinumButtonPrimaryHighlight",
+                    color: Color(ColorTheme.platinum.buttonPrimaryHighlight)
+                ),
+                ColorDemo(
+                    name: "platinumButtonPrimaryDisabled",
+                    color: Color(ColorTheme.platinum.buttonPrimaryDisabled)
+                ),
+
+                ColorDemo(name: "platinumSelection", color: Color(ColorTheme.platinum.selection)),
+                ColorDemo(name: "platinumGradientStart", color: Color(ColorTheme.platinum.backgroundTopStart)),
+                ColorDemo(name: "platinumGradientEnd", color: Color(ColorTheme.platinum.backgroundTopEnd)),
             ]
         ),
     ]
