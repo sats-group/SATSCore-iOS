@@ -1,4 +1,5 @@
 public extension SATSFont {
+    /// Style variations for a font regarding its weight
     struct FontVariation: Equatable, Hashable {
         public let name: String
         public let fontName: String
