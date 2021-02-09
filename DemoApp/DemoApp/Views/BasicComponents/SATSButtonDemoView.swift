@@ -1,89 +1,67 @@
 import SwiftUI
 
-public class SATSButton: UIButton {
-
-    // MARK: Initializers
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-
-    // MARK: UIButton overrides
-
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-
-        layer.cornerRadius = bounds.height / 2
-    }
-
-    // MARK: Private methods
-
-    private func setup() {
-        clipsToBounds = true
-    }
-}
-
-public extension SATSButton {
-    /// Specifies a visual theme of the button
-    struct DisplayStyle {
-        // titleColor - normal
-        // titleColor - disabled
-
-        // backgroundImage - solidColor - normal
-        // backgroundImage - solidColor - highlighted
-        // backgroundImage - solidColor - disabled
-    }
-
-    /// Specifies a resizing behaviour of the button
-    struct LayoutStyle {
-        // contentEdgeInsets
-        // contentHugging
-        // imageEdgeInsets
-        // titleEdgeInsets
-    }
-}
-
-public extension SATSButton.DisplayStyle {
-    static let positiveMain = SATSButton.DisplayStyle()
-
-    static let negativeMain = SATSButton.DisplayStyle()
-
-    static let positiveSecondary = SATSButton.DisplayStyle()
-
-    static let negativeSecondary = SATSButton.DisplayStyle()
-
-    static let error = SATSButton.DisplayStyle()
-}
-
-public extension SATSButton.LayoutStyle {
-    /// Tall primary button, can grow horizontally.
-    static let large = SATSButton.LayoutStyle()
-
-    /// Small height but allowed to grow horizontally.
-    static let regular = SATSButton.LayoutStyle()
-
-    /// Compact button that hugs its title as much as possible.
-    static let compact = SATSButton.LayoutStyle()
-}
-
 struct SATSButtonDemoView: View {
     var body: some View {
-        VStack {
-            Text("Hello")
+        ScrollView {
+            VStack(spacing: 32) {
+                VStack {
+                    Text("Large")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    demoButton(style: .primary, size: .large)
+
+                    demoButton(style: .secondary, size: .large)
+
+                    demoButton(style: .cta, size: .large)
+
+                }
+
+                VStack {
+                    Text("Regular")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    demoButton(style: .primary, size: .regular)
+
+                    demoButton(style: .secondary, size: .regular)
+
+                    demoButton(style: .cta, size: .regular)
+
+                }
+
+                VStack {
+                    Text("Compact")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    demoButton(style: .primary, size: .compact)
+
+                    demoButton(style: .secondary, size: .compact)
+
+                    demoButton(style: .cta, size: .compact)
+                }
+
+                Spacer()
+                    .layoutPriority(1)
+            }
+            .padding()
+            .navigationTitle("SATSButton")
         }
-        .navigationTitle("SATSButton")
+    }
+
+    func demoButton(style: SATSButton.Style, size: SATSButton.Size) -> some View {
+        let button = SATSButton(style: style, size: size, withAutoLayout: false)
+        button.setTitle(style.name, for: .normal)
+        return DemoWrapperView(view: button)
     }
 }
 
 struct SATSButtonDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        ColorTheme.current = .blue
+
+        return NavigationView {
             SATSButtonDemoView()
         }
     }
