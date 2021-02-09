@@ -13,6 +13,7 @@ public extension SATSFont {
     }
 }
 
+// swiftlint:disable comma
 public extension SATSFont.TextStyle {
     static let h1              = SATSFont.TextStyle(size: 28, nativeStyle: .title1      , name: "h1")
     static let h2              = SATSFont.TextStyle(size: 24, nativeStyle: .title2      , name: "h2")
