@@ -8,6 +8,16 @@ class ColorsTests: XCTestCase {
         XCTAssertEqual(colorConstants().count, ColorName.allCases.count)
     }
 
+    func testColorResolutionWhenChaingTheme() {
+        let initialValue = UIColor.buttonPrimary.hexString ?? ""
+
+        ColorTheme.current = .platinum
+
+        let newValue = UIColor.buttonPrimary.hexString ?? ""
+
+        XCTAssertNotEqual(initialValue, newValue)
+    }
+
     private func colorConstants() -> [UIColor] {
         [
             .backgroundPrimary,
