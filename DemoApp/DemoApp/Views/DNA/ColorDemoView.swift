@@ -171,6 +171,7 @@ struct ColorPillView: View {
     var body: some View {
         HStack(spacing: 0) {
             demo.color
+                .overlay(hexOverlayLight(demo.color))
                 .colorScheme(.light)
 
             demo.color
@@ -179,6 +180,28 @@ struct ColorPillView: View {
         .overlay(label())
         .frame(height: 80)
         .cornerRadius(8)
+    }
+
+    func hexOverlayLight(_ color: Color) -> some View {
+        VStack {
+            Spacer()
+            HStack {
+                hexLabel(color)
+                Spacer()
+            }
+        }
+        .padding(8)
+    }
+
+    func hexLabel(_ color: Color) -> some View {
+        let text = UIColor(color).hexString ?? ""
+        return Text(text)
+            .font(.caption2)
+            .foregroundColor(.white)
+            .frame(alignment: .bottomLeading)
+            .padding(4)
+            .background(Color.black.opacity(0.4))
+            .cornerRadius(4)
     }
 
     func label() -> some View {
