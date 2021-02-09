@@ -10,11 +10,11 @@ import SwiftUI
 
  */
 
-struct DiscoverView: View {
+struct DemoDiscoverView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                HeaderView()
+                DemoHeaderView()
                     .padding(.top, -16)
                     .padding(.horizontal, -16)
 
@@ -49,7 +49,7 @@ struct DiscoverView: View {
 struct MainContainerView: View {
     var body: some View {
         TabView {
-            DiscoverView()
+            DemoDiscoverView()
                 .tabItem {
                     Image("tab-home")
                     Text("Home")

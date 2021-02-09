@@ -16,8 +16,8 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("Experimental Demo UI")) {
-                    NavigationLink("Header", destination: HeaderDemoView())
-                    NavigationLink("Discover", destination: DiscoverView())
+                    NavigationLink("Header", destination: DemoHeaderSampleView())
+                    NavigationLink("Discover", destination: DemoDiscoverView())
                 }
             }
             .navigationTitle("SATS Core Demo")
