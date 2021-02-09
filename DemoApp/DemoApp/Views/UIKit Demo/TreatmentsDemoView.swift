@@ -10,13 +10,10 @@ struct TreatmentsViewData {
 class TreatmentsView: UIView {
     // MARK: - Subviews
 
-    private lazy var titleLabel: UILabel = {
-        let label = SATSLabel(style: .h2, variant: .emphasis, withAutoLayout: true)
-        return label
-    }()
+    private lazy var titleLabel = SATSLabel(style: .h2, variant: .emphasis)
 
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel(withAutoLayout: true)
+    private lazy var descriptionLabel: SATSLabel = {
+        let label = SATSLabel(style: .large)
         label.numberOfLines = 0
         return label
     }()
@@ -29,10 +26,7 @@ class TreatmentsView: UIView {
         return imageView
     }()
 
-    private lazy var bookButton: UIButton = {
-        let button = UIButton(withAutoLayout: true)
-        return button
-    }()
+    private lazy var bookButton = SATSButton(style: .primary)
 
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
@@ -72,7 +66,7 @@ class TreatmentsView: UIView {
     // MARK: - Private methods
 
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = .backgroundSecondary
 
         [
             titleLabel,
@@ -121,12 +115,12 @@ struct TreatmentsDemoView: View {
                 buttonTitle: "Book Appointment"
             )
         )
-        treatmentView.backgroundColor = .red
         return treatmentView
     }
 
     var body: some View {
         DemoWrapperView(view: treatmentView)
+            .navigationTitle("UIKit Usage Demo")
     }
 }
 
