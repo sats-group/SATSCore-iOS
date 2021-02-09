@@ -1,5 +1,6 @@
 import Foundation
 
+/// Static list of color names defined in the Assets folder to avoid misspelling them
 enum ColorName: String, CaseIterable {
     case backgroundPrimary
     case backgroundSecondary
