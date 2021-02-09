@@ -1,6 +1,7 @@
 import UIKit
 
 public extension SATSFont {
+    /// Semantic style for text in order to define a hierarchy with text elements
     struct TextStyle: Equatable, Hashable {
         public let size: CGFloat
 
