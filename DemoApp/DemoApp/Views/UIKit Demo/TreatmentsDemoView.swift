@@ -124,7 +124,7 @@ struct TreatmentsDemoView: View {
     }
 }
 
-struct TreatmentsDemoView_Preview: PreviewProvider {
+struct TreatmentsDemoView_Previews: PreviewProvider {
     static var previews: some View {
         TreatmentsDemoView()
     }

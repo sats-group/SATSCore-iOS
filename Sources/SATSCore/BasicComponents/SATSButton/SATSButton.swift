@@ -53,7 +53,6 @@ public class SATSButton: UIButton {
         layer.cornerRadius = bounds.height / 2
     }
 
-
     // MARK: Private methods
 
     private func setup() {

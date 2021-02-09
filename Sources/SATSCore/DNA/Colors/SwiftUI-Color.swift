@@ -95,4 +95,3 @@ public extension Color {
         Color(name.rawValue, bundle: .module)
     }
 }
-

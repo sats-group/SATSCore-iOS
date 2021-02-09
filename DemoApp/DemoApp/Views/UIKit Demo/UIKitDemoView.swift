@@ -87,12 +87,13 @@ extension SampleView {
             ].forEach { text in
                 let label = SATSLabel(style: .large, withAutoLayout: true)
                 label.textColor = .onButtonPrimary
+                label.text = text
                 sections.addArrangedSubview(label)
             }
 
             [
                 title,
-                sections
+                sections,
             ].forEach(stackView.addArrangedSubview(_:))
 
             addSubview(stackView)
