@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct HeaderView: View {
+struct DemoHeaderView: View {
     var body: some View {
         VStack(spacing: 16.0) {
             HStack(alignment: .center) {
@@ -52,14 +52,14 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
 
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
                 .environment(\.colorTheme, .silver)
 
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
                 .colorScheme(.dark)
         }
@@ -67,17 +67,17 @@ struct HeaderView_Previews: PreviewProvider {
     }
 }
 
-struct HeaderDemoView: View {
+struct DemoHeaderSampleView: View {
     var body: some View {
         VStack {
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
 
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
                 .environment(\.colorTheme, .silver)
 
-            HeaderView()
+            DemoHeaderView()
                 .background(Color.backgroundTopStart)
                 .colorScheme(.dark)
         }
