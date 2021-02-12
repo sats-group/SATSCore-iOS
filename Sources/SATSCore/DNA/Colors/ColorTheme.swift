@@ -1,7 +1,7 @@
 import UIKit
 
 /// Collection of colors that define a color theme for the app
-public struct ColorTheme {
+public struct ColorTheme: Hashable {
     public let name: String
 
     public let buttonPrimary: UIColor
@@ -35,10 +35,10 @@ public extension ColorTheme {
 
     // MARK: Theme definitions
 
-    static let blue = ColorTheme(themeName: "blue")
-    static let silver = ColorTheme(themeName: "silver")
-    static let gold = ColorTheme(themeName: "gold")
-    static let platinum = ColorTheme(themeName: "platinum")
+    static var blue: ColorTheme { ColorTheme(themeName: "blue") }
+    static var silver: ColorTheme { ColorTheme(themeName: "silver") }
+    static var gold: ColorTheme { ColorTheme(themeName: "gold") }
+    static var platinum: ColorTheme { ColorTheme(themeName: "platinum") }
 
     // MARK: Private methods
 
