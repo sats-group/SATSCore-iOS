@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  DemoApp
-//
-//  Created by Felipe Espinoza on 19/01/2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -12,16 +5,28 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section(header: Text("DNA")) {
-                    NavigationLink("Fonts", destination: EmptyView())
-                    NavigationLink("Colors", destination: ColorsView())
-                    Text("Spacing")
+                    NavigationLink("Fonts", destination: SwiftUIFontsDemoView())
+                    NavigationLink("Colors", destination: ColorDemoView())
+                    NavigationLink("Spacing", destination: EmptyView())
                 }
 
-                Section(header: Text("Basic Components")) {
-                    Text("Labels")
-                    Text("Buttons")
+                Section(header: Text("UIKit Basics")) {
+                    NavigationLink("SATSLabel", destination: SATSLabelDemoView())
+                    NavigationLink("SATSButton", destination: SATSButtonDemoView())
                 }
-            }.navigationTitle("SATS Core Demo")
+
+                Section(header: Text("SwiftUI Demo")) {
+                    NavigationLink("Header", destination: DemoHeaderSampleView())
+                    NavigationLink("Discover", destination: DemoDiscoverView())
+                }
+
+                Section(header: Text("UIKit Demo")) {
+                    NavigationLink("Demo", destination: UIKitDemoView())
+                    NavigationLink("Treatments", destination: TreatmentsDemoView())
+                }
+            }
+            .listStyle(SidebarListStyle())
+            .navigationTitle("SATS Core Demo")
         }
     }
 }
