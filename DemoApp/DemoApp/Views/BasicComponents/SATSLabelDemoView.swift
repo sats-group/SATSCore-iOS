@@ -1,20 +1,20 @@
 import SwiftUI
 import SATSCore
 
-typealias FontVariation = SATSFont.FontVariation
+typealias FontVariation = SATSFont.Weight
 
 struct SATSLabelDemoView: View {
-    @State var fontVariant: FontVariation = .default
+    @State var weight: FontVariation = .default
 
     var body: some View {
         VStack {
-            FontVariantPicker(fontVariant: $fontVariant)
+            FontWeightPicker(weight: $weight)
 
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(SATSFont.TextStyle.allCases, content: wrappedSATSLabel(for:))
                 }
-                .id(fontVariant.name)
+                .id(weight.name)
             }
             .padding()
         }
@@ -26,9 +26,9 @@ struct SATSLabelDemoView: View {
     }
 
     func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
-        let text = fontVariant == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
+        let text = weight == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
 
-        let label = SATSLabel(style: textStyle, variant: fontVariant)
+        let label = SATSLabel(style: textStyle, weight: weight)
         label.text = text
 
         return DemoWrapperView(view: label)
@@ -41,7 +41,7 @@ struct SATSLabelDemoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             NavigationView {
-                SATSLabelDemoView(fontVariant: .medium)
+                SATSLabelDemoView(weight: .medium)
             }
 
             NavigationView {
@@ -75,10 +75,10 @@ extension SATSFont.TextStyle: Identifiable {
     ]
 }
 
-extension SATSFont.FontVariation: Identifiable {
+extension SATSFont.Weight: Identifiable {
     public var id: String { name }
 
-    static let allCases: [SATSFont.FontVariation] = [
+    static let allCases: [SATSFont.Weight] = [
         .default,
         .medium,
         .emphasis,

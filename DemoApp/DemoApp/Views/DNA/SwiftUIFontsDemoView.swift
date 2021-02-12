@@ -2,40 +2,40 @@ import SwiftUI
 import SATSCore
 
 struct SwiftUIFontsDemoView: View {
-    @State var fontVariant: FontVariation = .default
+    @State var weight: FontVariation = .default
 
     var body: some View {
         VStack {
-            FontVariantPicker(fontVariant: $fontVariant)
+            FontWeightPicker(weight: $weight)
 
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("h1")
-                        .font(.satsH1(variant: fontVariant))
+                        .font(.satsH1(weight: weight))
 
                     Text("h2")
-                        .font(.satsH2(variant: fontVariant))
+                        .font(.satsH2(weight: weight))
 
                     Text("h3")
-                        .font(.satsH3(variant: fontVariant))
+                        .font(.satsH3(weight: weight))
 
                     Text("large")
-                        .font(.satsLarge(variant: fontVariant))
+                        .font(.satsLarge(weight: weight))
 
                     Text("basic")
-                        .font(.satsBasic(variant: fontVariant))
+                        .font(.satsBasic(weight: weight))
 
                     Text("small")
-                        .font(.satsSmall(variant: fontVariant))
+                        .font(.satsSmall(weight: weight))
 
                     Text("section")
-                        .font(.satsSection(variant: fontVariant))
+                        .font(.satsSection(weight: weight))
 
                     Text("button")
-                        .font(.satsButton(variant: fontVariant))
+                        .font(.satsButton(weight: weight))
 
                     Text("navigationTitle")
-                        .font(.satsNavigationTitle(variant: fontVariant))
+                        .font(.satsNavigationTitle(weight: weight))
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             }
@@ -49,9 +49,9 @@ struct SwiftUIFontsDemoView: View {
     }
 
     func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
-        let text = fontVariant == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
+        let text = weight == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
 
-        let label = SATSLabel(style: textStyle, variant: fontVariant)
+        let label = SATSLabel(style: textStyle, weight: weight)
         label.text = text
 
         return DemoWrapperView(view: label)
