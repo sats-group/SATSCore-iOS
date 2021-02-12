@@ -25,6 +25,7 @@ struct ContentView: View {
                     NavigationLink("Treatments", destination: TreatmentsDemoView())
                 }
             }
+            .listStyle(SidebarListStyle())
             .navigationTitle("SATS Core Demo")
         }
     }
