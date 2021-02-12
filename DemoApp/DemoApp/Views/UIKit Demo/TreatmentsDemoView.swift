@@ -10,7 +10,7 @@ struct TreatmentsViewData {
 class TreatmentsView: UIView {
     // MARK: - Subviews
 
-    private lazy var titleLabel = SATSLabel(style: .h2, variant: .emphasis)
+    private lazy var titleLabel = SATSLabel(style: .h2, weight: .emphasis)
 
     private lazy var descriptionLabel: SATSLabel = {
         let label = SATSLabel(style: .large)

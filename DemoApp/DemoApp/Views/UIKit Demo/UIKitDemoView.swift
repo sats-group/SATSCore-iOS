@@ -65,7 +65,7 @@ extension SampleView {
         }
 
         private lazy var title: SATSLabel = {
-            let label = SATSLabel(style: .h1, variant: .satsFeeling, withAutoLayout: true)
+            let label = SATSLabel(style: .h1, weight: .satsFeeling, withAutoLayout: true)
             label.text = "SATS".uppercased()
             label.textColor = .onButtonPrimary
             return label
