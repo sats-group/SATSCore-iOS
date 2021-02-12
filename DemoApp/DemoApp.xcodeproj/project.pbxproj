@@ -13,6 +13,7 @@
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
 		9B2BFBE125B719AD00383193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */; };
+		9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78777825D68D9A00C69BB8 /* FontWeightPicker.swift */; };
 		9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A4D4B25D2ADA30086EA4F /* DemoDiscoverView.swift */; };
 		9B7A4D5225D2ADA30086EA4F /* SampleTopStoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A4D4E25D2ADA30086EA4F /* SampleTopStoriesView.swift */; };
 		9B7A4D5325D2ADA30086EA4F /* ClassSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A4D4F25D2ADA30086EA4F /* ClassSampleView.swift */; };
@@ -23,7 +24,6 @@
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
 		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
-		9BB6E2AF25CC1D0A009A6CCD /* FontVariantPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2AE25CC1D0A009A6CCD /* FontVariantPicker.swift */; };
 		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,7 @@
 		9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9B2BFBE225B719AD00383193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B2BFBF125B71A2800383193 /* SatsCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SatsCore; path = ..; sourceTree = "<group>"; };
+		9B78777825D68D9A00C69BB8 /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
 		9B7A4D4B25D2ADA30086EA4F /* DemoDiscoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDiscoverView.swift; sourceTree = "<group>"; };
 		9B7A4D4E25D2ADA30086EA4F /* SampleTopStoriesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTopStoriesView.swift; sourceTree = "<group>"; };
 		9B7A4D4F25D2ADA30086EA4F /* ClassSampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassSampleView.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWrapperView.swift; sourceTree = "<group>"; };
 		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
-		9BB6E2AE25CC1D0A009A6CCD /* FontVariantPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontVariantPicker.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,7 +195,7 @@
 		9BB6E2AD25CC1CD9009A6CCD /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				9BB6E2AE25CC1D0A009A6CCD /* FontVariantPicker.swift */,
+				9B78777825D68D9A00C69BB8 /* FontWeightPicker.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 				9B7A4D5225D2ADA30086EA4F /* SampleTopStoriesView.swift in Sources */,
 				9B7A4D6125D2B9C30086EA4F /* TreatmentsDemoView.swift in Sources */,
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
-				9BB6E2AF25CC1D0A009A6CCD /* FontVariantPicker.swift in Sources */,
+				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,

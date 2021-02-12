@@ -8,10 +8,10 @@ public struct SATSFont {
             .forEach(registerFont(with:))
     }
 
-    public static func font(style: TextStyle, variant: FontVariation) -> UIFont {
+    public static func font(style: TextStyle, weight: Weight) -> UIFont {
         let metrics = UIFontMetrics(forTextStyle: style.nativeStyle)
 
-        let fontName = "Inter-\(variant.fontName)"
+        let fontName = "Inter-\(weight.fontName)"
         guard let font = UIFont(name: fontName, size: style.size) else {
             assertionFailure("❌ \(fontName) should be available, you should call SATSFont.registerCustomFonts()")
             return UIFont.preferredFont(forTextStyle: style.nativeStyle)
