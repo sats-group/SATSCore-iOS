@@ -1,15 +1,5 @@
 import SwiftUI
 
-/*
-
- To solve:
-
- - how to have multiple previews of themes in xcode previews
- - how to define color themes
-
-
- */
-
 struct DemoDiscoverView: View {
     var body: some View {
         ScrollView {
