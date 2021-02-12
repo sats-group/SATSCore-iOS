@@ -69,17 +69,39 @@ struct HeaderView_Previews: PreviewProvider {
 
 struct DemoHeaderSampleView: View {
     var body: some View {
-        VStack {
-            DemoHeaderView()
-                .background(Color.backgroundTopStart)
+        VStack(spacing: 32) {
+            VStack(alignment: .leading) {
+                Text("Current theme")
+                    .font(.title2)
 
-            DemoHeaderView()
-                .background(Color.backgroundTopStart)
-                .environment(\.colorTheme, .silver)
+                DemoHeaderView()
+                    .background(Color.backgroundTopStart)
+            }
 
-            DemoHeaderView()
-                .background(Color.backgroundTopStart)
-                .colorScheme(.dark)
+            VStack(alignment: .leading) {
+                Text("Silver theme")
+                    .font(.title2)
+
+                DemoHeaderView()
+                    .background(Color.backgroundTopStart)
+                    .environment(\.colorTheme, .silver)
+            }
+
+            VStack(alignment: .leading) {
+                Text("Force dark mode")
+                    .font(.title2)
+
+                DemoHeaderView()
+                    .background(Color.backgroundTopStart)
+                    .colorScheme(.dark)
+            }
         }
+        .padding()
+    }
+}
+
+struct DemoHeaderSampleView_Previews: PreviewProvider {
+    static var previews: some View {
+        DemoHeaderSampleView()
     }
 }
