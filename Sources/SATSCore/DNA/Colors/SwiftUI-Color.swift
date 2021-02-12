@@ -2,19 +2,6 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public extension Color {
-    /// A convenience object to resolve colors using the environment value
-    class ColorThemeResolver {
-        @Environment(\.colorTheme) var colorTheme
-
-        func themedColor(for name: ColorName) -> Color {
-            guard let uiColor = colorTheme[name] else {
-                preconditionFailure("❌ \(name.rawValue) should be present in theme \(colorTheme.name)")
-            }
-
-            return Color(uiColor)
-        }
-    }
-
     // MARK: Background
 
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
@@ -88,7 +75,13 @@ public extension Color {
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> Color {
-        ColorThemeResolver().themedColor(for: name)
+        let colorTheme = ColorTheme.current
+
+        guard let uiColor = colorTheme[name] else {
+            preconditionFailure("❌ \(name.rawValue) should be present in theme \(colorTheme.name)")
+        }
+
+        return Color(uiColor)
     }
 
     private static func color(_ name: ColorName) -> Color {
