@@ -38,7 +38,7 @@ Text("Hello World")
     .font(.satsH1())
 ```
 
-`.satsH1`is a method as you can invoke it like `.satsH1(variant: .emphasis)` for a semi-bold variation of the semantic `H1` text.
+`.satsH1`is a method as you can invoke it like `.satsH1(weight: .emphasis)` for a semi-bold variation of the semantic `H1` text.
 
 ### Shared
 

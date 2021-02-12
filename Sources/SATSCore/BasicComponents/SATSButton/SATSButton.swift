@@ -58,7 +58,7 @@ public class SATSButton: UIButton {
     private func setup() {
         clipsToBounds = true
 
-        titleLabel?.font = SATSFont.font(style: .button, variant: .emphasis)
+        titleLabel?.font = SATSFont.font(style: .button, weight: .emphasis)
 
         updateStyle()
         updateSize()
