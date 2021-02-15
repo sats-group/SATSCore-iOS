@@ -27,6 +27,9 @@ struct ContentView: View {
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("SATS Core Demo")
+
+            Text("You can start by selecting a demo from the left side menu")
+                .italic()
         }
     }
 }
