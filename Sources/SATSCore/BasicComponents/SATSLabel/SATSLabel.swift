@@ -24,14 +24,3 @@ public class SATSLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-import SwiftUI
-
-@available(iOS 14, *)
-struct LabelExperiments_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            Text("Hello World")
-        }
-    }
-}
