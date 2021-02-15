@@ -66,7 +66,7 @@ class TreatmentsView: UIView {
 
     // MARK: - Private methods
     private func setup() {
-        backgroundColor = .white
+        backgroundColor = .backgroundSecondary
 
         [
             titleLabel,
