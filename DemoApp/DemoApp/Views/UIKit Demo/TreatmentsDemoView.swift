@@ -22,7 +22,7 @@ class TreatmentsView: UIView {
         let imageView = UIImageView(withAutoLayout: true)
         imageView.layer.cornerRadius = 8
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
@@ -59,14 +59,14 @@ class TreatmentsView: UIView {
     func configure(with viewData: TreatmentsViewData) {
         titleLabel.text = viewData.title
 
+        imageView.image = UIImage(named: "treatmentsCover")
         descriptionLabel.attributedText = viewData.description
         bookButton.setTitle(viewData.buttonTitle, for: .normal)
     }
 
     // MARK: - Private methods
-
     private func setup() {
-        backgroundColor = .backgroundSecondary
+        backgroundColor = .white
 
         [
             titleLabel,
@@ -81,13 +81,14 @@ class TreatmentsView: UIView {
             bookButton,
         ].forEach(addSubview(_:))
 
+        scrollView.pin(to: self)
         stackView.pinWithinReadableContentGuide(to: scrollView)
 
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: bookButton.topAnchor, constant: -16),
+            imageView.widthAnchor.constraint(lessThanOrEqualToConstant: 500),
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.69),
+
+            stackView.widthAnchor.constraint(equalTo: scrollView.readableContentGuide.widthAnchor),
 
             imageView.widthAnchor.constraint(equalTo: stackView.layoutMarginsGuide.widthAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: stackView.layoutMarginsGuide.widthAnchor),
@@ -106,13 +107,18 @@ struct TreatmentsDemoView: View {
         treatmentView.configure(
             with: TreatmentsViewData(
                 title: "SATS treatments",
-                imageUrl: nil,
+                imageUrl: URL(
+                    string: "https://images.ctfassets.net/bton54gi9dnn/i8qN8WMqkidBBPMvTid46/" +
+                        "0779955ce011f4e74f2e1863a5011980/Treatments_v4.png"
+                )!,
                 description: NSAttributedString(string: """
-                    Sore shoulder after training? Not sure if you are just very upset \
-                    or if something is not right? Get a quick assessment by a physiotherapist!
-                    """
+                            A unique link between treatments and exercise under one roof ensures that you\
+                            get a faster way back to an active life. By clicking book below, you will be sent\
+                            to a website provided by our partner. We use this partner solution to be able to\
+                            offer connection with other health systems if needed.
+                            """
                 ),
-                buttonTitle: "Book Appointment"
+                buttonTitle: "BOOK"
             )
         )
         return treatmentView
