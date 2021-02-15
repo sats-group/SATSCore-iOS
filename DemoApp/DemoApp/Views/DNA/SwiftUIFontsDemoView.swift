@@ -10,31 +10,31 @@ struct SwiftUIFontsDemoView: View {
 
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("h1")
+                    weightedText("h1")
                         .font(.satsH1(weight: weight))
 
-                    Text("h2")
+                    weightedText("h2")
                         .font(.satsH2(weight: weight))
 
-                    Text("h3")
+                    weightedText("h3")
                         .font(.satsH3(weight: weight))
 
-                    Text("large")
+                    weightedText("large")
                         .font(.satsLarge(weight: weight))
 
-                    Text("basic")
+                    weightedText("basic")
                         .font(.satsBasic(weight: weight))
 
-                    Text("small")
+                    weightedText("small")
                         .font(.satsSmall(weight: weight))
 
-                    Text("section")
+                    weightedText("section")
                         .font(.satsSection(weight: weight))
 
-                    Text("button")
+                    weightedText("button")
                         .font(.satsButton(weight: weight))
 
-                    Text("navigationTitle")
+                    weightedText("navigationTitle")
                         .font(.satsNavigationTitle(weight: weight))
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
@@ -46,6 +46,11 @@ struct SwiftUIFontsDemoView: View {
             Color(UIColor.systemBackground)
                 .ignoresSafeArea()
         )
+    }
+
+    func weightedText(_ text: String) -> Text {
+        let text = weight == .satsFeeling ? text.uppercased() : text
+        return Text(text)
     }
 
     func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
