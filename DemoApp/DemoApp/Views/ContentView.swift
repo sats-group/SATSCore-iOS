@@ -7,7 +7,7 @@ struct ContentView: View {
                 Section(header: Text("DNA")) {
                     NavigationLink("Fonts", destination: SwiftUIFontsDemoView())
                     NavigationLink("Colors", destination: ColorDemoView())
-                    NavigationLink("Spacing", destination: EmptyView())
+                    NavigationLink("Spacing", destination: Text("⚠️ We should totally have constants here!"))
                 }
 
                 Section(header: Text("UIKit Basics")) {
@@ -16,17 +16,20 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("SwiftUI Demo")) {
-                    NavigationLink("Header", destination: DemoHeaderSampleView())
-                    NavigationLink("Discover", destination: DemoDiscoverView())
+                    NavigationLink("Header Concept", destination: DemoHeaderSampleView())
+                    NavigationLink("Discover Concept", destination: DemoDiscoverView())
                 }
 
                 Section(header: Text("UIKit Demo")) {
-                    NavigationLink("Demo", destination: UIKitDemoView())
-                    NavigationLink("Treatments", destination: TreatmentsDemoView())
+                    NavigationLink("Basic Demo", destination: UIKitDemoView())
+                    NavigationLink("Treatments Demo", destination: TreatmentsDemoView())
                 }
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("SATS Core Demo")
+
+            Text("You can start by selecting a demo from the left side menu")
+                .italic()
         }
     }
 }

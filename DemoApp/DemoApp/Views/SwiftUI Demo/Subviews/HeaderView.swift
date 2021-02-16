@@ -79,15 +79,6 @@ struct DemoHeaderSampleView: View {
             }
 
             VStack(alignment: .leading) {
-                Text("Silver theme")
-                    .font(.title2)
-
-                DemoHeaderView()
-                    .background(Color.backgroundTopStart)
-                    .environment(\.colorTheme, .silver)
-            }
-
-            VStack(alignment: .leading) {
                 Text("Force dark mode")
                     .font(.title2)
 
