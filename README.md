@@ -1,6 +1,4 @@
-# SATSCore
-
-A base UI framework.
+![Repo Header](Github/Header.png)
 
 The objective of this library is to provide all the utilities we need to create UI for the SATS member app by implementing the design system we use, then when building UI we just care of combining this basic elements rather than re-invent everything and also to provide a solid base that allows support to advanced UI features like: dark mode, dynamic types and so on.
 
