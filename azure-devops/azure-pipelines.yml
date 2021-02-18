@@ -1,0 +1,61 @@
+trigger:
+  - main
+
+pr: none
+
+variables:
+  - group: "SatsVariables"
+  - name: "scheme"
+    value: "DemoApp"
+  - name: "configuration"
+    value: "Release"
+  - name: "sdk"
+    value: "iphoneos"
+
+pool:
+  vmImage: "macos-latest"
+
+jobs:
+  - job: BuildDev
+    displayName: Build SATS Dev
+    steps:
+      - task: InstallAppleCertificate@2
+        displayName: Install Distribution certficate
+        inputs:
+          certSecureFile: $(SATS_DISTRIBUTION_CERTIFICATE_NAME)
+          certPwd: $(SATS_DISTRIBUTION_CERTIFICATE_PASSWORD)
+          keychain: "temp"
+          deleteCert: true
+
+      - task: InstallAppleProvisioningProfile@1
+        displayName: "Install Dev Provisioning Profile"
+        inputs:
+          provisioningProfileLocation: "secureFiles"
+          provProfileSecureFile: $(SATS_CORE_PROD_PROFILE_NAME)
+
+      - task: Xcode@5
+        displayName: "Xcode build, sign and export"
+        inputs:
+          actions: "clean build"
+          sdk: "$(sdk)"
+          scheme: "$(scheme)"
+          configuration: "$(configuration)"
+          xcodeVersion: "default"
+          signingOption: "manual"
+          provisioningProfileName: "SATS Core Demo Distribution"
+          packageApp: true
+          exportMethod: "app-store"
+          exportPath: "ios/build/$(configuration)"
+          workingDirectory: "DemoApp"
+
+      - task: CopyFiles@2
+        displayName: "Copy IPA file"
+        inputs:
+          SourceFolder: "$(system.defaultworkingdirectory)"
+          Contents: "**/*.ipa"
+          TargetFolder: "$(build.artifactstagingdirectory)"
+
+      - task: PublishBuildArtifacts@1
+        displayName: "Publish iOS Artifact"
+        inputs:
+          PathtoPublish: "$(build.artifactstagingdirectory)"
