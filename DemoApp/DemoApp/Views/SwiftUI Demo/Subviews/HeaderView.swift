@@ -16,7 +16,7 @@ struct DemoHeaderView: View {
             HStack(alignment: .top, spacing: 24) {
                 VStack(spacing: 4.0) {
                     Text("Discover")
-                        .foregroundColor(.onButtonPrimary)
+                        .foregroundColor(.onPrimary)
                     Color.selection
                         .frame(width: 46, height: 2)
                         .cornerRadius(1)
@@ -28,7 +28,7 @@ struct DemoHeaderView: View {
             }
         }
         .font(.satsNavigationTitle())
-        .foregroundColor(.onButtonPrimary)
+        .foregroundColor(.onPrimary)
         .padding(16)
         .background(backgroundHeader)
     }

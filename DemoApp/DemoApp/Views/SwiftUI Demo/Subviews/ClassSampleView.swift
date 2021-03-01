@@ -17,7 +17,7 @@ struct ClassSampleView: View {
                                 VStack {
                                     Text("on wednesday".uppercased())
                                         .font(.satsSmall())
-                                        .foregroundColor(.onButtonPrimary)
+                                        .foregroundColor(.onPrimary)
                                         .padding(8)
                                         .background(Color.black.opacity(0.5))
                                         .cornerRadius(4)
@@ -34,7 +34,7 @@ struct ClassSampleView: View {
                             .font(.satsLarge())
                         Text("Carl Berner")
                             .font(.satsSmall())
-                            .foregroundColor(.onBackgroundPrimarySecondary)
+                            .foregroundColor(.onBackgroundSecondary)
                     }
 
                     VStack(alignment: .leading) {
@@ -50,7 +50,7 @@ struct ClassSampleView: View {
                             .font(.satsLarge())
                         Text("Carl Berner")
                             .font(.satsSmall())
-                            .foregroundColor(.onBackgroundPrimarySecondary)
+                            .foregroundColor(.onBackgroundSecondary)
                     }
                 }
             }

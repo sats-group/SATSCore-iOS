@@ -18,6 +18,7 @@ class ColorsTests: XCTestCase {
         XCTAssertNotEqual(initialValue, newValue)
     }
 
+    // swiftlint:disable:next function_body_length
     private func colorConstants() -> [UIColor] {
         [
             .backgroundPrimary,
