@@ -17,28 +17,37 @@ struct ColorDemo: Identifiable {
 struct ColorDemoView: View {
     let sections: [ColorSection] = [
         ColorSection(
+            name: "Primary",
+            colors: [
+                ColorDemo(name: "primary", color: .satsPrimary),
+                ColorDemo(name: "primaryHighlight", color: .satsPrimaryHighlight),
+                ColorDemo(name: "primaryDisabled", color: .satsPrimaryDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "Secondary",
+            colors: [
+                ColorDemo(name: "secondary", color: .satsSecondary),
+                ColorDemo(name: "secondaryHighlight", color: .satsSecondaryHighlight),
+                ColorDemo(name: "secondaryDisabled", color: .satsSecondaryDisabled),
+                ColorDemo(name: "clean", color: .clean),
+            ]
+        ),
+        ColorSection(
+            name: "CTA",
+            colors: [
+                ColorDemo(name: "cta", color: .cta),
+                ColorDemo(name: "ctaHighlight", color: .ctaHighlight),
+                ColorDemo(name: "ctaDisabled", color: .ctaDisabled),
+                ColorDemo(name: "nonText", color: .nonText),
+            ]
+        ),
+        ColorSection(
             name: "Background",
             colors: [
                 ColorDemo(name: "backgroundPrimary", color: .backgroundPrimary),
                 ColorDemo(name: "backgroundSecondary", color: .backgroundSecondary),
                 ColorDemo(name: "backgroundSurface", color: .backgroundSurface),
-            ]
-        ),
-
-        ColorSection(
-            name: "Main",
-            colors: [
-//                ColorDemo(name: "primary", color: .primary),
-                ColorDemo(name: "primaryHighlight", color: .primaryHighlight),
-                ColorDemo(name: "primaryDisabled", color: .primaryDisabled),
-//                ColorDemo(name: "secondary", color: .secondary),
-                ColorDemo(name: "secondaryHighlight", color: .secondaryHighlight),
-                ColorDemo(name: "secondaryDisabled", color: .secondaryDisabled),
-                ColorDemo(name: "clean", color: .clean),
-                ColorDemo(name: "cta", color: .cta),
-                ColorDemo(name: "ctaHighlight", color: .ctaHighlight),
-                ColorDemo(name: "ctaDisabled", color: .ctaDisabled),
-                ColorDemo(name: "nonText", color: .nonText),
             ]
         ),
         ColorSection(

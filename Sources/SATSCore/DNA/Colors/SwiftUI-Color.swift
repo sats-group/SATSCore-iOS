@@ -11,9 +11,11 @@ public extension Color {
 
     // MARK: Secondary
 
-    static var secondary: Color { color(.secondary) }
-    static var secondaryHighlight: Color { color(.secondaryHighlight) }
-    static var secondaryDisabled: Color { color(.secondaryDisabled) }
+    // these colors are prefixed with "sats" as Color.secondary already exists
+    // in SwiftUI
+    static var satsSecondary: Color { color(.secondary) }
+    static var satsSecondaryHighlight: Color { color(.secondaryHighlight) }
+    static var satsSecondaryDisabled: Color { color(.secondaryDisabled) }
     static var clean: Color { color(.clean) }
 
     // MARK: CTA
@@ -84,9 +86,11 @@ public extension Color {
 
     // MARK: Theme dependant colors
 
-    static var primary: Color { themedColor(.primary) }
-    static var primaryHighlight: Color { themedColor(.primaryHighlight) }
-    static var primaryDisabled: Color { themedColor(.primaryDisabled) }
+    // these colors are prefixed with "sats" as Color.secondary already exists
+    // in SwiftUI
+    static var satsPrimary: Color { themedColor(.primary) }
+    static var satsPrimaryHighlight: Color { themedColor(.primaryHighlight) }
+    static var satsPrimaryDisabled: Color { themedColor(.primaryDisabled) }
 
     static var selection: Color { themedColor(.selection) }
 
