@@ -44,7 +44,47 @@ struct ColorDemoView: View {
         ColorSection(
             name: "\"On\"",
             colors: [
-
+                ColorDemo(name: "onPrimary", color: .onPrimary),
+                ColorDemo(name: "onPrimaryDisabled", color: .onPrimaryDisabled),
+                ColorDemo(name: "onSecondary", color: .onSecondary),
+                ColorDemo(name: "onSecondaryDisabled", color: .onSecondaryDisabled),
+                ColorDemo(name: "onCta", color: .onCta),
+                ColorDemo(name: "onCtaDisabled", color: .onCtaDisabled),
+                ColorDemo(name: "onNonText", color: .onNonText),
+                ColorDemo(name: "onSignal", color: .onSignal),
+                ColorDemo(name: "onWaitlist", color: .onWaitlist),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Background",
+            colors: [
+                ColorDemo(name: "onBackgroundEnabledOn", color: .onBackgroundEnabledOn),
+                ColorDemo(name: "onBackgroundEnabledOff", color: .onBackgroundEnabledOff),
+                ColorDemo(name: "onBackgroundDisabledOn", color: .onBackgroundDisabledOn),
+                ColorDemo(name: "onBackgroundDisabledOff", color: .onBackgroundDisabledOff),
+                ColorDemo(name: "onBackgroundPrimary", color: .onBackgroundPrimary),
+                ColorDemo(name: "onBackgroundSecondary", color: .onBackgroundSecondary),
+                ColorDemo(name: "onBackgroundDisabled", color: .onBackgroundDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Surface",
+            colors: [
+                ColorDemo(name: "onSurfaceEnabledOn", color: .onSurfaceEnabledOn),
+                ColorDemo(name: "onSurfaceEnabledOff", color: .onSurfaceEnabledOff),
+                ColorDemo(name: "onSurfaceDisabledOn", color: .onSurfaceDisabledOn),
+                ColorDemo(name: "onSurfaceDisabledOff", color: .onSurfaceDisabledOff),
+                ColorDemo(name: "onSurfacePrimary", color: .onSurfacePrimary),
+                ColorDemo(name: "onSurfaceSecondary", color: .onSurfaceSecondary),
+                ColorDemo(name: "onSurfaceDisabled", color: .onSurfaceDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Gradient",
+            colors: [
+                ColorDemo(name: "onGradientPrimary", color: .onGradientPrimary),
+                ColorDemo(name: "onGradientSecondary", color: .onGradientSecondary),
+                ColorDemo(name: "onGradientDisabled", color: .onGradientDisabled),
             ]
         ),
         ColorSection(
