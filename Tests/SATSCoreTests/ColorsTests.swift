@@ -9,11 +9,11 @@ class ColorsTests: XCTestCase {
     }
 
     func testColorResolutionWhenChaingTheme() {
-        let initialValue = UIColor.buttonPrimary.hexString ?? ""
+        let initialValue = UIColor.primary.hexString ?? ""
 
         ColorTheme.current = .platinum
 
-        let newValue = UIColor.buttonPrimary.hexString ?? ""
+        let newValue = UIColor.primary.hexString ?? ""
 
         XCTAssertNotEqual(initialValue, newValue)
     }
@@ -22,28 +22,17 @@ class ColorsTests: XCTestCase {
         [
             .backgroundPrimary,
             .backgroundSecondary,
-            .backgroundShimmer,
-            .backgroundTabbar,
-            .backgroundSurfaceStart,
-            .backgroundSurfaceEnd,
+            .backgroundSurface,
 
-            .buttonSecondary,
-            .buttonSecondaryHighlight,
-            .buttonSecondaryDisabled,
-            .buttonCta,
-            .buttonCtaHighlight,
-            .buttonCtaDisabled,
+            .secondary,
+            .secondaryHighlight,
+            .secondaryDisabled,
+            .clean,
 
-            .onButtonPrimary,
-            .onButtonPrimarySecondary,
-            .onButtonSecondary,
-            .onButtonSecondarySecondary,
-            .onButtonCta,
-            .onButtonCtaSecondary,
-            .onBackgroundSurface,
-            .onBackgroundSurfaceSecondary,
-            .onBackgroundPrimary,
-            .onBackgroundPrimarySecondary,
+            .cta,
+            .ctaHighlight,
+            .ctaDisabled,
+            .nonText,
 
             .waitlist,
             .waitlistHighlight,
@@ -57,10 +46,42 @@ class ColorsTests: XCTestCase {
             .signalError,
 
             .border,
+            .shimmer,
+            .tabs,
 
-            .buttonPrimary,
-            .buttonPrimaryHighlight,
-            .buttonPrimaryDisabled,
+            .onPrimary,
+            .onPrimaryDisabled,
+            .onSecondary,
+            .onSecondaryDisabled,
+            .onCta,
+            .onCtaDisabled,
+            .onNonText,
+            .onSignal,
+            .onWaitlist,
+
+            .onBackgroundEnabledOn,
+            .onBackgroundEnabledOff,
+            .onBackgroundDisabledOn,
+            .onBackgroundDisabledOff,
+            .onBackgroundPrimary,
+            .onBackgroundSecondary,
+            .onBackgroundDisabled,
+
+            .onSurfaceEnabledOn,
+            .onSurfaceEnabledOff,
+            .onSurfaceDisabledOn,
+            .onSurfaceDisabledOff,
+            .onSurfacePrimary,
+            .onSurfaceSecondary,
+            .onSurfaceDisabled,
+
+            .onGradientPrimary,
+            .onGradientSecondary,
+            .onGradientDisabled,
+
+            .primary,
+            .primaryHighlight,
+            .primaryDisabled,
 
             .selection,
 
