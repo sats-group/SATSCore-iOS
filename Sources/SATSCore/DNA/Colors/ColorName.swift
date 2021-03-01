@@ -1,8 +1,5 @@
 import Foundation
 
-// NOTE: `onPrimaryDefault` is named as `onPrimary`, omitting the `Default`
-
-
 /// Static list of color names defined in the Assets folder to avoid misspelling them
 enum ColorName: String, CaseIterable {
     case backgroundPrimary
@@ -79,7 +76,4 @@ enum ColorName: String, CaseIterable {
 
     case backgroundTopStart
     case backgroundTopEnd
-
-//    case navigation1
-//    case navigation2
 }
