@@ -46,7 +46,7 @@ To use colors part of the design system, we have included a bunch of extensions 
 Color.backgroundPrimary
 Color.backgroundSecondary
 Color.buttonPrimary
-Color.onButtonPrimary // text or icons on top of button primary color
+Color.onPrimary // text or icons on top of button primary color
 Color.selection
 Color.waitlist
 // etc.

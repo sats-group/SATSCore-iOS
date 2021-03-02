@@ -4,9 +4,9 @@ import UIKit
 public struct ColorTheme: Hashable {
     public let name: String
 
-    public let buttonPrimary: UIColor
-    public let buttonPrimaryHighlight: UIColor
-    public let buttonPrimaryDisabled: UIColor
+    public let primary: UIColor
+    public let primaryHighlight: UIColor
+    public let primaryDisabled: UIColor
 
     public let selection: UIColor
 
@@ -16,9 +16,9 @@ public struct ColorTheme: Hashable {
     /// Given an static color name, return the appropriate value from the theme
     subscript(index: ColorName) -> UIColor? {
         switch index {
-        case .buttonPrimary: return buttonPrimary
-        case .buttonPrimaryHighlight: return buttonPrimaryHighlight
-        case .buttonPrimaryDisabled: return buttonPrimaryDisabled
+        case .primary: return primary
+        case .primaryHighlight: return primaryHighlight
+        case .primaryDisabled: return primaryDisabled
         case .selection: return selection
         case .backgroundTopStart: return backgroundTopStart
         case .backgroundTopEnd: return backgroundTopEnd
@@ -45,9 +45,9 @@ public extension ColorTheme {
     private init(themeName: String) {
         self.init(
             name: themeName,
-            buttonPrimary: Self.color("\(themeName)ButtonPrimary"),
-            buttonPrimaryHighlight: Self.color("\(themeName)ButtonPrimaryHighlight"),
-            buttonPrimaryDisabled: Self.color("\(themeName)ButtonPrimaryDisabled"),
+            primary: Self.color("\(themeName)Primary"),
+            primaryHighlight: Self.color("\(themeName)PrimaryHighlight"),
+            primaryDisabled: Self.color("\(themeName)PrimaryDisabled"),
             selection: Self.color("\(themeName)Selection"),
             backgroundTopStart: Self.color("\(themeName)GradientStart"),
             backgroundTopEnd: Self.color("\(themeName)GradientEnd")
