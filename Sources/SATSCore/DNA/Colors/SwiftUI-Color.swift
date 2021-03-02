@@ -35,7 +35,7 @@ public extension Color {
     static var link: Color { color(.link) }
     static var linkHighlight: Color { color(.linkHighlight) }
 
-    // MARK: Singal
+    // MARK: Signal
 
     static var signalSuccess: Color { color(.signalSuccess) }
     static var signalWarning: Color { color(.signalWarning) }
