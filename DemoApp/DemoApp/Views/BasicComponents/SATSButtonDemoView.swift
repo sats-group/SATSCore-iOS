@@ -13,6 +13,8 @@ struct SATSButtonDemoView: View {
 
                     demoButton(style: .secondary, size: .large)
 
+                    demoButton(style: .clean, size: .large)
+
                     demoButton(style: .cta, size: .large)
 
                 }
@@ -26,6 +28,8 @@ struct SATSButtonDemoView: View {
 
                     demoButton(style: .secondary, size: .regular)
 
+                    demoButton(style: .clean, size: .large)
+
                     demoButton(style: .cta, size: .regular)
 
                 }
@@ -38,6 +42,8 @@ struct SATSButtonDemoView: View {
                     demoButton(style: .primary, size: .compact)
 
                     demoButton(style: .secondary, size: .compact)
+
+                    demoButton(style: .clean, size: .large)
 
                     demoButton(style: .cta, size: .compact)
                 }

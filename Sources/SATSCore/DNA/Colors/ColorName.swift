@@ -4,33 +4,17 @@ import Foundation
 enum ColorName: String, CaseIterable {
     case backgroundPrimary
     case backgroundSecondary
-    case backgroundShimmer
-    case backgroundTabbar
-    case backgroundSurfaceStart
-    case backgroundSurfaceEnd
+    case backgroundSurface
 
-    case buttonSecondary
-    case buttonSecondaryHighlight
-    case buttonSecondaryDisabled
+    case secondary
+    case secondaryHighlight
+    case secondaryDisabled
+    case clean
 
-    case buttonCta
-    case buttonCtaHighlight
-    case buttonCtaDisabled
-
-    case onButtonPrimary
-    case onButtonPrimarySecondary
-
-    case onButtonSecondary
-    case onButtonSecondarySecondary
-
-    case onButtonCta
-    case onButtonCtaSecondary
-
-    case onBackgroundSurface
-    case onBackgroundSurfaceSecondary
-
-    case onBackgroundPrimary
-    case onBackgroundPrimarySecondary
+    case cta
+    case ctaHighlight
+    case ctaDisabled
+    case nonText
 
     case waitlist
     case waitlistHighlight
@@ -44,12 +28,49 @@ enum ColorName: String, CaseIterable {
     case signalError
 
     case border
+    case shimmer
+    case tabs
+
+    // "On" colors
+
+    case onPrimary
+    case onPrimaryDisabled
+
+    case onSecondary
+    case onSecondaryDisabled
+
+    case onCta
+    case onCtaDisabled
+
+    case onNonText
+    case onSignal
+    case onWaitlist
+
+    case onBackgroundEnabledOn
+    case onBackgroundEnabledOff
+    case onBackgroundDisabledOn
+    case onBackgroundDisabledOff
+    case onBackgroundPrimary
+    case onBackgroundSecondary
+    case onBackgroundDisabled
+
+    case onSurfaceEnabledOn
+    case onSurfaceEnabledOff
+    case onSurfaceDisabledOn
+    case onSurfaceDisabledOff
+    case onSurfacePrimary
+    case onSurfaceSecondary
+    case onSurfaceDisabled
+
+    case onGradientPrimary
+    case onGradientSecondary
+    case onGradientDisabled
 
     // Theme colors
 
-    case buttonPrimary
-    case buttonPrimaryHighlight
-    case buttonPrimaryDisabled
+    case primary
+    case primaryHighlight
+    case primaryDisabled
 
     case selection
 

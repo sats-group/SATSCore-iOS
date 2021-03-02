@@ -2,43 +2,28 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public extension Color {
+
     // MARK: Background
 
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
     static var backgroundSecondary: Color { color(.backgroundSecondary) }
-    static var backgroundShimmer: Color { color(.backgroundShimmer) }
-    static var backgroundTabbar: Color { color(.backgroundTabbar) }
-    static var backgroundSurfaceStart: Color { color(.backgroundSurfaceStart) }
-    static var backgroundSurfaceEnd: Color { color(.backgroundSurfaceEnd) }
+    static var backgroundSurface: Color { color(.backgroundSurface) }
 
-    // MARK: Button
+    // MARK: Secondary
 
-    static var buttonSecondary: Color { color(.buttonSecondary) }
-    static var buttonSecondaryHighlight: Color { color(.buttonSecondaryHighlight) }
-    static var buttonSecondaryDisabled: Color { color(.buttonSecondaryDisabled) }
+    // these colors are prefixed with "sats" as Color.secondary already exists
+    // in SwiftUI
+    static var satsSecondary: Color { color(.secondary) }
+    static var satsSecondaryHighlight: Color { color(.secondaryHighlight) }
+    static var satsSecondaryDisabled: Color { color(.secondaryDisabled) }
+    static var clean: Color { color(.clean) }
 
-    static var buttonCta: Color { color(.buttonCta) }
-    static var buttonCtaHighlight: Color { color(.buttonCtaHighlight) }
-    static var buttonCtaDisabled: Color { color(.buttonCtaDisabled) }
+    // MARK: CTA
 
-    // MARK: "On" colors
-    // "On" colors are used for text and icons, they are related on where this text/icon
-    // is presented "on top of", like a backgroundPrimary, etc.
-
-    static var onButtonPrimary: Color { color(.onButtonPrimary) }
-    static var onButtonPrimarySecondary: Color { color(.onButtonPrimarySecondary) }
-
-    static var onButtonSecondary: Color { color(.onButtonSecondary) }
-    static var onButtonSecondarySecondary: Color { color(.onButtonSecondarySecondary) }
-
-    static var onButtonCta: Color { color(.onButtonCta) }
-    static var onButtonCtaSecondary: Color { color(.onButtonCtaSecondary) }
-
-    static var onBackgroundSurface: Color { color(.onBackgroundSurface)}
-    static var onBackgroundSurfaceSecondary: Color { color(.onBackgroundSurfaceSecondary) }
-
-    static var onBackgroundPrimary: Color { color(.onBackgroundPrimary)}
-    static var onBackgroundPrimarySecondary: Color { color(.onBackgroundPrimarySecondary) }
+    static var cta: Color { color(.cta) }
+    static var ctaHighlight: Color { color(.ctaHighlight) }
+    static var ctaDisabled: Color { color(.ctaDisabled) }
+    static var nonText: Color { color(.nonText) }
 
     // MARK: Waitlist
 
@@ -57,20 +42,60 @@ public extension Color {
     static var signalDelete: Color { color(.signalDelete) }
     static var signalError: Color { color(.signalError) }
 
-    // MARK: Other UI
+    // MARK: UI
 
     static var border: Color { color(.border) }
+    static var shimmer: Color { color(.shimmer) }
+    static var tabs: Color { color(.tabs) }
+
+    // MARK: "On" colors
+    // used in text and icons "on" top of another color
+
+    static var onPrimary: Color { color(.onPrimary) }
+    static var onPrimaryDisabled: Color { color(.onPrimaryDisabled) }
+
+    static var onSecondary: Color { color(.onSecondary) }
+    static var onSecondaryDisabled: Color { color(.onSecondaryDisabled) }
+
+    static var onCta: Color { color(.onCta) }
+    static var onCtaDisabled: Color { color(.onCtaDisabled) }
+
+    static var onNonText: Color { color(.onNonText) }
+    static var onSignal: Color { color(.onSignal) }
+    static var onWaitlist: Color { color(.onWaitlist) }
+
+    static var onBackgroundEnabledOn: Color { color(.onBackgroundEnabledOn) }
+    static var onBackgroundEnabledOff: Color { color(.onBackgroundEnabledOff) }
+    static var onBackgroundDisabledOn: Color { color(.onBackgroundDisabledOn) }
+    static var onBackgroundDisabledOff: Color { color(.onBackgroundDisabledOff) }
+    static var onBackgroundPrimary: Color { color(.onBackgroundPrimary) }
+    static var onBackgroundSecondary: Color { color(.onBackgroundSecondary) }
+    static var onBackgroundDisabled: Color { color(.onBackgroundDisabled) }
+
+    static var onSurfaceEnabledOn: Color { color(.onSurfaceEnabledOn) }
+    static var onSurfaceEnabledOff: Color { color(.onSurfaceEnabledOff) }
+    static var onSurfaceDisabledOn: Color { color(.onSurfaceDisabledOn) }
+    static var onSurfaceDisabledOff: Color { color(.onSurfaceDisabledOff) }
+    static var onSurfacePrimary: Color { color(.onSurfacePrimary) }
+    static var onSurfaceSecondary: Color { color(.onSurfaceSecondary) }
+    static var onSurfaceDisabled: Color { color(.onSurfaceDisabled) }
+
+    static var onGradientPrimary: Color { color(.onGradientPrimary) }
+    static var onGradientSecondary: Color { color(.onGradientSecondary) }
+    static var onGradientDisabled: Color { color(.onGradientDisabled) }
 
     // MARK: Theme dependant colors
 
-    static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
-    static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
-
-    static var buttonPrimary: Color { themedColor(.buttonPrimary) }
-    static var buttonPrimaryHighlight: Color { themedColor(.buttonPrimaryHighlight) }
-    static var buttonPrimaryDisabled: Color { themedColor(.buttonPrimaryDisabled) }
+    // these colors are prefixed with "sats" as Color.secondary already exists
+    // in SwiftUI
+    static var satsPrimary: Color { themedColor(.primary) }
+    static var satsPrimaryHighlight: Color { themedColor(.primaryHighlight) }
+    static var satsPrimaryDisabled: Color { themedColor(.primaryDisabled) }
 
     static var selection: Color { themedColor(.selection) }
+
+    static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
+    static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
 
     // MARK: Private
 

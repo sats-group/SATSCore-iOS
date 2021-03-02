@@ -58,21 +58,21 @@ extension SampleTopStoriesView {
                 VStack(alignment: .leading) {
                     Text(time)
                     Text(duration)
-                        .foregroundColor(.onBackgroundPrimarySecondary)
+                        .foregroundColor(.onBackgroundSecondary)
                         .font(.satsSmall())
                 }
 
                 VStack(alignment: .leading) {
                     Text(title)
                     Text(club)
-                        .foregroundColor(.onBackgroundPrimarySecondary)
+                        .foregroundColor(.onBackgroundSecondary)
                         .font(.satsSmall())
                 }
 
                 Spacer()
 
                 Text("4")
-                    .foregroundColor(.onButtonPrimary)
+                    .foregroundColor(.onPrimary)
                     .font(.satsSmall())
                     .frame(width: 18, height: 18)
                     .background(Color.waitlist)

@@ -67,7 +67,7 @@ extension SampleView {
         private lazy var title: SATSLabel = {
             let label = SATSLabel(style: .h1, weight: .satsFeeling, withAutoLayout: true)
             label.text = "SATS".uppercased()
-            label.textColor = .onButtonPrimary
+            label.textColor = .onPrimary
             return label
         }()
 
@@ -97,7 +97,7 @@ extension SampleView {
                 "Online Training",
             ].forEach { text in
                 let label = SATSLabel(style: .large)
-                label.textColor = .onButtonPrimary
+                label.textColor = .onPrimary
                 label.text = text
                 label.textAlignment = .center
 

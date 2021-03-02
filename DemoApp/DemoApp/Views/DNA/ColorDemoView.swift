@@ -17,44 +17,83 @@ struct ColorDemo: Identifiable {
 struct ColorDemoView: View {
     let sections: [ColorSection] = [
         ColorSection(
+            name: "Primary",
+            colors: [
+                ColorDemo(name: "primary", color: .satsPrimary),
+                ColorDemo(name: "primaryHighlight", color: .satsPrimaryHighlight),
+                ColorDemo(name: "primaryDisabled", color: .satsPrimaryDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "Secondary",
+            colors: [
+                ColorDemo(name: "secondary", color: .satsSecondary),
+                ColorDemo(name: "secondaryHighlight", color: .satsSecondaryHighlight),
+                ColorDemo(name: "secondaryDisabled", color: .satsSecondaryDisabled),
+                ColorDemo(name: "clean", color: .clean),
+            ]
+        ),
+        ColorSection(
+            name: "CTA",
+            colors: [
+                ColorDemo(name: "cta", color: .cta),
+                ColorDemo(name: "ctaHighlight", color: .ctaHighlight),
+                ColorDemo(name: "ctaDisabled", color: .ctaDisabled),
+                ColorDemo(name: "nonText", color: .nonText),
+            ]
+        ),
+        ColorSection(
             name: "Background",
             colors: [
                 ColorDemo(name: "backgroundPrimary", color: .backgroundPrimary),
                 ColorDemo(name: "backgroundSecondary", color: .backgroundSecondary),
-                ColorDemo(name: "backgroundShimmer", color: .backgroundShimmer),
-                ColorDemo(name: "backgroundTabbar", color: .backgroundTabbar),
-                ColorDemo(name: "backgroundSurfaceStart", color: .backgroundSurfaceStart),
-                ColorDemo(name: "backgroundSurfaceEnd", color: .backgroundSurfaceEnd),
-            ]
-        ),
-
-        ColorSection(
-            name: "Buttons",
-            colors: [
-                ColorDemo(name: "buttonPrimary", color: .buttonPrimary),
-                ColorDemo(name: "buttonPrimaryHighlight", color: .buttonPrimaryHighlight),
-                ColorDemo(name: "buttonPrimaryDisabled", color: .buttonPrimaryDisabled),
-                ColorDemo(name: "buttonSecondary", color: .buttonSecondary),
-                ColorDemo(name: "buttonSecondaryHighlight", color: .buttonSecondaryHighlight),
-                ColorDemo(name: "buttonSecondaryDisabled", color: .buttonSecondaryDisabled),
-                ColorDemo(name: "buttonCta", color: .buttonCta),
-                ColorDemo(name: "buttonCtaHighlight", color: .buttonCtaHighlight),
-                ColorDemo(name: "buttonCtaDisabled", color: .buttonCtaDisabled),
+                ColorDemo(name: "backgroundSurface", color: .backgroundSurface),
             ]
         ),
         ColorSection(
             name: "\"On\"",
             colors: [
-                ColorDemo(name: "onButtonPrimary", color: .onButtonPrimary),
-                ColorDemo(name: "onButtonPrimarySecondary", color: .onButtonPrimarySecondary),
-                ColorDemo(name: "onButtonSecondary", color: .onButtonSecondary),
-                ColorDemo(name: "onButtonSecondarySecondary", color: .onButtonSecondarySecondary),
-                ColorDemo(name: "onButtonCta", color: .onButtonCta),
-                ColorDemo(name: "onButtonCtaSecondary", color: .onButtonCtaSecondary),
-                ColorDemo(name: "onBackgroundSurface", color: .onBackgroundSurface),
-                ColorDemo(name: "onBackgroundSurfaceSecondary", color: .onBackgroundSurfaceSecondary),
+                ColorDemo(name: "onPrimary", color: .onPrimary),
+                ColorDemo(name: "onPrimaryDisabled", color: .onPrimaryDisabled),
+                ColorDemo(name: "onSecondary", color: .onSecondary),
+                ColorDemo(name: "onSecondaryDisabled", color: .onSecondaryDisabled),
+                ColorDemo(name: "onCta", color: .onCta),
+                ColorDemo(name: "onCtaDisabled", color: .onCtaDisabled),
+                ColorDemo(name: "onNonText", color: .onNonText),
+                ColorDemo(name: "onSignal", color: .onSignal),
+                ColorDemo(name: "onWaitlist", color: .onWaitlist),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Background",
+            colors: [
+                ColorDemo(name: "onBackgroundEnabledOn", color: .onBackgroundEnabledOn),
+                ColorDemo(name: "onBackgroundEnabledOff", color: .onBackgroundEnabledOff),
+                ColorDemo(name: "onBackgroundDisabledOn", color: .onBackgroundDisabledOn),
+                ColorDemo(name: "onBackgroundDisabledOff", color: .onBackgroundDisabledOff),
                 ColorDemo(name: "onBackgroundPrimary", color: .onBackgroundPrimary),
-                ColorDemo(name: "onBackgroundPrimarySecondary", color: .onBackgroundPrimarySecondary),
+                ColorDemo(name: "onBackgroundSecondary", color: .onBackgroundSecondary),
+                ColorDemo(name: "onBackgroundDisabled", color: .onBackgroundDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Surface",
+            colors: [
+                ColorDemo(name: "onSurfaceEnabledOn", color: .onSurfaceEnabledOn),
+                ColorDemo(name: "onSurfaceEnabledOff", color: .onSurfaceEnabledOff),
+                ColorDemo(name: "onSurfaceDisabledOn", color: .onSurfaceDisabledOn),
+                ColorDemo(name: "onSurfaceDisabledOff", color: .onSurfaceDisabledOff),
+                ColorDemo(name: "onSurfacePrimary", color: .onSurfacePrimary),
+                ColorDemo(name: "onSurfaceSecondary", color: .onSurfaceSecondary),
+                ColorDemo(name: "onSurfaceDisabled", color: .onSurfaceDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "\"On\" Gradient",
+            colors: [
+                ColorDemo(name: "onGradientPrimary", color: .onGradientPrimary),
+                ColorDemo(name: "onGradientSecondary", color: .onGradientSecondary),
+                ColorDemo(name: "onGradientDisabled", color: .onGradientDisabled),
             ]
         ),
         ColorSection(
@@ -73,15 +112,22 @@ struct ColorDemoView: View {
                 ColorDemo(name: "waitlistHighlight", color: .waitlistHighlight),
                 ColorDemo(name: "link", color: .link),
                 ColorDemo(name: "linkHighlight", color: .linkHighlight),
+            ]
+        ),
+        ColorSection(
+            name: "UI",
+            colors: [
                 ColorDemo(name: "border", color: .border),
+                ColorDemo(name: "shimmer", color: .shimmer),
+                ColorDemo(name: "tabs", color: .tabs),
             ]
         ),
         ColorSection(
             name: "🔵 Blue Theme",
             colors: [
-                ColorDemo(name: "blueButtonPrimary", color: Color(ColorTheme.blue.buttonPrimary)),
-                ColorDemo(name: "blueButtonPrimaryHighlight", color: Color(ColorTheme.blue.buttonPrimaryHighlight)),
-                ColorDemo(name: "blueButtonPrimaryDisabled", color: Color(ColorTheme.blue.buttonPrimaryDisabled)),
+                ColorDemo(name: "bluePrimary", color: Color(ColorTheme.blue.primary)),
+                ColorDemo(name: "bluePrimaryHighlight", color: Color(ColorTheme.blue.primaryHighlight)),
+                ColorDemo(name: "bluePrimaryDisabled", color: Color(ColorTheme.blue.primaryDisabled)),
 
                 ColorDemo(name: "blueSelection", color: Color(ColorTheme.blue.selection)),
 
@@ -92,9 +138,9 @@ struct ColorDemoView: View {
         ColorSection(
             name: "🥈 Silver Theme",
             colors: [
-                ColorDemo(name: "silverButtonPrimary", color: Color(ColorTheme.silver.buttonPrimary)),
-                ColorDemo(name: "silverButtonPrimaryHighlight", color: Color(ColorTheme.silver.buttonPrimaryHighlight)),
-                ColorDemo(name: "silverButtonPrimaryDisabled", color: Color(ColorTheme.silver.buttonPrimaryDisabled)),
+                ColorDemo(name: "silverPrimary", color: Color(ColorTheme.silver.primary)),
+                ColorDemo(name: "silverPrimaryHighlight", color: Color(ColorTheme.silver.primaryHighlight)),
+                ColorDemo(name: "silverPrimaryDisabled", color: Color(ColorTheme.silver.primaryDisabled)),
 
                 ColorDemo(name: "silverSelection", color: Color(ColorTheme.silver.selection)),
 
@@ -105,9 +151,9 @@ struct ColorDemoView: View {
         ColorSection(
             name: "🥇 Gold Theme",
             colors: [
-                ColorDemo(name: "goldButtonPrimary", color: Color(ColorTheme.gold.buttonPrimary)),
-                ColorDemo(name: "goldButtonPrimaryHighlight", color: Color(ColorTheme.gold.buttonPrimaryHighlight)),
-                ColorDemo(name: "goldButtonPrimaryDisabled", color: Color(ColorTheme.gold.buttonPrimaryDisabled)),
+                ColorDemo(name: "goldPrimary", color: Color(ColorTheme.gold.primary)),
+                ColorDemo(name: "goldPrimaryHighlight", color: Color(ColorTheme.gold.primaryHighlight)),
+                ColorDemo(name: "goldPrimaryDisabled", color: Color(ColorTheme.gold.primaryDisabled)),
 
                 ColorDemo(name: "goldSelection", color: Color(ColorTheme.gold.selection)),
 
@@ -118,14 +164,14 @@ struct ColorDemoView: View {
         ColorSection(
             name: "🏆 Platinum Theme",
             colors: [
-                ColorDemo(name: "platinumButtonPrimary", color: Color(ColorTheme.platinum.buttonPrimary)),
+                ColorDemo(name: "platinumPrimary", color: Color(ColorTheme.platinum.primary)),
                 ColorDemo(
-                    name: "platinumButtonPrimaryHighlight",
-                    color: Color(ColorTheme.platinum.buttonPrimaryHighlight)
+                    name: "platinumPrimaryHighlight",
+                    color: Color(ColorTheme.platinum.primaryHighlight)
                 ),
                 ColorDemo(
-                    name: "platinumButtonPrimaryDisabled",
-                    color: Color(ColorTheme.platinum.buttonPrimaryDisabled)
+                    name: "platinumPrimaryDisabled",
+                    color: Color(ColorTheme.platinum.primaryDisabled)
                 ),
 
                 ColorDemo(name: "platinumSelection", color: Color(ColorTheme.platinum.selection)),

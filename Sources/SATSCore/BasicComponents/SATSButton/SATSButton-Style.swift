@@ -30,28 +30,37 @@ public extension SATSButton {
 public extension SATSButton.Style {
     static let primary = SATSButton.Style(
         name: "Primary",
-        titleColor: .onButtonPrimary,
-        titleColorDisabled: .onButtonPrimarySecondary,
-        backgroundColor: .buttonPrimary,
-        backgroundColorHighlighted: .buttonPrimaryHighlight,
-        backgroundColorDisabled: .buttonPrimaryDisabled
+        titleColor: .onPrimary,
+        titleColorDisabled: .onPrimaryDisabled,
+        backgroundColor: .primary,
+        backgroundColorHighlighted: .primaryHighlight,
+        backgroundColorDisabled: .primaryDisabled
     )
 
     static let secondary = SATSButton.Style(
         name: "Secondary",
-        titleColor: .onButtonSecondary,
-        titleColorDisabled: .onButtonSecondarySecondary,
-        backgroundColor: .buttonSecondary,
-        backgroundColorHighlighted: .buttonSecondaryHighlight,
-        backgroundColorDisabled: .buttonSecondaryDisabled
+        titleColor: .onSecondary,
+        titleColorDisabled: .onSecondaryDisabled,
+        backgroundColor: .secondary,
+        backgroundColorHighlighted: .secondaryHighlight,
+        backgroundColorDisabled: .secondaryDisabled
+    )
+
+    static let clean = SATSButton.Style(
+        name: "Clean",
+        titleColor: .onSecondary,
+        titleColorDisabled: .onSecondaryDisabled,
+        backgroundColor: .clean,
+        backgroundColorHighlighted: .secondaryHighlight,
+        backgroundColorDisabled: .secondaryDisabled
     )
 
     static let cta = SATSButton.Style(
         name: "Call To Action",
-        titleColor: .onButtonCta,
-        titleColorDisabled: .onButtonCtaSecondary,
-        backgroundColor: .buttonCta,
-        backgroundColorHighlighted: .buttonCtaHighlight,
-        backgroundColorDisabled: .buttonCtaDisabled
+        titleColor: .onCta,
+        titleColorDisabled: .onCtaDisabled,
+        backgroundColor: .cta,
+        backgroundColorHighlighted: .ctaHighlight,
+        backgroundColorDisabled: .ctaDisabled
     )
 }
