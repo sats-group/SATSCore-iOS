@@ -32,7 +32,7 @@ public extension UIColor {
     static var link: UIColor { color(.link) }
     static var linkHighlight: UIColor { color(.linkHighlight) }
 
-    // MARK: Singal
+    // MARK: Signal
 
     static var signalSuccess: UIColor { color(.signalSuccess) }
     static var signalWarning: UIColor { color(.signalWarning) }
