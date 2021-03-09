@@ -13,6 +13,11 @@ struct ContentView: View {
                 Section(header: Text("UIKit Basics")) {
                     NavigationLink("SATSLabel", destination: SATSLabelDemoView())
                     NavigationLink("SATSButton", destination: SATSButtonDemoView())
+                    NavigationLink("SATSExternalUrlView", destination: SATSExternalUrlDemoView())
+                }
+
+                Section(header: Text("UIKit Components")) {
+                    NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
                 }
 
                 Section(header: Text("SwiftUI Demo")) {
