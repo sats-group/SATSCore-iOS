@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280AB7B025F10D5300F7EB69 /* SATSExternalUrlDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */; };
+		28E1DE1025F25B550063E962 /* ArticlePageViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1DE0F25F25B540063E962 /* ArticlePageViewDemo.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
 		9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoAppApp.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSExternalUrlDemoView.swift; sourceTree = "<group>"; };
+		28E1DE0F25F25B540063E962 /* ArticlePageViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePageViewDemo.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
@@ -62,6 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28F0F0B425F0F1DE00882E75 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				28F0F0B525F0F1FA00882E75 /* ArticlePageViewDemo */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		28F0F0B525F0F1FA00882E75 /* ArticlePageViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				28E1DE0F25F25B540063E962 /* ArticlePageViewDemo.swift */,
+			);
+			path = ArticlePageViewDemo;
+			sourceTree = "<group>";
+		};
 		9B00E27525B9AE6200533641 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +97,7 @@
 			children = (
 				9B2BFBDB25B719AD00383193 /* ContentView.swift */,
 				9B2BFBFD25B7250B00383193 /* BasicComponents */,
+				28F0F0B425F0F1DE00882E75 /* Components */,
 				9BB6E2A825CC1B59009A6CCD /* DNA */,
 				9BB6E2AD25CC1CD9009A6CCD /* Internal */,
 				9B7A4D4725D2A4E70086EA4F /* SwiftUI Demo */,
@@ -143,6 +164,7 @@
 			children = (
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
+				280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -316,7 +338,9 @@
 				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */,
 				9B7A4D5225D2ADA30086EA4F /* SampleTopStoriesView.swift in Sources */,
 				9B7A4D6125D2B9C30086EA4F /* TreatmentsDemoView.swift in Sources */,
+				280AB7B025F10D5300F7EB69 /* SATSExternalUrlDemoView.swift in Sources */,
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
+				28E1DE1025F25B550063E962 /* ArticlePageViewDemo.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
