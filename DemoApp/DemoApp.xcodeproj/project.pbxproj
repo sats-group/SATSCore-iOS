@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		280AB7B025F10D5300F7EB69 /* SATSExternalUrlDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */; };
+		2853B81E25FA21B6000DD76C /* SATSTopBarDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853B81D25FA21B6000DD76C /* SATSTopBarDemoView.swift */; };
 		28E1DE1025F25B550063E962 /* ArticlePageViewDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1DE0F25F25B540063E962 /* ArticlePageViewDemo.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSExternalUrlDemoView.swift; sourceTree = "<group>"; };
+		2853B81D25FA21B6000DD76C /* SATSTopBarDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSTopBarDemoView.swift; sourceTree = "<group>"; };
 		28E1DE0F25F25B540063E962 /* ArticlePageViewDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePageViewDemo.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
 				280AB7AF25F10D5300F7EB69 /* SATSExternalUrlDemoView.swift */,
+				2853B81D25FA21B6000DD76C /* SATSTopBarDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
+				2853B81E25FA21B6000DD76C /* SATSTopBarDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */,

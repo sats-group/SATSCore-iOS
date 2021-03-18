@@ -54,4 +54,18 @@ public extension UIView {
             centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
+
+    func fixed(width: CGFloat, height: CGFloat) {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: width),
+            heightAnchor.constraint(equalToConstant: height),
+        ])
+    }
+
+    func fixed(widthAndHeight: CGFloat) {
+        NSLayoutConstraint.activate([
+            widthAnchor.constraint(equalToConstant: widthAndHeight),
+            heightAnchor.constraint(equalToConstant: widthAndHeight),
+        ])
+    }
 }

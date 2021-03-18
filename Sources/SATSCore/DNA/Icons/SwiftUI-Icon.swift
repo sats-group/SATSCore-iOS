@@ -2,8 +2,9 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public extension Image {
-    static var backArrow: Image { icon(.backArrow) }
-    static var externalUrl: Image { icon(.externalUrl) }
+    static var back: Image { icon(.back) }
+    static var close: Image { icon(.close) }
+    static var linkExternal: Image { icon(.linkExternal) }
 
     private static func icon(_ name: IconName) -> Image {
         Image(name.rawValue, bundle: .module)

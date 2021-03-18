@@ -14,6 +14,7 @@ struct ContentView: View {
                     NavigationLink("SATSLabel", destination: SATSLabelDemoView())
                     NavigationLink("SATSButton", destination: SATSButtonDemoView())
                     NavigationLink("SATSExternalUrlView", destination: SATSExternalUrlDemoView())
+                    NavigationLink("SATSTopBar", destination: SATSTopBarDemoView())
                 }
 
                 Section(header: Text("UIKit Components")) {
