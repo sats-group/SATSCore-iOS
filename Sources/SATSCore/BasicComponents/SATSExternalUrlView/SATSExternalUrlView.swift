@@ -33,7 +33,7 @@ public class SATSExternalUrlView: UIView {
 
     private lazy var iconView: UIImageView = {
         let imageView = UIImageView(withAutoLayout: true)
-        imageView.image = .externalUrl
+        imageView.image = .linkExternal
         imageView.tintColor = UIColor(red: 0.49, green: 0.57, blue: 0.68, alpha: 1) // IcoPositivePrimary
         return imageView
     }()

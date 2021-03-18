@@ -1,6 +1,7 @@
 import Foundation
 
 enum IconName: String {
-    case backArrow
-    case externalUrl
+    case back
+    case close
+    case linkExternal
 }
