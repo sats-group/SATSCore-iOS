@@ -15,6 +15,11 @@ struct ContentView: View {
                     NavigationLink("SATSButton", destination: SATSButtonDemoView())
                 }
 
+                Section(header: Text("Components")) {
+                    NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
+                    NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
+                }
+
                 Section(header: Text("SwiftUI Demo")) {
                     NavigationLink("Header Concept", destination: DemoHeaderSampleView())
                     NavigationLink("Discover Concept", destination: DemoDiscoverView())
