@@ -12,6 +12,7 @@ struct SATSTopBarDemoView: View {
                     demoBar(title: "Transparent style", style: .transparent)
                 }
             }
+            .navigationTitle("SATSTopBarView")
         }
     }
 
@@ -21,12 +22,14 @@ struct SATSTopBarDemoView: View {
         topBar.addRightButton(type: .close, action: Selector(("someMethod")))
         topBar.configure(with: title, style: style)
         return DemoWrapperView(view: topBar)
-            .frame(width: .infinity, height: 58)
+            .frame(width: .infinity, height: 56)
     }
 }
 
 struct SATSTopBarDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        SATSTopBarDemoView()
+        NavigationView {
+            SATSTopBarDemoView()
+        }
     }
 }

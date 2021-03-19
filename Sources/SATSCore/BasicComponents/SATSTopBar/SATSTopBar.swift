@@ -22,10 +22,8 @@ public class SATSTopBar: UIView {
     // MARK: Private properties
 
     private let onSolidIconColor = UIColor(red: 0.49, green: 0.57, blue: 0.68, alpha: 1) // IcoPositivePrimary
-
-    // MARK: Public properties
-
-    public var style: SATSTopBarStyle = .solid {
+    private var titleLayoutConstraint = NSLayoutConstraint()
+    private var style: SATSTopBarStyle = .solid {
         didSet {
             updateLayout()
         }
@@ -33,28 +31,28 @@ public class SATSTopBar: UIView {
 
     // MARK: Views
 
-    private lazy var horizontalWrapperStackView: UIStackView = {
-        let stackView = UIStackView(withAutoLayout: true)
-        stackView.axis = .horizontal
-        stackView.layoutMargins = .init(all: 5)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        return stackView
+    private lazy var horizontalWrapperView: UIView = {
+        let view = UIView(withAutoLayout: true)
+        view.layoutMargins = .init(all: 4)
+        return view
     }()
 
     private lazy var leftButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
+        stackView.spacing = 4
         stackView.axis = .horizontal
         return stackView
     }()
 
     private lazy var rightButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
+        stackView.spacing = 4
         stackView.axis = .horizontal
         return stackView
     }()
 
     private lazy var titleLabel: SATSLabel = {
-        let label = SATSLabel(style: .h3, weight: .medium, withAutoLayout: true)
+        let label = SATSLabel(style: .h3, weight: .medium)
         label.textAlignment = .center
         return label
     }()
@@ -66,7 +64,7 @@ public class SATSTopBar: UIView {
     }()
 
     private lazy var borderView: UIView = {
-        let view = UIView()
+        let view = UIView(withAutoLayout: true)
         return view
     }()
 
@@ -102,23 +100,42 @@ extension SATSTopBar {
         updateLayout()
     }
 
-    public func hideTitle(animated: Bool) {
+    public func hideTitle(animated: Bool = false) {
+        let frameHeight = frame.height
+        if titleLayoutConstraint.constant == frameHeight { return }
+
         if animated {
-            UIView.animate(withDuration: 0.5) {
-                self.titleLabel.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+            UIView.animate(withDuration: 0.2) {
+                self.titleLayoutConstraint.constant = frameHeight
+                self.layoutIfNeeded()
             }
         } else {
-            titleLabel.topAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            titleLayoutConstraint.constant = frameHeight
         }
     }
 
-    public func showTitle(animated: Bool) {
+    public func showTitle(animated: Bool = false) {
+        if titleLayoutConstraint.constant == 0 { return }
+
         if animated {
-            UIView.animate(withDuration: 0.5) {
-                self.titleLabel.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = false
+            UIView.animate(withDuration: 0.2) {
+                self.titleLayoutConstraint.constant = 0
+                self.layoutIfNeeded()
             }
         } else {
-            titleLabel.topAnchor.constraint(equalTo: bottomAnchor).isActive = false
+            titleLayoutConstraint.constant = 0
+        }
+    }
+
+    public func setStyle(style: SATSTopBarStyle, animated: Bool = false) {
+        if self.style == style { return }
+        
+        if animated {
+            UIView.animate(withDuration: 0.2) {
+                self.style = style
+            }
+        } else {
+            self.style = style
         }
     }
 }
@@ -133,22 +150,44 @@ extension SATSTopBar {
             leftButtonWrapper,
             titleLabel,
             rightButtonWrapper,
-        ].forEach { horizontalWrapperStackView.addArrangedSubview($0) }
+        ].forEach { horizontalWrapperView.addSubview($0) }
 
         [
-            horizontalWrapperStackView,
+            horizontalWrapperView,
             borderView,
         ].forEach { verticalWrapperStackView.addArrangedSubview($0) }
 
         addSubview(verticalWrapperStackView)
 
         verticalWrapperStackView.pin(to: self)
-        borderView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+
+        titleLayoutConstraint = titleLabel.centerYAnchor.constraint(
+            equalTo: horizontalWrapperView.centerYAnchor,
+            constant: frame.height
+        )
+
+        NSLayoutConstraint.activate([
+            leftButtonWrapper.leadingAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.leadingAnchor),
+            leftButtonWrapper.topAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.topAnchor),
+            leftButtonWrapper.bottomAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.bottomAnchor),
+            leftButtonWrapper.trailingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: -4),
+
+            titleLabel.centerXAnchor.constraint(equalTo: horizontalWrapperView.centerXAnchor),
+            titleLayoutConstraint,
+            titleLabel.trailingAnchor.constraint(equalTo: rightButtonWrapper.leadingAnchor, constant: -4),
+
+            rightButtonWrapper.trailingAnchor.constraint(
+                equalTo: horizontalWrapperView.layoutMarginsGuide.trailingAnchor
+            ),
+            rightButtonWrapper.topAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.topAnchor),
+            rightButtonWrapper.bottomAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.bottomAnchor),
+
+            borderView.heightAnchor.constraint(equalToConstant: 1),
+        ])
     }
 
     private func createButton(type: SATSTopBarButton, action: Selector) -> UIButton {
-        let button = UIButton(type: .custom)
-        button.translatesAutoresizingMaskIntoConstraints = false
+        let button = UIButton(withAutoLayout: true)
         button.addTarget(self, action: action, for: .touchUpInside)
         button.fixed(widthAndHeight: 48)
         button.setImage(type.icon, for: .normal)
