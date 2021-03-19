@@ -55,20 +55,6 @@ public extension UIView {
         ])
     }
 
-    func fixed(width: CGFloat, height: CGFloat) {
-        NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: width),
-            heightAnchor.constraint(equalToConstant: height),
-        ])
-    }
-
-    func fixed(widthAndHeight: CGFloat) {
-        NSLayoutConstraint.activate([
-            widthAnchor.constraint(equalToConstant: widthAndHeight),
-            heightAnchor.constraint(equalToConstant: widthAndHeight),
-        ])
-    }
-
     /// Fixed size utility method that makes the height equal to a width
     func fixed(size: CGFloat) {
         NSLayoutConstraint.activate([
