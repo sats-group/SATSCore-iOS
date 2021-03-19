@@ -190,7 +190,7 @@ extension SATSTopBar {
     private func createButton(type: SATSTopBarButton, action: Selector) -> UIButton {
         let button = UIButton(withAutoLayout: true)
         button.addTarget(self, action: action, for: .touchUpInside)
-        button.fixed(widthAndHeight: 48)
+        button.fixed(size: 48)
         button.setImage(type.icon, for: .normal)
         return button
     }
