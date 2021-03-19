@@ -151,7 +151,6 @@ extension ArticlePageView {
             descriptionLabel.widthAnchor.constraint(lessThanOrEqualTo: readableContentGuide.widthAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
-
     }
 
     private func configure(externalUrl: SATSExternalUrlViewData) {

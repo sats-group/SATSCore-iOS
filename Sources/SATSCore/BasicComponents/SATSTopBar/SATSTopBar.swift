@@ -129,10 +129,11 @@ extension SATSTopBar {
 
     public func setStyle(style: SATSTopBarStyle, animated: Bool = false) {
         if self.style == style { return }
-        
+
         if animated {
             UIView.animate(withDuration: 0.2) {
                 self.style = style
+                self.layoutIfNeeded()
             }
         } else {
             self.style = style

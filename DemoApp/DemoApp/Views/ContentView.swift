@@ -17,11 +17,8 @@ struct ContentView: View {
                     NavigationLink("SATSTopBar", destination: SATSTopBarDemoView())
                 }
 
-                Section(header: Text("UIKit Components")) {
-                    NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
-                }
-
                 Section(header: Text("Components")) {
+                    NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
                     NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
                     NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
                 }
