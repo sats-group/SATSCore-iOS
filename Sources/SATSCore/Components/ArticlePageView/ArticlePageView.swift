@@ -23,10 +23,14 @@ public class ArticlePageView: UIView {
 
     // MARK: - Private
     private let roundedCornerRadius: CGFloat = 8
-    private let imageHeight: CGFloat = 230
+    private let headerHeight: CGFloat = 56
     private var imageHeightConstraint = NSLayoutConstraint()
+    private var hasImage: Bool { imageView.image != nil }
+    private var imageHeight: CGFloat { 230 + safeAreaInsets.top }
 
     // MARK: - Views
+
+    private lazy var headerView = SATSTopBar(withAutoLayout: true)
 
     private lazy var titleLabel: SATSLabel = {
         let label = SATSLabel(style: .h1, weight: .emphasis)
@@ -74,12 +78,25 @@ public class ArticlePageView: UIView {
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
     }
+}
 
-    // MARK: - Public methods
+// MARK: - Public methods
 
-    public func configure(with viewData: ArticlePageViewData) {
+extension ArticlePageView {
+    public func configure(with viewData: ArticlePageViewData, dismissAction: Selector, isModal: Bool = false) {
+        scrollView.delegate = self
+        scrollView.contentInset.top = headerHeight
+
         titleLabel.text = viewData.title
         descriptionLabel.attributedText = viewData.description
+
+        headerView.configure(with: viewData.title)
+        headerView.hideTitle()
+        if isModal {
+            headerView.addRightButton(type: .close, action: dismissAction)
+        } else {
+            headerView.addLeftButton(type: .back, action: dismissAction)
+        }
 
         if let image = viewData.image {
             configure(image: image)
@@ -90,35 +107,12 @@ public class ArticlePageView: UIView {
         }
     }
 
-    // MARK: - Private methods
-
-    private func setup() {
-        [
-            titleLabel,
-            descriptionLabel,
-        ].forEach(contentStackView.addArrangedSubview(_:))
-
-        scrollView.addSubview(contentStackView)
-        addSubview(scrollView)
-
-        scrollView.pin(to: self)
-        contentStackView.pin(to: scrollView)
-
-        NSLayoutConstraint.activate([
-            titleLabel.widthAnchor.constraint(equalTo: contentStackView.layoutMarginsGuide.widthAnchor),
-            descriptionLabel.widthAnchor.constraint(equalTo: contentStackView.layoutMarginsGuide.widthAnchor),
-            contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-        ])
-
-    }
-
-    private func configure(image: UIImage) {
-        scrollView.delegate = self
-
+    public func configure(image: UIImage) {
         imageView.image = image
         imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageHeight)
         contentStackView.layer.cornerRadius = roundedCornerRadius
         scrollView.contentInset.top = imageHeight - roundedCornerRadius
+        headerView.setStyle(style: .transparent)
 
         addSubview(imageView)
         sendSubviewToBack(imageView)
@@ -129,6 +123,35 @@ public class ArticlePageView: UIView {
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageHeightConstraint,
         ])
+    }
+}
+
+// MARK: - Private methods
+
+extension ArticlePageView {
+    private func setup() {
+        [
+            titleLabel,
+            descriptionLabel,
+        ].forEach(contentStackView.addArrangedSubview(_:))
+
+        scrollView.addSubview(contentStackView)
+        addSubview(scrollView)
+        addSubview(headerView)
+
+        scrollView.pin(to: self, includeSafeArea: true)
+        contentStackView.pin(to: scrollView)
+
+        NSLayoutConstraint.activate([
+            headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headerView.topAnchor.constraint(equalTo: topAnchor),
+            headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+
+            titleLabel.widthAnchor.constraint(lessThanOrEqualTo: readableContentGuide.widthAnchor),
+            descriptionLabel.widthAnchor.constraint(lessThanOrEqualTo: readableContentGuide.widthAnchor),
+            contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+        ])
+
     }
 
     private func configure(externalUrl: SATSExternalUrlViewData) {
@@ -142,10 +165,32 @@ public class ArticlePageView: UIView {
         let additionalHeight = scrollOffset - topInset
         imageHeightConstraint.constant = imageHeight + max(0, additionalHeight)
     }
+
+    private func handleHeaderShift() {
+        let headerShiftThreshold = scrollView.contentOffset.y + headerView.frame.size.height
+
+        if headerShiftThreshold >= 0 {
+            headerView.setStyle(style: .solid, animated: true)
+        } else {
+            headerView.setStyle(style: .transparent, animated: true)
+        }
+    }
+
+    private func handleTitleShift() {
+        if scrollView.contentOffset.y >= titleLabel.bounds.origin.y {
+            headerView.showTitle(animated: true)
+        } else if scrollView.contentOffset.y < titleLabel.bounds.origin.y {
+            headerView.hideTitle(animated: true)
+        }
+    }
 }
 
 extension ArticlePageView: UIScrollViewDelegate {
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updateImageSize()
+        if hasImage {
+            updateImageSize()
+            handleHeaderShift()
+        }
+        handleTitleShift()
     }
 }
