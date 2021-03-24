@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B88561260B4594000D9840 /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B88560260B4594000D9840 /* RoundLoadingDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
 		9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoAppApp.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		28B88560260B4594000D9840 /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28B8855F260B4571000D9840 /* RoundLoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				28B88560260B4594000D9840 /* RoundLoadingDemoView.swift */,
+			);
+			path = RoundLoadingView;
+			sourceTree = "<group>";
+		};
 		9B00E27525B9AE6200533641 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +220,7 @@
 			children = (
 				9BCEE85626035CB2001C8692 /* InlineNoticeView */,
 				9BCEE85826035CB2001C8692 /* ProgressLineView */,
+				28B8855F260B4571000D9840 /* RoundLoadingView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -350,6 +361,7 @@
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
 				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
+				28B88561260B4594000D9840 /* RoundLoadingDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
