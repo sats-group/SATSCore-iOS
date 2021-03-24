@@ -4,7 +4,7 @@ public class SATSButton: UIButton {
 
     // MARK: Initializers
 
-    public init(style: Style, size: Size = .regular, withAutoLayout: Bool = true) {
+    public init(style: Style, size: Size = .basic, withAutoLayout: Bool = true) {
         self.style = style
         self.size = size
 
