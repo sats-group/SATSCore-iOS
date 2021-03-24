@@ -20,17 +20,17 @@ struct SATSButtonDemoView: View {
                 }
 
                 VStack {
-                    Text("Regular")
+                    Text("Basic")
                         .font(.title2)
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    demoButton(style: .primary, size: .regular)
+                    demoButton(style: .primary, size: .basic)
 
-                    demoButton(style: .secondary, size: .regular)
+                    demoButton(style: .secondary, size: .basic)
 
-                    demoButton(style: .clean, size: .large)
+                    demoButton(style: .clean, size: .basic)
 
-                    demoButton(style: .cta, size: .regular)
+                    demoButton(style: .cta, size: .basic)
 
                 }
 
@@ -43,7 +43,7 @@ struct SATSButtonDemoView: View {
 
                     demoButton(style: .secondary, size: .compact)
 
-                    demoButton(style: .clean, size: .large)
+                    demoButton(style: .clean, size: .compact)
 
                     demoButton(style: .cta, size: .compact)
                 }
