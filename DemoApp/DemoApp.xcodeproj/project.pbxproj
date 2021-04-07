@@ -227,6 +227,7 @@
 				28127D482604B8AC000A4941 /* ArticlePageViewDemo */,
 				9BCEE85626035CB2001C8692 /* InlineNoticeView */,
 				9BCEE85826035CB2001C8692 /* ProgressLineView */,
+				28B8855F260B4571000D9840 /* RoundLoadingView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -369,6 +370,7 @@
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
 				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
+				28B88561260B4594000D9840 /* RoundLoadingDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				2853B81E25FA21B6000DD76C /* SATSTopBarDemoView.swift in Sources */,
