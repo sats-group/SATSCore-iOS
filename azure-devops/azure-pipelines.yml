@@ -1,5 +1,5 @@
 trigger:
-  - main
+  - refs/tags/.*.*.*
 
 pr: none
 
