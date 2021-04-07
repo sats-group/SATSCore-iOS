@@ -4,33 +4,39 @@ public struct ArticlePageViewData {
     let title: String
     let description: NSAttributedString
     let image: UIImage?
-    let externalUrl: SATSExternalUrlViewData?
+    let externalUrlTitle: String?
 
     public init(
         title: String,
         description: NSAttributedString,
         image: UIImage?,
-        externalUrl: SATSExternalUrlViewData?
+        externalUrlTitle: String?
     ) {
         self.title = title
         self.description = description
         self.image = image
-        self.externalUrl = externalUrl
+        self.externalUrlTitle = externalUrlTitle
     }
+}
+
+public protocol ArticlePageViewDelegate: AnyObject {
+    func articleViewDidSelectExternalUrl(_ view: ArticlePageView)
 }
 
 public class ArticlePageView: UIView {
 
+    public lazy var topBar = TopBar(withAutoLayout: true)
+    public weak var delegate: ArticlePageViewDelegate?
+
     // MARK: - Private
+
     private let roundedCornerRadius: CGFloat = 8
     private let headerHeight: CGFloat = 56
-    private var imageHeightConstraint = NSLayoutConstraint()
     private var hasImage: Bool { imageView.image != nil }
     private var imageHeight: CGFloat { 230 + safeAreaInsets.top }
+    private lazy var imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageHeight)
 
     // MARK: - Views
-
-    private lazy var headerView = SATSTopBar(withAutoLayout: true)
 
     private lazy var titleLabel: SATSLabel = {
         let label = SATSLabel(style: .h1, weight: .emphasis)
@@ -51,7 +57,12 @@ public class ArticlePageView: UIView {
         return imageView
     }()
 
-    private lazy var externalUrlView = SATSExternalUrlView(withAutoLayout: true)
+    private lazy var externalUrlView: ExternalUrlView = {
+        let view = ExternalUrlView(withAutoLayout: true)
+        view.isHidden = true
+        view.onOpenUrl = externalUrlTapped
+        return view
+    }()
 
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
@@ -60,11 +71,15 @@ public class ArticlePageView: UIView {
         stackView.spacing = 25
         stackView.layoutMargins = UIEdgeInsets(top: 30, left: 20, bottom: 0, right: 20)
         stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.alignment = .center
+        stackView.distribution = .fill
         return stackView
     }()
 
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(withAutoLayout: true)
+        scrollView.delegate = self
+        scrollView.contentInset.top = headerHeight
         return scrollView
     }()
 
@@ -83,46 +98,33 @@ public class ArticlePageView: UIView {
 // MARK: - Public methods
 
 extension ArticlePageView {
-    public func configure(with viewData: ArticlePageViewData, dismissAction: Selector, isModal: Bool = false) {
-        scrollView.delegate = self
-        scrollView.contentInset.top = headerHeight
-
+    public func configure(with viewData: ArticlePageViewData) {
         titleLabel.text = viewData.title
         descriptionLabel.attributedText = viewData.description
 
-        headerView.configure(with: viewData.title)
-        headerView.hideTitle()
-        if isModal {
-            headerView.addRightButton(type: .close, action: dismissAction)
-        } else {
-            headerView.addLeftButton(type: .back, action: dismissAction)
-        }
+        topBar.configure(with: viewData.title)
+        topBar.hideTitle()
 
         if let image = viewData.image {
-            configure(image: image)
+            set(headerImage: image)
         }
 
-        if let externalUrl = viewData.externalUrl {
-            configure(externalUrl: externalUrl)
+        if let externalUrlTitle = viewData.externalUrlTitle {
+            externalUrlView.configure(title: externalUrlTitle)
+            externalUrlView.isHidden = false
+        } else {
+            externalUrlView.isHidden = true
         }
     }
 
-    public func configure(image: UIImage) {
+    public func set(headerImage image: UIImage) {
         imageView.image = image
-        imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageHeight)
+
         contentStackView.layer.cornerRadius = roundedCornerRadius
+        // here we make space for the content
         scrollView.contentInset.top = imageHeight - roundedCornerRadius
-        headerView.setStyle(style: .transparent)
 
-        addSubview(imageView)
-        sendSubviewToBack(imageView)
-
-        NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageHeightConstraint,
-        ])
+        topBar.set(style: .transparent)
     }
 }
 
@@ -133,29 +135,36 @@ extension ArticlePageView {
         [
             titleLabel,
             descriptionLabel,
+            externalUrlView,
         ].forEach(contentStackView.addArrangedSubview(_:))
 
         scrollView.addSubview(contentStackView)
-        addSubview(scrollView)
-        addSubview(headerView)
+
+        [
+            imageView,
+            scrollView,
+            topBar,
+        ].forEach(addSubview(_:))
 
         scrollView.pin(to: self, includeSafeArea: true)
         contentStackView.pin(to: scrollView)
 
         NSLayoutConstraint.activate([
-            headerView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            headerView.topAnchor.constraint(equalTo: topAnchor),
-            headerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topBar.topAnchor.constraint(equalTo: topAnchor),
+            topBar.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topBar.trailingAnchor.constraint(equalTo: trailingAnchor),
+            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
 
-            titleLabel.widthAnchor.constraint(lessThanOrEqualTo: readableContentGuide.widthAnchor),
-            descriptionLabel.widthAnchor.constraint(lessThanOrEqualTo: readableContentGuide.widthAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageHeightConstraint,
+
+            titleLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            descriptionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            externalUrlView.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
-    }
-
-    private func configure(externalUrl: SATSExternalUrlViewData) {
-        contentStackView.addArrangedSubview(externalUrlView)
-        externalUrlView.configure(withViewData: externalUrl)
     }
 
     private func updateImageSize() {
@@ -166,21 +175,25 @@ extension ArticlePageView {
     }
 
     private func handleHeaderShift() {
-        let headerShiftThreshold = scrollView.contentOffset.y + headerView.frame.size.height
+        let headerShiftThreshold = scrollView.contentOffset.y + topBar.frame.size.height
 
         if headerShiftThreshold >= 0 {
-            headerView.setStyle(style: .solid, animated: true)
+            topBar.set(style: .solid, animated: true)
         } else {
-            headerView.setStyle(style: .transparent, animated: true)
+            topBar.set(style: .transparent, animated: true)
         }
     }
 
     private func handleTitleShift() {
         if scrollView.contentOffset.y >= titleLabel.bounds.origin.y {
-            headerView.showTitle(animated: true)
+            topBar.showTitle(animated: true)
         } else if scrollView.contentOffset.y < titleLabel.bounds.origin.y {
-            headerView.hideTitle(animated: true)
+            topBar.hideTitle(animated: true)
         }
+    }
+
+    private func externalUrlTapped() {
+        delegate?.articleViewDidSelectExternalUrl(self)
     }
 }
 
