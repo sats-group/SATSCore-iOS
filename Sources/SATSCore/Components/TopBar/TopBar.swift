@@ -1,29 +1,38 @@
 import UIKit
 
-public enum SATSTopBarButton {
-    case back
-    case close
-
-    var icon: UIImage {
-        switch self {
-        case .back: return .back
-        case .close: return .close
-        }
-    }
+public struct TopBarStyle: Equatable {
+    let tintColor: UIColor
+    let borderColor: UIColor
+    let backgroundColor: UIColor
+    let textColor: UIColor
 }
 
-public enum SATSTopBarStyle {
-    case solid
-    case transparent
+public extension TopBarStyle {
+    static let solid = TopBarStyle(
+        tintColor: .onBackgroundPrimary,
+        borderColor: .border,
+        backgroundColor: .backgroundSecondary,
+        textColor: .onSecondary
+    )
+
+    static let transparent = TopBarStyle(
+        tintColor: .onPrimary,
+        borderColor: .clear,
+        backgroundColor: .clear,
+        textColor: .onPrimary
+    )
 }
 
-public class SATSTopBar: UIView {
+public class TopBar: UIView {
 
     // MARK: Private properties
 
-    private let onSolidIconColor = UIColor(red: 0.49, green: 0.57, blue: 0.68, alpha: 1) // IcoPositivePrimary
-    private var titleLayoutConstraint = NSLayoutConstraint()
-    private var style: SATSTopBarStyle = .solid {
+    private lazy var titleLayoutConstraint = titleLabel.centerYAnchor.constraint(
+        equalTo: horizontalWrapperView.safeAreaLayoutGuide.centerYAnchor,
+        constant: frame.height
+    )
+
+    private var style: TopBarStyle = .solid {
         didSet {
             updateLayout()
         }
@@ -37,6 +46,7 @@ public class SATSTopBar: UIView {
         return view
     }()
 
+    // why a stack view, do we need multiple buttons?
     private lazy var leftButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
@@ -44,6 +54,7 @@ public class SATSTopBar: UIView {
         return stackView
     }()
 
+    // why a stack view, do we need multiple buttons?
     private lazy var rightButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
@@ -63,10 +74,7 @@ public class SATSTopBar: UIView {
         return stackView
     }()
 
-    private lazy var borderView: UIView = {
-        let view = UIView(withAutoLayout: true)
-        return view
-    }()
+    private lazy var borderView = UIView(withAutoLayout: true)
 
     // MARK: - Initializers
 
@@ -82,21 +90,19 @@ public class SATSTopBar: UIView {
 
 // MARK: Public methods
 
-extension SATSTopBar {
-    public func configure(with title: String, style: SATSTopBarStyle = .solid) {
+extension TopBar {
+    public func configure(with title: String, style: TopBarStyle = .solid) {
         titleLabel.text = title
         self.style = style
     }
 
-    public func addLeftButton(type: SATSTopBarButton, action: Selector) {
-        let button = createButton(type: type, action: action)
-        leftButtonWrapper.addArrangedSubview(button)
+    public func addRightButton(_ button: UIButton) {
+        rightButtonWrapper.addArrangedSubview(button)
         updateLayout()
     }
 
-    public func addRightButton(type: SATSTopBarButton, action: Selector) {
-        let button = createButton(type: type, action: action)
-        rightButtonWrapper.addArrangedSubview(button)
+    public func addLeftButton(_ button: UIButton) {
+        leftButtonWrapper.addArrangedSubview(button)
         updateLayout()
     }
 
@@ -127,7 +133,7 @@ extension SATSTopBar {
         }
     }
 
-    public func setStyle(style: SATSTopBarStyle, animated: Bool = false) {
+    public func set(style: TopBarStyle, animated: Bool = false) {
         if self.style == style { return }
 
         if animated {
@@ -143,29 +149,24 @@ extension SATSTopBar {
 
 // MARK: Private methods
 
-extension SATSTopBar {
+extension TopBar {
     private func setup() {
         clipsToBounds = true
+
+        addSubview(verticalWrapperStackView)
+
+        [
+            horizontalWrapperView,
+            borderView,
+        ].forEach(verticalWrapperStackView.addArrangedSubview(_:))
 
         [
             leftButtonWrapper,
             titleLabel,
             rightButtonWrapper,
-        ].forEach { horizontalWrapperView.addSubview($0) }
-
-        [
-            horizontalWrapperView,
-            borderView,
-        ].forEach { verticalWrapperStackView.addArrangedSubview($0) }
-
-        addSubview(verticalWrapperStackView)
+        ].forEach(horizontalWrapperView.addSubview(_:))
 
         verticalWrapperStackView.pin(to: self)
-
-        titleLayoutConstraint = titleLabel.centerYAnchor.constraint(
-            equalTo: horizontalWrapperView.centerYAnchor,
-            constant: frame.height
-        )
 
         NSLayoutConstraint.activate([
             leftButtonWrapper.leadingAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.leadingAnchor),
@@ -187,28 +188,12 @@ extension SATSTopBar {
         ])
     }
 
-    private func createButton(type: SATSTopBarButton, action: Selector) -> UIButton {
-        let button = UIButton(withAutoLayout: true)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        button.fixed(size: 48)
-        button.setImage(type.icon, for: .normal)
-        return button
-    }
-
     private func updateLayout() {
         let buttons = leftButtonWrapper.arrangedSubviews + rightButtonWrapper.arrangedSubviews
-        switch style {
-        case .solid:
-            titleLabel.textColor = .onSecondary
-            backgroundColor = .backgroundSecondary
-            borderView.backgroundColor = .border
-            buttons.forEach { $0.tintColor = onSolidIconColor }
 
-        case .transparent:
-            titleLabel.textColor = .onPrimary
-            backgroundColor = .clear
-            borderView.backgroundColor = .clear
-            buttons.forEach { $0.tintColor = .onPrimary }
-        }
+        titleLabel.textColor = style.textColor
+        backgroundColor = style.backgroundColor
+        borderView.backgroundColor = style.borderColor
+        buttons.forEach { $0.tintColor = style.tintColor }
     }
 }
