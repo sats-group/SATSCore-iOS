@@ -4,7 +4,7 @@ public class SATSButton: UIButton {
 
     // MARK: Initializers
 
-    public init(style: Style, size: Size = .regular, withAutoLayout: Bool = true) {
+    public init(style: Style, size: Size = .basic, withAutoLayout: Bool = true) {
         self.style = style
         self.size = size
 
@@ -53,6 +53,14 @@ public class SATSButton: UIButton {
         layer.cornerRadius = bounds.height / 2
     }
 
+    // MARK: Views
+
+    private lazy var loaderView: RoundLoadingView = {
+        let spinnerView = RoundLoadingView(withAutoLayout: true)
+        spinnerView.alpha = 0
+        return spinnerView
+    }()
+
     // MARK: Private methods
 
     private func setup() {
@@ -69,6 +77,7 @@ public class SATSButton: UIButton {
 
         setTitleColor(style.titleColor, for: .normal)
         setTitleColor(style.titleColorDisabled, for: .disabled)
+        loaderView.setLoaderColor(color: style.titleColor)
     }
 
     private func updateSize() {
@@ -78,5 +87,30 @@ public class SATSButton: UIButton {
 
         setContentHuggingPriority(size.contentHuggingPriority, for: .horizontal)
         setContentHuggingPriority(size.contentHuggingPriority, for: .vertical)
+    }
+
+    // MARK: Public methods
+
+    public func startLoader() {
+        guard !subviews.contains(loaderView) else { return }
+
+        addSubview(loaderView)
+        isUserInteractionEnabled = false
+        titleLabel?.alpha = 0
+        imageView?.alpha = 0
+        loaderView.center(in: self)
+        loaderView.fixed(size: 20)
+        loaderView.alpha = 1
+        loaderView.startAnimating()
+    }
+
+    public func stopLoader() {
+        guard subviews.contains(loaderView) else { return }
+
+        isUserInteractionEnabled = true
+        loaderView.stopAnimating()
+        loaderView.removeFromSuperview()
+        titleLabel?.alpha = 1
+        imageView?.alpha = 1
     }
 }
