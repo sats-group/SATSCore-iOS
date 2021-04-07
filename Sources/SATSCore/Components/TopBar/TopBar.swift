@@ -46,7 +46,6 @@ public class TopBar: UIView {
         return view
     }()
 
-    // why a stack view, do we need multiple buttons?
     private lazy var leftButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
@@ -54,7 +53,6 @@ public class TopBar: UIView {
         return stackView
     }()
 
-    // why a stack view, do we need multiple buttons?
     private lazy var rightButtonWrapper: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
