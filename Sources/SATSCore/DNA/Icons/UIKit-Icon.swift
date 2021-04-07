@@ -1,6 +1,6 @@
 import UIKit
 
-public extension UIImage {
+extension UIImage {
     static var back: UIImage { icon(.back) }
     static var close: UIImage { icon(.close) }
     static var linkExternal: UIImage { icon(.linkExternal) }
