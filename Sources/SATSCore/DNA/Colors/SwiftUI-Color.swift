@@ -30,11 +30,6 @@ public extension Color {
     static var waitlist: Color { color(.waitlist) }
     static var waitlistHighlight: Color { color(.waitlistHighlight) }
 
-    // MARK: Link
-
-    static var link: Color { color(.link) }
-    static var linkHighlight: Color { color(.linkHighlight) }
-
     // MARK: Signal
 
     static var signalSuccess: Color { color(.signalSuccess) }
