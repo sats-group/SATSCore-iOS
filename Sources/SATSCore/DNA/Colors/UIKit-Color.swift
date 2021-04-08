@@ -87,6 +87,9 @@ public extension UIColor {
     static var backgroundTopStart: UIColor { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: UIColor { themedColor(.backgroundTopEnd) }
 
+    static var navigationPrimary: UIColor { themedColor(.navigationPrimary) }
+    static var navigationSecondary: UIColor { themedColor(.navigationSecondary) }
+
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> UIColor {

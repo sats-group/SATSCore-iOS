@@ -92,6 +92,9 @@ public extension Color {
     static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
 
+    static var navigationPrimary: Color { themedColor(.navigationPrimary) }
+    static var navigationSecondary: Color { themedColor(.navigationSecondary) }
+
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> Color {
