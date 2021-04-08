@@ -8,7 +8,7 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = !withAutoLayout
     }
 
-    func pin(to view: UIView, preserveMargins: Bool = false) {
+    func pin(to view: UIView, preserveMargins: Bool = false, includeSafeArea: Bool = false) {
         if preserveMargins {
             NSLayoutConstraint.activate([
                 leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
@@ -16,14 +16,26 @@ public extension UIView {
                 topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
                 bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
             ])
-        } else {
-            NSLayoutConstraint.activate([
-                leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                topAnchor.constraint(equalTo: view.topAnchor),
-                bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            ])
+            return
         }
+
+        if includeSafeArea {
+            NSLayoutConstraint.activate([
+                leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            ])
+            return
+        }
+
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topAnchor.constraint(equalTo: view.topAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+
     }
 
     /// Convenience method to ensure we pin to a view, but we respect the readable content guide
@@ -32,7 +44,7 @@ public extension UIView {
             topAnchor.constraint(equalTo: view.topAnchor),
             leadingAnchor.constraint(equalTo: view.readableContentGuide.leadingAnchor),
             trailingAnchor.constraint(equalTo: view.readableContentGuide.trailingAnchor),
-            topAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
 
