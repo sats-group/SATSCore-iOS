@@ -13,6 +13,9 @@ public struct ColorTheme: Hashable {
     public let backgroundTopStart: UIColor
     public let backgroundTopEnd: UIColor
 
+    public let navigationPrimary: UIColor
+    public let navigationSecondary: UIColor
+
     /// Given an static color name, return the appropriate value from the theme
     subscript(index: ColorName) -> UIColor? {
         switch index {
@@ -22,6 +25,8 @@ public struct ColorTheme: Hashable {
         case .selection: return selection
         case .backgroundTopStart: return backgroundTopStart
         case .backgroundTopEnd: return backgroundTopEnd
+        case .navigationPrimary: return navigationPrimary
+        case .navigationSecondary: return navigationSecondary
         default:
             return nil
         }
@@ -50,7 +55,9 @@ public extension ColorTheme {
             primaryDisabled: Self.color("\(themeName)PrimaryDisabled"),
             selection: Self.color("\(themeName)Selection"),
             backgroundTopStart: Self.color("\(themeName)GradientStart"),
-            backgroundTopEnd: Self.color("\(themeName)GradientEnd")
+            backgroundTopEnd: Self.color("\(themeName)GradientEnd"),
+            navigationPrimary: Self.color("\(themeName)NavigationPrimary"),
+            navigationSecondary: Self.color("\(themeName)NavigationSecondary")
         )
     }
 

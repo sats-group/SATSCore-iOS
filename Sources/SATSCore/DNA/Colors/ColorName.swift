@@ -73,4 +73,7 @@ enum ColorName: String, CaseIterable {
 
     case backgroundTopStart
     case backgroundTopEnd
+
+    case navigationPrimary
+    case navigationSecondary
 }
