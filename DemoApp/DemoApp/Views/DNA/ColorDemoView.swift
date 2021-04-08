@@ -110,8 +110,6 @@ struct ColorDemoView: View {
             colors: [
                 ColorDemo(name: "waitlist", color: .waitlist),
                 ColorDemo(name: "waitlistHighlight", color: .waitlistHighlight),
-                ColorDemo(name: "link", color: .link),
-                ColorDemo(name: "linkHighlight", color: .linkHighlight),
             ]
         ),
         ColorSection(
