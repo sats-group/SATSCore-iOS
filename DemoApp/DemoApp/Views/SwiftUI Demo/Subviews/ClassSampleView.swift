@@ -4,7 +4,7 @@ struct ClassSampleView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Your most booked")
-                .font(.satsH3())
+                .satsFont(.h3)
                 .padding(.horizontal, 20)
 
             ScrollView(.horizontal) {
@@ -16,7 +16,7 @@ struct ClassSampleView: View {
                             .overlay(
                                 VStack {
                                     Text("on wednesday".uppercased())
-                                        .font(.satsSmall())
+                                        .satsFont(.small)
                                         .foregroundColor(.onPrimary)
                                         .padding(8)
                                         .background(Color.black.opacity(0.5))
@@ -29,11 +29,11 @@ struct ClassSampleView: View {
                             .clipped()
 
                         Text("GROUP CLASS")
-                            .font(.satsSmall())
+                            .satsFont(.small)
                         Text("Cycling Intervals")
-                            .font(.satsLarge())
+                            .satsFont(.large)
                         Text("Carl Berner")
-                            .font(.satsSmall())
+                            .satsFont(.small)
                             .foregroundColor(.onBackgroundSecondary)
                     }
 
@@ -45,11 +45,11 @@ struct ClassSampleView: View {
                             .cornerRadius(5)
 
                         Text("GROUP CLASS")
-                            .font(.satsSmall())
+                            .satsFont(.small)
                         Text("Cycling Intervals")
-                            .font(.satsLarge())
+                            .satsFont(.large)
                         Text("Carl Berner")
-                            .font(.satsSmall())
+                            .satsFont(.small)
                             .foregroundColor(.onBackgroundSecondary)
                     }
                 }
