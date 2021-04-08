@@ -1,5 +1,5 @@
 trigger:
-  - main
+  - refs/tags/*.*.*
 
 pr: none
 
@@ -11,6 +11,8 @@ variables:
     value: "Release"
   - name: "sdk"
     value: "iphoneos"
+  - name: "buildNumber"
+    value: $[counter(0, 100)]
 
 pool:
   vmImage: "macos-latest"
@@ -32,6 +34,13 @@ jobs:
         inputs:
           provisioningProfileLocation: "secureFiles"
           provProfileSecureFile: $(SATS_CORE_PROD_PROFILE_NAME)
+          
+      - task: Bash@3
+        displayName: "Update build number and version name"
+        inputs:
+          filePath: "azure-devops/increment-build-number.sh"
+          failOnStderr: true
+          arguments: $(buildNumber)
 
       - task: Xcode@5
         displayName: "Xcode build, sign and export"
