@@ -65,8 +65,7 @@ If you want to edit the package on its own you can just open `Package.swift`, wh
 The best way to develop the package is to open the demo app Xcode project
 
 ```
-~/Code/SATSCore$ cd DemoApp
-~/Code/SATSCore/DemoApp$ xed .
+~/Code/SATSCore$ xed DemoApp
 ```
 
 This is one of the tradeoffs of using SwiftPackageManager, in standalone packages we cannot have demo apps, neither configure Xcode to run SwiftLint. So I added this to the DemoApp.
