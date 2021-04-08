@@ -33,10 +33,10 @@ To use fonts, you can do
 
 ```swift
 Text("Hello World")
-    .font(.satsH1())
+    .satsFont(.h1)
 ```
 
-`.satsH1`is a method as you can invoke it like `.satsH1(weight: .emphasis)` for a semi-bold variation of the semantic `H1` text.
+`.satsFont` is a method as you can invoke it like `.satsFont(.h1, weight: .emphasis)` for a semi-bold variation of the semantic `H1` text.
 
 ### Shared
 
