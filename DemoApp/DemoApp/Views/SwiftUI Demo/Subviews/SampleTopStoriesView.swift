@@ -59,27 +59,27 @@ extension SampleTopStoriesView {
                     Text(time)
                     Text(duration)
                         .foregroundColor(.onBackgroundSecondary)
-                        .font(.satsSmall())
+                        .satsFont(.small)
                 }
 
                 VStack(alignment: .leading) {
                     Text(title)
                     Text(club)
                         .foregroundColor(.onBackgroundSecondary)
-                        .font(.satsSmall())
+                        .satsFont(.small)
                 }
 
                 Spacer()
 
                 Text("4")
                     .foregroundColor(.onPrimary)
-                    .font(.satsSmall())
+                    .satsFont(.small)
                     .frame(width: 18, height: 18)
                     .background(Color.waitlist)
                     .cornerRadius(9)
             }
             .foregroundColor(.onBackgroundPrimary)
-            .font(.satsBasic())
+            .satsFont(.basic)
         }
     }
 }
@@ -92,9 +92,9 @@ extension SampleTopStoriesView {
         var body: some View {
             VStack(alignment: .leading) {
                 Text(day)
-                    .font(.satsLarge())
+                    .satsFont(.large)
                 Text(month)
-                    .font(.satsSmall())
+                    .satsFont(.small)
             }
             .foregroundColor(.onBackgroundPrimary)
         }

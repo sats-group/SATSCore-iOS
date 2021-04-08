@@ -11,31 +11,31 @@ struct SwiftUIFontsDemoView: View {
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 16) {
                     weightedText("h1")
-                        .font(.satsH1(weight: weight))
+                        .satsFont(.h1, weight: weight)
 
                     weightedText("h2")
-                        .font(.satsH2(weight: weight))
+                        .satsFont(.h2, weight: weight)
 
                     weightedText("h3")
-                        .font(.satsH3(weight: weight))
+                        .satsFont(.h3, weight: weight)
 
                     weightedText("large")
-                        .font(.satsLarge(weight: weight))
+                        .satsFont(.large, weight: weight)
 
                     weightedText("basic")
-                        .font(.satsBasic(weight: weight))
+                        .satsFont(.basic, weight: weight)
 
                     weightedText("small")
-                        .font(.satsSmall(weight: weight))
+                        .satsFont(.small, weight: weight)
 
                     weightedText("section")
-                        .font(.satsSection(weight: weight))
+                        .satsFont(.section, weight: weight)
 
                     weightedText("button")
-                        .font(.satsButton(weight: weight))
+                        .satsFont(.button, weight: weight)
 
                     weightedText("navigationTitle")
-                        .font(.satsNavigationTitle(weight: weight))
+                        .satsFont(.navigationTitle, weight: weight)
                 }
                 .frame(maxWidth: .greatestFiniteMagnitude, alignment: .leading)
             }

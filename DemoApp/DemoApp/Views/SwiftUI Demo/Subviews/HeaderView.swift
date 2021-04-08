@@ -27,7 +27,7 @@ struct DemoHeaderView: View {
                 Spacer()
             }
         }
-        .font(.satsNavigationTitle())
+        .satsFont(.navigationTitle)
         .foregroundColor(.onPrimary)
         .padding(16)
         .background(backgroundHeader)
