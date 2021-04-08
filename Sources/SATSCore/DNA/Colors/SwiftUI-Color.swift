@@ -30,11 +30,6 @@ public extension Color {
     static var waitlist: Color { color(.waitlist) }
     static var waitlistHighlight: Color { color(.waitlistHighlight) }
 
-    // MARK: Link
-
-    static var link: Color { color(.link) }
-    static var linkHighlight: Color { color(.linkHighlight) }
-
     // MARK: Signal
 
     static var signalSuccess: Color { color(.signalSuccess) }
@@ -96,6 +91,9 @@ public extension Color {
 
     static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
+
+    static var navigationPrimary: Color { themedColor(.navigationPrimary) }
+    static var navigationSecondary: Color { themedColor(.navigationSecondary) }
 
     // MARK: Private
 
