@@ -38,9 +38,6 @@ class ColorsTests: XCTestCase {
             .waitlist,
             .waitlistHighlight,
 
-            .link,
-            .linkHighlight,
-
             .signalSuccess,
             .signalWarning,
             .signalDelete,

@@ -27,11 +27,6 @@ public extension UIColor {
     static var waitlist: UIColor { color(.waitlist) }
     static var waitlistHighlight: UIColor { color(.waitlistHighlight) }
 
-    // MARK: Link
-
-    static var link: UIColor { color(.link) }
-    static var linkHighlight: UIColor { color(.linkHighlight) }
-
     // MARK: Signal
 
     static var signalSuccess: UIColor { color(.signalSuccess) }
