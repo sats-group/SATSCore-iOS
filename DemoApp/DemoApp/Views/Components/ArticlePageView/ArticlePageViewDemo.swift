@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct ArticlePageViewDemo: View {
+    var includeImage: Bool = true
+
     // swiftlint:disable:next function_body_length
     func getViewData(includeImage: Bool, includeExternalUrl: Bool) -> ArticlePageViewData {
         ArticlePageViewData(
@@ -49,24 +51,17 @@ struct ArticlePageViewDemo: View {
             Jo mer du trener - desto mer får du
             """),
             image: includeImage ? UIImage(named: "articlePageCover") : nil,
-            externalUrl:
-                includeExternalUrl
-                ? SATSExternalUrlViewData(
-                    title: "Les hele saken",
-                    url: "https://www.sats.no/campaign/personal-training-boost/"
-                )
-                : nil
+            externalUrlTitle: includeExternalUrl ? "Les hele saken" : nil
         )
     }
 
     private func getArticlePage() -> UIView {
         let articlePageView = ArticlePageView()
+        articlePageView.topBar.addRightButton(.closeButton())
         articlePageView.configure(
-            with: getViewData(includeImage: true,
-            includeExternalUrl: true),
-            dismissAction: Selector(("someMethod")),
-            isModal: true
+            with: getViewData(includeImage: includeImage, includeExternalUrl: true)
         )
+
         return articlePageView
     }
 
@@ -80,10 +75,18 @@ struct ArticlePageViewDemo_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ArticlePageViewDemo()
+
+            ArticlePageViewDemo(includeImage: false)
+
             ArticlePageViewDemo()
                 .preferredColorScheme(.dark)
+
+            ArticlePageViewDemo(includeImage: false)
+                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+
             ArticlePageViewDemo()
                 .previewDevice("iPad Pro (12.9-inch) (4th generation)")
         }
+        .ignoresSafeArea()
     }
 }
