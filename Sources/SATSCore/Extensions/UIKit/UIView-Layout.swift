@@ -8,6 +8,11 @@ public extension UIView {
         translatesAutoresizingMaskIntoConstraints = !withAutoLayout
     }
 
+    func pinToSuperview() {
+        guard let superview = superview else { return }
+        pin(to: superview)
+    }
+
     func pin(to view: UIView, preserveMargins: Bool = false, includeSafeArea: Bool = false) {
         if preserveMargins {
             NSLayoutConstraint.activate([
