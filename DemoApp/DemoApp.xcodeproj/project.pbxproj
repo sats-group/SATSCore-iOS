@@ -252,7 +252,6 @@
 				9B2BFBD325B719AD00383193 /* Frameworks */,
 				9B2BFBD425B719AD00383193 /* Resources */,
 				9B83387825D30FFB0083B6D1 /* Swiftlint */,
-				9B5B945825DE6F0100E83BBD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -312,23 +311,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9B5B945825DE6F0100E83BBD /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(git rev-list --count HEAD)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$PRODUCT_SETTINGS_PATH\"\n";
-		};
 		9B83387825D30FFB0083B6D1 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
