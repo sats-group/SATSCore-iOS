@@ -29,15 +29,15 @@ public extension SATSButton.Size {
     )
 
     /// Small height but allowed to grow horizontally.
-    static let regular = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(vertical: 12, horizontal: 16),
+    static let basic = SATSButton.Size(
+        contentEdgeInsets: UIEdgeInsets(vertical: 9, horizontal: 30),
         imageEdgeInsets: .zero,
         contentHuggingPriority: .defaultLow
     )
 
     /// Compact button that hugs its title as much as possible.
     static let compact = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(vertical: 12, horizontal: 20),
+        contentEdgeInsets: UIEdgeInsets(vertical: 9, horizontal: 30),
         imageEdgeInsets: .zero,
         contentHuggingPriority: .defaultHigh
     )
