@@ -18,10 +18,11 @@ jobs:
       - task: Xcode@5
         displayName: "Xcode Test"
         inputs:
-          actions: "clean build test"
+          actions: "build test"
           sdk: "$(sdk)"
           scheme: "$(scheme)"
           xcodeVersion: "default"
+          xcWorkspacePath: "DemoApp"
           destinationPlatform: "iOS"
           destinationPlatformOption: "iOS"
           destinationSimulators: "iPhone 12 Pro,OS=14.4"
