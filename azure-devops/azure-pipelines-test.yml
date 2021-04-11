@@ -22,7 +22,7 @@ jobs:
           sdk: "$(sdk)"
           scheme: "$(scheme)"
           xcodeVersion: "default"
-          xcWorkspacePath: "DemoApp.xcodeproj"
+          xcWorkspacePath: "DemoApp/DemoApp.xcodeproj"
           destinationPlatform: "iOS"
           destinationPlatformOption: "iOS"
           destinationSimulators: "iPhone 12 Pro,OS=14.4"
