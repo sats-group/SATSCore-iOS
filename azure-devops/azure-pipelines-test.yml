@@ -1,0 +1,25 @@
+pr:
+- main
+
+variables:
+  - group: "SatsVariables"
+  - name: "scheme"
+    value: "DemoApp"
+  - name: "sdk"
+    value: "iphoneos"
+
+pool:
+  vmImage: "macos-latest"
+
+jobs:
+  - job: BuildDev
+    displayName: Build SATS Dev
+    steps:          
+      - task: Xcode@5
+        displayName: "Xcode Test"
+        inputs:
+          actions: "clean test"
+          sdk: "$(sdk)"
+          scheme: "$(scheme)"
+          xcodeVersion: "default"
+          workingDirectory: "DemoApp"
