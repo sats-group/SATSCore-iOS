@@ -22,5 +22,7 @@ jobs:
           sdk: "$(sdk)"
           scheme: "$(scheme)"
           xcodeVersion: "default"
-          destinationSimulators: "iPhone 12 Pro"
+          destinationPlatform: "custom"
+          destinationPlatformOption: "custom"
+          destinationSimulators: "iPhone 12 Pro,OS=12.4"
           workingDirectory: "DemoApp"
