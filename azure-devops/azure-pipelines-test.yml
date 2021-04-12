@@ -27,3 +27,4 @@ jobs:
           destinationPlatformOption: "iOS"
           destinationSimulators: "iPhone 12 Pro,OS=14.4"
           workingDirectory: "DemoApp"
+          useXcpretty: false
