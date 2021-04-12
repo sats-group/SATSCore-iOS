@@ -18,12 +18,14 @@ jobs:
       - task: Xcode@5
         displayName: "Xcode Test"
         inputs:
-          actions: "build test"
+          actions: "test"
           sdk: "$(sdk)"
           scheme: "$(scheme)"
           xcodeVersion: "default"
           xcWorkspacePath: "DemoApp/DemoApp.xcodeproj"
           destinationPlatform: "iOS"
+          signingOption: "auto"
+          args: "-UseModernBuildSystem=YES"
           destinationPlatformOption: "iOS"
           destinationSimulators: "iPhone 12 Pro,OS=14.4"
           workingDirectory: "DemoApp"
