@@ -10,6 +10,12 @@ public extension SATSFont {
 
         /// Name of the style, for debugging purposes only
         public let name: String
+
+        public init(size: CGFloat, nativeStyle: UIFont.TextStyle, name: String) {
+            self.size = size
+            self.nativeStyle = nativeStyle
+            self.name = name
+        }
     }
 }
 
