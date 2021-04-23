@@ -13,34 +13,25 @@ public extension UIView {
         pin(to: superview)
     }
 
-    func pin(to view: UIView, preserveMargins: Bool = false, includeSafeArea: Bool = false) {
-        if preserveMargins {
-            NSLayoutConstraint.activate([
-                leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-                trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-                topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-                bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-            ])
-            return
-        }
+    func centerInSuperview() {
+        guard let superview = superview else { return }
+        center(in: superview)
+    }
 
-        if includeSafeArea {
-            NSLayoutConstraint.activate([
-                leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-                trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-                topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            ])
-            return
-        }
+    func centerAndConstraintInSuperview() {
+        guard let superview = superview else { return }
+        centerAndConstraint(in: superview)
+    }
 
+    /// Make all side anchors match the given anchorable's sides
+    /// - Parameter anchorable: an instance of UIView or UILayoutGuide
+    func pin(to anchorable: Anchorable) {
         NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topAnchor.constraint(equalTo: view.topAnchor),
-            bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            leadingAnchor.constraint(equalTo: anchorable.leadingAnchor),
+            trailingAnchor.constraint(equalTo: anchorable.trailingAnchor),
+            topAnchor.constraint(equalTo: anchorable.topAnchor),
+            bottomAnchor.constraint(equalTo: anchorable.bottomAnchor),
         ])
-
     }
 
     /// Convenience method to ensure we pin to a view, but we respect the readable content guide
@@ -53,10 +44,22 @@ public extension UIView {
         ])
     }
 
-    func center(in view: UIView) {
+    func center(in view: Anchorable) {
         NSLayoutConstraint.activate([
             centerXAnchor.constraint(equalTo: view.centerXAnchor),
             centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+    }
+
+    /// Centers a view within the passed area and
+    /// ensures the size of this view is not bigger than the area is being centered into
+    func centerAndConstraint(in view: Anchorable) {
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            centerYAnchor.constraint(equalTo: view.centerYAnchor),
+
+            widthAnchor.constraint(lessThanOrEqualTo: view.widthAnchor),
+            heightAnchor.constraint(lessThanOrEqualTo: view.heightAnchor),
         ])
     }
 
@@ -81,3 +84,44 @@ public extension UIView {
         }
     }
 }
+
+// Transition methods - used to idenfity deprecated variations of method
+
+public extension UIView {
+    @available(*, deprecated, message: "You should use `pin(to: view.layoutMarginsGuide)` instead")
+    func pin(to view: UIView, preserveMargins: Bool) {
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
+            topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
+            bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
+        ])
+    }
+
+    @available(*, deprecated, message: "You should use `pin(to: view.safeAreaLayoutGuide)` instead")
+    func pin(to view: UIView, includeSafeArea: Bool) {
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
+    }
+}
+
+/// A protocol to combine UIView and UILayoutGuide in order to define layout methods in an easier way
+public protocol Anchorable {
+    var centerXAnchor: NSLayoutXAxisAnchor { get }
+    var centerYAnchor: NSLayoutYAxisAnchor { get }
+
+    var widthAnchor: NSLayoutDimension { get }
+    var heightAnchor: NSLayoutDimension { get }
+
+    var topAnchor: NSLayoutYAxisAnchor { get }
+    var leadingAnchor: NSLayoutXAxisAnchor { get }
+    var trailingAnchor: NSLayoutXAxisAnchor { get }
+    var bottomAnchor: NSLayoutYAxisAnchor { get }
+}
+
+extension UIView: Anchorable {}
+extension UILayoutGuide: Anchorable {}
