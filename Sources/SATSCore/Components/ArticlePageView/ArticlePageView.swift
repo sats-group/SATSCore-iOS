@@ -146,7 +146,7 @@ extension ArticlePageView {
             topBar,
         ].forEach(addSubview(_:))
 
-        scrollView.pin(to: self, includeSafeArea: true)
+        scrollView.pin(to: safeAreaLayoutGuide)
         contentStackView.pin(to: scrollView)
 
         NSLayoutConstraint.activate([
