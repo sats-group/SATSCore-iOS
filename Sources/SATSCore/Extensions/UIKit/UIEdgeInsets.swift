@@ -15,4 +15,19 @@ public extension UIEdgeInsets {
             right: horizontal
         )
     }
+
+    /// Convenience initializer to set horizontal values instead of specifying all of them
+    init(top: CGFloat = 0, horizontal: CGFloat, bottom: CGFloat = 0) {
+        self.init(
+            top: top,
+            left: horizontal,
+            bottom: bottom,
+            right: horizontal
+        )
+    }
+
+    // Convenience initializer that allows to skip values, then those will default to 0
+    init(top: CGFloat = 0, leading: CGFloat = 0, bottom: CGFloat = 0, trailing: CGFloat = 0) {
+        self.init(top: top, left: leading, bottom: bottom, right: trailing)
+    }
 }
