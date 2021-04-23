@@ -69,3 +69,17 @@ The best way to develop the package is to open the demo app Xcode project
 ```
 
 This is one of the tradeoffs of using SwiftPackageManager, in standalone packages we cannot have demo apps, neither configure Xcode to run SwiftLint. So I added this to the DemoApp.
+
+## Releasing
+
+In order to release a new version of the package (and SATSCore iOS app) we just need to add a tag in the [Releases section](https://github.com/healthfitnessnordic/SATSCore-iOS/releases).
+
+Then make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM to define the version.
+
+Then if you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
+
+```
+$ pr_changelog 0.0.7 main
+```
+
+To get a formatted list of changes. Remember to replace `0.0.7` for the last released version of the package.
