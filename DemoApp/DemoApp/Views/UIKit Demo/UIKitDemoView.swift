@@ -49,7 +49,7 @@ class SampleView: UIView {
         ].forEach(stackView.addArrangedSubview(_:))
 
         addSubview(stackView)
-        stackView.pin(to: self, preserveMargins: true)
+        stackView.pin(to: layoutMarginsGuide)
     }
 }
 
@@ -104,7 +104,7 @@ extension SampleView {
                 let containerView = UIView(withAutoLayout: true)
                 containerView.layoutMargins = UIEdgeInsets(all: 8)
                 containerView.addSubview(label)
-                label.pin(to: containerView, preserveMargins: true)
+                label.pin(to: containerView.layoutMarginsGuide)
 
                 if text == "Discover" {
                     let activeLineView = UIView(withAutoLayout: true)
@@ -128,7 +128,7 @@ extension SampleView {
             ].forEach(stackView.addArrangedSubview(_:))
 
             addSubview(stackView)
-            stackView.pin(to: self, preserveMargins: true)
+            stackView.pin(to: layoutMarginsGuide)
 
             NSLayoutConstraint.activate([
                 sections.widthAnchor.constraint(equalTo: stackView.widthAnchor),
