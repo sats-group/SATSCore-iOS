@@ -93,10 +93,12 @@ public class InlineNoticeView: UIView {
             containerView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
 
             topSeparator.topAnchor.constraint(equalTo: topAnchor),
-            topSeparator.widthAnchor.constraint(equalTo: widthAnchor),
+            topSeparator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            topSeparator.trailingAnchor.constraint(equalTo: trailingAnchor),
 
             bottomSeparator.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bottomSeparator.widthAnchor.constraint(equalTo: widthAnchor),
+            bottomSeparator.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bottomSeparator.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
 }
