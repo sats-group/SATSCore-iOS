@@ -5,7 +5,13 @@ struct ArticlePageViewDemo: View {
 
     // swiftlint:disable:next function_body_length
     func getViewData(includeImage: Bool, includeExternalUrl: Bool) -> ArticlePageViewData {
-        ArticlePageViewData(
+        let externalUrls = [
+            ExternalUrlViewData(title: "Les hele saken", url: URL(string: "https://sats.com")!),
+            ExternalUrlViewData(title: "Les halve saken", url: URL(string: "https://sats.com")!),
+            ExternalUrlViewData(title: "Les kvarte saken", url: URL(string: "https://sats.com")!),
+        ]
+
+        return ArticlePageViewData(
             title: "Er du klar for en skikkelig utfordring?",
             // swiftlint:disable:next line_length
             introduction: "Man må nesten ha superkrefter for å finne ro i sitt eget hjem om dagen. Fortvil ikke! Det finnes håp og det heter Yoga Nidra. Best av alt - du skal ikke gjøre noen ting!",
@@ -53,7 +59,7 @@ struct ArticlePageViewDemo: View {
             Jo mer du trener - desto mer får du
             """),
             image: includeImage ? UIImage(named: "articlePageCover") : nil,
-            externalUrlTitle: includeExternalUrl ? "Les hele saken" : nil
+            externalUrls: includeExternalUrl ? externalUrls : nil
         )
     }
 
