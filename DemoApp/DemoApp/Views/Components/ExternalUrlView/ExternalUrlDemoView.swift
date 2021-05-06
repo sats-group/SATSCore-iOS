@@ -13,9 +13,10 @@ struct ExternalUrlDemoView: View {
     }
 
     func demoView(title: String) -> some View {
+        let viewData = ExternalUrlViewData(title: title, url: URL(string: "https://sats.com")!)
         let externalUrlView = ExternalUrlView()
-        externalUrlView.configure(title: title)
-        externalUrlView.onOpenUrl = {
+        externalUrlView.configure(with: viewData)
+        externalUrlView.onOpenUrl = { _ in
             print("open URL for \(title)")
         }
         return DemoWrapperView(view: externalUrlView)
