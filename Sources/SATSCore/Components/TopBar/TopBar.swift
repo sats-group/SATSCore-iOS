@@ -50,6 +50,7 @@ public class TopBar: UIView {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
         stackView.axis = .horizontal
+        stackView.alignment = .center
         return stackView
     }()
 
@@ -57,6 +58,7 @@ public class TopBar: UIView {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.spacing = 4
         stackView.axis = .horizontal
+        stackView.alignment = .center
         return stackView
     }()
 

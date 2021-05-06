@@ -9,6 +9,10 @@ public extension UIButton {
         iconButton(icon: .close, onTap: action)
     }
 
+    static func closeFloatingButton(onTap action: (() -> Void)? = nil) -> UIButton {
+        iconButton(icon: .closeFloating, onTap: action)
+    }
+
     private static func iconButton(icon: UIImage?, onTap: (() -> Void)? = nil) -> UIButton {
         let button = CallbackButton(withAutoLayout: true)
         button.setImage(icon, for: .normal)
