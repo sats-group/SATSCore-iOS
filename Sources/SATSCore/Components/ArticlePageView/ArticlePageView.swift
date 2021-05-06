@@ -23,7 +23,7 @@ public struct ArticlePageViewData {
 }
 
 public protocol ArticlePageViewDelegate: AnyObject {
-    func articleViewDidSelectExternalUrl(_ url: URL?)
+    func articleView(_ articleView: ArticlePageView, didSelectExternalUrl url: URL?)
 }
 
 extension SATSFont.TextStyle {
@@ -78,6 +78,12 @@ public class ArticlePageView: UIView {
         return imageView
     }()
 
+    private lazy var externalUrlsWrapper: UIStackView = {
+        let stackView = UIStackView(withAutoLayout: true)
+        stackView.axis = .vertical
+        return stackView
+    }()
+
     private func createExternalUrlView(viewData: ExternalUrlViewData) -> ExternalUrlView {
         let view = ExternalUrlView(withAutoLayout: true)
         view.onOpenUrl = externalUrlTapped
@@ -90,7 +96,7 @@ public class ArticlePageView: UIView {
         stackView.backgroundColor = .backgroundSecondary
         stackView.axis = .vertical
         stackView.spacing = 30
-        stackView.layoutMargins = UIEdgeInsets(top: 30, left: 20, bottom: 0, right: 20)
+        stackView.layoutMargins = UIEdgeInsets(top: 30, horizontal: 20, bottom: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.alignment = .center
         stackView.distribution = .fill
@@ -131,12 +137,11 @@ extension ArticlePageView {
             set(headerImage: image)
         }
 
+        externalUrlsWrapper.arrangedSubviews.forEach { $0.removeFromSuperview() }
         if let urls = viewData.externalUrls {
             urls.forEach {
                 let view = createExternalUrlView(viewData: $0)
-                contentStackView.addArrangedSubview(view)
-                contentStackView.setCustomSpacing(0, after: view)
-                view.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor).isActive = true
+                externalUrlsWrapper.addArrangedSubview(view)
             }
         }
     }
@@ -160,6 +165,7 @@ extension ArticlePageView {
             titleLabel,
             introductionLabel,
             descriptionLabel,
+            externalUrlsWrapper,
         ].forEach(contentStackView.addArrangedSubview(_:))
 
         scrollView.addSubview(contentStackView)
@@ -187,6 +193,7 @@ extension ArticlePageView {
             titleLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             introductionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            externalUrlsWrapper.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
     }
@@ -217,7 +224,7 @@ extension ArticlePageView {
     }
 
     private func externalUrlTapped(url: URL?) {
-        delegate?.articleViewDidSelectExternalUrl(url)
+        delegate?.articleView(self, didSelectExternalUrl: url)
     }
 }
 
