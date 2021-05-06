@@ -3,6 +3,7 @@ import UIKit
 extension UIImage {
     static var back: UIImage { icon(.back) }
     static var close: UIImage { icon(.close) }
+    static var closeFloating: UIImage { icon(.closeFloating) }
     static var linkExternal: UIImage { icon(.linkExternal) }
 
     // MARK: Private
@@ -12,6 +13,6 @@ extension UIImage {
             preconditionFailure("❌ \(name.rawValue) icon not found!")
         }
 
-        return icon.withRenderingMode(.alwaysTemplate)
+        return icon
     }
 }

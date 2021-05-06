@@ -2,25 +2,36 @@ import UIKit
 
 public struct ArticlePageViewData {
     let title: String
+    let introduction: String?
     let description: NSAttributedString
     let image: UIImage?
-    let externalUrlTitle: String?
+    let externalUrls: [ExternalUrlViewData]?
 
     public init(
         title: String,
+        introduction: String?,
         description: NSAttributedString,
         image: UIImage?,
-        externalUrlTitle: String?
+        externalUrls: [ExternalUrlViewData]?
     ) {
         self.title = title
+        self.introduction = introduction
         self.description = description
         self.image = image
-        self.externalUrlTitle = externalUrlTitle
+        self.externalUrls = externalUrls
     }
 }
 
 public protocol ArticlePageViewDelegate: AnyObject {
-    func articleViewDidSelectExternalUrl(_ view: ArticlePageView)
+    func articleView(_ articleView: ArticlePageView, didSelectExternalUrl url: URL?)
+}
+
+extension SATSFont.TextStyle {
+    static let articleIntroduction = SATSFont.TextStyle(
+        size: 19,
+        nativeStyle: .subheadline,
+        name: "articleIntroduction"
+    )
 }
 
 public class ArticlePageView: UIView {
@@ -39,13 +50,23 @@ public class ArticlePageView: UIView {
     // MARK: - Views
 
     private lazy var titleLabel: SATSLabel = {
-        let label = SATSLabel(style: .h1, weight: .emphasis)
+        let label = SATSLabel(style: .h1, weight: .satsFeeling)
+        label.textColor = .onSecondary
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private lazy var introductionLabel: SATSLabel = {
+        let label = SATSLabel(style: .basic, weight: .default)
+        label.font = SATSFont.font(style: .articleIntroduction, weight: .default)
+        label.textColor = .onSecondaryDisabled
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var descriptionLabel: SATSLabel = {
-        let label = SATSLabel(style: .basic)
+        let label = SATSLabel(style: .large)
+        label.textColor = .onSecondaryDisabled
         label.numberOfLines = 0
         return label
     }()
@@ -57,19 +78,25 @@ public class ArticlePageView: UIView {
         return imageView
     }()
 
-    private lazy var externalUrlView: ExternalUrlView = {
-        let view = ExternalUrlView(withAutoLayout: true)
-        view.isHidden = true
-        view.onOpenUrl = externalUrlTapped
-        return view
+    private lazy var externalUrlsWrapper: UIStackView = {
+        let stackView = UIStackView(withAutoLayout: true)
+        stackView.axis = .vertical
+        return stackView
     }()
+
+    private func createExternalUrlView(viewData: ExternalUrlViewData) -> ExternalUrlView {
+        let view = ExternalUrlView(withAutoLayout: true)
+        view.onOpenUrl = externalUrlTapped
+        view.configure(with: viewData)
+        return view
+    }
 
     private lazy var contentStackView: UIStackView = {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.backgroundColor = .backgroundSecondary
         stackView.axis = .vertical
-        stackView.spacing = 25
-        stackView.layoutMargins = UIEdgeInsets(top: 30, left: 20, bottom: 0, right: 20)
+        stackView.spacing = 30
+        stackView.layoutMargins = UIEdgeInsets(top: 30, horizontal: 20, bottom: 0)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.alignment = .center
         stackView.distribution = .fill
@@ -99,7 +126,8 @@ public class ArticlePageView: UIView {
 
 extension ArticlePageView {
     public func configure(with viewData: ArticlePageViewData) {
-        titleLabel.text = viewData.title
+        titleLabel.text = viewData.title.uppercased()
+        introductionLabel.text = viewData.introduction
         descriptionLabel.attributedText = viewData.description
 
         topBar.configure(with: viewData.title)
@@ -109,11 +137,12 @@ extension ArticlePageView {
             set(headerImage: image)
         }
 
-        if let externalUrlTitle = viewData.externalUrlTitle {
-            externalUrlView.configure(title: externalUrlTitle)
-            externalUrlView.isHidden = false
-        } else {
-            externalUrlView.isHidden = true
+        externalUrlsWrapper.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        if let urls = viewData.externalUrls {
+            urls.forEach {
+                let view = createExternalUrlView(viewData: $0)
+                externalUrlsWrapper.addArrangedSubview(view)
+            }
         }
     }
 
@@ -134,8 +163,9 @@ extension ArticlePageView {
     private func setup() {
         [
             titleLabel,
+            introductionLabel,
             descriptionLabel,
-            externalUrlView,
+            externalUrlsWrapper,
         ].forEach(contentStackView.addArrangedSubview(_:))
 
         scrollView.addSubview(contentStackView)
@@ -153,7 +183,7 @@ extension ArticlePageView {
             topBar.topAnchor.constraint(equalTo: topAnchor),
             topBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             topBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: headerHeight),
 
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -161,8 +191,9 @@ extension ArticlePageView {
             imageHeightConstraint,
 
             titleLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            introductionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
-            externalUrlView.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            externalUrlsWrapper.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
         ])
     }
@@ -192,8 +223,8 @@ extension ArticlePageView {
         }
     }
 
-    private func externalUrlTapped() {
-        delegate?.articleViewDidSelectExternalUrl(self)
+    private func externalUrlTapped(url: URL?) {
+        delegate?.articleView(self, didSelectExternalUrl: url)
     }
 }
 

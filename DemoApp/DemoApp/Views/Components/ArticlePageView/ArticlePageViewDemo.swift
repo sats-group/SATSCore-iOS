@@ -5,8 +5,16 @@ struct ArticlePageViewDemo: View {
 
     // swiftlint:disable:next function_body_length
     func getViewData(includeImage: Bool, includeExternalUrl: Bool) -> ArticlePageViewData {
-        ArticlePageViewData(
+        let externalUrls = [
+            ExternalUrlViewData(title: "Les hele saken", url: URL(string: "https://sats.com")!),
+            ExternalUrlViewData(title: "Les halve saken", url: URL(string: "https://sats.com")!),
+            ExternalUrlViewData(title: "Les kvarte saken", url: URL(string: "https://sats.com")!),
+        ]
+
+        return ArticlePageViewData(
             title: "Er du klar for en skikkelig utfordring?",
+            // swiftlint:disable:next line_length
+            introduction: "Man må nesten ha superkrefter for å finne ro i sitt eget hjem om dagen. Fortvil ikke! Det finnes håp og det heter Yoga Nidra. Best av alt - du skal ikke gjøre noen ting!",
             description: NSAttributedString(string: """
             Å trene med en personlig trener er en investering i helsen din, og virker booster treningseffektene.
             Vi ønsker nå å gi deg ett ekstra PT-klipp for hver fjerde PT-time du bruker mellom 1.-31. mars.
@@ -51,13 +59,13 @@ struct ArticlePageViewDemo: View {
             Jo mer du trener - desto mer får du
             """),
             image: includeImage ? UIImage(named: "articlePageCover") : nil,
-            externalUrlTitle: includeExternalUrl ? "Les hele saken" : nil
+            externalUrls: includeExternalUrl ? externalUrls : nil
         )
     }
 
     private func getArticlePage() -> UIView {
         let articlePageView = ArticlePageView()
-        articlePageView.topBar.addRightButton(.closeButton())
+        articlePageView.topBar.addRightButton(.closeFloatingButton())
         articlePageView.configure(
             with: getViewData(includeImage: includeImage, includeExternalUrl: true)
         )

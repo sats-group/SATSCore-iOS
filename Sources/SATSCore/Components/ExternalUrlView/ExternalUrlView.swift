@@ -1,13 +1,21 @@
 import UIKit
 
+public struct ExternalUrlViewData {
+    let title: String
+    let url: URL
+
+    public init(title: String, url: URL) {
+        self.title = title
+        self.url = url
+    }
+}
+
 /// This is a visual button that used to render links to external URLs
-///
-/// it only requires a title for configuration, as when the button is pressed, we use the `onOpenUrl`
-/// callback, which should handle the logic of actually opening an external web page.
-/// Then this button doesn't require any knowledge of the URL.
 public class ExternalUrlView: UIView {
 
-    public var onOpenUrl: (() -> Void)?
+    private var url: URL?
+
+    public var onOpenUrl: ((_ url: URL?) -> Void)?
 
     // MARK: Views
 
@@ -24,7 +32,7 @@ public class ExternalUrlView: UIView {
     private lazy var iconView: UIImageView = {
         let imageView = UIImageView(withAutoLayout: true)
         imageView.image = .linkExternal
-        imageView.tintColor = .onBackgroundPrimary
+        imageView.tintColor = .onSecondaryDisabled
         return imageView
     }()
 
@@ -58,14 +66,15 @@ extension ExternalUrlView {
     }
 
     @objc func viewDidTap(sender: UIView) {
-        onOpenUrl?()
+        onOpenUrl?(url)
     }
 }
 
 // MARK: Public methods
 
 extension ExternalUrlView {
-    public func configure(title: String) {
-        label.text = title
+    public func configure(with viewData: ExternalUrlViewData) {
+        label.text = viewData.title
+        url = viewData.url
     }
 }
