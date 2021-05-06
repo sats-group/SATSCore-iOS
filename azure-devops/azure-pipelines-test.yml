@@ -1,5 +1,10 @@
+trigger: none
+
 pr:
-- main
+  autoCancel: true
+  branches:
+    include:
+      - main
 
 variables:
   - group: "SatsVariables"
@@ -7,6 +12,8 @@ variables:
     value: "DemoApp"
   - name: "sdk"
     value: "iphoneos"
+  - name: "iOSVersion"
+    value: "14.4"
 
 pool:
   vmImage: "macos-latest"
@@ -14,7 +21,7 @@ pool:
 jobs:
   - job: BuildDev
     displayName: Build SATS Dev
-    steps:          
+    steps:
       - task: Xcode@5
         displayName: "Xcode Test"
         inputs:
@@ -27,7 +34,7 @@ jobs:
           signingOption: "auto"
           args: "-UseModernBuildSystem=YES"
           destinationPlatformOption: "iOS"
-          destinationSimulators: "iPhone 12 Pro,OS=14.4"
+          destinationSimulators: "iPhone 12 Pro,OS=$(iOSVersion)"
           workingDirectory: "DemoApp"
           useXcpretty: true
           publishJUnitResults: true
