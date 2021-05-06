@@ -50,7 +50,7 @@ public class ArticlePageView: UIView {
     // MARK: - Views
 
     private lazy var titleLabel: SATSLabel = {
-        let label = SATSLabel(style: .h1, weight: .emphasis)
+        let label = SATSLabel(style: .h1, weight: .satsFeeling)
         label.textColor = .onSecondary
         label.numberOfLines = 0
         return label
@@ -120,7 +120,7 @@ public class ArticlePageView: UIView {
 
 extension ArticlePageView {
     public func configure(with viewData: ArticlePageViewData) {
-        titleLabel.text = viewData.title
+        titleLabel.text = viewData.title.uppercased()
         introductionLabel.text = viewData.introduction
         descriptionLabel.attributedText = viewData.description
 
