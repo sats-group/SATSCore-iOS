@@ -24,7 +24,7 @@ public class ExternalUrlView: UIView {
     private lazy var iconView: UIImageView = {
         let imageView = UIImageView(withAutoLayout: true)
         imageView.image = .linkExternal
-        imageView.tintColor = .onBackgroundPrimary
+        imageView.tintColor = .onSecondaryDisabled
         return imageView
     }()
 

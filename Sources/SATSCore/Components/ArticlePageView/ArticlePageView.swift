@@ -2,17 +2,20 @@ import UIKit
 
 public struct ArticlePageViewData {
     let title: String
+    let introduction: String?
     let description: NSAttributedString
     let image: UIImage?
     let externalUrlTitle: String?
 
     public init(
         title: String,
+        introduction: String?,
         description: NSAttributedString,
         image: UIImage?,
         externalUrlTitle: String?
     ) {
         self.title = title
+        self.introduction = introduction
         self.description = description
         self.image = image
         self.externalUrlTitle = externalUrlTitle
@@ -21,6 +24,14 @@ public struct ArticlePageViewData {
 
 public protocol ArticlePageViewDelegate: AnyObject {
     func articleViewDidSelectExternalUrl(_ view: ArticlePageView)
+}
+
+extension SATSFont.TextStyle {
+    static let articleIntroduction = SATSFont.TextStyle(
+        size: 19,
+        nativeStyle: .subheadline,
+        name: "articleIntroduction"
+    )
 }
 
 public class ArticlePageView: UIView {
@@ -40,12 +51,22 @@ public class ArticlePageView: UIView {
 
     private lazy var titleLabel: SATSLabel = {
         let label = SATSLabel(style: .h1, weight: .emphasis)
+        label.textColor = .onSecondary
+        label.numberOfLines = 0
+        return label
+    }()
+
+    private lazy var introductionLabel: SATSLabel = {
+        let label = SATSLabel(style: .basic, weight: .default)
+        label.font = SATSFont.font(style: .articleIntroduction, weight: .default)
+        label.textColor = .onSecondaryDisabled
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var descriptionLabel: SATSLabel = {
-        let label = SATSLabel(style: .basic)
+        let label = SATSLabel(style: .large)
+        label.textColor = .onSecondaryDisabled
         label.numberOfLines = 0
         return label
     }()
@@ -68,7 +89,7 @@ public class ArticlePageView: UIView {
         let stackView = UIStackView(withAutoLayout: true)
         stackView.backgroundColor = .backgroundSecondary
         stackView.axis = .vertical
-        stackView.spacing = 25
+        stackView.spacing = 30
         stackView.layoutMargins = UIEdgeInsets(top: 30, left: 20, bottom: 0, right: 20)
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.alignment = .center
@@ -100,6 +121,7 @@ public class ArticlePageView: UIView {
 extension ArticlePageView {
     public func configure(with viewData: ArticlePageViewData) {
         titleLabel.text = viewData.title
+        introductionLabel.text = viewData.introduction
         descriptionLabel.attributedText = viewData.description
 
         topBar.configure(with: viewData.title)
@@ -134,6 +156,7 @@ extension ArticlePageView {
     private func setup() {
         [
             titleLabel,
+            introductionLabel,
             descriptionLabel,
             externalUrlView,
         ].forEach(contentStackView.addArrangedSubview(_:))
@@ -153,7 +176,7 @@ extension ArticlePageView {
             topBar.topAnchor.constraint(equalTo: topAnchor),
             topBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             topBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: 100),
+            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: headerHeight),
 
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -161,6 +184,7 @@ extension ArticlePageView {
             imageHeightConstraint,
 
             titleLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
+            introductionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             descriptionLabel.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             externalUrlView.widthAnchor.constraint(equalTo: readableContentGuide.widthAnchor),
             contentStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
