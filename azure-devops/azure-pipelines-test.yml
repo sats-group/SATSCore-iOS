@@ -23,11 +23,11 @@ jobs:
     displayName: Build SATS Dev
     steps:
       - task: InstallSSHKey@0
-        displayName: "Install SSH key for SATSCore"
+        displayName: "Install SSH key for SATSType"
         inputs:
           knownHostsEntry: $(SATSCore_GITHUB_HOST)
-          sshPublicKey: $(SATSCore_SSH_DEPLOY_PUBLIC_KEY)
-          sshKeySecureFile: "SATSCore_SSH_DEPLOY_KEY"
+          sshPublicKey: $(SATSType_SSH_DEPLOY_PUBLIC_KEY)
+          sshKeySecureFile: "SATSType_SSH_DEPLOY_KEY"
 
       - task: Bash@3
         displayName: "Workaround for private SSH SPM dependencies"
