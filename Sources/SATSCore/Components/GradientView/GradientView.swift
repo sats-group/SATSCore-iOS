@@ -3,9 +3,7 @@ import UIKit
 /// Implements a semi-translucent fog aka gradient for the ProfileTrainingGraphCell
 public class GradientView: UIView {
     public var colors: [UIColor] = [] {
-        didSet {
-            gradientLayer.colors = colors.map { $0.cgColor }
-        }
+        didSet { updateColors() }
     }
 
     public var startPoint: CGPoint {
@@ -32,5 +30,14 @@ public class GradientView: UIView {
 
     public override class var layerClass: AnyClass {
         CAGradientLayer.self
+    }
+
+    public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateColors()
+    }
+
+    private func updateColors() {
+        gradientLayer.colors = colors.map { $0.cgColor }
     }
 }
