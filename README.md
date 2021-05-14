@@ -4,7 +4,7 @@ The objective of this library is to provide all the utilities we need to create 
 
 This library defines Fonts, Colors and other base components and configurations to create UI. This applies to both `UIKit` and `SwiftUI`based UI.
 
-⚠️ I opted to create this library directly as an SPM package, since I believe is the future way of handling packages over CocoaPods. This has benefits as well tradeoffs.
+⚠️ We opted to create this library directly as an SPM package, since we believe is the future way of handling packages over CocoaPods. This has benefits as well tradeoffs.
 
 ## Usage
 
@@ -68,7 +68,7 @@ The best way to develop the package is to open the demo app Xcode project
 ~/Code/SATSCore$ xed DemoApp
 ```
 
-This is one of the tradeoffs of using SwiftPackageManager, in standalone packages we cannot have demo apps, neither configure Xcode to run SwiftLint. So I added this to the DemoApp.
+This is one of the tradeoffs of using SwiftPackageManager, in standalone packages we cannot have demo apps, neither configure Xcode to run SwiftLint. So we added this to the DemoApp.
 
 ## Releasing
 
