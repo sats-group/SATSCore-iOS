@@ -22,6 +22,20 @@ jobs:
   - job: BuildDev
     displayName: Build SATS Dev
     steps:
+      - task: InstallSSHKey@0
+        displayName: "Install SSH key for SATSType"
+        inputs:
+          knownHostsEntry: $(SATSCore_GITHUB_HOST)
+          sshPublicKey: $(SATSType_SSH_DEPLOY_PUBLIC_KEY)
+          sshKeySecureFile: "SATSType_SSH_DEPLOY_KEY"
+
+      - task: Bash@3
+        displayName: "Workaround for private SSH SPM dependencies"
+        inputs:
+          targetType: "inline"
+          script: "for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts"
+          failOnStderr: true
+
       - task: Xcode@5
         displayName: "Xcode Test"
         inputs:
