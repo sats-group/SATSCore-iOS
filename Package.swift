@@ -10,14 +10,13 @@ let package = Package(
             targets: ["SATSCore"]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "SATSType", url: "git@github.com:healthfitnessnordic/SATSType-iOS.git", .branch("main")),
+    ],
     targets: [
         .target(
             name: "SATSCore",
-            dependencies: [],
-            resources: [
-                .process("Assets/Fonts"),
-            ]
+            dependencies: ["SATSType"]
         ),
         .testTarget(
             name: "SATSCoreTests",
