@@ -11,7 +11,11 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(name: "SATSType", url: "git@github.com:healthfitnessnordic/SATSType-iOS.git", .branch("main")),
+        .package(
+            name: "SATSType",
+            url: "git@github.com:healthfitnessnordic/SATSType-iOS.git",
+            .upToNextMajor(from: "0.0.1")
+        ),
     ],
     targets: [
         .target(
