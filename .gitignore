@@ -1,5 +1,7 @@
 .swiftpm
 
+*.otf
+
 .DS_Store
 /.build
 /Packages
