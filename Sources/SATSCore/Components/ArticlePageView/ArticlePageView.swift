@@ -42,9 +42,9 @@ public class ArticlePageView: UIView {
     // MARK: - Private
 
     private let roundedCornerRadius: CGFloat = 8
-    private var headerHeight: CGFloat = 56
+    private let headerHeight: CGFloat = 56
+    private let imageHeight: CGFloat = 230
     private var hasImage: Bool { imageView.image != nil }
-    private var imageHeight: CGFloat { 230 }
     private lazy var imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageHeight)
     private lazy var topBarHeightConstraint = topBar.heightAnchor.constraint(equalToConstant: headerHeight)
 
