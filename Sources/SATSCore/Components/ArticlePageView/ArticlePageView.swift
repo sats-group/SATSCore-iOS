@@ -43,9 +43,10 @@ public class ArticlePageView: UIView {
 
     private let roundedCornerRadius: CGFloat = 8
     private let headerHeight: CGFloat = 56
+    private let imageHeight: CGFloat = 230
     private var hasImage: Bool { imageView.image != nil }
-    private var imageHeight: CGFloat { 230 + safeAreaInsets.top }
     private lazy var imageHeightConstraint = imageView.heightAnchor.constraint(equalToConstant: imageHeight)
+    private lazy var topBarHeightConstraint = topBar.heightAnchor.constraint(equalToConstant: headerHeight)
 
     // MARK: - Views
 
@@ -120,6 +121,17 @@ public class ArticlePageView: UIView {
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
     }
+
+    // Hack to prevent weird initial animation and set topbar height and content offset correctly.
+    public override func safeAreaInsetsDidChange() {
+        super.safeAreaInsetsDidChange()
+
+        topBarHeightConstraint.constant = headerHeight + safeAreaInsets.top
+        if hasImage { scrollView.setContentOffset(.init(x: 0, y: -imageHeight - roundedCornerRadius), animated: false) }
+        UIView.animate(withDuration: 0) {
+            self.layoutIfNeeded()
+        }
+    }
 }
 
 // MARK: - Public methods
@@ -127,7 +139,7 @@ public class ArticlePageView: UIView {
 extension ArticlePageView {
     public func configure(with viewData: ArticlePageViewData) {
         titleLabel.text = viewData.title.uppercased()
-        introductionLabel.text = viewData.introduction
+        introductionLabel.setText(text: viewData.introduction, withLineHeightMultiple: 1.25)
         descriptionLabel.attributedText = viewData.description
 
         topBar.configure(with: viewData.title)
@@ -150,9 +162,8 @@ extension ArticlePageView {
         imageView.image = image
 
         contentStackView.layer.cornerRadius = roundedCornerRadius
-        // here we make space for the content
-        scrollView.contentInset.top = imageHeight - roundedCornerRadius
 
+        scrollView.contentInset.top = imageHeight - roundedCornerRadius
         topBar.set(style: .transparent)
     }
 }
@@ -176,14 +187,14 @@ extension ArticlePageView {
             topBar,
         ].forEach(addSubview(_:))
 
-        scrollView.pin(to: safeAreaLayoutGuide)
+        scrollView.pinToSuperview()
         contentStackView.pin(to: scrollView)
 
         NSLayoutConstraint.activate([
             topBar.topAnchor.constraint(equalTo: topAnchor),
             topBar.leadingAnchor.constraint(equalTo: leadingAnchor),
             topBar.trailingAnchor.constraint(equalTo: trailingAnchor),
-            topBar.heightAnchor.constraint(greaterThanOrEqualToConstant: headerHeight),
+            topBarHeightConstraint,
 
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),

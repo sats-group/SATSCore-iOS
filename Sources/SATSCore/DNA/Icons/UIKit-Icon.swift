@@ -2,6 +2,7 @@ import UIKit
 
 extension UIImage {
     static var back: UIImage { icon(.back) }
+    static var backFloating: UIImage { icon(.backFloating) }
     static var close: UIImage { icon(.close) }
     static var closeFloating: UIImage { icon(.closeFloating) }
     static var linkExternal: UIImage { icon(.linkExternal) }

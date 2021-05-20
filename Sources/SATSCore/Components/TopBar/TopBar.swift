@@ -106,6 +106,11 @@ extension TopBar {
         updateLayout()
     }
 
+    public func removeButtons() {
+        let buttons = leftButtonWrapper.arrangedSubviews + rightButtonWrapper.arrangedSubviews
+        buttons.forEach { $0.removeFromSuperview() }
+    }
+
     public func hideTitle(animated: Bool = false) {
         let frameHeight = frame.height
         if titleLayoutConstraint.constant == frameHeight { return }
