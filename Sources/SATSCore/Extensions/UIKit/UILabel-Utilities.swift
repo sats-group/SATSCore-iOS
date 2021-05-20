@@ -7,7 +7,7 @@ extension UILabel {
         style.lineHeightMultiple = lineHeight
         let attributeString = NSMutableAttributedString(
             string: text,
-            attributes: [NSAttributedString.Key.paragraphStyle: style]
+            attributes: [.paragraphStyle: style]
         )
         self.attributedText = attributeString
     }

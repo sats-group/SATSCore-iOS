@@ -122,6 +122,7 @@ public class ArticlePageView: UIView {
         fatalError("Not implemented")
     }
 
+    // Hack to prevent weird initial animation and set topbar height and content offset correctly.
     public override func safeAreaInsetsDidChange() {
         super.safeAreaInsetsDidChange()
 
