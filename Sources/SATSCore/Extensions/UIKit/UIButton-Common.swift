@@ -9,6 +9,10 @@ public extension UIButton {
         iconButton(icon: .close, onTap: action)
     }
 
+    static func backFloatingButton(onTap action: (() -> Void)? = nil) -> UIButton {
+        iconButton(icon: .backFloating, onTap: action)
+    }
+
     static func closeFloatingButton(onTap action: (() -> Void)? = nil) -> UIButton {
         iconButton(icon: .closeFloating, onTap: action)
     }
