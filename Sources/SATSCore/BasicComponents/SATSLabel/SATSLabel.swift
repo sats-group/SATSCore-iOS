@@ -18,6 +18,7 @@ public class SATSLabel: UILabel {
         self.font = SATSFont.font(style: style, weight: weight)
         self.textColor = .onBackgroundPrimary
         self.translatesAutoresizingMaskIntoConstraints = !withAutoLayout
+        self.adjustsFontForContentSizeCategory = true
     }
 
     public required init?(coder: NSCoder) {
