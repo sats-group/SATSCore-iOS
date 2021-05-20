@@ -11,6 +11,7 @@ public class SATSButton: UIButton {
         super.init(frame: .zero)
 
         self.translatesAutoresizingMaskIntoConstraints = !withAutoLayout
+        self.titleLabel?.adjustsFontForContentSizeCategory = true
         setup()
     }
 
