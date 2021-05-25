@@ -84,7 +84,7 @@ public class SATSButton: UIButton {
     private func updateSize() {
         contentEdgeInsets = size.adjustContentInsets(with: contentSpacing)
         imageEdgeInsets = size.imageEdgeInsets
-        titleEdgeInsets = UIEdgeInsets(top: 0, left: contentSpacing, bottom: 0, right: -contentSpacing)
+        titleEdgeInsets = UIEdgeInsets(vertical: 0, horizontal: contentSpacing)
 
         setContentHuggingPriority(size.contentHuggingPriority, for: .horizontal)
         setContentHuggingPriority(size.contentHuggingPriority, for: .vertical)
