@@ -36,6 +36,9 @@ enum ColorName: String, CaseIterable {
     case onSecondary
     case onSecondaryDisabled
 
+    case onClean
+    case onCleanDisabled
+
     case onCta
     case onCtaDisabled
 

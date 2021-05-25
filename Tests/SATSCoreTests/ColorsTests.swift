@@ -51,6 +51,8 @@ class ColorsTests: XCTestCase {
             .onPrimaryDisabled,
             .onSecondary,
             .onSecondaryDisabled,
+            .onClean,
+            .onCleanDisabled,
             .onCta,
             .onCtaDisabled,
             .onNonText,
