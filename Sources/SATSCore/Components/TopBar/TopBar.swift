@@ -68,12 +68,6 @@ public class TopBar: UIView {
         return label
     }()
 
-    private lazy var verticalWrapperStackView: UIStackView = {
-        let stackView = UIStackView(withAutoLayout: true)
-        stackView.axis = .vertical
-        return stackView
-    }()
-
     private lazy var borderView = UIView(withAutoLayout: true)
 
     // MARK: - Initializers
@@ -158,12 +152,10 @@ extension TopBar {
     private func setup() {
         clipsToBounds = true
 
-        addSubview(verticalWrapperStackView)
-
         [
             horizontalWrapperView,
             borderView,
-        ].forEach(verticalWrapperStackView.addArrangedSubview(_:))
+        ].forEach(addSubview(_:))
 
         [
             leftButtonWrapper,
@@ -171,7 +163,7 @@ extension TopBar {
             rightButtonWrapper,
         ].forEach(horizontalWrapperView.addSubview(_:))
 
-        verticalWrapperStackView.pin(to: self)
+        horizontalWrapperView.pinToSuperview()
 
         NSLayoutConstraint.activate([
             leftButtonWrapper.leadingAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.leadingAnchor),
@@ -189,6 +181,9 @@ extension TopBar {
             rightButtonWrapper.topAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.topAnchor),
             rightButtonWrapper.bottomAnchor.constraint(equalTo: horizontalWrapperView.layoutMarginsGuide.bottomAnchor),
 
+            borderView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            borderView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            borderView.bottomAnchor.constraint(equalTo: bottomAnchor),
             borderView.heightAnchor.constraint(equalToConstant: 1),
         ])
     }
