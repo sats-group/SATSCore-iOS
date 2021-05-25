@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SATSType",
+        "repositoryURL": "git@github.com:healthfitnessnordic/SATSType-iOS.git",
+        "state": {
+          "branch": null,
+          "revision": "0a8f4d295169febbce9b99485589b03314b4bb15",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
