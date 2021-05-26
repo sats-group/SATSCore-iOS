@@ -49,6 +49,9 @@ public extension UIColor {
     static var onSecondary: UIColor { color(.onSecondary) }
     static var onSecondaryDisabled: UIColor { color(.onSecondaryDisabled) }
 
+    static var onClean: UIColor { color(.onClean) }
+    static var onCleanDisabled: UIColor { color(.onCleanDisabled) }
+
     static var onCta: UIColor { color(.onCta) }
     static var onCtaDisabled: UIColor { color(.onCtaDisabled) }
 

@@ -52,6 +52,9 @@ public extension Color {
     static var onSecondary: Color { color(.onSecondary) }
     static var onSecondaryDisabled: Color { color(.onSecondaryDisabled) }
 
+    static var onClean: Color { color(.onClean) }
+    static var onCleanDisabled: Color { color(.onCleanDisabled) }
+
     static var onCta: Color { color(.onCta) }
     static var onCtaDisabled: Color { color(.onCtaDisabled) }
 
