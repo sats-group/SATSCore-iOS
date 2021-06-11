@@ -443,6 +443,7 @@
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
 				9B7A4D5325D2ADA30086EA4F /* ClassSampleView.swift in Sources */,
+				9B57208F26738E0B00D12109 /* ScrollReaderDemoView.swift in Sources */,
 				9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */,
 				9B7A4D5725D2B03D0086EA4F /* HeaderView.swift in Sources */,
 			);
