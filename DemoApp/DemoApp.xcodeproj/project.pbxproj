@@ -172,6 +172,7 @@
 			children = (
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
+				9B57209026738EE200D12109 /* SATSButtonSwftUIDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -430,6 +431,7 @@
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
+				9B57209126738EE200D12109 /* SATSButtonSwftUIDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */,
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
