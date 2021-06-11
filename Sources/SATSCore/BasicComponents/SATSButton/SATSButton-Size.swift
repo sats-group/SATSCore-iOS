@@ -3,9 +3,19 @@ import UIKit
 public extension SATSButton {
     /// Specifies a resizing behaviour of the button
     struct Size {
-        let contentEdgeInsets: UIEdgeInsets
-        let imageEdgeInsets: UIEdgeInsets
-        let contentHuggingPriority: UILayoutPriority
+        public let contentEdgeInsets: UIEdgeInsets
+        public let imageEdgeInsets: UIEdgeInsets
+        public let contentHuggingPriority: UILayoutPriority
+
+        public init(
+            contentEdgeInsets: UIEdgeInsets,
+            imageEdgeInsets: UIEdgeInsets,
+            contentHuggingPriority: UILayoutPriority
+        ) {
+            self.contentEdgeInsets = contentEdgeInsets
+            self.imageEdgeInsets = imageEdgeInsets
+            self.contentHuggingPriority = contentHuggingPriority
+        }
 
         func adjustContentInsets(with contentSpacing: CGFloat) -> UIEdgeInsets {
             UIEdgeInsets(
