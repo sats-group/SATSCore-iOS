@@ -28,9 +28,12 @@ struct ContentView: View {
                     NavigationLink("GradientView", destination: GradientDemoView())
                     NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
                     NavigationLink("LoadingView", destination: LoadingDemoView())
-                    NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
-                    NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
-                    NavigationLink("TopBar", destination: TopBarDemoView())
+
+                    Group {
+                        NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
+                        NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
+                        NavigationLink("TopBar", destination: TopBarDemoView())
+                    }
                 }
 
                 Section(header: Text("SwiftUI Demo")) {
