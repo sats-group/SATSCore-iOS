@@ -2,7 +2,7 @@ import UIKit
 
 public extension SATSButton {
     /// Specifies a resizing behaviour of the button
-    struct Size {
+    struct Size: Equatable {
         public let contentEdgeInsets: UIEdgeInsets
         public let imageEdgeInsets: UIEdgeInsets
         public let contentHuggingPriority: UILayoutPriority
@@ -25,6 +25,14 @@ public extension SATSButton {
                 right: contentEdgeInsets.right + contentSpacing
             )
         }
+    }
+}
+
+extension SATSButton.Size: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(contentEdgeInsets.left)
+        hasher.combine(imageEdgeInsets.left)
+        hasher.combine(contentHuggingPriority.rawValue)
     }
 }
 
