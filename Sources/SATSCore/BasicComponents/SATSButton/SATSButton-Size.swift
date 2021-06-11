@@ -36,6 +36,17 @@ extension SATSButton.Size: Hashable {
     }
 }
 
+// MARK: - SwiftUI adjustments
+extension SATSButton.Size {
+    var verticalPadding: CGFloat { contentEdgeInsets.top }
+    var horizontalPadding: CGFloat { contentEdgeInsets.left }
+
+    // Temporary solution
+    var cornerRadius: CGFloat {
+        self == .large ? 32 : 24
+    }
+}
+
 // MARK: - Default Sizes
 
 public extension SATSButton.Size {
