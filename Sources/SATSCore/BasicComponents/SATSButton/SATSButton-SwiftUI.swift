@@ -33,8 +33,10 @@ public extension View {
     func makeBody(configuration: Configuration) -> some View {
         Group {
             if isLoading {
-                ProgressView()
-                    .accentColor(textColor(for: configuration))
+                SimpleRepresentable<RoundLoadingView> { loadingView in
+                    loadingView.startAnimating()
+                }
+                .frame(width: 20, height: 20, alignment: .center)
             } else {
                 configuration
                     .label
