@@ -34,6 +34,7 @@
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
 		9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */; };
 		9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */; };
+		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
 		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
 		9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineNoticeDemoView.swift; sourceTree = "<group>"; };
 		9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineDemoView.swift; sourceTree = "<group>"; };
+		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		9B2BFBFD25B7250B00383193 /* BasicComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */,
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
 			);
@@ -418,6 +421,7 @@
 				9B9D6D94261EF70500450E67 /* GradientDemoView.swift in Sources */,
 				9B7A4D5225D2ADA30086EA4F /* SampleTopStoriesView.swift in Sources */,
 				9B4083BE261DE66D00A3A718 /* ExternalUrlDemoView.swift in Sources */,
+				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
 				9B4083BD261DE66D00A3A718 /* TopBarDemoView.swift in Sources */,
 				9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */,

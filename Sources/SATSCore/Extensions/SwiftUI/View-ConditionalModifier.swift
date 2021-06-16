@@ -1,0 +1,31 @@
+import SwiftUI
+
+@available(iOS 13.0, *)
+public extension View {
+    /// Applies the given transform if the given condition evaluates to `true`.
+    ///
+    /// Taken from: https://www.avanderlee.com/swiftui/conditional-view-modifier/
+    ///
+    /// Example:
+    /// ```
+    /// Button("Sample Button", action: {})
+    ///   .if(shouldStretch, transform: { button in
+    ///     button.frame(maxWidth: .infinity, alignment: .center)
+    ///   })
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - condition: The condition to evaluate.
+    ///   - transform: The transform to apply to the source `View`.
+    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
+    @ViewBuilder func `if`<Content: View>(
+        _ condition: @autoclosure () -> Bool,
+        transform: (Self) -> Content
+    ) -> some View {
+        if condition() {
+            transform(self)
+        } else {
+            self
+        }
+    }
+}

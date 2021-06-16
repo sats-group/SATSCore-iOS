@@ -2,10 +2,20 @@ import UIKit
 
 public extension SATSButton {
     /// Specifies a resizing behaviour of the button
-    struct Size {
-        let contentEdgeInsets: UIEdgeInsets
-        let imageEdgeInsets: UIEdgeInsets
-        let contentHuggingPriority: UILayoutPriority
+    struct Size: Equatable {
+        public let contentEdgeInsets: UIEdgeInsets
+        public let imageEdgeInsets: UIEdgeInsets
+        public let contentHuggingPriority: UILayoutPriority
+
+        public init(
+            contentEdgeInsets: UIEdgeInsets,
+            imageEdgeInsets: UIEdgeInsets,
+            contentHuggingPriority: UILayoutPriority
+        ) {
+            self.contentEdgeInsets = contentEdgeInsets
+            self.imageEdgeInsets = imageEdgeInsets
+            self.contentHuggingPriority = contentHuggingPriority
+        }
 
         func adjustContentInsets(with contentSpacing: CGFloat) -> UIEdgeInsets {
             UIEdgeInsets(
@@ -15,6 +25,25 @@ public extension SATSButton {
                 right: contentEdgeInsets.right + contentSpacing
             )
         }
+    }
+}
+
+extension SATSButton.Size: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(contentEdgeInsets.left)
+        hasher.combine(imageEdgeInsets.left)
+        hasher.combine(contentHuggingPriority.rawValue)
+    }
+}
+
+// MARK: - SwiftUI adjustments
+extension SATSButton.Size {
+    var verticalPadding: CGFloat { contentEdgeInsets.top }
+    var horizontalPadding: CGFloat { contentEdgeInsets.left }
+
+    // Temporary solution
+    var cornerRadius: CGFloat {
+        self == .large ? 32 : 24
     }
 }
 
