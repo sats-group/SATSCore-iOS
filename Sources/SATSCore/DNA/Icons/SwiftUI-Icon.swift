@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 13.0, *)
 extension Image {
     static var back: Image { icon(.back) }
     static var close: Image { icon(.close) }

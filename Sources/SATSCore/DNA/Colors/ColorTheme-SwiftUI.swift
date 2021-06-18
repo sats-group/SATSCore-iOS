@@ -6,7 +6,6 @@ public struct ColorThemeEnvironmentKey: EnvironmentKey {
     public static let defaultValue: ColorTheme = ColorTheme.current
 }
 
-@available(iOS 13.0, *)
 public extension EnvironmentValues {
     var colorTheme: ColorTheme {
         get { return self[ColorThemeEnvironmentKey] }
