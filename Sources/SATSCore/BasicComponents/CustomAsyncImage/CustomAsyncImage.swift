@@ -21,15 +21,16 @@ import SwiftUI
  }
  ```
  */
-@available(iOS 14.0, *) public struct CustomAsyncImage<Output: View>: View {
-    @StateObject var viewModel: ImageViewModel
+public struct CustomAsyncImage<Output: View>: View {
+    @ObservedObject var viewModel: ImageViewModel
     let transform: ((Image) -> Output)?
 
+    /// 
     /// - Parameters:
     ///   - state: the initial state for the async image
     ///   - transform: a closure that will be used to add modifiers to the view
     public init(_ state: ImageViewData, transform: ((Image) -> Output)? = nil) {
-        self._viewModel = StateObject(wrappedValue: ImageViewModel(state: state))
+        self._viewModel = ObservedObject(wrappedValue: ImageViewModel(state: state))
         self.transform = transform
     }
 
@@ -42,7 +43,7 @@ import SwiftUI
                 .onAppear(perform: viewModel.loadImage)
         case .loading:
             placeholder
-                .overlay(ProgressView())
+                .overlay(progressView)
         case let .image(image):
             if let transform = transform {
                 transform(image)
@@ -56,9 +57,20 @@ import SwiftUI
         Rectangle()
             .foregroundColor(.shimmer)
     }
+
+    var progressView: some View {
+        Group {
+            if #available(iOS 14, *) {
+                ProgressView()
+            } else {
+                SimpleRepresentable<RoundLoadingView> { view in
+                    view.startAnimating()
+                }
+            }
+        }
+    }
 }
 
-@available(iOS 14.0, *)
 public extension CustomAsyncImage where Output == Image {
     init(_ state: ImageViewData) {
         self.init(state, transform: nil)
