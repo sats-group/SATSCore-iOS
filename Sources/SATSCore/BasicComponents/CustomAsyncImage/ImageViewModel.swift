@@ -15,11 +15,13 @@ class ImageViewModel: ObservableObject {
 
         state = .loading
         imageClient.loadImage(with: imageUrl) { [weak self] result in
-            switch result {
-            case let .success(image):
-                self?.state = .image(image)
-            case .failure:
-                self?.state = .empty
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(image):
+                    self?.state = .image(image)
+                case .failure:
+                    self?.state = .empty
+                }
             }
         }
     }
