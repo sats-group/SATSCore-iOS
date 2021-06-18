@@ -17,7 +17,7 @@ import SwiftUI
     }
     ```
 */
-@available(iOS 13.0, *) public struct SimpleRepresentable<View: UIView>: UIViewRepresentable {
+public struct SimpleRepresentable<View: UIView>: UIViewRepresentable {
     let onCreation: (View) -> Void
 
     public init(onCreation: @escaping (View) -> Void) {

@@ -9,11 +9,7 @@ public class LoadingView: UIView {
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(withAutoLayout: true)
-        if #available(iOS 13.0, *) {
-            activityIndicator.style = .medium
-        } else {
-            activityIndicator.style = .gray
-        }
+        activityIndicator.style = .medium
         return activityIndicator
     }()
 
