@@ -66,6 +66,7 @@ public struct CustomAsyncImage<Output: View>: View {
                 SimpleRepresentable<RoundLoadingView> { view in
                     view.startAnimating()
                 }
+                .frame(width: 16, height: 16)
             }
         }
     }
