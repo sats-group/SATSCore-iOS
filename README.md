@@ -15,8 +15,10 @@ import SATSCore
 In `AppDelegate` you should call
 
 ```swift
-SATSFont.registerCustomFonts()
+Config.setup()
 ```
+
+This will register the custom fonts and can be used to customize library options.
 
 ### UIKit
 

@@ -4,7 +4,7 @@ import SwiftUI
 @main
 struct DemoAppApp: App {
     init() {
-        SATSFont.registerCustomFonts()
+        Config.setup()
     }
 
     var body: some Scene {
