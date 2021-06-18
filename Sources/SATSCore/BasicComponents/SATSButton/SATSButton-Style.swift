@@ -12,6 +12,22 @@ public extension SATSButton {
         public let backgroundColorHighlighted: UIColor
         public let backgroundColorDisabled: UIColor
 
+        public init(
+            name: String,
+            titleColor: UIColor,
+            titleColorDisabled: UIColor,
+            backgroundColor: UIColor,
+            backgroundColorHighlighted: UIColor,
+            backgroundColorDisabled: UIColor
+        ) {
+            self.name = name
+            self.titleColor = titleColor
+            self.titleColorDisabled = titleColorDisabled
+            self.backgroundColor = backgroundColor
+            self.backgroundColorHighlighted = backgroundColorHighlighted
+            self.backgroundColorDisabled = backgroundColorDisabled
+        }
+
         func backgroundColor(forState state: UIControl.State) -> UIColor {
             switch state {
             case .highlighted:
