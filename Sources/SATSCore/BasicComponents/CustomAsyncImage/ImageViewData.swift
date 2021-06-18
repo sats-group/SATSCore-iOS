@@ -16,7 +16,7 @@ import SwiftUI
  */
 public enum ImageViewData: Equatable {
     case empty
-    case remote(url: URL) // what about optionality?
+    case remote(url: URL)
     case loading
     case image(_ image: Image)
 
