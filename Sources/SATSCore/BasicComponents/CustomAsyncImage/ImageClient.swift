@@ -43,7 +43,7 @@ class DefaultImageClient: ImageClient {
 
         var errorDescription: String? {
             switch self {
-            case .decodeError: return "We got the image data but coudn't convert it to a proper image"
+            case .decodeError: return "We got the image data but couldn't convert it to a proper image"
             case .noData: return "We didn't receive any data, but no error"
             }
         }
