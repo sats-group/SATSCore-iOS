@@ -21,6 +21,21 @@ struct CustomAsyncDemoView: View {
                     .background(Color.red)
             }
             .background(Color.blue)
+            /*
+             For demo purposes this is important.
+
+             `CustomAsyncImage` will create an ImageViewModel and that instance
+             will live as long CustomAsyncImage is "alive".
+             Meaning that even the Initializer of the CustomAsyncImage will be
+             called multiple times, the end result will still be the same image,
+             even though the values passed are different.
+
+             This is a good thing when using the component, but, when demo-ing,
+             we want to dispose irrelevant values of `CustomAsyncImage`, which
+             we can achieve by tying the `id` of this view to the `imageViewData`.
+             Then `imageViewData` changes we get a fresh copy of `CustomAsyncImage`
+             */
+            .id(imageViewData)
 
             Spacer()
         }
