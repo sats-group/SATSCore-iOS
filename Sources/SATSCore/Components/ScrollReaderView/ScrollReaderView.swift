@@ -9,7 +9,7 @@ then we use that binding to communicate up the scroll value so the
 
  Original solution found in: https://developer.apple.com/forums/thread/650312
  */
-@available(iOS 13.0, *) public struct ScrollReaderView<Content: View>: View {
+public struct ScrollReaderView<Content: View>: View {
     let content: Content
     let showsIndicators: Bool
     @Binding var scrollValue: CGFloat
@@ -48,7 +48,7 @@ then we use that binding to communicate up the scroll value so the
     }
 }
 
-@available(iOS 13.0, *) private struct ScrollViewOffsetPreferenceKey: PreferenceKey {
+private struct ScrollViewOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGFloat = 0
 
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {

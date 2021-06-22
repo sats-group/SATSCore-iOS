@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Score indicator
 /// used to show for example "Strength" level in Gx classes
-@available(iOS 13.0, *) public struct ScoreView: View {
+public struct ScoreView: View {
     let title: String
     let score: Int
 
