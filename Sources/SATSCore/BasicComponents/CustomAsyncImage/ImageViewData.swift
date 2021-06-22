@@ -20,29 +20,29 @@ public enum ImageViewData: Equatable {
     case loading
     case image(_ image: Image)
 
-    var url: URL? {
+    public var url: URL? {
         guard case let .remote(url) = self else { return nil }
         return url
     }
 
-    var image: Image? {
+    public var image: Image? {
         guard case let .image(image) = self else { return nil }
         return image
+    }
+
+    public var description: String {
+        switch self {
+        case .empty: return "empty"
+        case .image: return "image(_)"
+        case let .remote(url): return "remote(url: \(url))"
+        case .loading: return "loading"
+        }
     }
 }
 
 extension ImageViewData: Hashable {
-    var hashDescription: String {
-        switch self {
-        case .empty: return "empty"
-        case .image: return "image"
-        case .remote: return "remote"
-        case .loading: return "loading"
-        }
-    }
-
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(hashDescription)
+        hasher.combine(description)
         hasher.combine(url)
     }
 }
