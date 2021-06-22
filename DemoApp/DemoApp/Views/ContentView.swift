@@ -33,6 +33,7 @@ struct ContentView: View {
                         NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
                         NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
+                        NavigationLink("ScrollReaderView", destination: ScrollReaderDemoView())
                         NavigationLink("TopBar", destination: TopBarDemoView())
                     }
                 }
