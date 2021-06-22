@@ -29,6 +29,7 @@
 		9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */; };
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
 		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
+		9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */; };
 		9B9D6D94261EF70500450E67 /* GradientDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D6D93261EF70500450E67 /* GradientDemoView.swift */; };
 		9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
@@ -63,6 +64,7 @@
 		9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSLabelDemoView.swift; sourceTree = "<group>"; };
 		9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWrapperView.swift; sourceTree = "<group>"; };
 		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
+		9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImageDemoView.swift; sourceTree = "<group>"; };
 		9B9D6D93261EF70500450E67 /* GradientDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDemoView.swift; sourceTree = "<group>"; };
 		9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDemoView.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */,
 				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
+				9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				9B4083BE261DE66D00A3A718 /* ExternalUrlDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
+				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B4083BD261DE66D00A3A718 /* TopBarDemoView.swift in Sources */,
 				9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */,
 				9B7A4D6125D2B9C30086EA4F /* TreatmentsDemoView.swift in Sources */,

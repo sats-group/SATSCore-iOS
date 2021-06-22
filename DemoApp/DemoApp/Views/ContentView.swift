@@ -17,6 +17,7 @@ struct ContentView: View {
 
                 Section(header: Text("SwiftUI Basics")) {
                     NavigationLink("Button Styles", destination: SATSButtonSwftUIDemoView())
+                    NavigationLink("Custom Async Image", destination: CustomAsyncDemoView())
                 }
 
                 Section(header: Text("Components")) {
