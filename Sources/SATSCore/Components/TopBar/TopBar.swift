@@ -5,6 +5,13 @@ public struct TopBarStyle: Equatable {
     let borderColor: UIColor
     let backgroundColor: UIColor
     let textColor: UIColor
+
+    public init(tintColor: UIColor, borderColor: UIColor, backgroundColor: UIColor, textColor: UIColor) {
+        self.tintColor = tintColor
+        self.borderColor = borderColor
+        self.backgroundColor = backgroundColor
+        self.textColor = textColor
+    }
 }
 
 public extension TopBarStyle {
