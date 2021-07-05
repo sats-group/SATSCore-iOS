@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 14.0, *)
 public extension View {
 
     /// Convenience to apply SATSButton styles to SwiftUI buttons
@@ -18,7 +17,7 @@ public extension View {
 /// Internal implementation of `SATSButton` for SwiftUI,
 /// It takes the same parametes as the UIKit implementation
 /// and interprets them in a SwiftUI context
-@available(iOS 14.0, *) private struct SATSButtonSwiftUIStyle: ButtonStyle {
+private struct SATSButtonSwiftUIStyle: ButtonStyle {
     let style: SATSButton.Style
     let size: SATSButton.Size
     let isLoading: Bool
@@ -38,10 +37,16 @@ public extension View {
                 }
                 .frame(width: 20, height: 20, alignment: .center)
             } else {
-                configuration
-                    .label
-                    .satsFont(.button, weight: .medium)
-                    .textCase(.uppercase)
+                if #available(iOS 14.0, *) {
+                    configuration
+                        .label
+                        .satsFont(.button, weight: .medium)
+                        .textCase(.uppercase)
+                } else {
+                    configuration
+                        .label
+                        .satsFont(.button, weight: .medium)
+                }
             }
         }
         .padding(.vertical, size.verticalPadding)
