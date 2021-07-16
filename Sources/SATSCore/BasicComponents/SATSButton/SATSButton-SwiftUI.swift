@@ -43,7 +43,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
         })
         .background(backgroundColor(for: configuration))
         .foregroundColor(textColor(for: configuration))
-        .cornerRadius(size.cornerRadius)
+        .clipShape(Capsule())
     }
 
     // MARK: Subviews
