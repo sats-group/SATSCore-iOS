@@ -40,11 +40,6 @@ extension SATSButton.Size: Hashable {
 extension SATSButton.Size {
     var verticalPadding: CGFloat { contentEdgeInsets.top }
     var horizontalPadding: CGFloat { contentEdgeInsets.left }
-
-    // Temporary solution
-    var cornerRadius: CGFloat {
-        self == .large ? 32 : 24
-    }
 }
 
 // MARK: - Default Sizes
@@ -52,7 +47,7 @@ extension SATSButton.Size {
 public extension SATSButton.Size {
     /// Tall primary button, can grow horizontally.
     static let large = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(all: 20),
+        contentEdgeInsets: UIEdgeInsets(all: 16),
         imageEdgeInsets: .zero,
         contentHuggingPriority: .defaultLow
     )
