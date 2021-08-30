@@ -10,7 +10,7 @@ struct TabSelectionDemoView: View {
                 selectedValue: $value,
                 options: ["Group class", "PT Session", "Treatments"]
             )
-                .background(Color.white)
+                .background(Color.backgroundSecondary)
             Spacer()
         }
         .background(Color.backgroundPrimary)
@@ -20,6 +20,11 @@ struct TabSelectionDemoView: View {
 
 struct TabSelectionDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        TabSelectionDemoView()
+        Group {
+            TabSelectionDemoView()
+
+            TabSelectionDemoView()
+                .colorScheme(.dark)
+        }
     }
 }
