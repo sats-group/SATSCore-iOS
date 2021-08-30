@@ -40,6 +40,7 @@
 		9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */; };
 		9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */; };
 		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
+		9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */; };
 		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineDemoView.swift; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
 		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
+		9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSelectionDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -361,6 +363,7 @@
 				2865CF58261EDB9A00D6433F /* RoundLoadingView */,
 				9B57208A26738BD600D12109 /* ScoreView */,
 				9BF417162681D25B00E708FD /* ScrollReaderView */,
+				9BFBDEF526DCC93C0066F1C8 /* TabSelectionView */,
 				9B4083B7261DE66D00A3A718 /* TopBarView */,
 			);
 			path = Components;
@@ -389,6 +392,15 @@
 			);
 			path = ScrollReaderView;
 			sourceTree = "<group>";
+		};
+		9BFBDEF526DCC93C0066F1C8 /* TabSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */,
+			);
+			name = TabSelectionView;
+			path = DemoApp/Views/Components/TabSelectionView;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -525,6 +537,7 @@
 				9B4083BE261DE66D00A3A718 /* ExternalUrlDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
+				9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B4083BD261DE66D00A3A718 /* TopBarDemoView.swift in Sources */,
 				9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */,
