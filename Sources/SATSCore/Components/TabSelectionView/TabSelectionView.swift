@@ -53,7 +53,7 @@ public struct TabSelectionView: View {
 
     private func selectValue(_ value: Int) -> () -> Void {
         return {
-            withAnimation { selectedValue = selectedValue }
+            withAnimation { selectedValue = value }
         }
     }
 }
