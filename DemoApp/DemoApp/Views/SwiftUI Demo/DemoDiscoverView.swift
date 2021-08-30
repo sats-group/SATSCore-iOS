@@ -41,25 +41,25 @@ struct MainContainerView: View {
         TabView {
             DemoDiscoverView()
                 .tabItem {
-                    Image("tab-home")
+                    Image(.tabHomeOff)
                     Text("Home")
                 }
 
             Color.backgroundPrimary
                 .tabItem {
-                    Image("tab-book")
+                    Image(.tabBookingOff)
                     Text("Book")
                 }
 
             Color.backgroundPrimary
                 .tabItem {
-                    Image("tab-online")
+                    Image(.tabTrainingOff)
                     Text("SATS anywhere")
                 }
 
             Color.backgroundPrimary
                 .tabItem {
-                    Image("tab-profile")
+                    Image(.tabProfileOff)
                     Text("Me")
                 }
         }
