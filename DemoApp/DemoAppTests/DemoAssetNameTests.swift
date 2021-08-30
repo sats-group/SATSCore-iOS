@@ -1,7 +1,7 @@
 import XCTest
 @testable import DemoApp
 
-class DemoAssetNameTests: XCTest {
+class DemoAssetNameTests: XCTestCase {
     func testAllAssetsArePresent() {
         DemoAssetName.allCases.forEach { assetName in
             XCTAssertNotNil(
