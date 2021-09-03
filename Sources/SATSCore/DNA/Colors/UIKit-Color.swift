@@ -13,7 +13,18 @@ public extension UIColor {
     static var secondary: UIColor { color(.secondary) }
     static var secondaryHighlight: UIColor { color(.secondaryHighlight) }
     static var secondaryDisabled: UIColor { color(.secondaryDisabled) }
+
+    // MARK: Clean
+
     static var clean: UIColor { color(.clean) }
+    static var cleanHighlight: UIColor { color(.cleanHighlight) }
+    static var cleanDisabled: UIColor { color(.cleanDisabled) }
+
+    // MARK: Clean Secondary
+
+    static var cleanSecondary: UIColor { color(.cleanSecondary) }
+    static var cleanSecondaryHighlight: UIColor { color(.cleanSecondaryHighlight) }
+    static var cleanSecondaryDisabled: UIColor { color(.cleanSecondaryDisabled) }
 
     // MARK: CTA
 
@@ -54,6 +65,9 @@ public extension UIColor {
 
     static var onClean: UIColor { color(.onClean) }
     static var onCleanDisabled: UIColor { color(.onCleanDisabled) }
+
+    static var onCleanSecondary: UIColor { color(.onCleanSecondary) }
+    static var onCleanSecondaryDisabled: UIColor { color(.onCleanSecondaryDisabled) }
 
     static var onCta: UIColor { color(.onCta) }
     static var onCtaDisabled: UIColor { color(.onCtaDisabled) }
