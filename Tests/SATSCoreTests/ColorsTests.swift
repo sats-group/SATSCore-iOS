@@ -8,7 +8,7 @@ class ColorsTests: XCTestCase {
         XCTAssertEqual(colorConstants().count, ColorName.allCases.count)
     }
 
-    func testColorResolutionWhenChaingTheme() {
+    func testColorResolutionWhenChangingTheme() {
         let initialValue = UIColor.primary.hexString ?? ""
 
         ColorTheme.current = .platinum
@@ -44,6 +44,9 @@ class ColorsTests: XCTestCase {
             .signalError,
 
             .border,
+            .graphicalElements1,
+            .graphicalElements2,
+            .graphicalElements3,
             .shimmer,
             .tabs,
 
