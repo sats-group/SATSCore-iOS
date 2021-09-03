@@ -39,6 +39,9 @@ public extension UIColor {
     static var border: UIColor { color(.border) }
     static var shimmer: UIColor { color(.shimmer) }
     static var tabs: UIColor { color(.tabs) }
+    static var graphicalElements1: UIColor { color(.graphicalElements1) }
+    static var graphicalElements2: UIColor { color(.graphicalElements2) }
+    static var graphicalElements3: UIColor { color(.graphicalElements3) }
 
     // MARK: "On" colors
     // used in text and icons "on" top of another color

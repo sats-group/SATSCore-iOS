@@ -41,6 +41,9 @@ public extension Color {
     static var border: Color { color(.border) }
     static var shimmer: Color { color(.shimmer) }
     static var tabs: Color { color(.tabs) }
+    static var graphicalElements1: Color { color(.graphicalElements1) }
+    static var graphicalElements2: Color { color(.graphicalElements2) }
+    static var graphicalElements3: Color { color(.graphicalElements3) }
 
     // MARK: "On" colors
     // used in text and icons "on" top of another color

@@ -27,6 +27,9 @@ enum ColorName: String, CaseIterable {
     case border
     case shimmer
     case tabs
+    case graphicalElements1
+    case graphicalElements2
+    case graphicalElements3
 
     // "On" colors
 
