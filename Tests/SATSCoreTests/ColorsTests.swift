@@ -44,11 +44,11 @@ class ColorsTests: XCTestCase {
             .signalError,
 
             .border,
-            .shimmer,
-            .tabs,
             .graphicalElements1,
             .graphicalElements2,
             .graphicalElements3,
+            .shimmer,
+            .tabs,
 
             .onPrimary,
             .onPrimaryDisabled,
