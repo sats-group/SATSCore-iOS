@@ -67,8 +67,17 @@ public extension SATSButton.Style {
         titleColor: .onClean,
         titleColorDisabled: .onCleanDisabled,
         backgroundColor: .clean,
-        backgroundColorHighlighted: .secondaryHighlight,
-        backgroundColorDisabled: .secondaryDisabled
+        backgroundColorHighlighted: .cleanHighlight,
+        backgroundColorDisabled: .cleanDisabled
+    )
+
+    static let cleanSecondary = SATSButton.Style(
+        name: "CleanSecondary",
+        titleColor: .onCleanSecondary,
+        titleColorDisabled: .onCleanSecondaryDisabled,
+        backgroundColor: .cleanSecondary,
+        backgroundColorHighlighted: .cleanSecondaryHighlight,
+        backgroundColorDisabled: .cleanSecondaryDisabled
     )
 
     static let cta = SATSButton.Style(

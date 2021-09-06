@@ -28,7 +28,14 @@ class ColorsTests: XCTestCase {
             .secondary,
             .secondaryHighlight,
             .secondaryDisabled,
+
             .clean,
+            .cleanHighlight,
+            .cleanDisabled,
+
+            .cleanSecondary,
+            .cleanSecondaryHighlight,
+            .cleanSecondaryDisabled,
 
             .cta,
             .ctaHighlight,
@@ -56,6 +63,8 @@ class ColorsTests: XCTestCase {
             .onSecondaryDisabled,
             .onClean,
             .onCleanDisabled,
+            .onCleanSecondary,
+            .onCleanSecondaryDisabled,
             .onCta,
             .onCtaDisabled,
             .onNonText,

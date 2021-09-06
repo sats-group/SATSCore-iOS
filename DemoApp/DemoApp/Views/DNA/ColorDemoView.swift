@@ -43,6 +43,22 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
+            name: "Clean",
+            colors: [
+                ColorDemo(name: "clean", color: .clean),
+                ColorDemo(name: "cleanHighlightgithub", color: .cleanHighlight),
+                ColorDemo(name: "cleanDisabled", color: .cleanDisabled),
+            ]
+        ),
+        ColorSection(
+            name: "Clean Secondary",
+            colors: [
+                ColorDemo(name: "cleanSecondary", color: .cleanSecondary),
+                ColorDemo(name: "cleanSecondaryHighlight", color: .cleanSecondaryHighlight),
+                ColorDemo(name: "cleanSecondaryDisabled", color: .cleanSecondaryDisabled),
+            ]
+        ),
+        ColorSection(
             name: "Background",
             colors: [
                 ColorDemo(name: "backgroundPrimary", color: .backgroundPrimary),
@@ -57,6 +73,10 @@ struct ColorDemoView: View {
                 ColorDemo(name: "onPrimaryDisabled", color: .onPrimaryDisabled),
                 ColorDemo(name: "onSecondary", color: .onSecondary),
                 ColorDemo(name: "onSecondaryDisabled", color: .onSecondaryDisabled),
+                ColorDemo(name: "onClean", color: .onClean),
+                ColorDemo(name: "onCleanDisabled", color: .onCleanDisabled),
+                ColorDemo(name: "onCleanSecondary", color: .onCleanSecondary),
+                ColorDemo(name: "onCleanSecondaryDisabled", color: .onCleanSecondaryDisabled),
                 ColorDemo(name: "onCta", color: .onCta),
                 ColorDemo(name: "onCtaDisabled", color: .onCtaDisabled),
                 ColorDemo(name: "onNonText", color: .onNonText),

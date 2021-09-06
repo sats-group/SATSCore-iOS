@@ -64,6 +64,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     var spinner: some View {
         SimpleRepresentable<RoundLoadingView> { loadingView in
+            loadingView.setLoaderColor(color: style.titleColor)
             loadingView.startAnimating()
         }
         .frame(width: 20, height: 20, alignment: .center)

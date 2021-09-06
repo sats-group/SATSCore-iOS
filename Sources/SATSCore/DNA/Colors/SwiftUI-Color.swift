@@ -15,7 +15,18 @@ public extension Color {
     static var satsSecondary: Color { color(.secondary) }
     static var satsSecondaryHighlight: Color { color(.secondaryHighlight) }
     static var satsSecondaryDisabled: Color { color(.secondaryDisabled) }
+
+    // MARK: Clean
+
     static var clean: Color { color(.clean) }
+    static var cleanHighlight: Color { color(.cleanHighlight) }
+    static var cleanDisabled: Color { color(.cleanDisabled) }
+
+    // MARK: Clean Secondary
+
+    static var cleanSecondary: Color { color(.cleanSecondary) }
+    static var cleanSecondaryHighlight: Color { color(.cleanSecondaryHighlight) }
+    static var cleanSecondaryDisabled: Color { color(.cleanSecondaryDisabled) }
 
     // MARK: CTA
 
@@ -56,6 +67,9 @@ public extension Color {
 
     static var onClean: Color { color(.onClean) }
     static var onCleanDisabled: Color { color(.onCleanDisabled) }
+
+    static var onCleanSecondary: Color { color(.onCleanSecondary) }
+    static var onCleanSecondaryDisabled: Color { color(.onCleanSecondaryDisabled) }
 
     static var onCta: Color { color(.onCta) }
     static var onCtaDisabled: Color { color(.onCtaDisabled) }

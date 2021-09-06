@@ -9,7 +9,14 @@ enum ColorName: String, CaseIterable {
     case secondary
     case secondaryHighlight
     case secondaryDisabled
+
     case clean
+    case cleanHighlight
+    case cleanDisabled
+
+    case cleanSecondary
+    case cleanSecondaryHighlight
+    case cleanSecondaryDisabled
 
     case cta
     case ctaHighlight
@@ -41,6 +48,9 @@ enum ColorName: String, CaseIterable {
 
     case onClean
     case onCleanDisabled
+
+    case onCleanSecondary
+    case onCleanSecondaryDisabled
 
     case onCta
     case onCtaDisabled
