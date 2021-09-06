@@ -29,6 +29,10 @@ public struct IdentifiableList<Element: Identifiable> {
 
     public var content: [Element] { Array(storage.values) }
 
+    public func contains(_ element: Element) -> Bool {
+        self[element.id] != nil
+    }
+
     // MARK: Mutating functions
 
     public mutating func update(with newValue: Element) {
