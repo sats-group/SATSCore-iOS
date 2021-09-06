@@ -28,8 +28,6 @@ struct SATSButtonSwftUIDemoView: View {
                 }
                 .padding(.horizontal)
 
-                Spacer()
-
                 VStack {
                     Button("Primary", action: {})
                         .satsButton(.primary, size: size, isLoading: isLoading)
@@ -39,13 +37,24 @@ struct SATSButtonSwftUIDemoView: View {
                         .satsButton(.secondary, size: size, isLoading: isLoading)
                         .padding()
 
-                    HStack {
-                        Spacer()
+                    VStack(spacing: 20) {
+                        HStack {
+                            Spacer()
 
-                        Button("Clean", action: {})
-                            .satsButton(.clean, size: size, isLoading: isLoading)
+                            Button("Clean", action: {})
+                                .satsButton(.clean, size: size, isLoading: isLoading)
 
-                        Spacer()
+                            Spacer()
+                        }
+
+                        HStack {
+                            Spacer()
+
+                            Button("Clean Secondary", action: {})
+                                .satsButton(.cleanSecondary, size: size, isLoading: isLoading)
+
+                            Spacer()
+                        }
                     }
                     .padding()
                     .background(Color.satsPrimary)
