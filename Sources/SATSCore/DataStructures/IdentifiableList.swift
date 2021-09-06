@@ -35,7 +35,9 @@ public struct IdentifiableList<Element: Identifiable> {
 
     // MARK: Mutating functions
 
+    /// Updates an existing value from the collection
     public mutating func update(with newValue: Element) {
+        guard contains(newValue) else { return }
         self[newValue.id] = newValue
     }
 
