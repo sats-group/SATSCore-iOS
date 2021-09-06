@@ -1,90 +1,101 @@
 import SwiftUI
 
 struct SATSButtonDemoView: View {
+    @State var size: SATSButton.Size = .basic
+    @State var isEnabled: Bool = true
+    @State var isLoading: Bool = false
+
+    var settingDescription: String {
+        let sizeName: String
+        switch size {
+        case .compact: sizeName = "Compact"
+        case .basic: sizeName = "Basic"
+        case .large: sizeName = "Large"
+        default:
+            sizeName = "???"
+        }
+
+        return "\(isEnabled ? "Enabled" : "Disabled") - \(sizeName)"
+    }
+
     var body: some View {
-        ScrollView {
-            VStack(spacing: 32) {
-                VStack {
-                    Text("Large")
-                        .font(.title2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                    demoButton(style: .primary, size: .large)
-
-                    demoButton(style: .secondary, size: .large)
-
-                    demoButton(style: .clean, size: .large)
-
-                    demoButton(style: .cta, size: .large)
-
+        ZStack {
+            VStack {
+                HStack {
+                    Text(settingDescription)
+                        .satsFont(.h3)
+                    Spacer()
                 }
+                .padding(.horizontal)
 
                 VStack {
-                    Text("Basic")
-                        .font(.title2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    demoButton(style: .primary)
+                        .padding()
 
-                    demoButton(style: .primary, size: .basic)
+                    demoButton(style: .secondary)
+                        .padding()
 
-                    demoButton(style: .secondary, size: .basic)
+                    VStack(spacing: 20) {
+                        HStack {
+                            Spacer()
 
-                    demoButton(style: .clean, size: .basic)
+                            demoButton(style: .clean)
 
-                    demoButton(style: .cta, size: .basic)
+                            Spacer()
+                        }
 
-                }
+                        HStack {
+                            Spacer()
 
-                VStack {
-                    Text("Compact")
-                        .font(.title2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                            demoButton(style: .cleanSecondary)
 
-                    demoButton(style: .primary, size: .compact)
+                            Spacer()
+                        }
+                    }
+                    .padding()
+                    .background(Color.satsPrimary)
 
-                    demoButton(style: .secondary, size: .compact)
+                    demoButton(style: .cta)
+                        .padding()
 
-                    demoButton(style: .clean, size: .compact)
-
-                    demoButton(style: .cta, size: .compact)
-                }
-
-                VStack {
-                    Text("Loading")
-                        .font(.title2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-
-                    demoButton(style: .primary, size: .large, shouldLoad: true)
-
-                    demoButton(style: .secondary, size: .large, shouldLoad: true)
-
-                    demoButton(style: .clean, size: .large, shouldLoad: true)
-
-                    demoButton(style: .cta, size: .large, shouldLoad: true)
-
-                    demoButton(style: .primary, size: .basic, shouldLoad: true)
-
-                    demoButton(style: .secondary, size: .basic, shouldLoad: true)
-
-                    demoButton(style: .clean, size: .basic, shouldLoad: true)
-
-                    demoButton(style: .cta, size: .basic, shouldLoad: true)
                 }
 
                 Spacer()
-                    .layoutPriority(1)
             }
-            .padding()
-            .navigationTitle("SATSButton")
+            .background(Color.backgroundPrimary.ignoresSafeArea())
+
+            VStack {
+                Spacer()
+
+                VStack {
+                    Toggle("Enabled", isOn: $isEnabled)
+
+                    Toggle("Loading", isOn: $isLoading)
+
+                    Picker("Size", selection: $size) {
+                        Text("compact").tag(SATSButton.Size.compact)
+                        Text("basic").tag(SATSButton.Size.basic)
+                        Text("large").tag(SATSButton.Size.large)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .padding()
+                .background(Color.backgroundSurface)
+            }
         }
+        .navigationTitle("UIKit Button Styles")
     }
 
-    func demoButton(style: SATSButton.Style, size: SATSButton.Size, shouldLoad: Bool = false) -> some View {
+    func demoButton(style: SATSButton.Style) -> some View {
         let button = SATSButton(style: style, size: size, withAutoLayout: false)
         button.setTitle(style.name, for: .normal)
-        if shouldLoad {
+        button.isEnabled = isEnabled
+        button.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        if isLoading {
             button.startLoader()
         }
         return DemoWrapperView(view: button)
+            .id("button-\(style.name)-\(size.hashValue)-\(isLoading)-\(isEnabled)")
     }
 }
 
