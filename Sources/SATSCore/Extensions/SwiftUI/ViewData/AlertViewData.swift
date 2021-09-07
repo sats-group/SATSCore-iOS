@@ -10,6 +10,20 @@ public struct AlertViewData: Identifiable, Equatable {
     public let actionTitle: String
     public let action: () -> Void
 
+    public init(
+        id: String? = nil,
+        title: String,
+        message: String,
+        actionTitle: String,
+        action: @escaping () -> Void
+    ) {
+        self.id = id ?? UUID().uuidString
+        self.title = title
+        self.message = message
+        self.actionTitle = actionTitle
+        self.action = action
+    }
+
     public static func == (lhs: AlertViewData, rhs: AlertViewData) -> Bool {
         lhs.id == rhs.id &&
             lhs.title == rhs.title &&

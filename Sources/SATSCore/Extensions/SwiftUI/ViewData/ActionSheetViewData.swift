@@ -6,9 +6,21 @@ public struct ActionSheetViewData: Identifiable, Equatable {
     public let message: String?
     public let actions: [ActionViewData]
 
+    public init(id: String? = nil, title: String, message: String?, actions: [ActionViewData]) {
+        self.id = id ?? UUID().uuidString
+        self.title = title
+        self.message = message
+        self.actions = actions
+    }
+
     public struct ActionViewData: Equatable {
         public let title: String
         public let perform: () -> Void
+
+        public init(title: String, perform: @escaping () -> Void) {
+            self.title = title
+            self.perform = perform
+        }
 
         public static func == (lhs: Self, rhs: Self) -> Bool {
             lhs.title == rhs.title
