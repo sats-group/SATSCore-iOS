@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PullToRefreshContainerDemoView: View {
-    @State var isLoading: Bool = false
+    @State private var isLoading: Bool = false
 
     var body: some View {
         GeometryReader { proxy in
