@@ -10,6 +10,7 @@
 		2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
+		9B119AF026E6357C00F05553 /* PullToRefreshContainerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B119AEF26E6357C00F05553 /* PullToRefreshContainerDemoView.swift */; };
 		9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoAppApp.swift */; };
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
+		9B119AEF26E6357C00F05553 /* PullToRefreshContainerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshContainerDemoView.swift; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
 		9B2BFBDB25B719AD00383193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 				9B2BFBD925B719AD00383193 /* DemoAppApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		9B119AEE26E6355C00F05553 /* PullToRefreshContainer */ = {
+			isa = PBXGroup;
+			children = (
+				9B119AEF26E6357C00F05553 /* PullToRefreshContainerDemoView.swift */,
+			);
+			path = PullToRefreshContainer;
 			sourceTree = "<group>";
 		};
 		9B2BFBCD25B719AC00383193 = {
@@ -360,6 +370,7 @@
 				9BCEE85626035CB2001C8692 /* InlineNoticeView */,
 				9BA17B0E26666D2700BDAA9C /* LoadingView */,
 				9BCEE85826035CB2001C8692 /* ProgressLineView */,
+				9B119AEE26E6355C00F05553 /* PullToRefreshContainer */,
 				2865CF58261EDB9A00D6433F /* RoundLoadingView */,
 				9B57208A26738BD600D12109 /* ScoreView */,
 				9BF417162681D25B00E708FD /* ScrollReaderView */,
@@ -538,6 +549,7 @@
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
 				9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */,
+				9B119AF026E6357C00F05553 /* PullToRefreshContainerDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B4083BD261DE66D00A3A718 /* TopBarDemoView.swift in Sources */,
 				9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */,
