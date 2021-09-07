@@ -16,7 +16,7 @@ import SwiftUI
     message: "This was a backport of the modifier for pull to refresh, now you should use the modifiers on list"
 )
 public struct PullToRefreshContainer<Content: View>: View {
-    @State var scrollValue: CGFloat = 0
+    @State private var scrollValue: CGFloat = 0
     let isLoading: Bool
     let onReload: () -> Void
     var content: Content
