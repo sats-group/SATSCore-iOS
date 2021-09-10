@@ -155,8 +155,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "blueGradientStart", color: Color(ColorTheme.blue.backgroundTopStart)),
                 ColorDemo(name: "blueGradientEnd", color: Color(ColorTheme.blue.backgroundTopEnd)),
 
-                ColorDemo(name: "blueNavigationPrimary", color: Color(ColorTheme.blue.navigationPrimary)),
-                ColorDemo(name: "blueNavigationSecondary", color: Color(ColorTheme.blue.navigationSecondary)),
+                ColorDemo(name: "blueNavigation", color: Color(ColorTheme.blue.navigation)),
             ]
         ),
         ColorSection(
@@ -171,8 +170,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "silverGradientStart", color: Color(ColorTheme.silver.backgroundTopStart)),
                 ColorDemo(name: "silverGradientEnd", color: Color(ColorTheme.silver.backgroundTopEnd)),
 
-                ColorDemo(name: "silverNavigationPrimary", color: Color(ColorTheme.silver.navigationPrimary)),
-                ColorDemo(name: "silverNavigationSecondary", color: Color(ColorTheme.silver.navigationSecondary)),
+                ColorDemo(name: "silverNavigation", color: Color(ColorTheme.silver.navigation)),
             ]
         ),
         ColorSection(
@@ -187,8 +185,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "goldGradientStart", color: Color(ColorTheme.gold.backgroundTopStart)),
                 ColorDemo(name: "goldGradientEnd", color: Color(ColorTheme.gold.backgroundTopEnd)),
 
-                ColorDemo(name: "goldNavigationPrimary", color: Color(ColorTheme.gold.navigationPrimary)),
-                ColorDemo(name: "goldNavigationSecondary", color: Color(ColorTheme.gold.navigationSecondary)),
+                ColorDemo(name: "goldNavigation", color: Color(ColorTheme.gold.navigation)),
             ]
         ),
         ColorSection(
@@ -208,8 +205,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "platinumGradientStart", color: Color(ColorTheme.platinum.backgroundTopStart)),
                 ColorDemo(name: "platinumGradientEnd", color: Color(ColorTheme.platinum.backgroundTopEnd)),
 
-                ColorDemo(name: "platinumNavigationPrimary", color: Color(ColorTheme.platinum.navigationPrimary)),
-                ColorDemo(name: "platinumNavigationSecondary", color: Color(ColorTheme.platinum.navigationSecondary)),
+                ColorDemo(name: "platinumNavigation", color: Color(ColorTheme.platinum.navigation)),
             ]
         ),
     ]

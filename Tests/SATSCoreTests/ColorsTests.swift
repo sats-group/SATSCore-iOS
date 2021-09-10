@@ -100,8 +100,7 @@ class ColorsTests: XCTestCase {
             .backgroundTopStart,
             .backgroundTopEnd,
 
-            .navigationPrimary,
-            .navigationSecondary,
+            .navigation,
         ]
     }
 }
