@@ -111,8 +111,7 @@ public extension Color {
     static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
 
-    static var navigationPrimary: Color { themedColor(.navigationPrimary) }
-    static var navigationSecondary: Color { themedColor(.navigationSecondary) }
+    static var navigationPrimary: Color { themedColor(.navigation) }
 
     // MARK: Private
 

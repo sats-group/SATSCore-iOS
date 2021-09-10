@@ -107,8 +107,7 @@ public extension UIColor {
     static var backgroundTopStart: UIColor { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: UIColor { themedColor(.backgroundTopEnd) }
 
-    static var navigationPrimary: UIColor { themedColor(.navigationPrimary) }
-    static var navigationSecondary: UIColor { themedColor(.navigationSecondary) }
+    static var navigation: UIColor { themedColor(.navigation) }
 
     // MARK: Private
 
