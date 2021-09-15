@@ -57,7 +57,6 @@ struct NoticeDemoView: View {
                     Text("Warning").tag(Style.warning)
                     Text("Error").tag(Style.error)
                 }
-                .font(.body.bold())
                 .pickerStyle(MenuPickerStyle())
                 .padding(4)
             }
