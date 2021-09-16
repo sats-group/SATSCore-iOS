@@ -6,7 +6,7 @@ struct NoticeModifier: ViewModifier {
     let edge: Notice.Edge
 
     private let transitionDuration: TimeInterval = 0.2
-    private let autoDismissTime: TimeInterval = 3
+    private let autoDismissTime: TimeInterval = 5
 
     func body(content: Content) -> some View {
         ZStack {
