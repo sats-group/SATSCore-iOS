@@ -33,21 +33,19 @@ public struct Notice {
 
     /// Creates an error notice data struct
     /// - Parameters:
-    ///   - icon: (optional) icon
     ///   - title: required title of the error
     ///   - explanation: (optional) explanation of the error
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func error(
-        icon: Image? = nil,
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: icon,
+            icon: Image(systemName: "xmark.octagon.fill"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -59,21 +57,19 @@ public struct Notice {
 
     /// Creates a warning notice data struct
     /// - Parameters:
-    ///   - icon: (optional) icon
     ///   - title: required title of the warning
     ///   - explanation: (optional) explanation of the warning
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView
     public static func warning(
-        icon: Image? = nil,
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: icon,
+            icon: Image(systemName: "exclamationmark.triangle.fill"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -85,21 +81,19 @@ public struct Notice {
 
     /// Creates a success notice data struct
     /// - Parameters:
-    ///   - icon: (optional) icon
     ///   - title: required title of the notice
     ///   - explanation: (optional) explanation of the notice
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView
     public static func success(
-        icon: Image? = nil,
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: icon,
+            icon: Image(systemName: "checkmark.circle.fill"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
