@@ -14,7 +14,7 @@ let package = Package(
         .package(
             name: "SATSType",
             url: "git@github.com:healthfitnessnordic/SATSType-iOS.git",
-            .upToNextMajor(from: "0.0.1")
+            .upToNextMajor(from: "0.0.2")
         ),
     ],
     targets: [
