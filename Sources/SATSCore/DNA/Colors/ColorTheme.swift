@@ -2,7 +2,7 @@ import UIKit
 
 /// Collection of colors that define a color theme for the app
 public struct ColorTheme: Hashable {
-    public let name: String
+    public let name: Name
 
     public let primary: UIColor
     public let primaryHighlight: UIColor
@@ -32,37 +32,67 @@ public struct ColorTheme: Hashable {
 }
 
 public extension ColorTheme {
+    enum Name: String, Equatable, Hashable, Identifiable, CaseIterable {
+        case blue
+        case silver
+        case gold
+        case platinum
+
+        public var id: String { rawValue }
+
+        public var titleName: String {
+            switch self {
+            case .blue: return "Blue"
+            case .silver: return "Silver"
+            case .gold: return "Gold"
+            case .platinum: return "Platinum"
+            }
+        }
+    }
+}
+
+public extension ColorTheme {
     // MARK: Current theme
 
     static var current: ColorTheme = .blue
 
     // MARK: Theme definitions
 
-    static var blue: ColorTheme { ColorTheme(themeName: "blue") }
-    static var silver: ColorTheme { ColorTheme(themeName: "silver") }
-    static var gold: ColorTheme { ColorTheme(themeName: "gold") }
-    static var platinum: ColorTheme { ColorTheme(themeName: "platinum") }
+    static var blue: ColorTheme { ColorTheme(themeName: .blue) }
+    static var silver: ColorTheme { ColorTheme(themeName: .silver) }
+    static var gold: ColorTheme { ColorTheme(themeName: .gold) }
+    static var platinum: ColorTheme { ColorTheme(themeName: .platinum) }
 
-    // MARK: Private methods
-
-    private init(themeName: String) {
-        self.init(
-            name: themeName,
-            primary: Self.color("\(themeName)Primary"),
-            primaryHighlight: Self.color("\(themeName)PrimaryHighlight"),
-            primaryDisabled: Self.color("\(themeName)PrimaryDisabled"),
-            selection: Self.color("\(themeName)Selection"),
-            backgroundTopStart: Self.color("\(themeName)GradientStart"),
-            backgroundTopEnd: Self.color("\(themeName)GradientEnd"),
-            navigation: Self.color("\(themeName)Navigation")
-        )
-    }
-
-    private static func color(_ name: String) -> UIColor {
-        guard let color = UIColor(named: name, in: .module, compatibleWith: nil) else {
-            preconditionFailure("❌ \(name) color not found!")
+    static func color(_ name: String, for themeName: ColorTheme.Name) -> UIColor {
+        let colorName = "\(themeName.rawValue)\(name)"
+        guard let color = UIColor(named: colorName, in: .module, compatibleWith: nil) else {
+            preconditionFailure("❌ \(name) color not found for \(themeName.rawValue)!")
         }
 
         return color
+    }
+
+    static func from(name: ColorTheme.Name) -> ColorTheme {
+        switch name {
+        case .blue: return .blue
+        case .silver: return .silver
+        case .gold: return .gold
+        case .platinum: return .platinum
+        }
+    }
+
+    // MARK: Private methods
+
+    private init(themeName: ColorTheme.Name) {
+        self.init(
+            name: themeName,
+            primary: Self.color("Primary", for: themeName),
+            primaryHighlight: Self.color("PrimaryHighlight", for: themeName),
+            primaryDisabled: Self.color("PrimaryDisabled", for: themeName),
+            selection: Self.color("Selection", for: themeName),
+            backgroundTopStart: Self.color("GradientStart", for: themeName),
+            backgroundTopEnd: Self.color("GradientEnd", for: themeName),
+            navigation: Self.color("Navigation", for: themeName)
+        )
     }
 }
