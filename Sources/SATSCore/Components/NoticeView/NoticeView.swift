@@ -10,13 +10,13 @@ public struct NoticeView: View {
     }
 
     public var body: some View {
-        HStack {
+        HStack(spacing: 15) {
             icon
             message
             Spacer()
         }
         .foregroundColor(notice.foregroundColor)
-        .padding()
+        .padding(.init(top: 21, leading: 17, bottom: 21, trailing: 17))
         .background(notice.backgroundColor)
         .cornerRadius(8)
         .padding(8)
@@ -35,7 +35,7 @@ public struct NoticeView: View {
     }
 
     var message: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 1) {
             Text(notice.title)
                 .satsFont(.basic, weight: .emphasis)
 
