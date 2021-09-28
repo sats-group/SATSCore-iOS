@@ -16,6 +16,8 @@ enum DemoAssetName: String, CaseIterable {
 
     case tabProfileOn = "profile-on"
     case tabProfileOff = "profile-off"
+
+    case checkmark
 }
 
 extension Image {
