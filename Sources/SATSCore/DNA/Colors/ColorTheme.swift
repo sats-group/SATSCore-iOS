@@ -49,6 +49,9 @@ public extension ColorTheme {
             }
         }
     }
+
+    /// General notifications consumers of the color theme can emit when chaning it
+    static let themeChangedNotification = NSNotification.Name(rawValue: "SATSCore_themeChangedNotification")
 }
 
 public extension ColorTheme {
