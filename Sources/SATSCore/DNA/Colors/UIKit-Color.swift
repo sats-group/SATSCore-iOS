@@ -112,11 +112,14 @@ public extension UIColor {
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> UIColor {
-        guard let color = ColorTheme.current[name] else {
-            preconditionFailure("❌ \(name.rawValue) color not found! in \(ColorTheme.current.name)")
-        }
+        // we use colors with a dynamic provider to re-evaluate colors when the theme changes
+        UIColor { traitCollection in
+            guard let uiColor = ColorTheme.current[name] else {
+                preconditionFailure("❌ \(name.rawValue) should be present in theme \(ColorTheme.current.name)")
+            }
 
-        return color
+            return uiColor
+        }
     }
 
     private static func color(_ name: ColorName) -> UIColor {

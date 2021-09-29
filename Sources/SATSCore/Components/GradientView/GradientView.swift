@@ -40,4 +40,23 @@ public class GradientView: UIView {
     private func updateColors() {
         gradientLayer.colors = colors.map { $0.cgColor }
     }
+
+    /// The colors used in the gradient are CGcolors,
+    /// this means they are eagerly evaluated, then we need to
+    /// observe the theme changed to update the colors accordingly
+    private var themeObservation: NSObjectProtocol?
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        themeObservation = NotificationCenter
+            .default
+            .addObserver(forName: ColorTheme.themeChangedNotification, object: nil, queue: .main) { [weak self] _ in
+                self?.updateColors()
+            }
+    }
+
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
