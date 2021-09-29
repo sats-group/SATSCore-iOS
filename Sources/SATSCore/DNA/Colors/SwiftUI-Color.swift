@@ -117,7 +117,7 @@ public extension Color {
 
     private static func themedColor(_ name: ColorName) -> Color {
         // we use colors with a dynamic provider to re-evaluate colors when the theme changes
-        let dynamicColor = UIColor { traitCollection in
+        let dynamicColor = UIColor { _ in
             guard let uiColor = ColorTheme.current[name] else {
                 preconditionFailure("❌ \(name.rawValue) should be present in theme \(ColorTheme.current.name)")
             }
