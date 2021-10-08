@@ -1,13 +1,11 @@
 import UIKit
 
 public struct TopBarStyle: Equatable {
-    let tintColor: UIColor
     let borderColor: UIColor
     let backgroundColor: UIColor
     let textColor: UIColor
 
-    public init(tintColor: UIColor, borderColor: UIColor, backgroundColor: UIColor, textColor: UIColor) {
-        self.tintColor = tintColor
+    public init(borderColor: UIColor, backgroundColor: UIColor, textColor: UIColor) {
         self.borderColor = borderColor
         self.backgroundColor = backgroundColor
         self.textColor = textColor
@@ -16,17 +14,15 @@ public struct TopBarStyle: Equatable {
 
 public extension TopBarStyle {
     static let solid = TopBarStyle(
-        tintColor: .onBackgroundPrimary,
         borderColor: .border,
         backgroundColor: .backgroundSecondary,
         textColor: .onSecondary
     )
 
     static let transparent = TopBarStyle(
-        tintColor: .onPrimary,
         borderColor: .clear,
         backgroundColor: .clear,
-        textColor: .onPrimary
+        textColor: .onSecondary
     )
 }
 
@@ -58,6 +54,8 @@ public class TopBar: UIView {
         stackView.spacing = 4
         stackView.axis = .horizontal
         stackView.alignment = .center
+        stackView.layoutMargins = .init(horizontal: 10)
+        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -66,6 +64,8 @@ public class TopBar: UIView {
         stackView.spacing = 4
         stackView.axis = .horizontal
         stackView.alignment = .center
+        stackView.layoutMargins = .init(horizontal: 10)
+        stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
 
@@ -196,11 +196,8 @@ extension TopBar {
     }
 
     private func updateLayout() {
-        let buttons = leftButtonWrapper.arrangedSubviews + rightButtonWrapper.arrangedSubviews
-
         titleLabel.textColor = style.textColor
         backgroundColor = style.backgroundColor
         borderView.backgroundColor = style.borderColor
-        buttons.forEach { $0.tintColor = style.tintColor }
     }
 }

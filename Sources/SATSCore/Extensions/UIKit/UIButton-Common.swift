@@ -10,19 +10,24 @@ public extension UIButton {
     }
 
     static func backFloatingButton(onTap action: (() -> Void)? = nil) -> UIButton {
-        iconButton(icon: .backFloating, onTap: action)
+        iconButton(icon: .back, isFloating: true, onTap: action)
     }
 
     static func closeFloatingButton(onTap action: (() -> Void)? = nil) -> UIButton {
-        iconButton(icon: .closeFloating, onTap: action)
+        iconButton(icon: .close, isFloating: true, onTap: action)
     }
 
-    private static func iconButton(icon: UIImage?, onTap: (() -> Void)? = nil) -> UIButton {
+    private static func iconButton(icon: UIImage?, isFloating: Bool = false, onTap: (() -> Void)? = nil) -> UIButton {
         let button = CallbackButton(withAutoLayout: true)
+        button.tintColor = .onSecondary
         button.setImage(icon, for: .normal)
-        button.tintColor = .onPrimary
-        button.fixed(size: 48)
+        button.fixed(size: 36)
         button.onTap = onTap
+
+        if isFloating {
+            button.backgroundColor = .backgroundSecondary
+            button.layer.cornerRadius = 18
+        }
 
         return button
     }

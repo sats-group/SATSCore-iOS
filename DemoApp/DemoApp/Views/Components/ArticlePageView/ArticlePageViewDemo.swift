@@ -90,10 +90,10 @@ struct ArticlePageViewDemo_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
 
             ArticlePageViewDemo(includeImage: false)
-                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
 
             ArticlePageViewDemo()
-                .previewDevice("iPad Pro (12.9-inch) (4th generation)")
+                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
         }
         .ignoresSafeArea()
     }
