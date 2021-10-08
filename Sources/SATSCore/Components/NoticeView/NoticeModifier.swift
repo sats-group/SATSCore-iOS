@@ -9,11 +9,14 @@ struct NoticeModifier: ViewModifier {
     private let autoDismissTime: TimeInterval = 5
 
     func body(content: Content) -> some View {
-        ZStack {
-            content
-            noticeOverlay
-        }
-        .clipped()
+        content
+            .overlay(
+                ZStack {
+                    Color.clear
+                    noticeOverlay
+                }
+                .clipped()
+            )
     }
 
     var noticeOverlay: some View {
