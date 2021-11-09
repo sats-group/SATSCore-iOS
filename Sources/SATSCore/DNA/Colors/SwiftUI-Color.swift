@@ -1,7 +1,6 @@
 import SwiftUI
 
 public extension Color {
-
     // MARK: Background
 
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
@@ -47,6 +46,13 @@ public extension Color {
     static var signalDelete: Color { color(.signalDelete) }
     static var signalError: Color { color(.signalError) }
 
+    // MARK: SignalText
+
+    static var signalSuccessText: Color { color(.signalSuccessText) }
+    static var signalWarningText: Color { color(.signalWarningText) }
+    static var signalDeleteText: Color { color(.signalDeleteText) }
+    static var signalErrorText: Color { color(.signalErrorText) }
+
     // MARK: UI
 
     static var border: Color { color(.border) }
@@ -57,6 +63,7 @@ public extension Color {
     static var tabs: Color { color(.tabs) }
 
     // MARK: "On" colors
+
     // used in text and icons "on" top of another color
 
     static var onPrimary: Color { color(.onPrimary) }

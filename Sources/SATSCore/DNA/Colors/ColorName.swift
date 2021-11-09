@@ -31,6 +31,11 @@ enum ColorName: String, CaseIterable {
     case signalDelete
     case signalError
 
+    case signalSuccessText
+    case signalWarningText
+    case signalDeleteText
+    case signalErrorText
+
     case border
     case graphicalElements1
     case graphicalElements2
