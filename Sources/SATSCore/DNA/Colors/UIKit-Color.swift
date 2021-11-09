@@ -1,7 +1,6 @@
 import UIKit
 
 public extension UIColor {
-
     // MARK: Background
 
     static var backgroundPrimary: UIColor { color(.backgroundPrimary) }
@@ -45,6 +44,13 @@ public extension UIColor {
     static var signalDelete: UIColor { color(.signalDelete) }
     static var signalError: UIColor { color(.signalError) }
 
+    // MARK: SignalText
+
+    static var signalSuccessText: UIColor { color(.signalSuccessText) }
+    static var signalWarningText: UIColor { color(.signalWarningText) }
+    static var signalDeleteText: UIColor { color(.signalDeleteText) }
+    static var signalErrorText: UIColor { color(.signalErrorText) }
+
     // MARK: UI
 
     static var border: UIColor { color(.border) }
@@ -55,6 +61,7 @@ public extension UIColor {
     static var tabs: UIColor { color(.tabs) }
 
     // MARK: "On" colors
+
     // used in text and icons "on" top of another color
 
     static var onPrimary: UIColor { color(.onPrimary) }
