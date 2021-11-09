@@ -50,6 +50,11 @@ class ColorsTests: XCTestCase {
             .signalDelete,
             .signalError,
 
+            .signalSuccessText,
+            .signalWarningText,
+            .signalDeleteText,
+            .signalErrorText,
+
             .border,
             .graphicalElements1,
             .graphicalElements2,
