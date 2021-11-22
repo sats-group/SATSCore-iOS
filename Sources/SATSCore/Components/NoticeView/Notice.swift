@@ -12,6 +12,8 @@ public struct Notice {
     public let foregroundColor: Color
     public let backgroundColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
+    public let retryTitle: String?
+    public let onRetry: (() -> Void)?
 
     public init(
         icon: Image? = nil,
@@ -20,7 +22,9 @@ public struct Notice {
         autoDismiss: Bool = true,
         foregroundColor: Color,
         backgroundColor: Color,
-        hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil
+        hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
+        retryTitle: String? = nil,
+        onRetry: (() -> Void)? = nil
     ) {
         self.icon = icon
         self.title = title
@@ -29,6 +33,8 @@ public struct Notice {
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
         self.hapticType = hapticType
+        self.retryTitle = retryTitle
+        self.onRetry = onRetry
     }
 
     /// Creates an error notice data struct
