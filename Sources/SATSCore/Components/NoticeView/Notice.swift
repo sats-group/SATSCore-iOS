@@ -61,6 +61,35 @@ public struct Notice {
         )
     }
 
+    /// Create a error notice with retry options
+    /// - Parameters:
+    ///   - title: required title of the error
+    ///   - explanation: (optional) explanation of the error
+    ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
+    ///   - retryTitle: title for the retry button
+    ///   - onRetry: callback when the try button is tapped
+    /// - Returns: returns a error `Notice` that won't autodismiss that allows to retry
+    ///            an operation that caused an error
+    public static func error(
+        title: String,
+        explanation: String? = nil,
+        includeHaptic: Bool = true,
+        retryTitle: String,
+        onRetry: @escaping () -> Void
+    ) -> Notice {
+        Notice(
+            icon: Image(systemName: "xmark.octagon.fill"),
+            title: title,
+            explanation: explanation,
+            autoDismiss: false,
+            foregroundColor: .onSignal,
+            backgroundColor: .signalError,
+            hapticType: includeHaptic ? .error : nil,
+            retryTitle: retryTitle,
+            onRetry: onRetry
+        )
+    }
+
     /// Creates a warning notice data struct
     /// - Parameters:
     ///   - title: required title of the warning
