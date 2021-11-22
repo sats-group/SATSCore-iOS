@@ -96,4 +96,11 @@ enum ColorName: String, CaseIterable {
     case backgroundTopEnd
 
     case navigation
+
+    // Challenge colors
+
+    case challengeFailed
+    case challengeInProgress
+    case challengeNotDone
+    case challengeSuccess
 }

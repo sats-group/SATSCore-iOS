@@ -116,6 +116,13 @@ public extension UIColor {
 
     static var navigation: UIColor { themedColor(.navigation) }
 
+    // MARK: Challenge colors
+
+    static var challengeFailed: UIColor { color(.challengeFailed) }
+    static var challengeInProgress: UIColor { color(.challengeInProgress) }
+    static var challengeNotDone: UIColor { color(.challengeNotDone) }
+    static var challengeSuccess: UIColor { color(.challengeSuccess) }
+
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> UIColor {

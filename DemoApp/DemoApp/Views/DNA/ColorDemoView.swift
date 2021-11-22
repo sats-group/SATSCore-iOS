@@ -139,6 +139,10 @@ struct ColorDemoView: View {
             colors: [
                 ColorDemo(name: "waitlist", color: .waitlist),
                 ColorDemo(name: "waitlistHighlight", color: .waitlistHighlight),
+                ColorDemo(name: "challengeFailed", color: .challengeFailed),
+                ColorDemo(name: "challengeInProgress", color: .challengeInProgress),
+                ColorDemo(name: "challengeNotDone", color: .challengeNotDone),
+                ColorDemo(name: "challengeSuccess", color: .challengeSuccess),
             ]
         ),
         ColorSection(

@@ -120,6 +120,13 @@ public extension Color {
 
     static var navigationPrimary: Color { themedColor(.navigation) }
 
+    // MARK: Challenge colors
+
+    static var challengeFailed: Color { color(.challengeFailed) }
+    static var challengeInProgress: Color { color(.challengeInProgress) }
+    static var challengeNotDone: Color { color(.challengeNotDone) }
+    static var challengeSuccess: Color { color(.challengeSuccess) }
+
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> Color {
