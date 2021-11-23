@@ -13,6 +13,7 @@ struct NoticeDemoView: View {
     @State var includeSubtitle: Bool = false
     @State var autoDismiss: Bool = true
     @State var edgeTop: Bool = true
+    @State var withRetry: Bool = false
     @State var style: Style = .success
 
     var edge: Notice.Edge { edgeTop ? .top : .bottom }
@@ -41,6 +42,9 @@ struct NoticeDemoView: View {
             Toggle("Include Subtitle?", isOn: $includeSubtitle)
             Toggle("Auto dismiss?", isOn: $autoDismiss)
             Toggle("Top Edge?", isOn: $edgeTop)
+            if style == .error {
+                Toggle("With Retry?", isOn: $withRetry)
+            }
 
             HStack {
                 Text("Style")
@@ -78,23 +82,35 @@ struct NoticeDemoView: View {
     // by using the `.success`, `.warning` and `.error`
     // factory methods which contain sensible defaults
     private func createNotice() -> Notice {
-        switch style {
-        case .success:
+        let subtitle = includeSubtitle ? "Subtitle text" : nil
+
+        switch (style, withRetry) {
+        case (.success, _):
             return Notice.success(
                 title: "Sample success notice",
-                explanation: includeSubtitle ? "Subtitle text" : nil,
+                explanation: subtitle,
                 autoDismiss: autoDismiss
             )
-        case .warning:
+
+        case (.warning, _):
             return Notice.warning(
                 title: "Sample warning notice",
-                explanation: includeSubtitle ? "Subtitle text" : nil,
+                explanation: subtitle,
                 autoDismiss: autoDismiss
             )
-        case .error:
+
+        case (.error, true):
             return Notice.error(
                 title: "Sample error notice",
-                explanation: includeSubtitle ? "Subtitle text" : nil,
+                explanation: subtitle,
+                retryTitle: "Retry",
+                onRetry: { print("on retry!") }
+            )
+
+        case (.error, false):
+            return Notice.error(
+                title: "Sample error notice",
+                explanation: subtitle,
                 autoDismiss: autoDismiss
             )
         }
@@ -123,6 +139,8 @@ struct ErrorNoticeView_Previews: PreviewProvider {
                 NoticeView(notice: .sampleWarning)
 
                 NoticeView(notice: .sampleError)
+
+                NoticeView(notice: .sampleErrorWithRetry)
             }
             .previewLayout(.sizeThatFits)
         }
@@ -132,6 +150,12 @@ struct ErrorNoticeView_Previews: PreviewProvider {
 extension Notice {
     static let sampleError = Notice.error(
         title: "This is a sample error"
+    )
+
+    static let sampleErrorWithRetry = Notice.error(
+        title: "This is a sample error",
+        retryTitle: "Retry",
+        onRetry: { print("Sample") }
     )
 
     static let sampleSuccess = Notice.success(

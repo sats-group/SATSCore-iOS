@@ -33,7 +33,7 @@ jobs:
         displayName: "Workaround for private SSH SPM dependencies"
         inputs:
           targetType: "inline"
-          script: "for ip in $(dig @8.8.8.8 gitlab.com +short); do ssh-keyscan -t ecdsa github.com,$ip; done 2>/dev/null >> ~/.ssh/known_hosts"
+          script: "for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan -t ecdsa github.com,$ip; done 2>/dev/null >> ~/.ssh/known_hosts"
           failOnStderr: true
 
       - task: Xcode@5

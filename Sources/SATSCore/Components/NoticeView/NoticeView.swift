@@ -14,6 +14,7 @@ public struct NoticeView: View {
             icon
             message
             Spacer()
+            retryButton
         }
         .foregroundColor(notice.foregroundColor)
         .padding(16)
@@ -26,6 +27,21 @@ public struct NoticeView: View {
 
     func performTap() {
         onTap?()
+    }
+
+    @ViewBuilder var retryButton: some View {
+        if let onRetry = notice.onRetry, let retryTitle = notice.retryTitle {
+            HStack {
+                Divider()
+                    .frame(height: 16)
+
+                Button(action: onRetry) {
+                    Text(retryTitle.uppercased())
+                        .satsFont(.basic, weight: .emphasis)
+                }
+                .padding(.horizontal, 8)
+            }
+        }
     }
 
     @ViewBuilder var icon: some View {

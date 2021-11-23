@@ -12,6 +12,8 @@ public struct Notice {
     public let foregroundColor: Color
     public let backgroundColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
+    public let retryTitle: String?
+    public let onRetry: (() -> Void)?
 
     public init(
         icon: Image? = nil,
@@ -20,7 +22,9 @@ public struct Notice {
         autoDismiss: Bool = true,
         foregroundColor: Color,
         backgroundColor: Color,
-        hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil
+        hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
+        retryTitle: String? = nil,
+        onRetry: (() -> Void)? = nil
     ) {
         self.icon = icon
         self.title = title
@@ -29,6 +33,8 @@ public struct Notice {
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
         self.hapticType = hapticType
+        self.retryTitle = retryTitle
+        self.onRetry = onRetry
     }
 
     /// Creates an error notice data struct
@@ -52,6 +58,35 @@ public struct Notice {
             foregroundColor: .onSignal,
             backgroundColor: .signalError,
             hapticType: includeHaptic ? .error : nil
+        )
+    }
+
+    /// Create a error notice with retry options
+    /// - Parameters:
+    ///   - title: required title of the error
+    ///   - explanation: (optional) explanation of the error
+    ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
+    ///   - retryTitle: title for the retry button
+    ///   - onRetry: callback when the try button is tapped
+    /// - Returns: returns a error `Notice` that won't autodismiss that allows to retry
+    ///            an operation that caused an error
+    public static func error(
+        title: String,
+        explanation: String? = nil,
+        includeHaptic: Bool = true,
+        retryTitle: String,
+        onRetry: @escaping () -> Void
+    ) -> Notice {
+        Notice(
+            icon: Image(systemName: "xmark.octagon.fill"),
+            title: title,
+            explanation: explanation,
+            autoDismiss: false,
+            foregroundColor: .onSignal,
+            backgroundColor: .signalError,
+            hapticType: includeHaptic ? .error : nil,
+            retryTitle: retryTitle,
+            onRetry: onRetry
         )
     }
 
