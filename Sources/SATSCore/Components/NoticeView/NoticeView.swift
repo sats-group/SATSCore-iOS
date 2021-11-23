@@ -35,8 +35,11 @@ public struct NoticeView: View {
                 Divider()
                     .frame(height: 16)
 
-                Button(retryTitle, action: onRetry)
-                    .padding(.horizontal, 8)
+                Button(action: onRetry) {
+                    Text(retryTitle)
+                        .satsFont(.basic, weight: .emphasis)
+                }
+                .padding(.horizontal, 8)
             }
         }
     }
