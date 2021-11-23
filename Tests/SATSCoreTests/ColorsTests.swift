@@ -106,6 +106,11 @@ class ColorsTests: XCTestCase {
             .backgroundTopEnd,
 
             .navigation,
+
+            .challengeFailed,
+            .challengeInProgress,
+            .challengeNotDone,
+            .challengeSuccess,
         ]
     }
 }
