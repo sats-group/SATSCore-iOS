@@ -36,7 +36,7 @@ public struct NoticeView: View {
                     .frame(height: 16)
 
                 Button(action: onRetry) {
-                    Text(retryTitle)
+                    Text(retryTitle.uppercased())
                         .satsFont(.basic, weight: .emphasis)
                 }
                 .padding(.horizontal, 8)
