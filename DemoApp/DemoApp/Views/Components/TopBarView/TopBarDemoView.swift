@@ -39,7 +39,7 @@ struct TopBarDemoView_Previews: PreviewProvider {
             NavigationView {
                 TopBarDemoView()
             }
- 
+
             NavigationView {
                 TopBarDemoView()
             }.preferredColorScheme(.dark)

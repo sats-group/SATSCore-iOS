@@ -35,6 +35,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
                 .opacity(isLoading ? 0.0 : 1.0)
             spinner
                 .opacity(isLoading ? 1.0 : 0.0)
+                .id(style.name)
         }
         .padding(.vertical, size.verticalPadding)
         .padding(.horizontal, size.horizontalPadding)
