@@ -10,7 +10,6 @@ import SwiftUI
 ///     MyCustomList()
 /// }
 /// ```
-@available(iOS 14.0, *)
 @available(iOS,
     deprecated: 15,
     message: "This was a backport of the modifier for pull to refresh, now you should use the modifiers on list"

@@ -21,7 +21,7 @@ import SwiftUI
  }
  ```
  */
-@available(iOS 14.0, *) public struct CustomAsyncImage<Output: View>: View {
+public struct CustomAsyncImage<Output: View>: View {
     @StateObject var viewModel: ImageViewModel
     let transform: ((Image) -> Output)?
     let uuid: UUID = UUID()
@@ -60,7 +60,6 @@ import SwiftUI
     }
 }
 
-@available(iOS 14.0, *)
 public extension CustomAsyncImage where Output == Image {
     init(_ state: ImageViewData) {
         self.init(state, transform: nil)

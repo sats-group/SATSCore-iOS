@@ -19,18 +19,8 @@ public struct SATSFont {
     public static func style(for textStyle: UIFont.TextStyle) -> Font.TextStyle {
         switch textStyle {
         case .title1: return .title
-        case .title2:
-            if #available(iOS 14.0, *) {
-                return .title2
-            } else {
-                return .title
-            }
-        case .title3:
-            if #available(iOS 14.0, *) {
-                return .title3
-            } else {
-                return .title
-            }
+        case .title2: return .title2
+        case .title3: return .title3
         case .body: return .body
         case .callout: return .callout
         case .footnote: return .footnote
