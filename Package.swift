@@ -1,9 +1,9 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
     name: "SATSCore",
-    platforms: [.iOS(.v13), .tvOS(.v14)],
+    platforms: [.iOS(.v14), .tvOS(.v14)],
     products: [
         .library(
             name: "SATSCore",

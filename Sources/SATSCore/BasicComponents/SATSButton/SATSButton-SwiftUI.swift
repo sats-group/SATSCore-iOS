@@ -51,16 +51,10 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     @ViewBuilder
     func buttonContent(for configuration: Configuration) -> some View {
-        if #available(iOS 14.0, *) {
-            configuration
-                .label
-                .satsFont(.button, weight: .medium)
-                .textCase(.uppercase)
-        } else {
-            configuration
-                .label
-                .satsFont(.button, weight: .medium)
-        }
+        configuration
+            .label
+            .satsFont(.button, weight: .medium)
+            .textCase(.uppercase)
     }
 
     var spinner: some View {
