@@ -51,7 +51,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image("notice-error"),
+            icon: .noticeError,
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -78,7 +78,7 @@ public struct Notice {
         onRetry: @escaping () -> Void
     ) -> Notice {
         Notice(
-            icon: Image("notice-error"),
+            icon: .noticeError,
             title: title,
             explanation: explanation,
             autoDismiss: false,
@@ -104,7 +104,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image("notice-warning"),
+            icon: .noticeWarning,
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -128,7 +128,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image("notice-checkmark"),
+            icon: .noticeSuccess,
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,

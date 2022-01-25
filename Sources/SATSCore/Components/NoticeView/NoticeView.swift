@@ -20,9 +20,11 @@ public struct NoticeView: View {
         .padding(16)
         .background(notice.backgroundColor)
         .cornerRadius(8)
+        .shadow(color: Color.black.opacity(0.08), radius: 1, x: 0, y: 1)
+        .shadow(color: Color.black.opacity(0.12), radius: 5, x: 0, y: 1)
+        .shadow(color: Color.black.opacity(0.1), radius: 9, x: 0, y: 2)
         .padding(8)
         .onTapGesture(perform: performTap)
-        .shadow(radius: 2)
         .frame(maxWidth: .readableWidthM)
     }
 
@@ -47,7 +49,7 @@ public struct NoticeView: View {
 
     @ViewBuilder var icon: some View {
         if let icon = notice.icon {
-            icon
+            icon.renderingMode(.original)
         }
     }
 
