@@ -41,6 +41,7 @@ public struct NoticeView: View {
                 Button(action: onRetry) {
                     Text(retryTitle.uppercased())
                         .satsFont(.basic, weight: .emphasis)
+                        .foregroundColor(.onSurfacePrimary)
                 }
                 .padding(.horizontal, 8)
             }
@@ -60,7 +61,7 @@ public struct NoticeView: View {
 
             if let explanation = notice.explanation {
                 Text(explanation)
-                    .satsFont(.small)
+                    .satsFont(.basic)
             }
         }
     }
