@@ -51,12 +51,12 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image("notice-error"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            foregroundColor: .onSurfaceSecondary,
+            backgroundColor: .backgroundSurface,
             hapticType: includeHaptic ? .error : nil
         )
     }
@@ -78,12 +78,12 @@ public struct Notice {
         onRetry: @escaping () -> Void
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image("notice-error"),
             title: title,
             explanation: explanation,
             autoDismiss: false,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            foregroundColor: .onSurfaceSecondary,
+            backgroundColor: .backgroundSurface,
             hapticType: includeHaptic ? .error : nil,
             retryTitle: retryTitle,
             onRetry: onRetry
@@ -104,12 +104,12 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "exclamationmark.triangle.fill"),
+            icon: Image("notice-warning"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalWarning,
+            foregroundColor: .onSurfaceSecondary,
+            backgroundColor: .backgroundSurface,
             hapticType: includeHaptic ? .warning : nil
         )
     }
@@ -128,12 +128,12 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "checkmark.circle.fill"),
+            icon: Image("notice-checkmark"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalSuccess,
+            foregroundColor: .onSurfaceSecondary,
+            backgroundColor: .backgroundSurface,
             hapticType: includeHaptic ? .success : nil
         )
     }

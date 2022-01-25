@@ -22,6 +22,7 @@ public struct NoticeView: View {
         .cornerRadius(8)
         .padding(8)
         .onTapGesture(perform: performTap)
+        .shadow(radius: 2)
         .frame(maxWidth: .readableWidthM)
     }
 
