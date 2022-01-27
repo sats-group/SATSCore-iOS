@@ -42,6 +42,7 @@ enum ColorName: String, CaseIterable {
     case graphicalElements3
     case shimmer
     case tabs
+    case shadow
 
     // "On" colors
 

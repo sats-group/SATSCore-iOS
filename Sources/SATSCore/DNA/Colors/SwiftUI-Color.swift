@@ -61,6 +61,7 @@ public extension Color {
     static var graphicalElements3: Color { color(.graphicalElements3) }
     static var shimmer: Color { color(.shimmer) }
     static var tabs: Color { color(.tabs) }
+    static var shadow: Color { color(.shadow) }
 
     // MARK: "On" colors
 

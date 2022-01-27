@@ -59,6 +59,7 @@ public extension UIColor {
     static var graphicalElements3: UIColor { color(.graphicalElements3) }
     static var shimmer: UIColor { color(.shimmer) }
     static var tabs: UIColor { color(.tabs) }
+    static var shadow: UIColor { color(.shadow) }
 
     // MARK: "On" colors
 
