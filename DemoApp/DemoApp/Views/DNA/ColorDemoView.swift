@@ -154,6 +154,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "graphicalElements3", color: .graphicalElements3),
                 ColorDemo(name: "shimmer", color: .shimmer),
                 ColorDemo(name: "tabs", color: .tabs),
+                ColorDemo(name: "shadow", color: .shadow),
             ]
         ),
         ColorSection(
