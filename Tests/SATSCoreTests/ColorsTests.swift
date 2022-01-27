@@ -61,6 +61,7 @@ class ColorsTests: XCTestCase {
             .graphicalElements3,
             .shimmer,
             .tabs,
+            .shadow,
 
             .onPrimary,
             .onPrimaryDisabled,
