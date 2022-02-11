@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */; };
+		28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0A16627A93846001374D2 /* DatePickerDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
 		9B119AF026E6357C00F05553 /* PullToRefreshContainerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B119AEF26E6357C00F05553 /* PullToRefreshContainerDemoView.swift */; };
@@ -58,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
+		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B119AEF26E6357C00F05553 /* PullToRefreshContainerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefreshContainerDemoView.swift; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,14 @@
 				2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */,
 			);
 			path = RoundLoadingView;
+			sourceTree = "<group>";
+		};
+		28D0A16527A937FD001374D2 /* DatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				28D0A16627A93846001374D2 /* DatePickerDemoView.swift */,
+			);
+			path = DatePickerView;
 			sourceTree = "<group>";
 		};
 		9B00E27525B9AE6200533641 /* Assets */ = {
@@ -372,6 +382,7 @@
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B4083BB261DE66D00A3A718 /* ArticlePageView */,
 				9B75EC43264B1D3C00B160EF /* EmptyStateView */,
 				9B2E8063266649D8000A657D /* ErrorView */,
@@ -560,6 +571,7 @@
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
+				28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */,
 				9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */,
 				9B119AF026E6357C00F05553 /* PullToRefreshContainerDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
