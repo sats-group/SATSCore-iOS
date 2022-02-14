@@ -12,7 +12,7 @@ extension DatePickerView {
         let days: [WeekViewData]
 
         var body: some View {
-            HStack {
+            HStack(spacing: 0) {
                 ForEach(days, id: \.self) { day in
                     if day.isOutsideOfRange {
                         DayView(

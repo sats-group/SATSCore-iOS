@@ -3,12 +3,10 @@ import SwiftUI
 extension DatePickerView {
     struct WeekdaysView: View {
         var body: some View {
-            HStack {
+            HStack(spacing: 0) {
                 ForEach(getWeekdays(), id: \.self) { day in
-                    VStack {
                         Text(weekdaySingleCharacter(date: day))
                             .foregroundColor(.onBackgroundDisabled)
-                    }
                     .frame(maxWidth: .infinity)
                 }
             }
