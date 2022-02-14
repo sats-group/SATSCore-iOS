@@ -13,7 +13,7 @@ variables:
   - name: "sdk"
     value: "iphoneos"
   - name: "iOSVersion"
-    value: "15.0"
+    value: "15.2"
 
 pool:
   vmImage: "macos-latest"
