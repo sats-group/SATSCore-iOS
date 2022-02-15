@@ -10,25 +10,36 @@ extension DatePickerView {
     struct WeekView: View {
         @Binding var selectedDate: Date
         let days: [WeekViewData]
+        let helper: DatePickerHelper
+
+        init(
+            selectedDate: Binding<Date>,
+            days: [WeekViewData],
+            helper: DatePickerHelper = .current
+        ) {
+            self._selectedDate = selectedDate
+            self.days = days
+            self.helper = helper
+        }
 
         var body: some View {
             HStack(spacing: 0) {
                 ForEach(days, id: \.self) { day in
                     if day.isOutsideOfRange {
                         DayView(
-                            day: dateNotZeroPrefixed(date: day.date),
+                            day: helper.dateNotZeroPrefixed(date: day.date),
                             textColor: .onBackgroundDisabled,
                             backgroundColor: .clear
                         )
                     } else {
                         DayView(
-                            day: dateNotZeroPrefixed(date: day.date),
-                            textColor: dateTextColor(
+                            day: helper.dateNotZeroPrefixed(date: day.date),
+                            textColor: helper.dateTextColor(
                                 date: day.date,
                                 selectedDate: selectedDate,
                                 isActive: day.isActive
                             ),
-                            backgroundColor: circleBackgroundColor(date: day.date, selectedDate: selectedDate)
+                            backgroundColor: helper.circleBackgroundColor(date: day.date, selectedDate: selectedDate)
                         )
                         .onTapGesture {
                             selectedDate = day.date

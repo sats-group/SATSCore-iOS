@@ -6,14 +6,16 @@ struct DatePickerDemoView: View {
     @State var showFullCalendar: Bool = false
 
     var body: some View {
-        DatePickerView(
-            selectedDate: $selectedDate,
-            showFullCalendar: $showFullCalendar,
-            viewData: generateViewData()
-        )
+        ScrollView {
+            DatePickerView(
+                selectedDate: $selectedDate,
+                showFullCalendar: $showFullCalendar,
+                days: generatePlaceholderDays()
+            )
+        }.frame(height: 300)
     }
 
-    private func generateViewData() -> [DatePickerViewData] {
+    private func generatePlaceholderDays() -> [DatePickerViewData] {
         var dates: [DatePickerViewData] = []
         for day in 0...60 {
             let date = Date().addingTimeInterval(dayDurationInSeconds * Double(day))

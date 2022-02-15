@@ -13,16 +13,19 @@ public struct DatePickerViewData: Hashable {
 public struct DatePickerView: View {
     @Binding var selectedDate: Date
     @Binding var showFullCalendar: Bool
-    let viewData: [DatePickerViewData]
+    let days: [DatePickerViewData]
+    let helper: DatePickerHelper
 
     public init(
         selectedDate: Binding<Date>,
         showFullCalendar: Binding<Bool>,
-        viewData: [DatePickerViewData]
+        days: [DatePickerViewData],
+        helper: DatePickerHelper = .current
     ) {
         self._selectedDate = selectedDate
         self._showFullCalendar = showFullCalendar
-        self.viewData = viewData
+        self.days = days
+        self.helper = helper
     }
 
     public var body: some View {
@@ -31,17 +34,13 @@ public struct DatePickerView: View {
             if showFullCalendar {
                 MonthView(
                     selectedDate: $selectedDate,
-                    days: getCalendarDatesGroupedByMonths(dates: viewData)
+                    days: getCalendarDaysGroupedByMonths(days: days)
                 )
             } else {
-                WeekView(selectedDate: $selectedDate, days: Self.getWeek(for: selectedDate, availableDates: viewData))
+                WeekView(selectedDate: $selectedDate, days: helper.getWeek(for: selectedDate, availableDays: days))
             }
 
-            Button(action: {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    showFullCalendar.toggle()
-                }
-            }) {
+            Button(action: toggleFullView) {
                 RoundedRectangle(cornerRadius: 2)
                     .frame(width: 50, height: 4)
                     .padding(8)
@@ -53,18 +52,24 @@ public struct DatePickerView: View {
         .satsFont(.small)
     }
 
-    private func getCalendarDatesGroupedByMonths(dates: [DatePickerViewData]) -> [[DatePickerViewData]] {
+    private func toggleFullView() {
+        withAnimation(.easeInOut(duration: 0.2)) {
+            showFullCalendar.toggle()
+        }
+    }
+
+    private func getCalendarDaysGroupedByMonths(days: [DatePickerViewData]) -> [[DatePickerViewData]] {
         var months: [[DatePickerViewData]] = []
         var currentMonth: [DatePickerViewData] = []
 
-        for date in dates {
-            if Self.isFirstInMonth(date: date.date) {
+        for day in days {
+            if helper.isFirstInMonth(date: day.date) {
                 if !currentMonth.isEmpty {
                     months.append(currentMonth)
                     currentMonth = []
                 }
             }
-            currentMonth.append(date)
+            currentMonth.append(day)
         }
         months.append(currentMonth)
 

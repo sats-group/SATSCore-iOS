@@ -11,7 +11,7 @@ extension DatePickerView {
                 .frame(height: 42)
                 .background(
                     Circle()
-                        .frame(width: 32, height: 32)
+                        .frame(size: 32)
                         .foregroundColor(backgroundColor)
                 )
                 .foregroundColor(textColor)

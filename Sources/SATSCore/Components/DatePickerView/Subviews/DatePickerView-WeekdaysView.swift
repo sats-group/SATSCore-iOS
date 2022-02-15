@@ -2,9 +2,15 @@ import SwiftUI
 
 extension DatePickerView {
     struct WeekdaysView: View {
+        let helper: DatePickerHelper
+
+        init(helper: DatePickerHelper = .current) {
+            self.helper = helper
+        }
+
         var body: some View {
             HStack(spacing: 0) {
-                ForEach(getWeekdays(), id: \.self) { day in
+                ForEach(helper.getWeekdays(), id: \.self) { day in
                         Text(weekdaySingleCharacter(date: day))
                             .foregroundColor(.onBackgroundDisabled)
                     .frame(maxWidth: .infinity)
