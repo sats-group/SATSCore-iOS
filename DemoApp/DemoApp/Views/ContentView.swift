@@ -22,6 +22,7 @@ struct ContentView: View {
 
                 Section(header: Text("Components")) {
                     NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
+                    NavigationLink("DatePickerView", destination: DatePickerDemoView())
                     NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
                     NavigationLink("ErrorView", destination: ErrorDemoView())
                     NavigationLink("ExternalUrlView", destination: ExternalUrlDemoView())
