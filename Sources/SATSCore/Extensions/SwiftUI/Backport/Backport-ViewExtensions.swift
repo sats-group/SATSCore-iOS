@@ -26,4 +26,15 @@ public extension Backport where Content: View {
             content.accentColor(color)
         }
     }
+
+    @available(iOS, deprecated: 15, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func task(_ action: @escaping () async -> Void) -> some View {
+        if #available(iOS 15, *) {
+            content.task {
+                await action()
+            }
+        } else {
+            content.modifier(Backported.TaskModifier(action: action))
+        }
+    }
 }
