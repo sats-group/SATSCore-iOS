@@ -12,7 +12,9 @@ struct DatePickerDemoView: View {
                 showFullCalendar: $showFullCalendar,
                 days: generatePlaceholderDays()
             )
-        }.frame(height: 300)
+        }
+        .frame(height: 300)
+        .background(Color.backgroundPrimary)
     }
 
     private func generatePlaceholderDays() -> [DatePickerViewData] {

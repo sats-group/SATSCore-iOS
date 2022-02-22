@@ -12,13 +12,12 @@ extension DatePickerView {
             HStack(spacing: 0) {
                 ForEach(helper.getWeekdays(), id: \.self) { day in
                         Text(weekdaySingleCharacter(date: day))
-                            .foregroundColor(.onBackgroundDisabled)
                     .frame(maxWidth: .infinity)
                 }
             }
+            .padding(.vertical, .spacingXXS)
             .satsFont(.small, weight: .emphasis)
-            .foregroundColor(.onBackgroundDisabled)
-            .frame(height: 18)
+            .foregroundColor(.onSurfaceDisabled)
         }
 
         // Should be replaced when targeting iOS 15 with

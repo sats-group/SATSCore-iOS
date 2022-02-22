@@ -41,14 +41,21 @@ public struct DatePickerView: View {
             }
 
             Button(action: toggleFullView) {
-                RoundedRectangle(cornerRadius: 2)
-                    .frame(width: 50, height: 4)
-                    .padding(8)
-                .foregroundColor(.border)
+                Image(systemName: "chevron.down")
+                    .foregroundColor(.onSurfaceSecondary)
+                    .background(
+                        Circle()
+                            .foregroundColor(.backgroundSurface)
+                            .shadow(radius: 1)
+                            .frame(size: 32)
+                    )
+                    .rotationEffect(showFullCalendar ? .radians(-.pi) : .radians(0))
             }
+            .offset(y: .spacingM)
         }
-        .background(Color.backgroundPrimary)
-        .foregroundColor(.onBackgroundPrimary)
+        .padding(.vertical, .spacingM)
+        .background(Color.backgroundSurface)
+        .foregroundColor(.onSurfacePrimary)
         .satsFont(.small)
     }
 
