@@ -27,7 +27,7 @@ extension DatePickerView {
                                 Text(monthFull(date: daysInMonth[0].date))
                                     .satsFont(.small, weight: .emphasis)
                                     .foregroundColor(.onSurfaceSecondary)
-                                    .frame(height: 20)
+                                    .padding(.vertical, .spacingXXS)
                             }
                             LazyVGrid(columns: sevenColumnGrid, spacing: 0) {
                                 ForEach(0 ..< getNumberOfEmptySpaces(date: daysInMonth[0].date), id: \.self) { _ in

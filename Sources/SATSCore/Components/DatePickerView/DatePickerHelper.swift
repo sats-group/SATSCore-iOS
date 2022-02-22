@@ -55,9 +55,9 @@ public class DatePickerHelper {
             return .onPrimary
         }
         if isActive {
-            return .onBackgroundPrimary
+            return .onSurfacePrimary
         }
-        return .onBackgroundDisabled
+        return .onSurfaceDisabled
     }
 
     func getWeek(for date: Date) -> [Date] {
