@@ -8,11 +8,11 @@ public struct SATSFont {
     }
 
     public static func font(style: TextStyle, weight: Weight) -> UIFont {
-        FontAccess.font(textStyle: style.nativeStyle, size: style.size, variantName: weight.fontName)
-    }
-
-    public static func fontName(for weight: Weight) -> String {
-        FontAccess.fontName(for: weight.fontName)
+        FontAccess.font(
+            font: weight.font,
+            textStyle: style.nativeStyle,
+            size: weight == .satsFeeling ? mapSatsFeelingSize(style: style) : style.size
+        )
     }
 
     /// Converts the UIKit text style into SwiftUI text style
@@ -27,6 +27,15 @@ public struct SATSFont {
         case .subheadline: return .subheadline
         default:
             fatalError("❌ unhandled UIKit to SwiftUI text style conversion")
+        }
+    }
+
+    private static func mapSatsFeelingSize(style: SATSFont.TextStyle) -> CGFloat {
+        switch style {
+        case .h1: return 32
+        case .h2: return 26
+        case .h3: return 21
+        default: return style.size
         }
     }
 }
