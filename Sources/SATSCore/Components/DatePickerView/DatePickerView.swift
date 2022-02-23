@@ -43,6 +43,7 @@ public struct DatePickerView: View {
             Button(action: toggleFullView) {
                 Image(systemName: "chevron.down")
                     .foregroundColor(.onSurfaceSecondary)
+                    .padding(.spacingM)
                     .background(
                         Circle()
                             .foregroundColor(.backgroundSurface)
@@ -51,9 +52,9 @@ public struct DatePickerView: View {
                     )
                     .rotationEffect(showFullCalendar ? .radians(-.pi) : .radians(0))
             }
-            .offset(y: .spacingM)
         }
-        .padding(.vertical, .spacingM)
+        .padding(.top, .spacingM)
+        .padding(.bottom, -.spacingM)
         .background(Color.backgroundSurface)
         .foregroundColor(.onSurfacePrimary)
         .satsFont(.small)
