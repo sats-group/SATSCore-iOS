@@ -1,8 +1,8 @@
 import SwiftUI
 
 public struct DatePickerViewData: Hashable {
-    let date: Date
-    let isActive: Bool
+    public let date: Date
+    public let isActive: Bool
 
     public init(date: Date, isActive: Bool) {
         self.date = date
