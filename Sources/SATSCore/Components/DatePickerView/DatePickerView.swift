@@ -68,6 +68,11 @@ public struct DatePickerView: View {
                     )
                     .rotationEffect(showFullCalendar ? .radians(-.pi) : .radians(0))
             }
+            .background(
+                Circle()
+                    .foregroundColor(.backgroundSurface)
+                    .frame(size: toggleButtonHeight)
+            )
             .offset(x: 0, y: toggleButtonHeight / 2)
         }
     }
