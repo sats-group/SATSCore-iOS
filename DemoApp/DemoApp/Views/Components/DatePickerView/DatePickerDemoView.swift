@@ -7,13 +7,20 @@ struct DatePickerDemoView: View {
 
     var body: some View {
         ScrollView {
-            DatePickerView(
-                selectedDate: $selectedDate,
-                showFullCalendar: $showFullCalendar,
-                days: generatePlaceholderDays()
-            )
+            VStack {
+                DatePickerView(
+                    selectedDate: $selectedDate,
+                    showFullCalendar: $showFullCalendar,
+                    days: generatePlaceholderDays()
+                )
+
+                Rectangle()
+                    .foregroundColor(.border)
+                    .frame(height: 1)
+
+                Spacer()
+            }
         }
-        .frame(height: 300)
         .background(Color.backgroundPrimary)
     }
 

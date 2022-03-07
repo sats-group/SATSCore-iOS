@@ -1,8 +1,8 @@
 import SwiftUI
 
 public struct DatePickerViewData: Hashable {
-    let date: Date
-    let isActive: Bool
+    public let date: Date
+    public let isActive: Bool
 
     public init(date: Date, isActive: Bool) {
         self.date = date
@@ -31,14 +31,30 @@ public struct DatePickerView: View {
     public var body: some View {
         VStack(spacing: 0) {
             WeekdaysView()
+
             if showFullCalendar {
                 MonthView(
                     selectedDate: $selectedDate,
                     days: getCalendarDaysGroupedByMonths(days: days)
                 )
             } else {
-                WeekView(selectedDate: $selectedDate, days: helper.getWeek(for: selectedDate, availableDays: days))
+                WeekView(
+                    selectedDate: $selectedDate,
+                    days: helper.getWeek(for: selectedDate, availableDays: days)
+                )
             }
+        }
+        .padding(.vertical, .spacingM)
+        .background(Color.backgroundSurface)
+        .overlay(toggleViewButtonContainer)
+        .foregroundColor(.onSurfacePrimary)
+        .satsFont(.small)
+        .zIndex(3)
+    }
+
+    var toggleViewButtonContainer: some View {
+        VStack {
+            Spacer()
 
             Button(action: toggleFullView) {
                 Image(systemName: "chevron.down")
@@ -48,16 +64,17 @@ public struct DatePickerView: View {
                         Circle()
                             .foregroundColor(.backgroundSurface)
                             .shadow(radius: 1)
-                            .frame(size: 32)
+                            .frame(size: toggleButtonHeight)
                     )
                     .rotationEffect(showFullCalendar ? .radians(-.pi) : .radians(0))
             }
+            .background(
+                Circle()
+                    .foregroundColor(.backgroundSurface)
+                    .frame(size: toggleButtonHeight)
+            )
+            .offset(x: 0, y: toggleButtonHeight / 2)
         }
-        .padding(.top, .spacingM)
-        .padding(.bottom, -.spacingM)
-        .background(Color.backgroundSurface)
-        .foregroundColor(.onSurfacePrimary)
-        .satsFont(.small)
     }
 
     private func toggleFullView() {
@@ -83,4 +100,6 @@ public struct DatePickerView: View {
 
         return months
     }
+
+    private let toggleButtonHeight: CGFloat = 32
 }
