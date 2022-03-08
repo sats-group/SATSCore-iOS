@@ -42,7 +42,6 @@ public struct AlertViewData: Identifiable, Equatable {
 
 public extension Alert {
     /// Creates an alert from view data, this include a default cancel button
-    ///
     init(viewData: AlertViewData)  {
         let primaryButton: Alert.Button
 
