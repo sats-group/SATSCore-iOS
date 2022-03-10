@@ -37,4 +37,15 @@ public extension Backport where Content: View {
             content.modifier(Backported.TaskModifier(action: action))
         }
     }
+
+    @available(iOS, deprecated: 15, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func refreshable(_ action: @escaping () async -> Void) -> some View {
+        if #available(iOS 15, *) {
+            content.refreshable {
+                await action()
+            }
+        } else {
+            content
+        }
+    }
 }
