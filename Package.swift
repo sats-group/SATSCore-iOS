@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(
             name: "SATSType",
-            url: "git@github.com:healthfitnessnordic/SATSType-iOS.git",
+            url: "https://github.com/healthfitnessnordic/SATSType-iOS.git",
             .upToNextMajor(from: "0.0.2")
         ),
     ],
