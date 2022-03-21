@@ -50,4 +50,33 @@ public extension Backport where Content: View {
             }
         }
     }
+
+    enum Visibility {
+        case automatic
+        case visible
+        case hidden
+
+        @available(iOS 15, *)
+        var value: SwiftUI.Visibility {
+            switch self {
+            case .automatic:
+                return .automatic
+
+            case .visible:
+                return .visible
+
+            case .hidden:
+                return .hidden
+            }
+        }
+    }
+
+    @available(iOS, deprecated: 15, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func listRowSeparator(_ visibility: Visibility) -> some View {
+        if #available(iOS 15, *) {
+            content.listRowSeparator(visibility.value)
+        } else {
+            content
+        }
+    }
 }
