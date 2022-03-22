@@ -45,7 +45,7 @@ public extension Backport where Content: View {
                 await action()
             }
         } else {
-            Backported.PullToRefreshContainer(onReload: action) {
+            PullToRefreshContainer(onReload: action) {
                 content
             }
         }
