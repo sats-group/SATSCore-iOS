@@ -17,4 +17,12 @@ public extension CGFloat {
     static let spacingXXL: CGFloat = 64
     /// spacing of 128 pts
     static let spacingXXXL: CGFloat = 128
+
+    // MARK: Corner Radius
+    /// Radius: 8
+    static let borderRadiusS: CGFloat = 8
+    /// Radius: 12
+    static let borderRadiusS: CGFloat = 12
+    /// Radius: 24
+    static let borderRadiusS: CGFloat = 24
 }
