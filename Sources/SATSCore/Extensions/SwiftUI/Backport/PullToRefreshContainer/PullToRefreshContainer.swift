@@ -16,7 +16,18 @@ import SwiftUI
 )
 public struct PullToRefreshContainer<Content: View>: View {
     @State private var scrollValue: CGFloat = 0
+
+    /// This property is to keep track if the `onReload`
+    /// method has been called or not.
+    /// Since we cannot know that the `onReaload` will
+    /// actually be an async function, then we cannot
+    /// await for that function to return to set this property to `false`
+    ///
+    /// Then this property acts to track the "gesture" of
+    /// the pull to refresh action, not if the async `onReload`
+    /// method returned.
     @State private var isLoading: Bool = false
+
     var onReload: () async -> Void
     @ViewBuilder var content: Content
 
@@ -47,18 +58,30 @@ public struct PullToRefreshContainer<Content: View>: View {
             }
         }
         .clipped()
-        .onChange(of: scrollValue, perform: { value in
-            if value >= progressHeight {
-                performReload()
-            }
-        })
+        .onChange(of: scrollValue, perform: reloadIfNeeded(given:))
+    }
+
+    /// Only call `performReload` if needed
+    /// The main conditions that we need is:
+    /// - the user scrolls "enough" to start the reload of data
+    /// - there is no a reload in progress
+    private func reloadIfNeeded(given value: CGFloat) {
+        guard
+            !isLoading,
+            value >= progressHeight
+        else {
+            // Since we are not awaiting to `performReload`
+            // to reset this value, we can derive if we
+            // need to reset `isLoading = false` with this condition
+            isLoading = !(value < progressHeight)
+            return
+        }
+
+        performReload()
     }
 
     private func performReload() {
         isLoading = true
-        Task {
-            await onReload()
-            isLoading = false
-        }
+        Task { await onReload() }
     }
 }
