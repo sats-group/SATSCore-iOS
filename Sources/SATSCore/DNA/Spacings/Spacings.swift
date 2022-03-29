@@ -20,9 +20,9 @@ public extension CGFloat {
 
     // MARK: Corner Radius
     /// Radius: 8
-    static let borderRadiusS: CGFloat = 8
+    static let cornerRadiusS: CGFloat = 8
     /// Radius: 12
-    static let borderRadiusS: CGFloat = 12
+    static let cornerRadiusS: CGFloat = 12
     /// Radius: 24
-    static let borderRadiusS: CGFloat = 24
+    static let cornerRadiusS: CGFloat = 24
 }
