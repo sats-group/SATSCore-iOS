@@ -6,6 +6,7 @@ public extension Color {
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
     static var backgroundSecondary: Color { color(.backgroundSecondary) }
     static var backgroundSurfacePrimary: Color { color(.backgroundSurfacePrimary) }
+    static var backgroundSurfaceSecondary: Color { color(.backgroundSurfaceSecondary) }
 
     // MARK: Secondary
 

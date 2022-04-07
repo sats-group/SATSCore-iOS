@@ -5,6 +5,7 @@ enum ColorName: String, CaseIterable {
     case backgroundPrimary
     case backgroundSecondary
     case backgroundSurfacePrimary
+    case backgroundSurfaceSecondary
 
     case secondary
     case secondaryHighlight

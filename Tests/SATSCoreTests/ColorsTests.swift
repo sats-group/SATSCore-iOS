@@ -24,6 +24,7 @@ class ColorsTests: XCTestCase {
             .backgroundPrimary,
             .backgroundSecondary,
             .backgroundSurfacePrimary,
+            .backgroundSurfaceSecondary,
 
             .secondary,
             .secondaryHighlight,
