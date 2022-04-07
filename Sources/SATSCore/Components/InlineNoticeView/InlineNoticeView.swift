@@ -51,7 +51,7 @@ public class InlineNoticeView: UIView {
     // MARK: Private methods
 
     private func setup() {
-        backgroundColor = .backgroundSurface
+        backgroundColor = .backgroundSurfacePrimary
         layoutMargins = UIEdgeInsets(vertical: 16, horizontal: 20)
 
         let topSeparator = horizontalSeparatorView()

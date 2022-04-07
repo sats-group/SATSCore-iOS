@@ -80,7 +80,7 @@ struct SATSButtonDemoView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 .padding()
-                .background(Color.backgroundSurface)
+                .background(Color.backgroundSurfacePrimary)
             }
         }
         .navigationTitle("UIKit Button Styles")

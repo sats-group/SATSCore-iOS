@@ -86,7 +86,7 @@ struct SATSButtonSwftUIDemoView: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 .padding()
-                .background(Color.backgroundSurface)
+                .background(Color.backgroundSurfacePrimary)
             }
         }
         .navigationTitle("SwiftUI Button Styles")
