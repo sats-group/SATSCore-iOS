@@ -4,7 +4,8 @@ import Foundation
 enum ColorName: String, CaseIterable {
     case backgroundPrimary
     case backgroundSecondary
-    case backgroundSurface
+    case backgroundSurfacePrimary
+    case backgroundSurfaceSecondary
 
     case secondary
     case secondaryHighlight

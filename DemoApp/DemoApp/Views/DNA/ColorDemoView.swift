@@ -63,7 +63,8 @@ struct ColorDemoView: View {
             colors: [
                 ColorDemo(name: "backgroundPrimary", color: .backgroundPrimary),
                 ColorDemo(name: "backgroundSecondary", color: .backgroundSecondary),
-                ColorDemo(name: "backgroundSurface", color: .backgroundSurface),
+                ColorDemo(name: "backgroundSurfacePrimary", color: .backgroundSurfacePrimary),
+                ColorDemo(name: "backgroundSurfaceSecondary", color: .backgroundSurfaceSecondary),
             ]
         ),
         ColorSection(

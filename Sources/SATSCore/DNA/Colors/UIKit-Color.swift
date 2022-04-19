@@ -5,7 +5,8 @@ public extension UIColor {
 
     static var backgroundPrimary: UIColor { color(.backgroundPrimary) }
     static var backgroundSecondary: UIColor { color(.backgroundSecondary) }
-    static var backgroundSurface: UIColor { color(.backgroundSurface) }
+    static var backgroundSurfacePrimary: UIColor { color(.backgroundSurfacePrimary) }
+    static var backgroundSurfaceSecondary: UIColor { color(.backgroundSurfaceSecondary) }
 
     // MARK: Secondary
 

@@ -62,7 +62,7 @@ struct NoticeDemoView: View {
         }
         .padding()
         .accentColor(Color.primary)
-        .background(Color.backgroundSurface)
+        .background(Color.backgroundSurfacePrimary)
     }
 
     func toggleNotice() {
