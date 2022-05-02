@@ -79,4 +79,13 @@ public extension Backport where Content: View {
             content
         }
     }
+
+    @available(iOS, deprecated: 15, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func listRowSeparatorTint(_ color: Color) -> some View {
+        if #available(iOS 15, *) {
+            content.listRowSeparatorTint(color)
+        } else {
+            content
+        }
+    }
 }
