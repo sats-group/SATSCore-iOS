@@ -60,6 +60,7 @@ class ColorsTests: XCTestCase {
             .graphicalElements1,
             .graphicalElements2,
             .graphicalElements3,
+            .graphicalElements4,
             .shimmer,
             .tabs,
 

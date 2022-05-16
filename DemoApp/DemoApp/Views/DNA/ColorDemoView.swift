@@ -153,6 +153,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "graphicalElements1", color: .graphicalElements1),
                 ColorDemo(name: "graphicalElements2", color: .graphicalElements2),
                 ColorDemo(name: "graphicalElements3", color: .graphicalElements3),
+                ColorDemo(name: "graphicalElements4", color: .graphicalElements4),
                 ColorDemo(name: "shimmer", color: .shimmer),
                 ColorDemo(name: "tabs", color: .tabs),
             ]
