@@ -9,6 +9,23 @@ public class DatePickerHelper {
         self.calendar = calendar
     }
 
+    private lazy var weekdayFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E"
+        return dateFormatter
+    }()
+
+    func weekdayName(for date: Date) -> String {
+        let stringValue: String
+
+        if #available(iOS 15.0, *) {
+            stringValue = date.formatted(.dateTime.weekday())
+        } else {
+            stringValue = weekdayFormatter.string(from: date)
+        }
+
+        return stringValue.prefix(1).uppercased()
+    }
     /// Should be replaced when targeting iOS 15 with
     /// Text(date, format: .dateTime.day())
     func dateNotZeroPrefixed(date: Date) -> String {
