@@ -11,7 +11,7 @@
 		28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0A16627A93846001374D2 /* DatePickerDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
-		9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoAppApp.swift */; };
+		9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoApp.swift */; };
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
 		9B2BFBE125B719AD00383193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */; };
@@ -61,7 +61,7 @@
 		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9B2BFBD925B719AD00383193 /* DemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppApp.swift; sourceTree = "<group>"; };
+		9B2BFBD925B719AD00383193 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		9B2BFBDB25B719AD00383193 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9B2BFBDD25B719AD00383193 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				9B2BFBE225B719AD00383193 /* Info.plist */,
-				9B2BFBD925B719AD00383193 /* DemoAppApp.swift */,
+				9B2BFBD925B719AD00383193 /* DemoApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -579,7 +579,7 @@
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
 				9B7A4D5325D2ADA30086EA4F /* ClassSampleView.swift in Sources */,
-				9B2BFBDA25B719AD00383193 /* DemoAppApp.swift in Sources */,
+				9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */,
 				9B7A4D5725D2B03D0086EA4F /* HeaderView.swift in Sources */,
 				9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */,
 			);

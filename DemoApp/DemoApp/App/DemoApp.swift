@@ -2,7 +2,7 @@ import SwiftUI
 @_exported import SATSCore
 
 @main
-struct DemoAppApp: App {
+struct DemoApp: App {
     init() {
         Config.setup()
     }
