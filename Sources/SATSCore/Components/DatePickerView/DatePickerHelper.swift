@@ -4,9 +4,14 @@ public class DatePickerHelper {
     public static let current: DatePickerHelper = .init()
 
     let calendar: Calendar
+    public let today: () -> Date
 
-    init(calendar: Calendar = .current) {
+    public init(
+        calendar: Calendar = .current,
+        today: @escaping () -> Date = { Date() }
+    ) {
         self.calendar = calendar
+        self.today = today
     }
 
     private lazy var weekdayFormatter: DateFormatter = {
@@ -39,7 +44,7 @@ public class DatePickerHelper {
     }
 
     func getWeekdays() -> [Date] {
-        getWeek(for: Date())
+        getWeek(for: today())
     }
 
     func getWeek(for date: Date, availableDays: [DatePickerViewData]) -> [DatePickerView.WeekViewData] {
@@ -96,7 +101,7 @@ public class DatePickerHelper {
         calendar.isDate(date1, equalTo: date2, toGranularity: .day)
     }
 
-    private func isToday(date: Date) -> Bool {
-        calendar.isDate(Date(), equalTo: date, toGranularity: .day)
+    func isToday(date: Date) -> Bool {
+        calendar.isDate(today(), equalTo: date, toGranularity: .day)
     }
 }
