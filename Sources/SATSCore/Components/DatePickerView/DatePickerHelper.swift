@@ -31,6 +31,7 @@ public class DatePickerHelper {
 
         return stringValue.prefix(1).uppercased()
     }
+
     /// Should be replaced when targeting iOS 15 with
     /// Text(date, format: .dateTime.day())
     func dateNotZeroPrefixed(date: Date) -> String {
@@ -63,7 +64,11 @@ public class DatePickerHelper {
     }
 
     func circleBackgroundColor(date: Date, selectedDate: Date) -> Color {
-        if isSameDay(date1: selectedDate, date2: date) {
+        circleBackgroundColor(date: date, isSelected: isSameDay(date1: selectedDate, date2: date))
+    }
+
+    func circleBackgroundColor(date: Date, isSelected: Bool) -> Color {
+        if isSelected {
             return .satsPrimary
         }
         if isToday(date: date) {
@@ -73,7 +78,15 @@ public class DatePickerHelper {
     }
 
     func dateTextColor(date: Date, selectedDate: Date, isActive: Bool) -> Color {
-        if isSameDay(date1: selectedDate, date2: date) {
+        dateTextColor(
+            date: date,
+            isSelected: isSameDay(date1: selectedDate, date2: date),
+            isActive: isActive
+        )
+    }
+
+    func dateTextColor(date: Date, isSelected: Bool, isActive: Bool) -> Color {
+        if isSelected {
             return .onPrimary
         }
         if isActive {
@@ -97,7 +110,7 @@ public class DatePickerHelper {
         return week
     }
 
-    private func isSameDay(date1: Date, date2: Date) -> Bool {
+    func isSameDay(date1: Date, date2: Date) -> Bool {
         calendar.isDate(date1, equalTo: date2, toGranularity: .day)
     }
 
