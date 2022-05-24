@@ -4,7 +4,7 @@ extension DatePickerView {
     /// An alternative date picker intended for a horizontal scrolling list
     public struct HorizontalDaysList: View {
         @Binding var selectedDate: Date
-        @State var availableDates: [DatePickerViewData]
+        let availableDates: [DatePickerViewData]
         let helper: DatePickerHelper
 
         public init(
@@ -13,7 +13,7 @@ extension DatePickerView {
             helper: DatePickerHelper = .current
         ) {
             self._selectedDate = selectedDate
-            self._availableDates = .init(initialValue: availableDates)
+            self.availableDates = availableDates
             self.helper = helper
         }
 
