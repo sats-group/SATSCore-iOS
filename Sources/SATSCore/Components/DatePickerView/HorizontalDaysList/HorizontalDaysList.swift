@@ -19,14 +19,20 @@ extension DatePickerView {
 
         public var body: some View {
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: .spacingL) {
-                    ForEach(availableDates, id: \.self) { date in
-                        dayView(for: date)
-                            .onTapGesture { selectedDate = date.date }
+                ScrollViewReader { proxy in
+                    HStack(spacing: 0) {
+                        ForEach(availableDates, id: \.self) { viewData in
+                            dayView(for: viewData)
+                                .onTapGesture { selectedDate = viewData.date }
+                                .id(helper.dateId(for: viewData.date))
+                        }
+                    }
+                    .padding(.vertical, .spacingM)
+                    .satsFont(.small)
+                    .onChange(of: selectedDate) { newValue in
+                        scroll(with: proxy, to: newValue)
                     }
                 }
-                .padding(.spacingM)
-                .satsFont(.small)
             }
             .background(Color.backgroundPrimary)
         }
@@ -37,7 +43,14 @@ extension DatePickerView {
                 isSelected: helper.isSameDay(date1: viewData.date, date2: selectedDate),
                 helper: helper
             )
-            .frame(width: 32)
+            .frame(minWidth: 32)
+            .padding(.horizontal, .spacingS)
+        }
+
+        func scroll(with proxy: ScrollViewProxy, to date: Date) {
+            withAnimation(.easeInOut) {
+                proxy.scrollTo(helper.dateId(for: date))
+            }
         }
     }
 }

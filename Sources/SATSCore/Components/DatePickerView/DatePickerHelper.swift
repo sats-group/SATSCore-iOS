@@ -20,6 +20,17 @@ public class DatePickerHelper {
         return dateFormatter
     }()
 
+    private lazy var dateOnlyFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+
+    /// Returns a string that is only the day/month/year components for a date
+    func dateId(for date: Date) -> String {
+        dateOnlyFormatter.string(from: date)
+    }
+
     func weekdayName(for date: Date) -> String {
         let stringValue: String
 
