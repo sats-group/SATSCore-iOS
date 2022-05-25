@@ -4,9 +4,43 @@ public class DatePickerHelper {
     public static let current: DatePickerHelper = .init()
 
     let calendar: Calendar
+    public let today: () -> Date
 
-    init(calendar: Calendar = .current) {
+    public init(
+        calendar: Calendar = .current,
+        today: @escaping () -> Date = { Date() }
+    ) {
         self.calendar = calendar
+        self.today = today
+    }
+
+    private lazy var weekdayFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E"
+        return dateFormatter
+    }()
+
+    private lazy var dateOnlyFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter
+    }()
+
+    /// Returns a string that is only the day/month/year components for a date
+    func dateId(for date: Date) -> String {
+        dateOnlyFormatter.string(from: date)
+    }
+
+    func weekdayName(for date: Date) -> String {
+        let stringValue: String
+
+        if #available(iOS 15.0, *) {
+            stringValue = date.formatted(.dateTime.weekday())
+        } else {
+            stringValue = weekdayFormatter.string(from: date)
+        }
+
+        return stringValue.prefix(1).uppercased()
     }
 
     /// Should be replaced when targeting iOS 15 with
@@ -22,7 +56,7 @@ public class DatePickerHelper {
     }
 
     func getWeekdays() -> [Date] {
-        getWeek(for: Date())
+        getWeek(for: today())
     }
 
     func getWeek(for date: Date, availableDays: [DatePickerViewData]) -> [DatePickerView.WeekViewData] {
@@ -41,7 +75,11 @@ public class DatePickerHelper {
     }
 
     func circleBackgroundColor(date: Date, selectedDate: Date) -> Color {
-        if isSameDay(date1: selectedDate, date2: date) {
+        circleBackgroundColor(date: date, isSelected: isSameDay(date1: selectedDate, date2: date))
+    }
+
+    func circleBackgroundColor(date: Date, isSelected: Bool) -> Color {
+        if isSelected {
             return .satsPrimary
         }
         if isToday(date: date) {
@@ -51,7 +89,15 @@ public class DatePickerHelper {
     }
 
     func dateTextColor(date: Date, selectedDate: Date, isActive: Bool) -> Color {
-        if isSameDay(date1: selectedDate, date2: date) {
+        dateTextColor(
+            date: date,
+            isSelected: isSameDay(date1: selectedDate, date2: date),
+            isActive: isActive
+        )
+    }
+
+    func dateTextColor(date: Date, isSelected: Bool, isActive: Bool) -> Color {
+        if isSelected {
             return .onPrimary
         }
         if isActive {
@@ -75,11 +121,11 @@ public class DatePickerHelper {
         return week
     }
 
-    private func isSameDay(date1: Date, date2: Date) -> Bool {
+    func isSameDay(date1: Date, date2: Date) -> Bool {
         calendar.isDate(date1, equalTo: date2, toGranularity: .day)
     }
 
-    private func isToday(date: Date) -> Bool {
-        calendar.isDate(Date(), equalTo: date, toGranularity: .day)
+    func isToday(date: Date) -> Bool {
+        calendar.isDate(today(), equalTo: date, toGranularity: .day)
     }
 }

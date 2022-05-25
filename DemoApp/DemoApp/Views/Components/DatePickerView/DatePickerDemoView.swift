@@ -6,22 +6,36 @@ struct DatePickerDemoView: View {
     @State var showFullCalendar: Bool = false
 
     var body: some View {
-        ScrollView {
+        VStack {
             VStack {
+                Text("PT booking date picker")
+                    .font(.headline)
+
                 DatePickerView(
                     selectedDate: $selectedDate,
                     showFullCalendar: $showFullCalendar,
                     days: generatePlaceholderDays()
                 )
+            }
 
-                Rectangle()
-                    .foregroundColor(.border)
-                    .frame(height: 1)
+            Rectangle()
+                .foregroundColor(.border)
+                .frame(height: 1)
 
-                Spacer()
+            Spacer()
+
+            VStack {
+                Text("GX booking date picker")
+                    .font(.headline)
+
+                DatePickerView.HorizontalDaysList(
+                    selectedDate: $selectedDate,
+                    availableDates: generatePlaceholderDays()
+                )
             }
         }
         .background(Color.backgroundPrimary)
+        .navigationTitle("Date Picker View")
     }
 
     private func generatePlaceholderDays() -> [DatePickerViewData] {
