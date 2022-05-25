@@ -27,7 +27,7 @@ extension DatePickerView {
             DatePickerView.WeekDayLabel(name: helper.weekdayName(for: viewData.date))
         }
 
-        @ViewBuilder var dayNumber: some View {
+        var dayNumber: some View {
             DatePickerView.DayView(
                 day: helper.dateNotZeroPrefixed(date: viewData.date),
                 textColor: helper.dateTextColor(
