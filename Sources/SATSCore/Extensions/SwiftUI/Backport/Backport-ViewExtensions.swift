@@ -88,4 +88,13 @@ public extension Backport where Content: View {
             content
         }
     }
+
+    @available(iOS, deprecated: 15, message: "This is a backported version that is not needed anymore")
+    @ViewBuilder func onSearchFocused(perform action: (() -> Void)?) -> some View {
+        if #available(iOS 15.0, *) {
+            content.onSearchFocused(perform: action)
+        } else {
+            content
+        }
+    }
 }
