@@ -37,6 +37,7 @@ public extension UIColor {
 
     static var waitlist: UIColor { color(.waitlist) }
     static var waitlistHighlight: UIColor { color(.waitlistHighlight) }
+    static var waitlistText: UIColor { color(.waitlistText) }
 
     // MARK: Signal
 
