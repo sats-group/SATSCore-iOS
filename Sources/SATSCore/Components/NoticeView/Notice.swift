@@ -12,8 +12,8 @@ public struct Notice {
     public let foregroundColor: Color
     public let backgroundColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
-    public let retryTitle: String?
-    public let onRetry: (() -> Void)?
+    public let actionTitle: String?
+    public let action: (() -> Void)?
 
     public init(
         icon: Image? = nil,
@@ -23,8 +23,8 @@ public struct Notice {
         foregroundColor: Color,
         backgroundColor: Color,
         hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
-        retryTitle: String? = nil,
-        onRetry: (() -> Void)? = nil
+        actionTitle: String? = nil,
+        action: (() -> Void)? = nil
     ) {
         self.icon = icon
         self.title = title
@@ -33,8 +33,8 @@ public struct Notice {
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
         self.hapticType = hapticType
-        self.retryTitle = retryTitle
-        self.onRetry = onRetry
+        self.actionTitle = actionTitle
+        self.action = action
     }
 
     /// Creates an error notice data struct
@@ -61,21 +61,21 @@ public struct Notice {
         )
     }
 
-    /// Create a error notice with retry options
+    /// Create a error notice with action options
     /// - Parameters:
     ///   - title: required title of the error
     ///   - explanation: (optional) explanation of the error
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
-    ///   - retryTitle: title for the retry button
-    ///   - onRetry: callback when the try button is tapped
-    /// - Returns: returns a error `Notice` that won't autodismiss that allows to retry
+    ///   - actionTitle: title for the action button
+    ///   - action: callback when the action button is tapped
+    /// - Returns: returns a error `Notice` that won't autodismiss that allows to action
     ///            an operation that caused an error
     public static func error(
         title: String,
         explanation: String? = nil,
         includeHaptic: Bool = true,
-        retryTitle: String,
-        onRetry: @escaping () -> Void
+        actionTitle: String,
+        action: @escaping () -> Void
     ) -> Notice {
         Notice(
             icon: Image(systemName: "xmark.octagon.fill"),
@@ -85,8 +85,8 @@ public struct Notice {
             foregroundColor: .onSignal,
             backgroundColor: .signalError,
             hapticType: includeHaptic ? .error : nil,
-            retryTitle: retryTitle,
-            onRetry: onRetry
+            actionTitle: actionTitle,
+            action: action
         )
     }
 
