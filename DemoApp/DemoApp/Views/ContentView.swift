@@ -38,7 +38,7 @@ struct ContentView: View {
                         NavigationLink("ScrollReaderView", destination: ScrollReaderDemoView())
                         NavigationLink("TabSelectionView", destination: TabSelectionDemoView())
                         NavigationLink("TopBar", destination: TopBarDemoView())
-                        NavigationLink("RadioButton", destination: RadioButtonView())
+                        NavigationLink("RadioGroup", destination: RadioGroupView())
                     }
                 }
 

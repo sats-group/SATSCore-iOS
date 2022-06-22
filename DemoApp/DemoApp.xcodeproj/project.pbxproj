@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */; };
 		28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0A16627A93846001374D2 /* DatePickerDemoView.swift */; };
-		579A78CC2861DBA0004BE247 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579A78CB2861DBA0004BE247 /* RadioButtonView.swift */; };
+		57016DC42863527200874F53 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57016DC32863527200874F53 /* RadioGroupView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
 		9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoApp.swift */; };
@@ -60,7 +60,7 @@
 /* Begin PBXFileReference section */
 		2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
 		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
-		579A78CB2861DBA0004BE247 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		57016DC32863527200874F53 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
@@ -137,12 +137,12 @@
 			path = DatePickerView;
 			sourceTree = "<group>";
 		};
-		579A78CA2861DB94004BE247 /* RadioButtonView */ = {
+		57016DC0286349BA00874F53 /* RadioGroupView */ = {
 			isa = PBXGroup;
 			children = (
-				579A78CB2861DBA0004BE247 /* RadioButtonView.swift */,
+				57016DC32863527200874F53 /* RadioGroupView.swift */,
 			);
-			path = RadioButtonView;
+			path = RadioGroupView;
 			sourceTree = "<group>";
 		};
 		9B00E27525B9AE6200533641 /* Assets */ = {
@@ -382,7 +382,7 @@
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				579A78CA2861DB94004BE247 /* RadioButtonView */,
+				57016DC0286349BA00874F53 /* RadioGroupView */,
 				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B4083BB261DE66D00A3A718 /* ArticlePageView */,
 				9B75EC43264B1D3C00B160EF /* EmptyStateView */,
@@ -570,7 +570,6 @@
 				9B4083BE261DE66D00A3A718 /* ExternalUrlDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */,
-				579A78CC2861DBA0004BE247 /* RadioButtonView.swift in Sources */,
 				9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */,
 				28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */,
 				9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */,
@@ -583,6 +582,7 @@
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
 				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
+				57016DC42863527200874F53 /* RadioGroupView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
