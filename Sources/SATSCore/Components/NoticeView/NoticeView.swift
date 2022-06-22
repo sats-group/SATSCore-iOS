@@ -14,7 +14,7 @@ public struct NoticeView: View {
             icon
             message
             Spacer()
-            retryButton
+            actionButton
         }
         .foregroundColor(notice.foregroundColor)
         .padding(16)
@@ -29,14 +29,14 @@ public struct NoticeView: View {
         onTap?()
     }
 
-    @ViewBuilder var retryButton: some View {
-        if let onRetry = notice.onRetry, let retryTitle = notice.retryTitle {
+    @ViewBuilder var actionButton: some View {
+        if let onAction = notice.action, let actionTitle = notice.actionTitle {
             HStack {
                 Divider()
                     .frame(height: 16)
 
-                Button(action: onRetry) {
-                    Text(retryTitle.uppercased())
+                Button(action: onAction) {
+                    Text(actionTitle.uppercased())
                         .satsFont(.basic, weight: .emphasis)
                 }
                 .padding(.horizontal, 8)

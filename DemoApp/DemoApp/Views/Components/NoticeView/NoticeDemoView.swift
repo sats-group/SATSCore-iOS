@@ -13,7 +13,7 @@ struct NoticeDemoView: View {
     @State var includeSubtitle: Bool = false
     @State var autoDismiss: Bool = true
     @State var edgeTop: Bool = true
-    @State var withRetry: Bool = false
+    @State var withAction: Bool = false
     @State var style: Style = .success
 
     var edge: Notice.Edge { edgeTop ? .top : .bottom }
@@ -43,7 +43,7 @@ struct NoticeDemoView: View {
             Toggle("Auto dismiss?", isOn: $autoDismiss)
             Toggle("Top Edge?", isOn: $edgeTop)
             if style == .error {
-                Toggle("With Retry?", isOn: $withRetry)
+                Toggle("With Action?", isOn: $withAction)
             }
 
             HStack {
@@ -84,7 +84,7 @@ struct NoticeDemoView: View {
     private func createNotice() -> Notice {
         let subtitle = includeSubtitle ? "Subtitle text" : nil
 
-        switch (style, withRetry) {
+        switch (style, withAction) {
         case (.success, _):
             return Notice.success(
                 title: "Sample success notice",
@@ -103,8 +103,8 @@ struct NoticeDemoView: View {
             return Notice.error(
                 title: "Sample error notice",
                 explanation: subtitle,
-                retryTitle: "Retry",
-                onRetry: { print("on retry!") }
+                actionTitle: "Action",
+                action: { print("on action!") }
             )
 
         case (.error, false):
@@ -140,7 +140,7 @@ struct ErrorNoticeView_Previews: PreviewProvider {
 
                 NoticeView(notice: .sampleError)
 
-                NoticeView(notice: .sampleErrorWithRetry)
+                NoticeView(notice: .sampleErrorWithAction)
             }
             .previewLayout(.sizeThatFits)
         }
@@ -152,10 +152,10 @@ extension Notice {
         title: "This is a sample error"
     )
 
-    static let sampleErrorWithRetry = Notice.error(
+    static let sampleErrorWithAction = Notice.error(
         title: "This is a sample error",
-        retryTitle: "Retry",
-        onRetry: { print("Sample") }
+        actionTitle: "Action",
+        action: { print("Sample") }
     )
 
     static let sampleSuccess = Notice.success(
