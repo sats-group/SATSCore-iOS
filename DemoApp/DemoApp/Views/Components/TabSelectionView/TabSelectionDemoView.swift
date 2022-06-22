@@ -10,7 +10,7 @@ struct TabSelectionDemoView: View {
                 selectedValue: $value,
                 options: ["Group class", "PT Session", "Treatments"]
             )
-                .background(Color.backgroundSecondary)
+            .background(Color.backgroundSecondary)
             Spacer()
         }
         .background(Color.backgroundPrimary)

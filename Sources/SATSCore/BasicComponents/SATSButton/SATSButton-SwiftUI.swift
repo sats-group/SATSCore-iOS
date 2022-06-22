@@ -1,7 +1,6 @@
 import SwiftUI
 
 public extension View {
-
     /// Convenience to apply SATSButton styles to SwiftUI buttons
     ///
     /// - Parameters:

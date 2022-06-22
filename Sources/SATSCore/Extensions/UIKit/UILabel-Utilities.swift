@@ -9,6 +9,6 @@ extension UILabel {
             string: text,
             attributes: [.paragraphStyle: style]
         )
-        self.attributedText = attributeString
+        attributedText = attributeString
     }
 }

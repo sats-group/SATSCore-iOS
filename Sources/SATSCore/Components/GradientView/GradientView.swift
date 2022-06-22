@@ -22,7 +22,7 @@ public class GradientView: UIView {
     }
 
     public var gradientLayer: CAGradientLayer {
-        guard let layer = self.layer as? CAGradientLayer else {
+        guard let layer = layer as? CAGradientLayer else {
             preconditionFailure()
         }
         return layer
@@ -49,7 +49,7 @@ public class GradientView: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
 
-        themeObservation = NotificationCenter
+        self.themeObservation = NotificationCenter
             .default
             .addObserver(forName: ColorTheme.themeChangedNotification, object: nil, queue: .main) { [weak self] _ in
                 self?.updateColors()

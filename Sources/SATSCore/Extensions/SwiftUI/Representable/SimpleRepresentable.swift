@@ -16,7 +16,7 @@ import SwiftUI
         errorView.configure(with: errorViewData)
     }
     ```
-*/
+ */
 public struct SimpleRepresentable<View: UIView>: UIViewRepresentable {
     let onCreation: (View) -> Void
 

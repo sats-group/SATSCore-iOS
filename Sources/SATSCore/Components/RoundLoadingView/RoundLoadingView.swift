@@ -1,7 +1,6 @@
 import UIKit
 
 public class RoundLoadingView: UIView {
-
     // MARK: Private properties
 
     private var progressLayer = CAShapeLayer()

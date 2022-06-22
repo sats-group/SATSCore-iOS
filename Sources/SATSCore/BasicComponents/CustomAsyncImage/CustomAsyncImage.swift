@@ -26,7 +26,7 @@ public struct CustomAsyncImage<Output: View>: View {
     let transform: ((Image) -> Output)?
     let uuid: UUID = UUID()
 
-    /// 
+    ///
     /// - Parameters:
     ///   - state: the initial state for the async image
     ///   - transform: a closure that will be used to add modifiers to the view

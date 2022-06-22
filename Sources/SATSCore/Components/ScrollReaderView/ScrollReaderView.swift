@@ -1,14 +1,14 @@
 import SwiftUI
 
 /**
-A view that helps to "bubble up" the scroll position for a SwiftUI content.
+ A view that helps to "bubble up" the scroll position for a SwiftUI content.
 
- `scrollValue` will be updated with the content offset when scrolling,
-then we use that binding to communicate up the scroll value so the
- container view can do state changed based on it.
+  `scrollValue` will be updated with the content offset when scrolling,
+ then we use that binding to communicate up the scroll value so the
+  container view can do state changed based on it.
 
- Original solution found in: https://developer.apple.com/forums/thread/650312
- */
+  Original solution found in: https://developer.apple.com/forums/thread/650312
+  */
 public struct ScrollReaderView<Content: View>: View {
     let content: Content
     let showsIndicators: Bool

@@ -15,7 +15,7 @@ public struct ScoreView: View {
         self.score = score
         self.maxScore = maxScore
 
-        guard score >= 0 && score <= maxScore else {
+        guard score >= 0, score <= maxScore else {
             preconditionFailure("❌ score should between 0 and \(maxScore)")
         }
     }
@@ -31,7 +31,7 @@ public struct ScoreView: View {
                 .foregroundColor(Color.clear)
                 .overlay(
                     HStack(spacing: 2) {
-                        ForEach(Array(0..<maxScore), id: \.self) { index in
+                        ForEach(Array(0 ..< maxScore), id: \.self) { index in
                             Rectangle()
                                 .foregroundColor(score >= (index + 1) ? onColor : offColor)
                         }

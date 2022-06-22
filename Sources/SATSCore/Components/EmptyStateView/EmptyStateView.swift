@@ -14,7 +14,6 @@ public struct EmptyStateViewData {
 
 /// Common implementation for empty state screens for the app
 public class EmptyStateView: UIView {
-
     // MARK: Subviews
 
     private lazy var contentStackView: UIStackView = {

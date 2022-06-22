@@ -40,7 +40,7 @@ struct DatePickerDemoView: View {
 
     private func generatePlaceholderDays() -> [DatePickerViewData] {
         var dates: [DatePickerViewData] = []
-        for day in 0...60 {
+        for day in 0 ... 60 {
             let date = Date().addingTimeInterval(dayDurationInSeconds * Double(day))
             let isActive = day % 3 > 0
             dates.append(.init(date: date, isActive: isActive))
@@ -50,7 +50,7 @@ struct DatePickerDemoView: View {
     }
 
     private var dayDurationInSeconds: TimeInterval {
-        60*60*24
+        60 * 60 * 24
     }
 }
 

@@ -27,7 +27,6 @@ public extension TopBarStyle {
 }
 
 public class TopBar: UIView {
-
     // MARK: Private properties
 
     private lazy var titleLayoutConstraint = titleLabel.centerYAnchor.constraint(
