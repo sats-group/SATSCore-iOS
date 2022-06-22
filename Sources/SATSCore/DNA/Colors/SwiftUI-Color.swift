@@ -88,6 +88,7 @@ public extension Color {
     static var onNonText: Color { color(.onNonText) }
     static var onSignal: Color { color(.onSignal) }
     static var onWaitlist: Color { color(.onWaitlist) }
+    static var onWaitlistDisabled: Color { color(.onWaitlistDisabled) }
 
     static var onBackgroundEnabledOn: Color { color(.onBackgroundEnabledOn) }
     static var onBackgroundEnabledOff: Color { color(.onBackgroundEnabledOff) }

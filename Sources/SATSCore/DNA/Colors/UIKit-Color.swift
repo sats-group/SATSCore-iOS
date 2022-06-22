@@ -86,6 +86,7 @@ public extension UIColor {
     static var onNonText: UIColor { color(.onNonText) }
     static var onSignal: UIColor { color(.onSignal) }
     static var onWaitlist: UIColor { color(.onWaitlist) }
+    static var onWaitlistDisabled: UIColor { color(.onWaitlistDisabled) }
 
     static var onBackgroundEnabledOn: UIColor { color(.onBackgroundEnabledOn) }
     static var onBackgroundEnabledOff: UIColor { color(.onBackgroundEnabledOff) }
