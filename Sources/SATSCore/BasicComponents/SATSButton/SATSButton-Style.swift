@@ -12,20 +12,29 @@ public extension SATSButton {
         public let backgroundColorHighlighted: UIColor
         public let backgroundColorDisabled: UIColor
 
+        public let borderColor: UIColor?
+        public let borderColorDisabled: UIColor?
+
         public init(
             name: String,
             titleColor: UIColor,
             titleColorDisabled: UIColor,
             backgroundColor: UIColor,
             backgroundColorHighlighted: UIColor,
-            backgroundColorDisabled: UIColor
+            backgroundColorDisabled: UIColor,
+            borderColor: UIColor? = nil,
+            borderColorDisabled: UIColor? = nil
         ) {
             self.name = name
             self.titleColor = titleColor
             self.titleColorDisabled = titleColorDisabled
+
             self.backgroundColor = backgroundColor
             self.backgroundColorHighlighted = backgroundColorHighlighted
             self.backgroundColorDisabled = backgroundColorDisabled
+
+            self.borderColor = borderColor
+            self.borderColorDisabled = borderColorDisabled
         }
 
         func backgroundColor(forState state: UIControl.State) -> UIColor {
@@ -36,6 +45,15 @@ public extension SATSButton {
                 return backgroundColorDisabled
             default:
                 return backgroundColor
+            }
+        }
+
+        func borderColor(forState state: UIControl.State) -> UIColor? {
+            switch state {
+            case .disabled:
+                return borderColorDisabled
+            default:
+                return borderColor
             }
         }
     }
