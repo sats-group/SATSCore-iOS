@@ -92,7 +92,7 @@ struct TabSelectionView_Previews: PreviewProvider {
                     selectedValue: $value,
                     options: ["Group class", "PT Session", "Treatments"]
                 )
-                    .background(Color.white)
+                .background(Color.white)
                 Spacer()
             }
             .background(Color.backgroundPrimary)

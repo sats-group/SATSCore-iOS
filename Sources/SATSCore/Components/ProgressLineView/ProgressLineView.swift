@@ -1,7 +1,6 @@
 import UIKit
 
 public class ProgressLineView: UIView {
-
     // MARK: Private properties
 
     private lazy var progressView: UIView = {

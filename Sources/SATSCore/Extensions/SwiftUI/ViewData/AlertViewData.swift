@@ -33,7 +33,7 @@ public struct AlertViewData: Identifiable, Equatable {
             lhs.message == rhs.message &&
             lhs.actionTitle == rhs.actionTitle
     }
-    
+
     public enum ActionButtonStyle {
         case `default`
         case destructive
@@ -42,17 +42,17 @@ public struct AlertViewData: Identifiable, Equatable {
 
 public extension Alert {
     /// Creates an alert from view data, this include a default cancel button
-    init(viewData: AlertViewData)  {
+    init(viewData: AlertViewData) {
         let primaryButton: Alert.Button
 
         switch viewData.actionButtonStyle {
-        case .`default`:
+        case .default:
             primaryButton = .default(Text(viewData.actionTitle), action: viewData.action)
 
-        case .destructive :
+        case .destructive:
             primaryButton = .destructive(Text(viewData.actionTitle), action: viewData.action)
         }
-        
+
         self.init(
             title: Text(viewData.title),
             message: Text(viewData.message),

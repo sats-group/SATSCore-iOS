@@ -57,7 +57,6 @@ struct SATSButtonDemoView: View {
 
                     demoButton(style: .cta)
                         .padding()
-
                 }
 
                 Spacer()

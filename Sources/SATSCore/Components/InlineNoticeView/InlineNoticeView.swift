@@ -1,7 +1,6 @@
 import UIKit
 
 public class InlineNoticeView: UIView {
-
     // MARK: Subviews
 
     private lazy var iconImageView: UIImageView = {

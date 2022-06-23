@@ -3,13 +3,13 @@ import SwiftUI
 public extension View {
     @ViewBuilder
     func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> some View {
-        self.font(.satsFont(style, weight: weight))
+        font(.satsFont(style, weight: weight))
     }
 }
 
 public extension Text {
     func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> Text {
-        self.font(.satsFont(style, weight: weight))
+        font(.satsFont(style, weight: weight))
     }
 }
 

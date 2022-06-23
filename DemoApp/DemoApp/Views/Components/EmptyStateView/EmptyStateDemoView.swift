@@ -37,6 +37,7 @@ struct SATSEmptyDemoView_Previews: PreviewProvider {
 }
 
 // MARK: Test data
+
 extension EmptyStateViewData {
     static let emptyVouchers = EmptyStateViewData(
         icon: UIImage(named: "empty-vouchers-icon"),

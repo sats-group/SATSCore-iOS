@@ -11,9 +11,8 @@ import SwiftUI
 /// }
 /// ```
 @available(iOS,
-    deprecated: 15,
-    message: "This was a backport of the modifier for pull to refresh, now you should use the modifiers on list"
-)
+           deprecated: 15,
+           message: "This was a backport of the modifier for pull to refresh, now you should use the modifiers on list")
 public struct PullToRefreshContainer<Content: View>: View {
     @State private var scrollValue: CGFloat = 0
 
