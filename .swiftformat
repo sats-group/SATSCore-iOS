@@ -1,0 +1,64 @@
+#### enabled rules
+--rules \
+  andOperator, \
+  anyObjectProtocol, \
+  blankLinesAroundMark, \
+  blankLinesAtEndOfScope, \
+  blankLinesAtStartOfScope, \
+  blankLinesBetweenScopes, \
+  consecutiveBlankLines, \
+  consecutiveSpaces, \
+  duplicateImports, \
+  emptyBraces, \
+  hoistPatternLet, \
+  indent, \
+  leadingDelimiters, \
+  linebreakAtEndOfFile, \
+  redundantBackticks, \
+  redundantBreak, \
+  redundantExtensionACL, \
+  redundantFileprivate, \
+  redundantGet, \
+  redundantInit, \
+  redundantLet, \
+  redundantLetError, \
+  redundantNilInit, \
+  redundantObjc, \
+  redundantParens, \
+  redundantPattern, \
+  redundantRawValues, \
+  redundantReturn, \
+  redundantSelf, \
+  redundantVoidReturnType, \
+  semicolons, \
+  spaceAroundBraces, \
+  spaceAroundBrackets, \
+  spaceAroundComments, \
+  spaceAroundGenerics, \
+  spaceAroundOperators, \
+  spaceInsideBraces, \
+  spaceInsideBrackets, \
+  spaceInsideComments, \
+  spaceInsideGenerics, \
+  spaceInsideParens, \
+  strongifiedSelf, \
+  todos, \
+  trailingCommas, \
+  trailingSpace, \
+  typeSugar, \
+  unusedArguments, \
+  void, \
+  wrapArguments, \
+  wrapEnumCases, \
+  wrapSwitchCases
+
+#### rule settings
+--stripunusedargs "closure-only"
+--ifdef "no-indent"
+--self "init-only"
+
+#### disabled rules
+--disable initCoderUnavailable
+--disable braces
+--disable preferKeyPath
+--disable wrapMultilineStatementBraces

@@ -64,7 +64,7 @@ public class DatePickerHelper {
         var week: [DatePickerView.WeekViewData] = []
 
         for day in weekdays {
-            if let availableDate = availableDays.first(where: { isSameDay(date1: day, date2: $0.date)}) {
+            if let availableDate = availableDays.first(where: { isSameDay(date1: day, date2: $0.date) }) {
                 week.append(.init(date: availableDate.date, isOutsideOfRange: false, isActive: availableDate.isActive))
             } else {
                 week.append(.init(date: day, isOutsideOfRange: true, isActive: false))
@@ -112,7 +112,7 @@ public class DatePickerHelper {
         let day = mutableCalendar.startOfDay(for: date)
         var week: [Date] = []
         if let weekInterval = mutableCalendar.dateInterval(of: .weekOfYear, for: day) {
-            for counter in 0...6 {
+            for counter in 0 ... 6 {
                 if let day = mutableCalendar.date(byAdding: .day, value: counter, to: weekInterval.start) {
                     week.append(day)
                 }

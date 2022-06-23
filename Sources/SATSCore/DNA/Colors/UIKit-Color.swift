@@ -37,6 +37,8 @@ public extension UIColor {
 
     static var waitlist: UIColor { color(.waitlist) }
     static var waitlistHighlight: UIColor { color(.waitlistHighlight) }
+    static var waitlistDisabled: UIColor { color(.waitlistDisabled) }
+    static var waitlistText: UIColor { color(.waitlistText) }
 
     // MARK: Signal
 
@@ -84,6 +86,7 @@ public extension UIColor {
     static var onNonText: UIColor { color(.onNonText) }
     static var onSignal: UIColor { color(.onSignal) }
     static var onWaitlist: UIColor { color(.onWaitlist) }
+    static var onWaitlistDisabled: UIColor { color(.onWaitlistDisabled) }
 
     static var onBackgroundEnabledOn: UIColor { color(.onBackgroundEnabledOn) }
     static var onBackgroundEnabledOff: UIColor { color(.onBackgroundEnabledOff) }

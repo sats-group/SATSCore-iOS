@@ -12,7 +12,6 @@ public struct ExternalUrlViewData {
 
 /// This is a visual button that used to render links to external URLs
 public class ExternalUrlView: UIView {
-
     private var url: URL?
 
     public var onOpenUrl: ((_ url: URL?) -> Void)?

@@ -1,7 +1,6 @@
 import UIKit
 
 public class SATSButton: UIButton {
-
     // MARK: Initializers
 
     public init(style: Style, size: Size = .basic, withAutoLayout: Bool = true) {
@@ -11,7 +10,7 @@ public class SATSButton: UIButton {
         super.init(frame: .zero)
 
         self.translatesAutoresizingMaskIntoConstraints = !withAutoLayout
-        self.titleLabel?.adjustsFontForContentSizeCategory = true
+        titleLabel?.adjustsFontForContentSizeCategory = true
         setup()
     }
 

@@ -62,7 +62,6 @@ struct SATSButtonSwftUIDemoView: View {
                     Button("CTA", action: {})
                         .satsButton(.cta, size: size, isLoading: isLoading)
                         .padding()
-
                 }
                 .disabled(!isEnabled)
 

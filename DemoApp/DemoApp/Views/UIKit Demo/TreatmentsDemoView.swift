@@ -65,6 +65,7 @@ class TreatmentsView: UIView {
     }
 
     // MARK: - Private methods
+
     private func setup() {
         backgroundColor = .backgroundSecondary
 
@@ -112,11 +113,11 @@ struct TreatmentsDemoView: View {
                         "0779955ce011f4e74f2e1863a5011980/Treatments_v4.png"
                 )!,
                 description: NSAttributedString(string: """
-                            A unique link between treatments and exercise under one roof ensures that you\
-                            get a faster way back to an active life. By clicking book below, you will be sent\
-                            to a website provided by our partner. We use this partner solution to be able to\
-                            offer connection with other health systems if needed.
-                            """
+                    A unique link between treatments and exercise under one roof ensures that you\
+                    get a faster way back to an active life. By clicking book below, you will be sent\
+                    to a website provided by our partner. We use this partner solution to be able to\
+                    offer connection with other health systems if needed.
+                    """
                 ),
                 buttonTitle: "BOOK"
             )

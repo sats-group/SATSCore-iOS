@@ -17,8 +17,8 @@ public extension SATSFont {
 }
 
 public extension SATSFont.Weight {
-    static let `default`   = SATSFont.Weight(name: "Default", font: InterFont.regular)
-    static let medium      = SATSFont.Weight(name: "Medium", font: InterFont.medium)
-    static let emphasis    = SATSFont.Weight(name: "Emphasis", font: InterFont.semiBold)
+    static let `default` = SATSFont.Weight(name: "Default", font: InterFont.regular)
+    static let medium = SATSFont.Weight(name: "Medium", font: InterFont.medium)
+    static let emphasis = SATSFont.Weight(name: "Emphasis", font: InterFont.semiBold)
     static let satsFeeling = SATSFont.Weight(name: "SATS feeling", font: SatsHeadlineFont.boldItalic)
 }

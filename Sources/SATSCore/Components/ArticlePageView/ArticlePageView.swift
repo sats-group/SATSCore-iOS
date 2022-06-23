@@ -35,7 +35,6 @@ extension SATSFont.TextStyle {
 }
 
 public class ArticlePageView: UIView {
-
     public lazy var topBar = TopBar(withAutoLayout: true)
     public weak var delegate: ArticlePageViewDelegate?
 

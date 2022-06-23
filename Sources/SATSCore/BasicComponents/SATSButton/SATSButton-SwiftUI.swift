@@ -1,7 +1,6 @@
 import SwiftUI
 
 public extension View {
-
     /// Convenience to apply SATSButton styles to SwiftUI buttons
     ///
     /// - Parameters:
@@ -43,8 +42,9 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
             label.frame(maxWidth: .infinity, alignment: .center)
         })
         .background(backgroundColor(for: configuration))
-        .foregroundColor(textColor(for: configuration))
+        .foregroundColor(textColor)
         .clipShape(Capsule())
+        .overlay(borderOverlay)
     }
 
     // MARK: Subviews
@@ -67,12 +67,12 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     // MARK: Private methods
 
-    private func textColor(for configuration: Configuration) -> Color {
-        Color(
-            isEnabled ?
-                style.titleColor :
-                style.titleColorDisabled
-        )
+    private var textColor: Color {
+        Color(isEnabled ? style.titleColor : style.titleColorDisabled)
+    }
+
+    private var borderColor: Color? {
+        (isEnabled ? style.borderColor : style.borderColorDisabled).map { Color($0) }
     }
 
     private func backgroundColor(for configuration: Configuration) -> Color {
@@ -84,6 +84,12 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
             )
         } else {
             return Color(style.backgroundColorDisabled)
+        }
+    }
+
+    @ViewBuilder private var borderOverlay: some View {
+        if let borderColor = borderColor {
+            Capsule().strokeBorder(borderColor, lineWidth: 1)
         }
     }
 }

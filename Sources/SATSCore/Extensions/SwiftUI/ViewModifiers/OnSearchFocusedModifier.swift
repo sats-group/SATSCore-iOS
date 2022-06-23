@@ -5,7 +5,7 @@ public extension View {
     /// Perform the given action when the `isSearching` environment property
     /// changes from `false` to `true`.
     func onSearchFocused(perform action: (() -> Void)?) -> some View {
-        self.modifier(OnSearchFocusedModifier(onSearchFocused: action))
+        modifier(OnSearchFocusedModifier(onSearchFocused: action))
     }
 }
 

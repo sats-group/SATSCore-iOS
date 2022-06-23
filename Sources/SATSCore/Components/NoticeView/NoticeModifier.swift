@@ -81,6 +81,6 @@ public extension View {
     ///   - edge: which edge to default `.top` (options: `.top` and `.bottom`)
     /// - Returns: applies the internal modifier that wraps a view in a zstack and manages the behavior of the notice
     func inlineNotice(_ notice: Binding<Notice?>, edge: Notice.Edge = .top) -> some View {
-        self.modifier(NoticeModifier(notice: notice, edge: edge))
+        modifier(NoticeModifier(notice: notice, edge: edge))
     }
 }
