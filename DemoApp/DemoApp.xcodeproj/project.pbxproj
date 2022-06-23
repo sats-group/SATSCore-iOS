@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */; };
 		28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0A16627A93846001374D2 /* DatePickerDemoView.swift */; };
-		57016DC42863527200874F53 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57016DC32863527200874F53 /* RadioGroupView.swift */; };
+		57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57016DC32863527200874F53 /* RadioGroupDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
 		9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoApp.swift */; };
@@ -60,7 +60,7 @@
 /* Begin PBXFileReference section */
 		2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
 		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
-		57016DC32863527200874F53 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
+		57016DC32863527200874F53 /* RadioGroupDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		57016DC0286349BA00874F53 /* RadioGroupView */ = {
 			isa = PBXGroup;
 			children = (
-				57016DC32863527200874F53 /* RadioGroupView.swift */,
+				57016DC32863527200874F53 /* RadioGroupDemoView.swift */,
 			);
 			path = RadioGroupView;
 			sourceTree = "<group>";
@@ -582,7 +582,7 @@
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
 				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
-				57016DC42863527200874F53 /* RadioGroupView.swift in Sources */,
+				57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,

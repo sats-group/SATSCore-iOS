@@ -1,7 +1,7 @@
 import SATSCore
 import SwiftUI
 
-struct RadioGroupView: View {
+struct RadioGroupDemoView: View {
     @State private var selectedOption: DemoOption = .yoga
 
     var body: some View {
@@ -24,7 +24,7 @@ struct RadioGroupView: View {
     }
 }
 
-extension RadioGroupView {
+extension RadioGroupDemoView {
     enum DemoOption: String, Identifiable, Hashable, CaseIterable {
         case yoga = "Yoga"
         case indoorRunning = "Indoor Running"
@@ -47,10 +47,10 @@ extension RadioGroupView {
     }
 }
 
-struct RadioButtonGroupView_Previews: PreviewProvider {
+struct RadioGroupDemoView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            RadioGroupView()
+            RadioGroupDemoView()
         }
     }
 }
