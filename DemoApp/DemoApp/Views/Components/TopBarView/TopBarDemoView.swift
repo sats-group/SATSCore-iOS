@@ -29,7 +29,8 @@ struct TopBarDemoView: View {
         }
         topBar.configure(with: title, style: style)
         return DemoWrapperView(view: topBar)
-            .frame(width: .infinity, height: 56)
+            .frame(height: 56)
+            .frame(maxWidth: .infinity)
     }
 }
 
