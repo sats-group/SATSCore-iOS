@@ -21,12 +21,12 @@ public extension UIButton {
         let button = CallbackButton(withAutoLayout: true)
         button.tintColor = .onSecondary
         button.setImage(icon, for: .normal)
-        button.fixed(size: 36)
+        button.fixed(size: .spacingXL)
         button.onTap = onTap
 
         if isFloating {
             button.backgroundColor = .backgroundSecondary
-            button.layer.cornerRadius = 18
+            button.layer.cornerRadius = .spacingXL / 2.0
         }
 
         return button
