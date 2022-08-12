@@ -1,6 +1,8 @@
 import CoreGraphics
 
 public extension CGFloat {
+    /// spacing of 2 pts
+    static let spacingXXXS: CGFloat = 2
     /// spacing of 4 pts
     static let spacingXXS: CGFloat = 4
     /// spacing of 8 pts
