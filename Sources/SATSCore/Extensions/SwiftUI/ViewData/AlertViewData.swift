@@ -10,6 +10,9 @@ public struct AlertViewData: Identifiable, Equatable {
     public let actionTitle: String
     public let action: () -> Void
     public let actionButtonStyle: ActionButtonStyle
+    public let secondaryButtonStyle: ActionButtonStyle
+    public let secondaryActionTitle: String?
+    public let secondaryAction: (() -> Void)?
 
     public init(
         id: String? = nil,
@@ -17,7 +20,10 @@ public struct AlertViewData: Identifiable, Equatable {
         message: String,
         actionButtonStyle: ActionButtonStyle = .default,
         actionTitle: String,
-        action: @escaping () -> Void
+        action: @escaping () -> Void,
+        secondaryButtonStyle: ActionButtonStyle = .default,
+        secondaryActionTitle: String? = nil,
+        secondaryAction: (() -> Void)? = nil
     ) {
         self.id = id ?? UUID().uuidString
         self.title = title
@@ -25,6 +31,9 @@ public struct AlertViewData: Identifiable, Equatable {
         self.actionButtonStyle = actionButtonStyle
         self.actionTitle = actionTitle
         self.action = action
+        self.secondaryButtonStyle = secondaryButtonStyle
+        self.secondaryActionTitle = secondaryActionTitle
+        self.secondaryAction = secondaryAction
     }
 
     public static func == (lhs: AlertViewData, rhs: AlertViewData) -> Bool {
@@ -43,21 +52,45 @@ public struct AlertViewData: Identifiable, Equatable {
 public extension Alert {
     /// Creates an alert from view data, this include a default cancel button
     init(viewData: AlertViewData) {
-        let primaryButton: Alert.Button
+        let primaryButton = Self.createActionButton(
+            style: viewData.actionButtonStyle,
+            title: viewData.actionTitle,
+            action: viewData.action
+        )
 
-        switch viewData.actionButtonStyle {
-        case .default:
-            primaryButton = .default(Text(viewData.actionTitle), action: viewData.action)
-
-        case .destructive:
-            primaryButton = .destructive(Text(viewData.actionTitle), action: viewData.action)
+        let secondaryButton: Alert.Button
+        if
+            let secondaryActionTitle = viewData.secondaryActionTitle,
+            let secondaryAction = viewData.secondaryAction
+        {
+            secondaryButton = Self.createActionButton(
+                style: viewData.secondaryButtonStyle,
+                title: secondaryActionTitle,
+                action: secondaryAction
+            )
+        } else {
+            secondaryButton = .cancel()
         }
 
         self.init(
             title: Text(viewData.title),
             message: Text(viewData.message),
             primaryButton: primaryButton,
-            secondaryButton: .cancel()
+            secondaryButton: secondaryButton
         )
+    }
+
+    private static func createActionButton(
+        style: AlertViewData.ActionButtonStyle,
+        title: String,
+        action: @escaping (() -> Void)
+    ) -> Alert.Button {
+        switch style {
+        case .default:
+            return .default(Text(title), action: action)
+
+        case .destructive:
+            return .destructive(Text(title), action: action)
+        }
     }
 }
