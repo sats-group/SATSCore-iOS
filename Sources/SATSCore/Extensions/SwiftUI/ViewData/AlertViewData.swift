@@ -58,11 +58,19 @@ public extension Alert {
             action: viewData.action
         )
 
-        let secondaryButton = Self.createActionButton(
-            style: viewData.secondaryButtonStyle,
-            title: viewData.secondaryActionTitle,
-            action: viewData.secondaryAction
-        )
+        let secondaryButton: Alert.Button
+        if
+            let secondaryActionTitle = viewData.secondaryActionTitle,
+            let secondaryAction = viewData.secondaryAction
+        {
+            secondaryButton = Self.createActionButton(
+                style: viewData.secondaryButtonStyle,
+                title: secondaryActionTitle,
+                action: secondaryAction
+            )
+        } else {
+            secondaryButton = .cancel()
+        }
 
         self.init(
             title: Text(viewData.title),
@@ -73,16 +81,10 @@ public extension Alert {
     }
 
     private static func createActionButton(
-        style: AlertViewData.ActionButtonStyle?,
-        title: String?,
-        action: (() -> Void)?
+        style: AlertViewData.ActionButtonStyle,
+        title: String,
+        action: @escaping (() -> Void)
     ) -> Alert.Button {
-        guard
-            let style = style,
-            let title = title,
-            let action = action
-        else { return .cancel() }
-
         switch style {
         case .default:
             return .default(Text(title), action: action)
