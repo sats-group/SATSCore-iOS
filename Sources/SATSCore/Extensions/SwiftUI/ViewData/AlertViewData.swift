@@ -54,7 +54,7 @@ public extension Alert {
     init(viewData: AlertViewData) {
         let primaryButton = Self.createActionButton(
             style: viewData.actionButtonStyle,
-            title: viewData.title,
+            title: viewData.actionTitle,
             action: viewData.action
         )
 
