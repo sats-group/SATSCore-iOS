@@ -31,4 +31,57 @@ platform :ios do
       result_bundle: true
     )
   end
+
+  desc "Push DemoApp to TestFlight"
+  lane :demo_app do
+    app_store_connect_api_key
+    set_versioning
+    cert_dist
+    build_app
+    testflight(
+      skip_waiting_for_build_processing: true,
+      changelog: sats_changelog
+    )
+  end
+
+  lane :set_versioning do
+    version_tag = (sh "git tag --list --sort=-version:refname '*' | head -n 1").chop
+    previous_tag = (sh "git tag --list --sort=-version:refname '*' | head -n 2 | tail -n 1").chop
+
+    build_number = latest_testflight_build_number(
+      initial_build_number: 1,
+      version: version_tag
+    )
+    
+    # If build number is one, it means that this is a new version and we need
+    # to fetch the build number from the previous version and increment that.
+    if build_number == 1
+      build_number = latest_testflight_build_number(
+        initial_build_number: 1,
+        version: previous_tag
+      )
+    end
+
+    increment_version_number_in_xcodeproj(
+      version_number: version_tag,
+      xcodeproj: "./DemoApp.xcodeproj",
+      target: "DemoApp"
+    )
+    increment_build_number_in_xcodeproj(
+      build_number: "#{build_number + 1}",
+      xcodeproj: "./DemoApp.xcodeproj",
+      target: "DemoApp"
+    )
+  end
+
+  lane :handle_test_output do
+    zip(
+      path: "fastlane/test_output/",
+      output_path: "fastlane/test_output.zip"
+    )
+    xcresult_to_junit(
+      xcresult_path: 'fastlane/test_output/DemoApp/DemoApp.xcresult',
+      output_path: 'fastlane/test_output/DemoApp/'
+    )
+  end
 end
