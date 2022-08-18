@@ -13,4 +13,22 @@ platform :ios do
     setup_devices
     setup_certificates_and_profiles
   end
+
+  desc "Pull request test"
+  lane :pr do
+    sh "mkdir test_output"
+    swiftlint(
+      output_file: "fastlane/test_output/junit.xml",
+      reporter: "junit",
+      strict: true,
+      config_file: "../.swiftlint.yml"
+    )
+    run_tests(
+      scheme: "DemoApp",
+      device: "iPhone 13 Pro",
+      output_types: "",
+      output_directory: "fastlane/test_output/DemoApp",
+      result_bundle: true
+    )
+  end
 end
