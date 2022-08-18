@@ -1,5 +1,8 @@
 .swiftpm
 
+# Fastlane
+DemoApp/fastlane/api-key.json
+
 *.otf
 
 .DS_Store
