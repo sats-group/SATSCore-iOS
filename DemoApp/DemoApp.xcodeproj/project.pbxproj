@@ -752,7 +752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sats.satscore.demo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SATS Core Demo Development";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sats.satscore.demo-app";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -776,7 +776,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sats.satscore.demo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "SATS Core Demo Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.sats.satscore.demo-app";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,0 +1,16 @@
+import "./submodules/Certificates"
+import "./submodules/Devices"
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Setup certificates and profiles"
+  lane :setup_development do
+    setup_devices
+    setup_certificates_and_profiles
+  end
+end

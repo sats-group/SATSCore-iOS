@@ -1,0 +1,31 @@
+lane :setup_devices do
+  register_devices(
+    devices: {
+      "SATS Andrew Watch" => "00008301-288D74A41EE8402E",
+      "SATS Andrew Phone" => "00008030-000251920C6A802E",
+      "SATS Felipe Watch" => "043d10ab805d80020154049486305637b3651e5e",
+      "SATS Felipe Phone iOS 14" => "eb9c6fb053d822144698f1ca19be6cf6b7f7b9d7",
+      "SATS Felipe Phone" => "00008101-001A71AE22B9003A",
+      "SATS Felipe Pad" => "00008027-001E093A2E81802E",
+      "SATS Kent Pad" => "38a49fd3e6b62681a0791998a247fe81cccd0bef",
+      "SATS Kent Watch" => "00008301-089045001E30402E",
+      "SATS Kent Phone" => "00008030-001855892661802E",
+      "SATS Petter Watch" => "00008301-30809059218B402E",
+      "SATS Petter Phone" => "00008101-001665520EC0001E",
+      "SATS Sven Watch" => "00008301-D0915DDE3C98C02E",
+      "SATS Sven Phone" => "00008110-001618280C09801E",
+      "SATS Test Device iPad 9th" => "00008030-000244100C60C02E",
+      "SATS Test Device iPhone 13 Pro Max" => "00008110-00161D663AD9801E",
+      "SATS Test Device iPhone SE" => "00008030-00012CC43423402E"
+    }
+  )
+
+  register_devices(
+    devices: {
+      "SATS Felipe Mac" => "00006001-001451962241801E",
+      "SATS Petter Mac" => "00006000-0002404C2662801E",
+      "SATS Sven Mac" => "00006000-0006683C3E21801E"
+    },
+    platform: "mac"
+  )
+end
