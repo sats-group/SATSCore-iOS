@@ -1,0 +1,7 @@
+git_url("https://github.com/healthfitnessnordic/Sats-Core-iOS-Signing")
+storage_mode("git")
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+for_lane :setup_development do
+  api_key_path("fastlane/api-key.json")
+end

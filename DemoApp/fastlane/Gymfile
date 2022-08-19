@@ -1,0 +1,7 @@
+output_directory("./")
+export_method("app-store")
+clean(true)
+output_name("SATSCore")
+scheme("DemoApp")
+include_symbols(true)
+include_bitcode(true)

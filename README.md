@@ -1,5 +1,7 @@
 <p align="center"><img width=100% src="https://i.imgur.com/DI2AIpj.png"></p>
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/healthfitnessnordic/SATSCore-iOS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/healthfitnessnordic/SATSCore-iOS/tree/main)
+
 The objective of this library is to provide all the utilities we need to create UI for the SATS member app by implementing the design system we use, then when building UI we just care of combining this basic elements rather than re-invent everything and also to provide a solid base that allows support to advanced UI features like: dark mode, dynamic types and so on.
 
 This library defines Fonts, Colors and other base components and configurations to create UI. This applies to both `UIKit` and `SwiftUI`based UI.
@@ -52,7 +54,7 @@ Color.onPrimary // text or icons on top of button primary color
 Color.selection
 Color.waitlist
 // etc.
-``` 
+```
 
 In `UIKit` this would be a common scenario
 
