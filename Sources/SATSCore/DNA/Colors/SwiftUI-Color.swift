@@ -63,6 +63,9 @@ public extension Color {
     static var graphicalElements2: Color { color(.graphicalElements2) }
     static var graphicalElements3: Color { color(.graphicalElements3) }
     static var graphicalElements4: Color { color(.graphicalElements4) }
+    static var graphicalElements5: Color { color(.graphicalElements5) }
+    static var graphicalElements6: Color { color(.graphicalElements6) }
+    static var graphicalElements7: Color { color(.graphicalElements7) }
     static var shimmer: Color { color(.shimmer) }
     static var tabs: Color { color(.tabs) }
 

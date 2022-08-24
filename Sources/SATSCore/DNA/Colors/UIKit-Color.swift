@@ -61,6 +61,9 @@ public extension UIColor {
     static var graphicalElements2: UIColor { color(.graphicalElements2) }
     static var graphicalElements3: UIColor { color(.graphicalElements3) }
     static var graphicalElements4: UIColor { color(.graphicalElements4) }
+    static var graphicalElements5: UIColor { color(.graphicalElements5) }
+    static var graphicalElements6: UIColor { color(.graphicalElements6) }
+    static var graphicalElements7: UIColor { color(.graphicalElements7) }
     static var shimmer: UIColor { color(.shimmer) }
     static var tabs: UIColor { color(.tabs) }
 
