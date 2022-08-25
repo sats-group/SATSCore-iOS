@@ -21,15 +21,17 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("Components")) {
-                    NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
-                    NavigationLink("DatePickerView", destination: DatePickerDemoView())
-                    NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
-                    NavigationLink("ErrorView", destination: ErrorDemoView())
-                    NavigationLink("ExternalUrlView", destination: ExternalUrlDemoView())
-                    NavigationLink("GradientView", destination: GradientDemoView())
-                    NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
-                    NavigationLink("LoadingView", destination: LoadingDemoView())
-                    NavigationLink("NoticeView", destination: NoticeDemoView())
+                    Group {
+                        NavigationLink("ArticlePageView", destination: ArticlePageViewDemo())
+                        NavigationLink("DatePickerView", destination: DatePickerDemoView())
+                        NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
+                        NavigationLink("ErrorView", destination: ErrorDemoView())
+                        NavigationLink("ExternalUrlView", destination: ExternalUrlDemoView())
+                        NavigationLink("GradientView", destination: GradientDemoView())
+                        NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
+                        NavigationLink("LoadingView", destination: LoadingDemoView())
+                        NavigationLink("NoticeView", destination: NoticeDemoView())
+                    }
 
                     Group {
                         NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
@@ -39,6 +41,8 @@ struct ContentView: View {
                         NavigationLink("TabSelectionView", destination: TabSelectionDemoView())
                         NavigationLink("TopBar", destination: TopBarDemoView())
                         NavigationLink("RadioGroup", destination: RadioGroupDemoView())
+                        NavigationLink("WheelPickerView", destination: WheelPickerDemoView())
+
                     }
                 }
 
