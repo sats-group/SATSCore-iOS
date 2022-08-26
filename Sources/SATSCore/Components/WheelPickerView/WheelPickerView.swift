@@ -11,16 +11,23 @@ public struct WheelPickerView: View {
     @State private var previousAngleValue: CGFloat = 0.0
 
     private let config: WheelConfig
+    private let hapticGenerator: UINotificationFeedbackGenerator
 
-    public init(config: WheelConfig, value: Binding<Int>) {
+    public init(
+        config: WheelConfig,
+        value: Binding<Int>,
+        hapticGenerator: UINotificationFeedbackGenerator = .init()
+    ) {
         self.config = config
         _value = value
 
         let floatValue = CGFloat(value.wrappedValue)
         let remainder = floatValue.truncatingRemainder(dividingBy: config.totalValue)
         let angle = 360 * remainder / config.totalValue
-        angleValue = angle
-        numberOfRounds = (floatValue / config.totalValue).rounded(.down)
+        self.angleValue = angle
+        self.numberOfRounds = (floatValue / config.totalValue).rounded(.down)
+
+        self.hapticGenerator = hapticGenerator
     }
 
     public var body: some View {
@@ -31,6 +38,7 @@ public struct WheelPickerView: View {
             knob
             label
         }
+        .onChange(of: value, perform: handleHaptic)
         .pickerShadow
     }
 
@@ -67,7 +75,6 @@ public struct WheelPickerView: View {
             .frame(width: config.radius * 2, height: config.radius * 2)
             .rotationEffect(.degrees(-90))
             .pickerShadow
-
     }
 
     private var knob: some View {
@@ -113,7 +120,7 @@ public struct WheelPickerView: View {
         let angleInRadians = atan2(
             vector.dy - (config.knobRadius + knobPadding),
             vector.dx - (config.knobRadius + knobPadding)
-        ) + .pi/2.0
+        ) + .pi / 2.0
 
         let fixedAngle = angleInRadians < 0.0 ? angleInRadians + 2.0 * .pi : angleInRadians
 
@@ -136,9 +143,16 @@ public struct WheelPickerView: View {
         numberOfRounds = numRounds
         value = Int(calculatedValue)
     }
+
+    private func handleHaptic(value: Int) {
+        let modulo = Int(config.totalValue / config.numberOfTicks)
+        if value % modulo == 0 {
+            hapticGenerator.notificationOccurred(.success)
+        }
+    }
 }
 
-fileprivate extension View {
+private extension View {
     var pickerShadow: some View {
         shadow(color: .black.opacity(0.12), radius: 12, x: 0, y: 0)
     }
