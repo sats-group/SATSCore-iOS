@@ -25,59 +25,73 @@ public struct WheelPickerView: View {
 
     public var body: some View {
         ZStack {
-            // Background circle
-            Circle()
-                .fill(Color.backgroundSurfacePrimary)
-                .frame(width: config.radius * 2, height: config.radius * 2)
-                .scaleEffect(1.1)
-
-            // Ticks
-            Circle()
-                .stroke(
-                    Color.graphicalElements3,
-                    style: .init(
-                        lineWidth: config.sizeOfTicks,
-                        lineCap: .round,
-                        dash: dashes()
-                    )
-                )
-                .frame(width: config.radius * 2, height: config.radius * 2)
-
-            // Circle line
-            Circle()
-                .trim(from: 0.0, to: CGFloat(value) / config.totalValue)
-                .stroke(
-                    Color.graphicalElements5,
-                    style: .init(
-                        lineWidth: lineWidth(),
-                        lineCap: .round
-                    )
-                )
-                .frame(width: config.radius * 2, height: config.radius * 2)
-                .rotationEffect(.degrees(-90))
-                .pickerShadow
-
-            // Knob
-            Circle()
-                .fill(Color.graphicalElements5)
-                .frame(width: config.knobRadius * 2, height: config.knobRadius * 2)
-                .padding(knobPadding)
-                .offset(y: -config.radius)
-                .rotationEffect(Angle.degrees(Double(angleValue)))
-                .gesture(DragGesture(minimumDistance: 0.0)
-                    .onChanged({ value in
-                        change(location: value.location)
-                    })
-                )
-                .pickerShadow
-
-            if let label = config.label {
-                Text("\(value) \(label)")
-                    .satsFont(.h1, weight: .emphasis)
-                    .foregroundColor(.onSurfacePrimary)
-            }
+            backgroundCircle
+            ticks
+            progressLine
+            knob
+            label
         }
         .pickerShadow
+    }
+
+    private var backgroundCircle: some View {
+        Circle()
+            .fill(Color.backgroundSurfacePrimary)
+            .frame(width: config.radius * 2, height: config.radius * 2)
+            .scaleEffect(1.1)
+    }
+
+    private var ticks: some View {
+        Circle()
+            .stroke(
+                Color.graphicalElements3,
+                style: .init(
+                    lineWidth: config.sizeOfTicks,
+                    lineCap: .round,
+                    dash: dashes()
+                )
+            )
+            .frame(width: config.radius * 2, height: config.radius * 2)
+    }
+
+    private var progressLine: some View {
+        Circle()
+            .trim(from: 0.0, to: CGFloat(value) / config.totalValue)
+            .stroke(
+                Color.graphicalElements5,
+                style: .init(
+                    lineWidth: lineWidth(),
+                    lineCap: .round
+                )
+            )
+            .frame(width: config.radius * 2, height: config.radius * 2)
+            .rotationEffect(.degrees(-90))
+            .pickerShadow
+
+    }
+
+    private var knob: some View {
+        Circle()
+            .fill(Color.graphicalElements5)
+            .frame(width: config.knobRadius * 2, height: config.knobRadius * 2)
+            .padding(knobPadding)
+            .offset(y: -config.radius)
+            .rotationEffect(Angle.degrees(Double(angleValue)))
+            .gesture(DragGesture(minimumDistance: 0.0)
+                .onChanged({ value in
+                    change(location: value.location)
+                })
+            )
+            .pickerShadow
+    }
+
+    @ViewBuilder
+    private var label: some View {
+        if let label = config.label {
+            Text("\(value) \(label)")
+                .satsFont(.h1, weight: .emphasis)
+                .foregroundColor(.onSurfacePrimary)
+        }
     }
 
     private func dashes() -> [CGFloat] {
