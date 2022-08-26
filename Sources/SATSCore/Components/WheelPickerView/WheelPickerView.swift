@@ -11,12 +11,12 @@ public struct WheelPickerView: View {
     @State private var previousAngleValue: CGFloat = 0.0
 
     private let config: WheelConfig
-    private let hapticGenerator: UINotificationFeedbackGenerator
+    private let hapticGenerator: UISelectionFeedbackGenerator
 
     public init(
         config: WheelConfig,
         value: Binding<Int>,
-        hapticGenerator: UINotificationFeedbackGenerator = .init()
+        hapticGenerator: UISelectionFeedbackGenerator = .init()
     ) {
         self.config = config
         _value = value
@@ -144,11 +144,8 @@ public struct WheelPickerView: View {
         value = Int(calculatedValue)
     }
 
-    private func handleHaptic(value: Int) {
-        let modulo = Int(config.totalValue / config.numberOfTicks)
-        if value % modulo == 0 {
-            hapticGenerator.notificationOccurred(.success)
-        }
+    private func handleHaptic(_: Int) {
+        hapticGenerator.selectionChanged()
     }
 }
 

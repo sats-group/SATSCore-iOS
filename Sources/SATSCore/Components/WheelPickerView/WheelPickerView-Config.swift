@@ -43,31 +43,33 @@ public extension WheelPickerView {
         public var circleMultiplier: CGFloat {
             360.0 / totalValue
         }
+    }
+}
 
-        public static func minutes(label: String? = nil) -> Self {
-            .init(
-                minValue: 0,
-                maxValue: 60 * 12,
-                totalValue: 60,
-                knobRadius: 15,
-                radius: 110,
-                numberOfTicks: 12,
-                sizeOfTicks: 4,
-                label: label
-            )
-        }
+public extension WheelPickerView.WheelConfig {
+    static func minutes(label: String? = nil) -> Self {
+        .init(
+            minValue: 0,
+            maxValue: 60 * 12,
+            totalValue: 60,
+            knobRadius: 15,
+            radius: 110,
+            numberOfTicks: 12,
+            sizeOfTicks: 4,
+            label: label
+        )
+    }
 
-        public static func kilometers(label: String? = nil) -> Self {
-            .init(
-                minValue: 0,
-                maxValue: 1000,
-                totalValue: 40,
-                knobRadius: 15,
-                radius: 110,
-                numberOfTicks: 8,
-                sizeOfTicks: 4,
-                label: label
-            )
-        }
+    static func kilometers(label: String? = nil) -> Self {
+        .init(
+            minValue: 0,
+            maxValue: 1000,
+            totalValue: 40,
+            knobRadius: 15,
+            radius: 110,
+            numberOfTicks: 8,
+            sizeOfTicks: 4,
+            label: label
+        )
     }
 }
