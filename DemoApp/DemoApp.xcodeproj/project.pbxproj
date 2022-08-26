@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28491B8F28B3AAC800E3C1D9 /* WheelPickerDemoView.swift */; };
 		2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */; };
 		28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D0A16627A93846001374D2 /* DatePickerDemoView.swift */; };
 		57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57016DC32863527200874F53 /* RadioGroupDemoView.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28491B8F28B3AAC800E3C1D9 /* WheelPickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerDemoView.swift; sourceTree = "<group>"; };
 		2865CF59261EDB9A00D6433F /* RoundLoadingDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLoadingDemoView.swift; sourceTree = "<group>"; };
 		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
 		57016DC32863527200874F53 /* RadioGroupDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupDemoView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28491B8E28B3AAB500E3C1D9 /* WheelPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				28491B8F28B3AAC800E3C1D9 /* WheelPickerDemoView.swift */,
+			);
+			path = WheelPickerView;
+			sourceTree = "<group>";
+		};
 		2865CF58261EDB9A00D6433F /* RoundLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +392,7 @@
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				28491B8E28B3AAB500E3C1D9 /* WheelPickerView */,
 				57016DC0286349BA00874F53 /* RadioGroupView */,
 				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B4083BB261DE66D00A3A718 /* ArticlePageView */,
@@ -589,6 +600,7 @@
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */,
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
+				28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
 				9B7A4D5325D2ADA30086EA4F /* ClassSampleView.swift in Sources */,
 				9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */,

@@ -8,7 +8,7 @@ public struct ColorThemeEnvironmentKey: EnvironmentKey {
 
 public extension EnvironmentValues {
     var colorTheme: ColorTheme {
-        get { return self[ColorThemeEnvironmentKey.self] }
+        get { self[ColorThemeEnvironmentKey.self] }
         set { self[ColorThemeEnvironmentKey.self] = newValue }
     }
 }
