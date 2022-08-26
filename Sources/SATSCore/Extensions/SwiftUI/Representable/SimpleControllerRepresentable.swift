@@ -20,7 +20,7 @@ public struct SimpleControllerRepresentable<ViewController: UIViewController>: U
     }
 
     public func makeUIViewController(context: Context) -> ViewController {
-        return factory()
+        factory()
     }
 
     public func updateUIViewController(_ uiViewController: ViewController, context: Context) {}

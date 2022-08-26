@@ -2,22 +2,22 @@ import CoreGraphics
 
 public extension WheelPickerView {
     struct WheelConfig {
-            /// The minimum value the picker will allow
+        /// The minimum value the picker will allow
         let minValue: CGFloat
-            /// The maximum value the picker will allow
+        /// The maximum value the picker will allow
         let maxValue: CGFloat
-            /// The value of one full circle
+        /// The value of one full circle
         let totalValue: CGFloat
-            /// The radius of the turning knob
+        /// The radius of the turning knob
         let knobRadius: CGFloat
-            /// The radius of the dial
+        /// The radius of the dial
         let radius: CGFloat
-            /// The number of how many ticks the dial will have
+        /// The number of how many ticks the dial will have
         let numberOfTicks: CGFloat
-            /// The size of the ticks on the dial
+        /// The size of the ticks on the dial
         let sizeOfTicks: CGFloat
-            /// The label to put after the value. E.g. km or min.
-            /// If absent there will be no text on the dial.
+        /// The label to put after the value. E.g. km or min.
+        /// If absent there will be no text on the dial.
         let label: String?
 
         public init(

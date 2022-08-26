@@ -42,7 +42,6 @@ struct ContentView: View {
                         NavigationLink("TopBar", destination: TopBarDemoView())
                         NavigationLink("RadioGroup", destination: RadioGroupDemoView())
                         NavigationLink("WheelPickerView", destination: WheelPickerDemoView())
-
                     }
                 }
 
