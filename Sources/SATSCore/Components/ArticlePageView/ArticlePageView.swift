@@ -103,7 +103,7 @@ public class ArticlePageView: UIView {
         return stackView
     }()
 
-    private lazy var scrollView: UIScrollView = {
+    public lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView(withAutoLayout: true)
         scrollView.delegate = self
         scrollView.contentInset.top = headerHeight
