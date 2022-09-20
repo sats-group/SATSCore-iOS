@@ -8,8 +8,8 @@ public extension View {
     ///   - size: size of the button (`.basic` by default)
     ///   - isLoading: a booelan to indicate if we need to show a spinner on the button instead of the button text
     /// - Returns: applies the `buttonStyle` modifier to the current view
-    func satsButton(_ style: SATSButton.Style, size: SATSButton.Size = .basic, isLoading: Bool = false) -> some View {
-        buttonStyle(SATSButtonSwiftUIStyle(style, size: size, isLoading: isLoading))
+    func satsButton(_ style: SATSButton.Style, size: SATSButton.Size = .basic, isLoading: Bool = false, weight: SATSFont.Weight = .medium) -> some View {
+        buttonStyle(SATSButtonSwiftUIStyle(style, size: size, isLoading: isLoading, weight: weight))
     }
 }
 
@@ -20,12 +20,14 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
     let style: SATSButton.Style
     let size: SATSButton.Size
     let isLoading: Bool
+    let weight: SATSFont.Weight
     @Environment(\.isEnabled) private var isEnabled
 
-    init(_ style: SATSButton.Style, size: SATSButton.Size, isLoading: Bool) {
+    init(_ style: SATSButton.Style, size: SATSButton.Size, isLoading: Bool, weight: SATSFont.Weight = .medium) {
         self.style = style
         self.size = size
         self.isLoading = isLoading
+        self.weight = weight
     }
 
     func makeBody(configuration: Configuration) -> some View {
@@ -53,7 +55,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
     func buttonContent(for configuration: Configuration) -> some View {
         configuration
             .label
-            .satsFont(.button, weight: .medium)
+            .satsFont(.button, weight: weight)
             .textCase(.uppercase)
     }
 
