@@ -18,14 +18,26 @@ public struct RadioGroup<Option: Identifiable, Label: View>: View {
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             ForEach(options) { option in
-                HStack(spacing: .spacingM) {
-                    RadioButton(isSelected: option.id == selected.id)
-                    label(option)
+                radioButtonRow(for: option)
+
+                if shouldAddDivider(for: option) {
+                    Divider()
                 }
-                .padding(EdgeInsets(vertical: .spacingM, horizontal: 0))
-                .onTapGesture { selected = option }
             }
         }
+    }
+
+    private func radioButtonRow(for option: Option) -> some View {
+        HStack(spacing: .spacingM) {
+            RadioButton(isSelected: option.id == selected.id)
+            label(option)
+        }
+        .padding(EdgeInsets(vertical: .spacingM, horizontal: 0))
+        .onTapGesture { selected = option }
+    }
+
+    private func shouldAddDivider(for option: Option) -> Bool {
+        option.id != options.last?.id
     }
 }
 
