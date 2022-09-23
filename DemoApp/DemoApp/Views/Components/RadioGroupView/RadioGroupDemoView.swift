@@ -41,7 +41,7 @@ extension RadioGroupDemoView {
                 return "Cardio"
 
             case .studioTraining:
-                return "Strenght"
+                return "Strength"
             }
         }
     }
