@@ -99,6 +99,9 @@ enum ColorName: String, CaseIterable {
     case primaryDisabled
 
     case selection
+    case action
+    case actionHighlighted
+    case actionDisabled
 
     case backgroundTopStart
     case backgroundTopEnd

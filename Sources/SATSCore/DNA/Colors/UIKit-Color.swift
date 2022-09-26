@@ -119,6 +119,10 @@ public extension UIColor {
 
     static var selection: UIColor { themedColor(.selection) }
 
+    static var action: UIColor { themedColor(.action) }
+    static var actionHighlighted: UIColor { themedColor(.actionHighlighted) }
+    static var actionDisabled: UIColor { themedColor(.actionDisabled) }
+
     static var backgroundTopStart: UIColor { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: UIColor { themedColor(.backgroundTopEnd) }
 

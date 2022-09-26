@@ -9,6 +9,11 @@ public struct ColorTheme: Hashable {
     public let primaryDisabled: UIColor
 
     public let selection: UIColor
+    /// Used as the main color for actionable elements
+    /// a.k.a tintColor / accentColor in UIKit/SwiftUI
+    public let action: UIColor
+    public let actionHighlighted: UIColor
+    public let actionDisabled: UIColor
 
     public let backgroundTopStart: UIColor
     public let backgroundTopEnd: UIColor
@@ -22,6 +27,9 @@ public struct ColorTheme: Hashable {
         case .primaryHighlight: return primaryHighlight
         case .primaryDisabled: return primaryDisabled
         case .selection: return selection
+        case .action: return action
+        case .actionHighlighted: return actionHighlighted
+        case .actionDisabled: return actionDisabled
         case .backgroundTopStart: return backgroundTopStart
         case .backgroundTopEnd: return backgroundTopEnd
         case .navigation: return navigation
@@ -93,6 +101,9 @@ public extension ColorTheme {
             primaryHighlight: Self.color("PrimaryHighlight", for: themeName),
             primaryDisabled: Self.color("PrimaryDisabled", for: themeName),
             selection: Self.color("Selection", for: themeName),
+            action: Self.color("Action", for: themeName),
+            actionHighlighted: Self.color("ActionHighlighted", for: themeName),
+            actionDisabled: Self.color("ActionDisabled", for: themeName),
             backgroundTopStart: Self.color("GradientStart", for: themeName),
             backgroundTopEnd: Self.color("GradientEnd", for: themeName),
             navigation: Self.color("Navigation", for: themeName)

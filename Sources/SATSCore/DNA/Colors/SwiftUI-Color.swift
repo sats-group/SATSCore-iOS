@@ -123,6 +123,10 @@ public extension Color {
 
     static var selection: Color { themedColor(.selection) }
 
+    static var action: Color { themedColor(.action) }
+    static var actionHighlighted: Color { themedColor(.actionHighlighted) }
+    static var actionDisalbed: Color { themedColor(.actionDisabled) }
+
     static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
     static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
 
