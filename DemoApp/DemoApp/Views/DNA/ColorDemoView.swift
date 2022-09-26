@@ -170,6 +170,10 @@ struct ColorDemoView: View {
 
                 ColorDemo(name: "blueSelection", color: Color(ColorTheme.blue.selection)),
 
+                ColorDemo(name: "blueAction", color: Color(ColorTheme.blue.action)),
+                ColorDemo(name: "blueActionHighlighted", color: Color(ColorTheme.blue.actionHighlighted)),
+                ColorDemo(name: "blueActionDisabled", color: Color(ColorTheme.blue.actionDisabled)),
+
                 ColorDemo(name: "blueGradientStart", color: Color(ColorTheme.blue.backgroundTopStart)),
                 ColorDemo(name: "blueGradientEnd", color: Color(ColorTheme.blue.backgroundTopEnd)),
 
@@ -185,6 +189,10 @@ struct ColorDemoView: View {
 
                 ColorDemo(name: "silverSelection", color: Color(ColorTheme.silver.selection)),
 
+                ColorDemo(name: "silverAction", color: Color(ColorTheme.silver.action)),
+                ColorDemo(name: "silverActionHighlighted", color: Color(ColorTheme.silver.actionHighlighted)),
+                ColorDemo(name: "silverActionDisabled", color: Color(ColorTheme.silver.actionDisabled)),
+
                 ColorDemo(name: "silverGradientStart", color: Color(ColorTheme.silver.backgroundTopStart)),
                 ColorDemo(name: "silverGradientEnd", color: Color(ColorTheme.silver.backgroundTopEnd)),
 
@@ -199,6 +207,10 @@ struct ColorDemoView: View {
                 ColorDemo(name: "goldPrimaryDisabled", color: Color(ColorTheme.gold.primaryDisabled)),
 
                 ColorDemo(name: "goldSelection", color: Color(ColorTheme.gold.selection)),
+
+                ColorDemo(name: "goldAction", color: Color(ColorTheme.gold.action)),
+                ColorDemo(name: "goldActionHighlighted", color: Color(ColorTheme.gold.actionHighlighted)),
+                ColorDemo(name: "goldActionDisabled", color: Color(ColorTheme.gold.actionDisabled)),
 
                 ColorDemo(name: "goldGradientStart", color: Color(ColorTheme.gold.backgroundTopStart)),
                 ColorDemo(name: "goldGradientEnd", color: Color(ColorTheme.gold.backgroundTopEnd)),
@@ -220,6 +232,11 @@ struct ColorDemoView: View {
                 ),
 
                 ColorDemo(name: "platinumSelection", color: Color(ColorTheme.platinum.selection)),
+
+                ColorDemo(name: "platinumAction", color: Color(ColorTheme.platinum.action)),
+                ColorDemo(name: "platinumActionHighlighted", color: Color(ColorTheme.platinum.actionHighlighted)),
+                ColorDemo(name: "platinumActionDisabled", color: Color(ColorTheme.platinum.actionDisabled)),
+
                 ColorDemo(name: "platinumGradientStart", color: Color(ColorTheme.platinum.backgroundTopStart)),
                 ColorDemo(name: "platinumGradientEnd", color: Color(ColorTheme.platinum.backgroundTopEnd)),
 

@@ -109,6 +109,9 @@ class ColorsTests: XCTestCase {
             .primaryDisabled,
 
             .selection,
+            .action,
+            .actionHighlighted,
+            .actionDisabled,
 
             .backgroundTopStart,
             .backgroundTopEnd,
