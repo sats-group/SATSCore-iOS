@@ -42,7 +42,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
             label.frame(maxWidth: .infinity, alignment: .center)
         })
         .background(backgroundColor(for: configuration))
-        .foregroundColor(textColor)
+        .foregroundColor(textColor(configuration: configuration))
         .clipShape(Capsule())
         .overlay(borderOverlay)
     }
@@ -67,23 +67,24 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     // MARK: Private methods
 
-    private var textColor: Color {
-        Color(isEnabled ? style.titleColor : style.titleColorDisabled)
+    private func textColor(configuration: Configuration) -> Color {
+        if isEnabled {
+            return Color(configuration.isPressed ? style.titleColorHighlighted : style.titleColor)
+        } else {
+            return Color(style.titleColorDisabled)
+        }
     }
 
     private var borderColor: Color? {
         (isEnabled ? style.borderColor : style.borderColorDisabled).map { Color($0) }
     }
 
-    private func backgroundColor(for configuration: Configuration) -> Color {
+    private func backgroundColor(for configuration: Configuration) -> Color? {
         if isEnabled {
-            return Color(
-                configuration.isPressed ?
-                    style.backgroundColorHighlighted :
-                    style.backgroundColor
-            )
+            let uiColor = configuration.isPressed ? style.backgroundColorHighlighted : style.backgroundColor
+            return uiColor.map { Color($0) }
         } else {
-            return Color(style.backgroundColorDisabled)
+            return style.backgroundColorDisabled.map { Color($0) }
         }
     }
 
