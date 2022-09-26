@@ -110,4 +110,12 @@ public extension SATSButton.Style {
         backgroundColorHighlighted: .ctaHighlight,
         backgroundColorDisabled: .ctaDisabled
     )
+
+    static let plain = SATSButton.Style(
+        name: "Plain",
+        titleColor: .action,
+        titleColorHighlighted: .actionHighlighted,
+        titleColorDisabled: .actionDisabled,
+        backgroundColor: nil
+    )
 }
