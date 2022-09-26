@@ -1,4 +1,5 @@
 import SwiftUI
+import SATSCore
 
 struct SATSButtonSwftUIDemoView: View {
     @State var size: SATSButton.Size = .basic
@@ -28,42 +29,54 @@ struct SATSButtonSwftUIDemoView: View {
                 }
                 .padding(.horizontal)
 
-                VStack {
-                    Button("Primary", action: {})
-                        .satsButton(.primary, size: size, isLoading: isLoading)
-                        .padding()
+                ScrollView(.vertical) {
+                    VStack {
+                        Button("Primary", action: {})
+                            .satsButton(.primary, size: size, isLoading: isLoading)
+                            .padding()
 
-                    Button("Secondary", action: {})
-                        .satsButton(.secondary, size: size, isLoading: isLoading)
-                        .padding()
+                        Button("Secondary", action: {})
+                            .satsButton(.secondary, size: size, isLoading: isLoading)
+                            .padding()
 
-                    VStack(spacing: 20) {
-                        HStack {
-                            Spacer()
+                        VStack(spacing: 20) {
+                            HStack {
+                                Spacer()
 
-                            Button("Clean", action: {})
-                                .satsButton(.clean, size: size, isLoading: isLoading)
+                                Button("Clean", action: {})
+                                    .satsButton(.clean, size: size, isLoading: isLoading)
 
-                            Spacer()
+                                Spacer()
+                            }
+
+                            HStack {
+                                Spacer()
+
+                                Button("Clean Secondary", action: {})
+                                    .satsButton(.cleanSecondary, size: size, isLoading: isLoading)
+
+                                Spacer()
+                            }
                         }
+                        .padding()
+                        .background(Color.satsPrimary)
 
-                        HStack {
-                            Spacer()
+                        Button("CTA", action: {})
+                            .satsButton(.cta, size: size, isLoading: isLoading)
+                            .padding()
 
-                            Button("Clean Secondary", action: {})
-                                .satsButton(.cleanSecondary, size: size, isLoading: isLoading)
+                        Button("Plain", action: {})
+                            .satsButton(.plain, size: size, isLoading: isLoading)
+                            .padding()
 
-                            Spacer()
+                        Button(action: {}) {
+                            Label("Plain with Image", systemImage: "person.circle")
                         }
+                        .satsButton(.plain, size: size, isLoading: isLoading)
+                        .padding()
                     }
-                    .padding()
-                    .background(Color.satsPrimary)
-
-                    Button("CTA", action: {})
-                        .satsButton(.cta, size: size, isLoading: isLoading)
-                        .padding()
+                    .disabled(!isEnabled)
                 }
-                .disabled(!isEnabled)
 
                 Spacer()
             }
@@ -94,7 +107,8 @@ struct SATSButtonSwftUIDemoView: View {
 
 struct SATSButtonSwftUIDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        SATSFont.registerCustomFonts()
+        return Group {
             NavigationView {
                 SATSButtonSwftUIDemoView()
             }
