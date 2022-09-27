@@ -33,6 +33,7 @@
 		9B7A4D6125D2B9C30086EA4F /* TreatmentsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7A4D6025D2B9C30086EA4F /* TreatmentsDemoView.swift */; };
 		9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */; };
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
+		9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */; };
 		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
 		9B9633A226DCD37E00656D61 /* DemoAssetName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A126DCD37E00656D61 /* DemoAssetName.swift */; };
 		9B9633A426DCD39F00656D61 /* DemoAssetNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A326DCD39F00656D61 /* DemoAssetNameTests.swift */; };
@@ -87,6 +88,7 @@
 		9B7A4D6025D2B9C30086EA4F /* TreatmentsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentsDemoView.swift; sourceTree = "<group>"; };
 		9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSLabelDemoView.swift; sourceTree = "<group>"; };
 		9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWrapperView.swift; sourceTree = "<group>"; };
+		9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageDemoView.swift; sourceTree = "<group>"; };
 		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
 		9B96339626DCD36800656D61 /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96339A26DCD36800656D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -330,6 +332,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		9B7F828E28E2FA25004D6ECA /* BannerImage */ = {
+			isa = PBXGroup;
+			children = (
+				9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */,
+			);
+			path = BannerImage;
+			sourceTree = "<group>";
+		};
 		9B8C11F226F23702007F5D0C /* NoticeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,10 +402,9 @@
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				28491B8E28B3AAB500E3C1D9 /* WheelPickerView */,
-				57016DC0286349BA00874F53 /* RadioGroupView */,
-				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B4083BB261DE66D00A3A718 /* ArticlePageView */,
+				9B7F828E28E2FA25004D6ECA /* BannerImage */,
+				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B75EC43264B1D3C00B160EF /* EmptyStateView */,
 				9B2E8063266649D8000A657D /* ErrorView */,
 				9B4083B9261DE66D00A3A718 /* ExternalUrlView */,
@@ -404,11 +413,13 @@
 				9BA17B0E26666D2700BDAA9C /* LoadingView */,
 				9B8C11F226F23702007F5D0C /* NoticeView */,
 				9BCEE85826035CB2001C8692 /* ProgressLineView */,
+				57016DC0286349BA00874F53 /* RadioGroupView */,
 				2865CF58261EDB9A00D6433F /* RoundLoadingView */,
 				9B57208A26738BD600D12109 /* ScoreView */,
 				9BF417162681D25B00E708FD /* ScrollReaderView */,
 				9BFBDEF526DCC93C0066F1C8 /* TabSelectionView */,
 				9B4083B7261DE66D00A3A718 /* TopBarView */,
+				28491B8E28B3AAB500E3C1D9 /* WheelPickerView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -598,6 +609,7 @@
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
+				9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */,
 				9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */,
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
 				28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */,
