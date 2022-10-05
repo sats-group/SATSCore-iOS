@@ -2,6 +2,11 @@ import SATSType
 public extension SATSFont {
     /// Style variations for a font regarding its weight
     struct Weight: Equatable, Hashable {
+        public init(name: String, font: FontName) {
+            self.name = name
+            self.font = font
+        }
+
         public static func == (lhs: SATSFont.Weight, rhs: SATSFont.Weight) -> Bool {
             lhs.name == rhs.name
         }
