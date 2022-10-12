@@ -43,6 +43,14 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
+            name: "Action",
+            colors: [
+                ColorDemo(name: "action", color: .action),
+                ColorDemo(name: "actionHighlight", color: .actionHighlight),
+                ColorDemo(name: "actionDisabled", color: .actionDisabled),
+            ]
+        ),
+        ColorSection(
             name: "Clean",
             colors: [
                 ColorDemo(name: "clean", color: .clean),
