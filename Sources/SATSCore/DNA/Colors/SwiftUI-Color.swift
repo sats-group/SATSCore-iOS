@@ -35,6 +35,12 @@ public extension Color {
     static var ctaDisabled: Color { color(.ctaDisabled) }
     static var nonText: Color { color(.nonText) }
 
+    // MARK: Action
+
+    static var action: Color { color(.action) }
+    static var actionHighlight: Color { color(.actionHighlight) }
+    static var actionDisabled: Color { color(.actionDisabled) }
+
     // MARK: Waitlist
 
     static var waitlist: Color { color(.waitlist) }

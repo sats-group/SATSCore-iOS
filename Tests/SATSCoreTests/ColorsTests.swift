@@ -43,6 +43,10 @@ class ColorsTests: XCTestCase {
             .ctaDisabled,
             .nonText,
 
+            .action,
+            .actionHighlight,
+            .actionDisabled,
+
             .waitlist,
             .waitlistHighlight,
             .waitlistDisabled,
