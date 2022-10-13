@@ -33,6 +33,12 @@ public extension UIColor {
     static var ctaDisabled: UIColor { color(.ctaDisabled) }
     static var nonText: UIColor { color(.nonText) }
 
+    // MARK: Action
+
+    static var action: UIColor { color(.action) }
+    static var actionHighlight: UIColor { color(.actionHighlight) }
+    static var actionDisabled: UIColor { color(.actionDisabled) }
+
     // MARK: Waitlist
 
     static var waitlist: UIColor { color(.waitlist) }
