@@ -48,9 +48,9 @@ extension SATSButton.Size {
 public extension SATSButton.Size {
     /// Tall primary button, can grow horizontally.
     static let large = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(all: 16),
+        contentEdgeInsets: UIEdgeInsets(vertical: 18, horizontal: 30),
         imageEdgeInsets: .zero,
-        contentHuggingPriority: .defaultLow
+        contentHuggingPriority: .defaultHigh
     )
 
     /// Small height but allowed to grow horizontally.
