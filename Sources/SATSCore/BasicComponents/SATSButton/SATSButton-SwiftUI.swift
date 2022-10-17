@@ -53,7 +53,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
     func buttonContent(for configuration: Configuration) -> some View {
         configuration
             .label
-            .satsFont(.button, weight: .medium)
+            .satsFont(.button, weight: .emphasis)
             .textCase(.uppercase)
     }
 
