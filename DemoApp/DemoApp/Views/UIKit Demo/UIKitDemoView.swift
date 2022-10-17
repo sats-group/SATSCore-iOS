@@ -27,7 +27,7 @@ class SampleView: UIView {
     }()
 
     private lazy var button: SATSButton = {
-        let button = SATSButton(style: .primary, size: .compact, withAutoLayout: true)
+        let button = SATSButton(style: .primary, size: .basic, withAutoLayout: true)
         button.setTitle("Push me!", for: .normal)
         return button
     }()
