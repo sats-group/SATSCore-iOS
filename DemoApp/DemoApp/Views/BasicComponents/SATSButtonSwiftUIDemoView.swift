@@ -1,4 +1,5 @@
 import SwiftUI
+import SATSCore
 
 struct SATSButtonSwftUIDemoView: View {
     @State var size: SATSButton.Size = .basic
@@ -8,7 +9,6 @@ struct SATSButtonSwftUIDemoView: View {
     var settingDescription: String {
         let sizeName: String
         switch size {
-        case .compact: sizeName = "Compact"
         case .basic: sizeName = "Basic"
         case .large: sizeName = "Large"
         default:
@@ -78,7 +78,6 @@ struct SATSButtonSwftUIDemoView: View {
                     Toggle("Loading", isOn: $isLoading)
 
                     Picker("Size", selection: $size) {
-                        Text("compact").tag(SATSButton.Size.compact)
                         Text("basic").tag(SATSButton.Size.basic)
                         Text("large").tag(SATSButton.Size.large)
                     }
