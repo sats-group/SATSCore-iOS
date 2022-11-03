@@ -25,7 +25,7 @@ platform :ios do
     )
     run_tests(
       scheme: "DemoApp",
-      device: "iPhone 13 Pro",
+      device: "iPhone 14 Pro",
       output_types: "",
       output_directory: "fastlane/test_output/DemoApp",
       result_bundle: true
