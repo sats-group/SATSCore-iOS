@@ -24,7 +24,7 @@ extension DatePickerView {
                     VStack(spacing: 0) {
                         ForEach(days, id: \.self) { daysInMonth in
                             if helper.isFirstInMonth(date: daysInMonth[0].date) {
-                                Text(monthFull(date: daysInMonth[0].date))
+                                Text(daysInMonth[0].date, format: .dateTime.month(.wide))
                                     .satsFont(.small, weight: .emphasis)
                                     .foregroundColor(.onSurfaceSecondary)
                                     .padding(.vertical, .spacingXXS)
@@ -69,14 +69,6 @@ extension DatePickerView {
             guard let weekday = day.weekday else { return -1 }
 
             return weekday == 1 ? 6 : weekday - 2
-        }
-
-        // Should be replaced when targeting iOS 15 with
-        // Text(datesInMonth[0], format: .dateTime.month(.wide))
-        private func monthFull(date: Date) -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM"
-            return dateFormatter.string(from: date).capitalized
         }
     }
 }

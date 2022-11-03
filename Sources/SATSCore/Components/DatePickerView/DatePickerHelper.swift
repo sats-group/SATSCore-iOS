@@ -14,12 +14,6 @@ public class DatePickerHelper {
         self.today = today
     }
 
-    private lazy var weekdayFormatter: DateFormatter = {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E"
-        return dateFormatter
-    }()
-
     private lazy var dateOnlyFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -32,23 +26,12 @@ public class DatePickerHelper {
     }
 
     func weekdayName(for date: Date) -> String {
-        let stringValue: String
-
-        if #available(iOS 15.0, *) {
-            stringValue = date.formatted(.dateTime.weekday())
-        } else {
-            stringValue = weekdayFormatter.string(from: date)
-        }
-
+        let stringValue = date.formatted(.dateTime.weekday())
         return stringValue.prefix(1).uppercased()
     }
 
-    /// Should be replaced when targeting iOS 15 with
-    /// Text(date, format: .dateTime.day())
     func dateNotZeroPrefixed(date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "d"
-        return dateFormatter.string(from: date)
+        date.formatted(.dateTime.day())
     }
 
     func isFirstInMonth(date: Date) -> Bool {

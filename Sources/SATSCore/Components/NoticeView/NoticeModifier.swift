@@ -27,14 +27,16 @@ struct NoticeModifier: ViewModifier {
         }
     }
 
-    @ViewBuilder var noticeView: some View {
-        if let notice = notice {
-            NoticeView(notice: notice, onTap: dimissNotice)
-                .animation(.easeInOut(duration: transitionDuration))
-                .transition(.move(edge: edge == .top ? .top : .bottom))
-                .onAppear(perform: scheduleAutoDismissIfNeeded)
-                .onAppear(perform: semanticHapticIfNeeded)
+    var noticeView: some View {
+        Group {
+            if let notice = notice {
+                NoticeView(notice: notice, onTap: dimissNotice)
+                    .onAppear(perform: scheduleAutoDismissIfNeeded)
+                    .onAppear(perform: semanticHapticIfNeeded)
+            }
         }
+        .animation(.easeInOut(duration: transitionDuration), value: notice != nil)
+        .transition(.move(edge: edge == .top ? .top : .bottom))
     }
 
     @ViewBuilder private var topSpacer: some View {
