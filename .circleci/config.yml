@@ -3,13 +3,13 @@ version: 2.1
 parameters:
   xcode-version:
     type: string
-    default: "13.4.1"
+    default: "14.1.0"
   simulator-version:
     type: string
-    default: "15.5"
+    default: "16.1"
   simulator-device:
     type: string
-    default: "iPhone 13 Pro"
+    default: "iPhone 14 Pro"
   ruby-version:
     type: string
     default: "3.1.2"
