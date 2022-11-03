@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(iOS 15.0, *)
 public extension View {
     /// Perform the given action when the `isSearching` environment property
     /// changes from `false` to `true`.
@@ -9,7 +8,6 @@ public extension View {
     }
 }
 
-@available(iOS 15.0, *)
 private struct OnSearchFocusedModifier: ViewModifier {
     var onSearchFocused: () -> Void
     @Environment(\.isSearching) var isSearching
