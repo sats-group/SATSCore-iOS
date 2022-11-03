@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "SATSCore",
-    platforms: [.iOS(.v14), .tvOS(.v14)],
+    platforms: [.iOS(.v15), .tvOS(.v15)],
     products: [
         .library(
             name: "SATSCore",
