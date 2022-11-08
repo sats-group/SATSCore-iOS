@@ -79,7 +79,7 @@ In order to release a new version of the package (and SATSCore iOS app)
 
 1. Create a PR for your improvements
 2. Merge your PR to main
-3. Get latest released version from the [releases section](https://github.com/sats-group/SATSCore-iOS/releases)
+3. Get latest released version from the [releases section]
 
 4. Get changelog from last version which in this case is 1.3.0
     
@@ -90,12 +90,12 @@ In order to release a new version of the package (and SATSCore iOS app)
      $ pr_changelog 1.3.0 main --format pretty | pbcopy
     ```
 
-5. On the [releases section](https://github.com/sats-group/SATSCore-iOS/releases) click the `Draft a new release` button
+5. On the [releases section] click the `Draft a new release` button
 
 ### The Release
 6. Create a tag - which in this case is 1.3.1 
    - You can do this from the dropdown button - `Choose a tag`
-   - Make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM(Software Program Managment) to define the version.
+   - Make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM(Swift Package Manager) to define the version.
 
 8. Fill in `Release title` with the newly created tag - 1.3.1
 
@@ -106,3 +106,5 @@ In order to release a new version of the package (and SATSCore iOS app)
 11. `Publish release`
 
 You are done 😄, now you can update the package where it's used
+
+[releases section]: https://github.com/sats-group/SATSCore-iOS/releases
