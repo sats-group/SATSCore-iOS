@@ -10,10 +10,10 @@ import SwiftUI
 struct NoticeDemoView: View {
     @State var notice: Notice?
 
-    @State var includeSubtitle: Bool = false
-    @State var autoDismiss: Bool = true
+    @State var includeSubtitle: Bool = true
+    @State var autoDismiss: Bool = false
     @State var edgeTop: Bool = true
-    @State var withAction: Bool = false
+    @State var withAction: Bool = true
     @State var style: Style = .success
 
     var edge: Notice.Edge { edgeTop ? .top : .bottom }
@@ -131,9 +131,11 @@ struct ErrorNoticeView_Previews: PreviewProvider {
         Group {
             NoticeDemoView()
                 .background(Color.red)
-                .previewDevice("iPhone 12 Pro")
+                .previewDisplayName("Full Demo")
 
-            Group {
+            VStack(spacing: .spacingL) {
+                Spacer()
+
                 NoticeView(notice: .sampleSuccess)
 
                 NoticeView(notice: .sampleWarning)
@@ -141,7 +143,12 @@ struct ErrorNoticeView_Previews: PreviewProvider {
                 NoticeView(notice: .sampleError)
 
                 NoticeView(notice: .sampleErrorWithAction)
+
+                Spacer()
             }
+            .padding()
+            .background(Color.backgroundPrimary)
+            .previewDisplayName("Notice Showcase")
             .previewLayout(.sizeThatFits)
         }
     }
