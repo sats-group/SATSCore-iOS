@@ -48,7 +48,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image(systemName: "xmark.octagon"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -74,7 +74,7 @@ public struct Notice {
         action: @escaping () -> Void
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image(systemName: "xmark.octagon"),
             title: title,
             explanation: explanation,
             autoDismiss: false,
@@ -99,7 +99,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "exclamationmark.triangle.fill"),
+            icon: Image(systemName: "exclamationmark.triangle"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
@@ -122,7 +122,7 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "checkmark.circle.fill"),
+            icon: Image(systemName: "checkmark.circle"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
