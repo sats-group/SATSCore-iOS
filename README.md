@@ -81,9 +81,9 @@ In order to release a new version of the package (and SATSCore iOS app)
 2. Merge your PR to main
 3. Get latest released version from the [releases section]
 
-4. Get changelog from last version which in this case is 1.3.0
+4. Get changelog from last version which in this case is `1.3.0`
     
-    - Remember to replace 1.3.0 for the last released version of the package.
+    - Remember to replace `1.3.0` for the last released version of the package.
     - If you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
 
     ```
@@ -93,11 +93,11 @@ In order to release a new version of the package (and SATSCore iOS app)
 5. On the [releases section] click the `Draft a new release` button
 
 ### The Release
-6. Create a tag - which in this case is 1.3.1 
+6. Create a tag - which in this case is `1.3.1`
    - You can do this from the dropdown button - `Choose a tag`
    - Make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM(Swift Package Manager) to define the version.
 
-8. Fill in `Release title` with the newly created tag - 1.3.1
+8. Fill in `Release title` with the newly created tag - `1.3.1`
 
 9. Paste changelog into the description field
 
