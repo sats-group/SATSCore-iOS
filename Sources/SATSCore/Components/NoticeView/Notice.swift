@@ -91,7 +91,7 @@ public struct Notice {
     ///   - explanation: (optional) explanation of the warning
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
-    /// - Returns: a `Notice` instance that can be used with `NoticeView
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func warning(
         title: String,
         explanation: String? = nil,
@@ -114,7 +114,7 @@ public struct Notice {
     ///   - explanation: (optional) explanation of the notice
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
-    /// - Returns: a `Notice` instance that can be used with `NoticeView
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func success(
         title: String,
         explanation: String? = nil,
@@ -127,6 +127,29 @@ public struct Notice {
             explanation: explanation,
             autoDismiss: autoDismiss,
             tintColor: .signalSuccess,
+            hapticType: includeHaptic ? .success : nil
+        )
+    }
+
+    /// Creates a info notice data struct
+    /// - Parameters:
+    ///   - title: required title of the notice
+    ///   - explanation: (optional) explanation of the notice
+    ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
+    ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
+    public static func info(
+        title: String,
+        explanation: String? = nil,
+        autoDismiss: Bool = true,
+        includeHaptic: Bool = true
+    ) -> Notice {
+        Notice(
+            icon: Image(systemName: "info.circle"),
+            title: title,
+            explanation: explanation,
+            autoDismiss: autoDismiss,
+            tintColor: .graphicalElements1,
             hapticType: includeHaptic ? .success : nil
         )
     }
