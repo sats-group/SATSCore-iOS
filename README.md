@@ -78,7 +78,7 @@ This is one of the tradeoffs of using SwiftPackageManager, in standalone package
 In order to release a new version of the package (and SATSCore iOS app)
 
 1. Create a PR for your improvements
-2. Merge your Pr to main
+2. Merge your PR to main
 3. Get latest released version from the [releases section](https://github.com/sats-group/SATSCore-iOS/releases)
 
 4. Get changelog from last version which in this case is 1.3.0
