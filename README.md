@@ -75,15 +75,34 @@ The best way to develop the package is to open the demo app Xcode project
 This is one of the tradeoffs of using SwiftPackageManager, in standalone packages we cannot have demo apps, neither configure Xcode to run SwiftLint. So we added this to the DemoApp.
 
 ## Releasing
+In order to release a new version of the package (and SATSCore iOS app)
 
-In order to release a new version of the package (and SATSCore iOS app) we just need to add a tag in the [Releases section](https://github.com/healthfitnessnordic/SATSCore-iOS/releases).
+1. Create a PR for your improvements
+2. Merge your Pr to main
+3. Get latest released version from the [releases section](https://github.com/sats-group/SATSCore-iOS/releases)
 
-Then make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM to define the version.
+4. Get changelog from last version which in this case is 1.3.0
+    
+    - Remember to replace 1.3.0 for the last released version of the package.
+    - If you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
 
-Then if you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
+    ```
+     $ pr_changelog 1.3.0 main --format pretty | pbcopy
+    ```
 
-```
-$ pr_changelog 0.0.7 main
-```
+5. On the [releases section](https://github.com/sats-group/SATSCore-iOS/releases) click the `Draft a new release` button
 
-To get a formatted list of changes. Remember to replace `0.0.7` for the last released version of the package.
+### The Release
+6. Create a tag - which in this case is 1.3.1 
+   - You can do this from the dropdown button - `Choose a tag`
+   - Make sure the `Tag` and `Title` of the release is in the form `0.0.8` or similar as this number is used by SPM(Software Program Managment) to define the version.
+
+8. Fill in `Release title` with the newly created tag - 1.3.1
+
+9. Paste changelog into the description field
+
+10. Check on the `Set as the latest release`
+
+11. `Publish release`
+
+You are done 😄, now you can update the package where it's used
