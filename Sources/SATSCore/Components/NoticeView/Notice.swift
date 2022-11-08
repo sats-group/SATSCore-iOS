@@ -9,8 +9,7 @@ public struct Notice {
     public let title: String
     public let explanation: String?
     public let autoDismiss: Bool
-    public let foregroundColor: Color
-    public let backgroundColor: Color
+    public let tintColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
     public let actionTitle: String?
     public let action: (() -> Void)?
@@ -20,8 +19,7 @@ public struct Notice {
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
-        foregroundColor: Color,
-        backgroundColor: Color,
+        tintColor: Color,
         hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
         actionTitle: String? = nil,
         action: (() -> Void)? = nil
@@ -30,8 +28,7 @@ public struct Notice {
         self.title = title
         self.explanation = explanation
         self.autoDismiss = autoDismiss
-        self.foregroundColor = foregroundColor
-        self.backgroundColor = backgroundColor
+        self.tintColor = tintColor
         self.hapticType = hapticType
         self.actionTitle = actionTitle
         self.action = action
@@ -55,8 +52,7 @@ public struct Notice {
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil
         )
     }
@@ -82,8 +78,7 @@ public struct Notice {
             title: title,
             explanation: explanation,
             autoDismiss: false,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil,
             actionTitle: actionTitle,
             action: action
@@ -108,8 +103,7 @@ public struct Notice {
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalWarning,
+            tintColor: .signalWarning,
             hapticType: includeHaptic ? .warning : nil
         )
     }
@@ -132,8 +126,7 @@ public struct Notice {
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalSuccess,
+            tintColor: .signalSuccess,
             hapticType: includeHaptic ? .success : nil
         )
     }
