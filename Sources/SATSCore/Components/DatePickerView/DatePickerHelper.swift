@@ -14,6 +14,12 @@ public class DatePickerHelper {
         self.today = today
     }
 
+    private lazy var dayNumberFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        return dateFormatter
+    }()
+
     private lazy var dateOnlyFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -31,7 +37,7 @@ public class DatePickerHelper {
     }
 
     func dateNotZeroPrefixed(date: Date) -> String {
-        date.formatted(.dateTime.day())
+        dayNumberFormatter.string(from: date)
     }
 
     func isFirstInMonth(date: Date) -> Bool {
