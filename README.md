@@ -81,7 +81,7 @@ In order to release a new version of the package (and SATSCore iOS app)
 2. Merge your PR to main
 3. Get latest released version from the [releases section]
 
-4. Get changelog from last version which in this case is `1.3.0`
+4. Get the changelog from the latest version which in this case is `1.3.0`
     
     - Remember to replace `1.3.0` for the last released version of the package.
     - If you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
