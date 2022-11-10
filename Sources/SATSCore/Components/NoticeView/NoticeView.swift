@@ -16,13 +16,13 @@ public struct NoticeView: View {
             Spacer()
             actionButton
         }
-        .foregroundColor(notice.foregroundColor)
         .padding(16)
-        .background(notice.backgroundColor)
+        .background(Color.backgroundSurfacePrimary)
         .cornerRadius(8)
         .padding(8)
         .onTapGesture(perform: performTap)
         .frame(maxWidth: .readableWidthM)
+        .shadow(radius: .cornerRadiusS)
     }
 
     func performTap() {
@@ -38,6 +38,7 @@ public struct NoticeView: View {
                 Button(action: onAction) {
                     Text(actionTitle.uppercased())
                         .satsFont(.basic, weight: .emphasis)
+                        .foregroundColor(.onSurfacePrimary)
                 }
                 .padding(.horizontal, 8)
             }
@@ -47,18 +48,21 @@ public struct NoticeView: View {
     @ViewBuilder var icon: some View {
         if let icon = notice.icon {
             icon
+                .font(.system(size: .spacingL, weight: .medium))
+                .foregroundColor(notice.tintColor)
         }
     }
 
     var message: some View {
-        VStack(alignment: .leading, spacing: 1) {
+        VStack(alignment: .leading, spacing: .spacingXXXS) {
             Text(notice.title)
                 .satsFont(.basic, weight: .emphasis)
 
             if let explanation = notice.explanation {
                 Text(explanation)
-                    .satsFont(.small)
+                    .satsFont(.basic, weight: .medium)
             }
         }
+        .foregroundColor(.onSurfaceSecondary)
     }
 }

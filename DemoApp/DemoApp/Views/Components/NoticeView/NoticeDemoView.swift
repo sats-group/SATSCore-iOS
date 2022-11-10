@@ -10,10 +10,10 @@ import SwiftUI
 struct NoticeDemoView: View {
     @State var notice: Notice?
 
-    @State var includeSubtitle: Bool = false
-    @State var autoDismiss: Bool = true
+    @State var includeSubtitle: Bool = true
+    @State var autoDismiss: Bool = false
     @State var edgeTop: Bool = true
-    @State var withAction: Bool = false
+    @State var withAction: Bool = true
     @State var style: Style = .success
 
     var edge: Notice.Edge { edgeTop ? .top : .bottom }
@@ -52,6 +52,7 @@ struct NoticeDemoView: View {
                 Spacer()
 
                 Picker("\(style.rawValue)", selection: $style) {
+                    Text("Info").tag(Style.info)
                     Text("Success").tag(Style.success)
                     Text("Warning").tag(Style.warning)
                     Text("Error").tag(Style.error)
@@ -85,6 +86,13 @@ struct NoticeDemoView: View {
         let subtitle = includeSubtitle ? "Subtitle text" : nil
 
         switch (style, withAction) {
+        case (.info, _):
+            return Notice.info(
+                title: "Sample info notice",
+                explanation: subtitle,
+                autoDismiss: autoDismiss
+            )
+
         case (.success, _):
             return Notice.success(
                 title: "Sample success notice",
@@ -120,6 +128,7 @@ struct NoticeDemoView: View {
     // In general I favor struct values over enums as they are
     // extensible outside the library
     enum Style: String, Hashable {
+        case info = "Info"
         case success = "Success"
         case warning = "Warning"
         case error = "Error"
@@ -131,9 +140,13 @@ struct ErrorNoticeView_Previews: PreviewProvider {
         Group {
             NoticeDemoView()
                 .background(Color.red)
-                .previewDevice("iPhone 12 Pro")
+                .previewDisplayName("Full Demo")
 
-            Group {
+            VStack(spacing: .spacingL) {
+                Spacer()
+
+                NoticeView(notice: .sampleInfo)
+
                 NoticeView(notice: .sampleSuccess)
 
                 NoticeView(notice: .sampleWarning)
@@ -141,7 +154,12 @@ struct ErrorNoticeView_Previews: PreviewProvider {
                 NoticeView(notice: .sampleError)
 
                 NoticeView(notice: .sampleErrorWithAction)
+
+                Spacer()
             }
+            .padding()
+            .background(Color.backgroundPrimary)
+            .previewDisplayName("Notice Showcase")
             .previewLayout(.sizeThatFits)
         }
     }
@@ -165,5 +183,9 @@ extension Notice {
 
     static let sampleWarning = Notice.warning(
         title: "You should be careful about this!"
+    )
+
+    static let sampleInfo = Notice.info(
+        title: "We have a new notice style"
     )
 }
