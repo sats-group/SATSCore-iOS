@@ -9,8 +9,7 @@ public struct Notice {
     public let title: String
     public let explanation: String?
     public let autoDismiss: Bool
-    public let foregroundColor: Color
-    public let backgroundColor: Color
+    public let tintColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
     public let actionTitle: String?
     public let action: (() -> Void)?
@@ -20,8 +19,7 @@ public struct Notice {
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
-        foregroundColor: Color,
-        backgroundColor: Color,
+        tintColor: Color,
         hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
         actionTitle: String? = nil,
         action: (() -> Void)? = nil
@@ -30,8 +28,7 @@ public struct Notice {
         self.title = title
         self.explanation = explanation
         self.autoDismiss = autoDismiss
-        self.foregroundColor = foregroundColor
-        self.backgroundColor = backgroundColor
+        self.tintColor = tintColor
         self.hapticType = hapticType
         self.actionTitle = actionTitle
         self.action = action
@@ -51,12 +48,11 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image(systemName: "xmark.octagon"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil
         )
     }
@@ -78,12 +74,11 @@ public struct Notice {
         action: @escaping () -> Void
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "xmark.octagon.fill"),
+            icon: Image(systemName: "xmark.octagon"),
             title: title,
             explanation: explanation,
             autoDismiss: false,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalError,
+            tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil,
             actionTitle: actionTitle,
             action: action
@@ -96,7 +91,7 @@ public struct Notice {
     ///   - explanation: (optional) explanation of the warning
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
-    /// - Returns: a `Notice` instance that can be used with `NoticeView
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func warning(
         title: String,
         explanation: String? = nil,
@@ -104,12 +99,11 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "exclamationmark.triangle.fill"),
+            icon: Image(systemName: "exclamationmark.triangle"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalWarning,
+            tintColor: .signalWarning,
             hapticType: includeHaptic ? .warning : nil
         )
     }
@@ -120,7 +114,7 @@ public struct Notice {
     ///   - explanation: (optional) explanation of the notice
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
-    /// - Returns: a `Notice` instance that can be used with `NoticeView
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func success(
         title: String,
         explanation: String? = nil,
@@ -128,12 +122,34 @@ public struct Notice {
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
-            icon: Image(systemName: "checkmark.circle.fill"),
+            icon: Image(systemName: "checkmark.circle"),
             title: title,
             explanation: explanation,
             autoDismiss: autoDismiss,
-            foregroundColor: .onSignal,
-            backgroundColor: .signalSuccess,
+            tintColor: .signalSuccess,
+            hapticType: includeHaptic ? .success : nil
+        )
+    }
+
+    /// Creates a info notice data struct
+    /// - Parameters:
+    ///   - title: required title of the notice
+    ///   - explanation: (optional) explanation of the notice
+    ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
+    ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
+    /// - Returns: a `Notice` instance that can be used with `NoticeView`
+    public static func info(
+        title: String,
+        explanation: String? = nil,
+        autoDismiss: Bool = true,
+        includeHaptic: Bool = true
+    ) -> Notice {
+        Notice(
+            icon: Image(systemName: "info.circle"),
+            title: title,
+            explanation: explanation,
+            autoDismiss: autoDismiss,
+            tintColor: .graphicalElements1,
             hapticType: includeHaptic ? .success : nil
         )
     }
