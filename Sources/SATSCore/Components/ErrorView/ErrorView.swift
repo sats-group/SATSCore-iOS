@@ -29,6 +29,16 @@ public struct ErrorViewData {
     }
 }
 
+extension ErrorViewData {
+    public static func previewValue(
+        title: String? = "Something went wrong",
+        message: String = "This shouldn't have happened, contact support if the error persist.",
+        canRetry: Bool = true
+    ) -> Self {
+        .init(title: title, message: message, canRetry: canRetry)
+    }
+}
+
 /// A view which displays a title, message and retry button
 public class ErrorView: UIView {
     // MARK: Public properties
