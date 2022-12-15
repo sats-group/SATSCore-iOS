@@ -24,7 +24,6 @@ import SwiftUI
 public struct CustomAsyncImage<Output: View>: View {
     @StateObject var viewModel: ImageViewModel
     let transform: ((Image) -> Output)?
-    let uuid: UUID = UUID()
 
     ///
     /// - Parameters:
