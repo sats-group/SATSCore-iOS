@@ -51,6 +51,7 @@ public struct CustomAsyncImage<Output: View>: View {
                 }
             }
         }
+        .transition(.opacity)
         .task { await viewModel.loadImageIfNeeded() }
     }
 

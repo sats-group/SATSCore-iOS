@@ -15,13 +15,13 @@ class ImageViewModel: ObservableObject {
     @MainActor func loadImageIfNeeded() async {
         guard case let .remote(imageUrl) = state else { return }
 
-        state = .loading
+        withAnimation { state = .loading }
 
         do {
             let image = try await imageClient.loadImage(with: imageUrl)
-            state = .image(image)
+            withAnimation { state = .image(image) }
         } catch {
-            state = .empty
+            withAnimation { state = .empty }
         }
     }
 }
