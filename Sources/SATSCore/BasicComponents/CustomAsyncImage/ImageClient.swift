@@ -14,35 +14,18 @@ public protocol ImageClient {
 
 /// Internal only type as a simple/default implementation of the `ImageClient` protocol.
 class DefaultImageClient: ImageClient {
-    var task: URLSessionDataTask?
-
-    func loadImage(with url: URL, onCompletion: @escaping (Result<Image, Error>) -> Void) {
-        task = URLSession.shared.dataTask(with: url) { imageData, _, error in
-            if let imageData = imageData {
-                if let uiImage = UIImage(data: imageData) {
-                    let image = Image(uiImage: uiImage)
-                    onCompletion(.success(image))
-                } else {
-                    onCompletion(.failure(ImageError.decodeError))
-                }
-            } else if let error = error {
-                onCompletion(.failure(error))
-            } else {
-                onCompletion(.failure(ImageError.noData))
-            }
-        }
-
-        task?.resume()
+    func loadImage(with url: URL) async throws -> Image {
+        let (imageData, _) = try await URLSession.shared.data(from: url)
+        guard let uiImage = UIImage(data: imageData) else { throw ImageError.decodeError }
+        return Image(uiImage: uiImage)
     }
 
     enum ImageError: LocalizedError {
         case decodeError
-        case noData
 
         var errorDescription: String? {
             switch self {
             case .decodeError: return "We got the image data but couldn't convert it to a proper image"
-            case .noData: return "We didn't receive any data, but no error"
             }
         }
     }
