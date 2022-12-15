@@ -35,22 +35,23 @@ public struct CustomAsyncImage<Output: View>: View {
     }
 
     public var body: some View {
-        switch viewModel.state {
-        case .empty:
-            placeholder
-        case .remote:
-            placeholder
-                .onAppear(perform: viewModel.loadImage)
-        case .loading:
-            placeholder
-                .overlay(ProgressView())
-        case let .image(image):
-            if let transform = transform {
-                transform(image)
-            } else {
-                image
+        Group {
+            switch viewModel.state {
+            case .empty,
+                 .remote:
+                placeholder
+            case .loading:
+                placeholder
+                    .overlay(ProgressView())
+            case let .image(image):
+                if let transform = transform {
+                    transform(image)
+                } else {
+                    image
+                }
             }
         }
+        .task { await viewModel.loadImageIfNeeded() }
     }
 
     var placeholder: some View {
