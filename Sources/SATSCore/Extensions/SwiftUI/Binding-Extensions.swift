@@ -1,5 +1,6 @@
 import SwiftUI
 
+// swiftlint:disable identifier_name
 extension Binding {
     /// A way to create a new binding from another, as long as we can transform the values both ways
     /// - Parameters:
