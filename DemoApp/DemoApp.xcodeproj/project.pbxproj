@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,7 @@
 		9B9D6D94261EF70500450E67 /* GradientDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D6D93261EF70500450E67 /* GradientDemoView.swift */; };
 		9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
+		9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */; };
 		9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */; };
 		9BCEE85B26035CB2001C8692 /* ProgressLineDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */; };
 		9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */; };
@@ -96,6 +97,7 @@
 		9B9D6D93261EF70500450E67 /* GradientDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDemoView.swift; sourceTree = "<group>"; };
 		9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDemoView.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
+		9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernErrorDemoView.swift; sourceTree = "<group>"; };
 		9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineNoticeDemoView.swift; sourceTree = "<group>"; };
 		9BCEE85926035CB2001C8692 /* ProgressLineDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressLineDemoView.swift; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
@@ -389,6 +391,14 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		9BCB6F0A294B208600202A52 /* ModernErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */,
+			);
+			path = ModernErrorView;
+			sourceTree = "<group>";
+		};
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +410,7 @@
 				9B9D6D91261EF6E300450E67 /* GradientView */,
 				9BCEE85626035CB2001C8692 /* InlineNoticeView */,
 				9BA17B0E26666D2700BDAA9C /* LoadingView */,
+				9BCB6F0A294B208600202A52 /* ModernErrorView */,
 				9B8C11F226F23702007F5D0C /* NoticeView */,
 				9BCEE85826035CB2001C8692 /* ProgressLineView */,
 				57016DC0286349BA00874F53 /* RadioGroupView */,
@@ -593,6 +604,7 @@
 				9B7A4D5E25D2B42C0086EA4F /* UIKitDemoView.swift in Sources */,
 				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9B78777925D68D9A00C69BB8 /* FontWeightPicker.swift in Sources */,
+				9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */,
 				57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
