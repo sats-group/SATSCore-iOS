@@ -5,9 +5,20 @@ public extension View {
 }
 
 public extension Backport where Content: View {
+    /// This is needed as TextViews in iOS 16 have an extra background
+    @available(iOS, deprecated: 16, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func hideScrollContentBackground() -> some View {
+        if #available(iOS 16.0, *) {
+            content
+                .scrollContentBackground(.hidden)
+        } else {
+            content
+        }
+    }
+
     // here there will backported extensions when needed for iOS 16
-    @ViewBuilder
-    func scrollDismissesKeyboard(_ visibility: ScrollDismissesKeyboard) -> some View {
+    @available(iOS, deprecated: 16, message: "This is a backported version that is not neeeded anymore")
+    @ViewBuilder func scrollDismissesKeyboard(_ visibility: ScrollDismissesKeyboard) -> some View {
         if #available(iOS 16, *) {
             content
                 .scrollDismissesKeyboard(visibility.mode)
@@ -16,6 +27,7 @@ public extension Backport where Content: View {
         }
     }
 
+    @available(iOS, deprecated: 16, message: "This is a backported version that is not neeeded anymore")
     enum ScrollDismissesKeyboard {
         // Determine the mode automatically based on the surrounding context
         case automatic
