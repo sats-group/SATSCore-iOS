@@ -40,6 +40,8 @@
 		9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */; };
 		9B9D6D94261EF70500450E67 /* GradientDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9D6D93261EF70500450E67 /* GradientDemoView.swift */; };
 		9BA17B1026666D3600BDAA9C /* LoadingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */; };
+		9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */; };
+		9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
 		9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */; };
 		9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */; };
@@ -98,6 +100,8 @@
 		9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImageDemoView.swift; sourceTree = "<group>"; };
 		9B9D6D93261EF70500450E67 /* GradientDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDemoView.swift; sourceTree = "<group>"; };
 		9BA17B0F26666D3600BDAA9C /* LoadingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDemoView.swift; sourceTree = "<group>"; };
+		9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingDemoView.swift; sourceTree = "<group>"; };
+		9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDemoView.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
 		9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernErrorDemoView.swift; sourceTree = "<group>"; };
 		9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineNoticeDemoView.swift; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 			children = (
 				9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */,
 				9B86614625CD7AB40040F8CA /* ColorDemoView.swift */,
+				9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */,
+				9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */,
 			);
 			path = DNA;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				9B57208C26738BF100D12109 /* ScoreDemoView.swift in Sources */,
 				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */,
 				9B9D6D94261EF70500450E67 /* GradientDemoView.swift in Sources */,
+				9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */,
 				9B7A4D5225D2ADA30086EA4F /* SampleTopStoriesView.swift in Sources */,
 				9B4083BE261DE66D00A3A718 /* ExternalUrlDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
@@ -613,6 +620,7 @@
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
+				9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */,
 				9B7A4D5025D2ADA30086EA4F /* DemoDiscoverView.swift in Sources */,
