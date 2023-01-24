@@ -47,7 +47,7 @@ public extension SATSCell {
                             accessory
                             action
                         }
-                        .padding(.trailing, .spacingS)
+                        .padding(.trailing, .spacingM)
                         .padding(.vertical, .spacingM)
 
                         divider
