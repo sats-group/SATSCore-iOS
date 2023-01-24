@@ -1,0 +1,29 @@
+{
+  "tags": [
+    {
+      "prefix": "feature",
+      "emoji": "",
+      "title": "New features"
+    },
+    {
+      "prefix": "improvement",
+      "emoji": "",
+      "title": "Improvements"
+    },
+    {
+      "prefix": "fix",
+      "emoji": "",
+      "title": "Fixes"
+    },
+    {
+      "prefix": "internal",
+      "emoji": "",
+      "title": "Internal"
+    },
+    {
+      "prefix": "unclassified",
+      "emoji": "",
+      "title": "Unclassified"
+    }
+  ]
+}
