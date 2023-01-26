@@ -7,7 +7,8 @@ struct ContentView: View {
                 Section(header: Text("DNA")) {
                     NavigationLink("Fonts", destination: SwiftUIFontsDemoView())
                     NavigationLink("Colors", destination: ColorDemoView())
-                    NavigationLink("Spacing", destination: Text("⚠️ We should totally have constants here!"))
+                    NavigationLink("Spacing", destination: SpacingDemoView())
+                    NavigationLink("Corner Radius", destination: CornerRadiusDemoView())
                 }
 
                 Section(header: Text("UIKit Basics")) {
