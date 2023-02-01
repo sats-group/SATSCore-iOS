@@ -38,6 +38,7 @@ class ImageViewModel: ObservableObject {
         components?.queryItems = [
             URLQueryItem(name: "w", value: "\(size.width * scale)"),
             URLQueryItem(name: "h", value: "\(size.height * scale)"),
+            URLQueryItem(name: "fit", value: "fill"),
         ]
 
         guard let newUrl = components?.url else { return url }
