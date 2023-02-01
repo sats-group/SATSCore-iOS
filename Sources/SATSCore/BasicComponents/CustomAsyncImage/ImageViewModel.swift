@@ -22,7 +22,7 @@ class ImageViewModel: ObservableObject {
         state = .loading
 
         do {
-            let url = addSizeQueryItemsIfNeeded(with: imageUrl, for: size)
+            let url = addSizeQueryItemsIfNeeded(to: imageUrl, for: size)
             let image = try await imageClient.loadImage(with: url)
             state = .image(image)
         } catch {
@@ -30,13 +30,14 @@ class ImageViewModel: ObservableObject {
         }
     }
 
-    private func addSizeQueryItemsIfNeeded(with url: URL, for size: CGSize) -> URL {
+    private func addSizeQueryItemsIfNeeded(to url: URL, for size: CGSize) -> URL {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         guard components?.host == "images.ctfassets.net" else { return url }
+        let scale = UIScreen.main.scale
 
         components?.queryItems = [
-            URLQueryItem(name: "w", value: "\(size.width)"),
-            URLQueryItem(name: "h", value: "\(size.height)"),
+            URLQueryItem(name: "w", value: "\(size.width * scale)"),
+            URLQueryItem(name: "h", value: "\(size.height * scale)"),
         ]
 
         guard let newUrl = components?.url else { return url }
