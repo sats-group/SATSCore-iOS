@@ -23,6 +23,7 @@ import SwiftUI
  */
 public struct CustomAsyncImage<Output: View>: View {
     @StateObject var viewModel: ImageViewModel
+    @Environment(\.redactionReasons) private var redactions
     let transform: ((Image) -> Output)?
 
     ///
@@ -35,25 +36,29 @@ public struct CustomAsyncImage<Output: View>: View {
     }
 
     public var body: some View {
-        Group {
-            switch viewModel.state {
-            case .empty,
-                 .remote:
-                placeholder
-            case .loading:
-                placeholder
-                    .overlay(ProgressView())
-            case let .image(image):
-                if let transform = transform {
-                    transform(image)
-                } else {
-                    image
+        GeometryReader { proxy in
+            Group {
+                switch viewModel.state {
+                case .empty,
+                     .remote:
+                    placeholder
+                case .loading:
+                    placeholder
+                        .overlay(ProgressView())
+                case let .image(image):
+                    if let transform = transform {
+                        transform(image)
+                    } else {
+                        image
+                    }
                 }
             }
+            .animation(.easeInOut, value: viewModel.state.description)
+            .transition(.opacity)
+            .task {
+                await viewModel.loadImageIfNeeded(size: proxy.size, viewRedaction: redactions)
+            }
         }
-        .animation(.easeInOut, value: viewModel.state.description)
-        .transition(.opacity)
-        .task { await viewModel.loadImageIfNeeded() }
     }
 
     var placeholder: some View {
