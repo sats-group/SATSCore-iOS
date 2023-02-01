@@ -34,7 +34,7 @@ class ImageViewModel: ObservableObject {
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
         guard components?.host == "images.ctfassets.net" else { return url }
         let scale = UIScreen.main.scale
-        components?.queryItems? = [
+        components?.queryItems = [
             URLQueryItem(name: "w", value: "\(size.width * scale)"),
         ]
 
