@@ -9,7 +9,7 @@ import SwiftUI
 
   Original solution found in: https://developer.apple.com/forums/thread/650312
   */
-public struct ScrollReaderView<Content: View>: View {
+public struct ScrollViewOffsetReader<Content: View>: View {
     let content: Content
     let showsIndicators: Bool
     @Binding var scrollValue: CGFloat
@@ -46,6 +46,7 @@ public struct ScrollReaderView<Content: View>: View {
             scrollValue = value
         }
     }
+
 }
 
 private struct ScrollViewOffsetPreferenceKey: PreferenceKey {

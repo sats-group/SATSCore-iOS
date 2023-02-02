@@ -4,7 +4,7 @@ struct ScrollReaderDemoView: View {
     @State var scrollValue: CGFloat = 0
 
     var body: some View {
-        ScrollReaderView(scrollValue: $scrollValue) {
+        ScrollViewOffsetReader(scrollValue: $scrollValue) {
             Rectangle()
                 .foregroundColor(.shimmer)
                 .overlay(
