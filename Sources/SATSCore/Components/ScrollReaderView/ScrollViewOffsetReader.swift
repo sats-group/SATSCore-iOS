@@ -10,6 +10,7 @@ import SwiftUI
   Original solution found in: https://developer.apple.com/forums/thread/650312
   */
 public struct ScrollViewOffsetReader<Content: View>: View {
+    let axis: Axis.Set
     let content: Content
     let showsIndicators: Bool
     @Binding var scrollValue: CGFloat
@@ -17,26 +18,27 @@ public struct ScrollViewOffsetReader<Content: View>: View {
     private let namespace: String = "scrollReader"
 
     public init(
+        _ axis: Axis.Set = .vertical,
         scrollValue: Binding<CGFloat>,
         showsIndicators: Bool = true,
         @ViewBuilder _ content: () -> Content
     ) {
+        self.axis = axis
         self._scrollValue = scrollValue
         self.showsIndicators = showsIndicators
         self.content = content()
     }
 
     public var body: some View {
-        ScrollView(showsIndicators: showsIndicators) {
+        ScrollView(axis, showsIndicators: showsIndicators) {
             ZStack {
                 content
 
                 GeometryReader { proxy in
-                    let offset = proxy.frame(in: .named(namespace)).minY
                     Color.clear
                         .preference(
                             key: ScrollViewOffsetPreferenceKey.self,
-                            value: offset
+                            value: offset(in: proxy)
                         )
                 }
             }
@@ -47,6 +49,15 @@ public struct ScrollViewOffsetReader<Content: View>: View {
         }
     }
 
+    private func offset(in proxy: GeometryProxy) -> CGFloat {
+        let frame = proxy.frame(in: .named(namespace))
+
+        if axis == .horizontal {
+            return frame.minX
+        } else {
+            return frame.minY
+        }
+    }
 }
 
 private struct ScrollViewOffsetPreferenceKey: PreferenceKey {
