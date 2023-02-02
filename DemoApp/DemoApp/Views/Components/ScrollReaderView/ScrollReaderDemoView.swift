@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ScrollReaderDemoView: View {
+struct ScrollViewOffsetReaderDemoView: View {
     @State var scrollValue: CGFloat = 0
 
     var body: some View {
@@ -28,14 +28,14 @@ struct ScrollReaderDemoView: View {
                     .background(Color.blue.opacity(0.2))
             }
         )
-        .navigationTitle("ScrollReaderDemoView")
+        .navigationTitle("ScrollViewOffsetReaderDemoView")
     }
 }
 
-struct ScrollReaderDemoView_Previews: PreviewProvider {
+struct ScrollViewOffsetReaderDemoView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ScrollReaderDemoView()
+            ScrollViewOffsetReaderDemoView()
         }
     }
 }
