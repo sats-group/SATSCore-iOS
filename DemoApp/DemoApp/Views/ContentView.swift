@@ -40,7 +40,7 @@ struct ContentView: View {
                         NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
                         NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
-                        NavigationLink("ScrollReaderView", destination: ScrollReaderDemoView())
+                        NavigationLink("ScrollViewOffsetReader", destination: ScrollViewOffsetReaderDemoView())
                         NavigationLink("TabSelectionView", destination: TabSelectionDemoView())
                         NavigationLink("TopBar", destination: TopBarDemoView())
                         NavigationLink("RadioGroup", destination: RadioGroupDemoView())
