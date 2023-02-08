@@ -40,12 +40,16 @@ public struct Notice {
     ///   - explanation: (optional) explanation of the error
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
+    ///   - actionTitle: (optional) a title for a notice button
+    ///   - action: (optional) an action to perform when pressing the action button
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func error(
         title: String,
         explanation: String? = nil,
         autoDismiss: Bool = true,
-        includeHaptic: Bool = true
+        includeHaptic: Bool = true,
+        actionTitle: String? = nil,
+        action: (() -> Void)? = nil
     ) -> Notice {
         Notice(
             icon: Image(systemName: "xmark.octagon"),
@@ -53,7 +57,9 @@ public struct Notice {
             explanation: explanation,
             autoDismiss: autoDismiss,
             tintColor: .signalError,
-            hapticType: includeHaptic ? .error : nil
+            hapticType: includeHaptic ? .error : nil,
+            actionTitle: actionTitle,
+            action: action
         )
     }
 
