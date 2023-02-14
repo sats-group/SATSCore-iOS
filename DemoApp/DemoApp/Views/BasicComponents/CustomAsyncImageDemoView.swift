@@ -8,19 +8,25 @@ struct CustomAsyncDemoView: View {
 
     @State var imageViewData: ImageViewData = .image(Self.sampleImage)
     @State var showControls: Bool = true
+    @State var uuid = UUID()
+    @State var transitionDelay: TimeInterval = 2
+    var demoId: String { imageViewData.description + uuid.uuidString }
+
+    var formattedDelay: String {
+        String(format: "%.2f", transitionDelay)
+    }
 
     var body: some View {
         VStack {
-            Spacer()
-
-            CustomAsyncImage(imageViewData) { image in
+            CustomAsyncImage(imageViewData, transitionDelay: transitionDelay) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 200, height: 200)
                     .background(Color.red)
             }
+            .frame(size: 300)
             .background(Color.blue)
+            .padding(.top, 100)
             /*
              For demo purposes this is important.
 
@@ -35,7 +41,15 @@ struct CustomAsyncDemoView: View {
              we can achieve by tying the `id` of this view to the `imageViewData`.
              Then `imageViewData` changes we get a fresh copy of `CustomAsyncImage`
              */
-            .id(imageViewData)
+            .id(demoId)
+
+            if case .remote = imageViewData {
+                Button("Refetch Image", action: refetchRemoteImage)
+                    .buttonStyle(.borderedProminent)
+
+                Stepper("Transition Delay: \(formattedDelay)", value: $transitionDelay, in: 0 ... 5)
+                    .padding(.horizontal)
+            }
 
             Spacer()
         }
@@ -43,6 +57,10 @@ struct CustomAsyncDemoView: View {
         .navigationTitle("Custom Async Image")
         .overlay(controls)
         .background(Color.backgroundPrimary.ignoresSafeArea())
+    }
+
+    func refetchRemoteImage() {
+        uuid = UUID()
     }
 
     var controls: some View {
