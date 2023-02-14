@@ -4,10 +4,13 @@ import SwiftUI
 class ImageViewModel: ObservableObject {
     @Published var state: ImageViewData = .empty
 
+    let transitionDelay: TimeInterval
+
     private var imageClient: ImageClient { Config.imageClient }
 
-    init(state: ImageViewData) {
+    init(state: ImageViewData, transitionDelay: TimeInterval = 0) {
         self.state = state
+        self.transitionDelay = transitionDelay
     }
 
     /// Loads and assign the remote image if needed,
@@ -19,9 +22,17 @@ class ImageViewModel: ObservableObject {
 
         do {
             let image = try await imageClient.loadImage(with: imageUrl)
+            await delay(for: transitionDelay)
             withAnimation { state = .image(image) }
         } catch {
+            await delay(for: transitionDelay)
             withAnimation { state = .empty }
+        }
+    }
+
+    func delay(for timeInterval: TimeInterval) async {
+        if #available(iOS 16.0, *) {
+            try? await Task.sleep(for: .seconds(timeInterval))
         }
     }
 }
