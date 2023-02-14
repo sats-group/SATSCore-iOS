@@ -24,34 +24,40 @@ import SwiftUI
 public struct CustomAsyncImage<Output: View>: View {
     @StateObject var viewModel: ImageViewModel
     let transform: ((Image) -> Output)?
-    let uuid: UUID = UUID()
 
     ///
     /// - Parameters:
     ///   - state: the initial state for the async image
+    ///   - transitionDelay: (in Seconds) a way to artifically delay the transition for `.remote` images. Intended for debugging purposes only.
     ///   - transform: a closure that will be used to add modifiers to the view
-    public init(_ state: ImageViewData, transform: ((Image) -> Output)? = nil) {
-        self._viewModel = StateObject(wrappedValue: ImageViewModel(state: state))
+    public init(
+        _ state: ImageViewData,
+        transitionDelay: TimeInterval = 0,
+        transform: ((Image) -> Output)? = nil
+    ) {
+        self._viewModel = StateObject(wrappedValue: ImageViewModel(state: state, transitionDelay: transitionDelay))
         self.transform = transform
     }
 
     public var body: some View {
-        switch viewModel.state {
-        case .empty:
-            placeholder
-        case .remote:
-            placeholder
-                .onAppear(perform: viewModel.loadImage)
-        case .loading:
-            placeholder
-                .overlay(ProgressView())
-        case let .image(image):
-            if let transform = transform {
-                transform(image)
-            } else {
-                image
+        Group {
+            switch viewModel.state {
+            case .empty,
+                 .remote:
+                placeholder
+            case .loading:
+                placeholder
+                    .overlay(ProgressView())
+            case let .image(image):
+                if let transform = transform {
+                    transform(image)
+                } else {
+                    image
+                }
             }
         }
+        .transition(.opacity)
+        .task { await viewModel.loadImageIfNeeded() }
     }
 
     var placeholder: some View {
