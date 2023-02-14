@@ -15,10 +15,12 @@ public struct ActionSheetViewData: Identifiable, Equatable {
 
     public struct ActionViewData: Equatable {
         public let title: String
+        public let isDestructive: Bool
         public let perform: () -> Void
 
-        public init(title: String, perform: @escaping () -> Void) {
+        public init(title: String, isDestructive: Bool = false, perform: @escaping () -> Void) {
             self.title = title
+            self.isDestructive = isDestructive
             self.perform = perform
         }
 
@@ -32,7 +34,11 @@ public extension ActionSheet {
     init(viewData: ActionSheetViewData) {
         var buttons: [Button] = viewData.actions
             .map { action in
-                Button.default(Text(action.title), action: action.perform)
+                if action.isDestructive {
+                    return Button.destructive(Text(action.title), action: action.perform)
+                } else {
+                    return Button.default(Text(action.title), action: action.perform)
+                }
             }
         buttons.append(.cancel())
 
