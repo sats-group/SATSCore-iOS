@@ -584,7 +584,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif [ $ENABLE_PREVIEWS == \"NO\" ]\nthen\n  if [ -z $CI ]\n  then\n    if which swiftlint >/dev/null; then\n      swiftlint lint .. --config ../.swiftlint.yml\n    else\n      echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi  \n  else\n    echo \"Skipping swiftlint script because not local build\"\n  fi\nelse\n  echo \"Skipping the script because of preview mode\"\nfi\n\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin:~/.mint/bin\"\n\nif [ $ENABLE_PREVIEWS == \"NO\" ]\nthen\n  if [ -z $CI ]\n  then\n    if [ $(command -v swiftlint) ]; then\n      swiftlint lint .. --config ../.swiftlint.yml\n    else\n      echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    fi  \n  else\n    echo \"Skipping swiftlint script because not local build\"\n  fi\nelse\n  echo \"Skipping the script because of preview mode\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
