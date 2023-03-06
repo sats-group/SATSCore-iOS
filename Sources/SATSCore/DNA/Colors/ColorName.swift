@@ -114,4 +114,11 @@ enum ColorName: String, CaseIterable {
     case challengeInProgress
     case challengeNotDone
     case challengeSuccess
+
+    // Workouts
+
+    case workoutPt
+    case workoutGx
+    case workoutGymfloor
+    case workoutOwnTraining
 }
