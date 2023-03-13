@@ -123,6 +123,11 @@ class ColorsTests: XCTestCase {
             .challengeInProgress,
             .challengeNotDone,
             .challengeSuccess,
+
+            .workoutPt,
+            .workoutGx,
+            .workoutGymfloor,
+            .workoutOwnTraining,
         ]
     }
 }

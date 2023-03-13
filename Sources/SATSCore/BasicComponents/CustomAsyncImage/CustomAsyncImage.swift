@@ -28,7 +28,8 @@ public struct CustomAsyncImage<Output: View>: View {
     ///
     /// - Parameters:
     ///   - state: the initial state for the async image
-    ///   - transitionDelay: (in Seconds) a way to artifically delay the transition for `.remote` images. Intended for debugging purposes only.
+    ///   - transitionDelay: (in Seconds) a way to artifically delay the transition for `.remote` images.
+    ///                      Intended for debugging purposes only.
     ///   - transform: a closure that will be used to add modifiers to the view
     public init(
         _ state: ImageViewData,
