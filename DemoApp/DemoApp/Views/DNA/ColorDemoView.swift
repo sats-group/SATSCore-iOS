@@ -170,6 +170,15 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
+            name: "Workout",
+            colors: [
+                ColorDemo(name: "workoutPt", color: .workoutPt),
+                ColorDemo(name: "workoutGx", color: .workoutGx),
+                ColorDemo(name: "workoutGymfloor", color: .workoutGymfloor),
+                ColorDemo(name: "workoutOwnTraining", color: .workoutOwnTraining),
+            ]
+        ),
+        ColorSection(
             name: "🔵 Blue Theme",
             colors: [
                 ColorDemo(name: "bluePrimary", color: Color(ColorTheme.blue.primary)),

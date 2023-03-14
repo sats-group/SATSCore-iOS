@@ -137,6 +137,13 @@ public extension UIColor {
     static var challengeNotDone: UIColor { color(.challengeNotDone) }
     static var challengeSuccess: UIColor { color(.challengeSuccess) }
 
+    // MARK: Workouts
+
+    static var workoutPt: UIColor { color(.workoutPt) }
+    static var workoutGx: UIColor { color(.workoutGx) }
+    static var workoutGymfloor: UIColor { color(.workoutGymfloor) }
+    static var workoutOwnTraining: UIColor { color(.workoutOwnTraining) }
+
     // MARK: Private
 
     private static func themedColor(_ name: ColorName) -> UIColor {
