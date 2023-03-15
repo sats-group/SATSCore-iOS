@@ -1,16 +1,9 @@
-//
-//  ErrorNoticeView.swift
-//  DemoApp
-//
-//  Created by Felipe Espinoza on 24/06/2021.
-//
-
 import SwiftUI
 
 struct NoticeDemoView: View {
     @State var notice: Notice?
 
-    @State var includeSubtitle: Bool = true
+    @State var includeTitle: Bool = true
     @State var autoDismiss: Bool = false
     @State var edgeTop: Bool = true
     @State var withAction: Bool = true
@@ -39,7 +32,7 @@ struct NoticeDemoView: View {
 
     @ViewBuilder var noticeEditor: some View {
         VStack {
-            Toggle("Include Subtitle?", isOn: $includeSubtitle)
+            Toggle("Include title?", isOn: $includeTitle)
             Toggle("Auto dismiss?", isOn: $autoDismiss)
             Toggle("Top Edge?", isOn: $edgeTop)
             if style == .error {
@@ -83,42 +76,42 @@ struct NoticeDemoView: View {
     // by using the `.success`, `.warning` and `.error`
     // factory methods which contain sensible defaults
     private func createNotice() -> Notice {
-        let subtitle = includeSubtitle ? "Subtitle text" : nil
+        let title = includeTitle ? "Title text" : nil
 
         switch (style, withAction) {
         case (.info, _):
             return Notice.info(
-                title: "Sample info notice",
-                explanation: subtitle,
+                title: title,
+                message: "Sample info notice",
                 autoDismiss: autoDismiss
             )
 
         case (.success, _):
             return Notice.success(
-                title: "Sample success notice",
-                explanation: subtitle,
+                title: title,
+                message: "Sample success notice",
                 autoDismiss: autoDismiss
             )
 
         case (.warning, _):
             return Notice.warning(
-                title: "Sample warning notice",
-                explanation: subtitle,
+                title: title,
+                message: "Sample warning notice",
                 autoDismiss: autoDismiss
             )
 
         case (.error, true):
             return Notice.error(
-                title: "Sample error notice",
-                explanation: subtitle,
+                title: title,
+                message: "Sample error notice",
                 actionTitle: "Action",
                 action: { print("on action!") }
             )
 
         case (.error, false):
             return Notice.error(
-                title: "Sample error notice",
-                explanation: subtitle,
+                title: title,
+                message: "Sample warning notice",
                 autoDismiss: autoDismiss
             )
         }
@@ -167,25 +160,25 @@ struct ErrorNoticeView_Previews: PreviewProvider {
 
 extension Notice {
     static let sampleError = Notice.error(
-        title: "This is a sample error"
+        message: "This is a sample error"
     )
 
     static let sampleErrorWithAction = Notice.error(
-        title: "This is a sample error",
+        message: "This is a sample error",
         actionTitle: "Action",
         action: { print("Sample") }
     )
 
     static let sampleSuccess = Notice.success(
         title: "Your operation was succesful",
-        explanation: "everything is awesome!"
+        message: "everything is awesome!"
     )
 
     static let sampleWarning = Notice.warning(
-        title: "You should be careful about this!"
+        message: "You should be careful about this!"
     )
 
     static let sampleInfo = Notice.info(
-        title: "We have a new notice style"
+        message: "We have a new notice style"
     )
 }

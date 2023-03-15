@@ -55,13 +55,14 @@ public struct NoticeView: View {
 
     var message: some View {
         VStack(alignment: .leading, spacing: .spacingXXXS) {
-            Text(notice.title)
-                .satsFont(.basic, weight: .emphasis)
-
-            if let explanation = notice.explanation {
-                Text(explanation)
-                    .satsFont(.basic, weight: .medium)
+            if let title = notice.title {
+                Text(title)
+                    .satsFont(.basic, weight: .emphasis)
             }
+
+            Text(notice.message)
+                .satsFont(.basic, weight: .medium)
+
         }
         .foregroundColor(.onSurfaceSecondary)
     }

@@ -6,8 +6,8 @@ import SwiftUI
 /// is enough
 public struct Notice {
     public let icon: Image?
-    public let title: String
-    public let explanation: String?
+    public let title: String?
+    public let message: String
     public let autoDismiss: Bool
     public let tintColor: Color
     public let hapticType: UINotificationFeedbackGenerator.FeedbackType?
@@ -16,8 +16,8 @@ public struct Notice {
 
     public init(
         icon: Image? = nil,
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         autoDismiss: Bool = true,
         tintColor: Color,
         hapticType: UINotificationFeedbackGenerator.FeedbackType? = nil,
@@ -26,7 +26,7 @@ public struct Notice {
     ) {
         self.icon = icon
         self.title = title
-        self.explanation = explanation
+        self.message = message
         self.autoDismiss = autoDismiss
         self.tintColor = tintColor
         self.hapticType = hapticType
@@ -36,16 +36,16 @@ public struct Notice {
 
     /// Creates an error notice data struct
     /// - Parameters:
-    ///   - title: required title of the error
-    ///   - explanation: (optional) explanation of the error
+    ///   - title: (optional) title of the error
+    ///   - message: required message of the error
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     ///   - actionTitle: (optional) a title for a notice button
     ///   - action: (optional) an action to perform when pressing the action button
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func error(
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true,
         actionTitle: String? = nil,
@@ -54,7 +54,7 @@ public struct Notice {
         Notice(
             icon: Image(systemName: "xmark.octagon"),
             title: title,
-            explanation: explanation,
+            message: message,
             autoDismiss: autoDismiss,
             tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil,
@@ -65,16 +65,16 @@ public struct Notice {
 
     /// Create a error notice with action options
     /// - Parameters:
-    ///   - title: required title of the error
-    ///   - explanation: (optional) explanation of the error
+    ///   - title: (optional) title of the error
+    ///   - message: required message of the error
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     ///   - actionTitle: title for the action button
     ///   - action: callback when the action button is tapped
     /// - Returns: returns a error `Notice` that won't autodismiss that allows to action
     ///            an operation that caused an error
     public static func error(
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         includeHaptic: Bool = true,
         actionTitle: String,
         action: @escaping () -> Void
@@ -82,7 +82,7 @@ public struct Notice {
         Notice(
             icon: Image(systemName: "xmark.octagon"),
             title: title,
-            explanation: explanation,
+            message: message,
             autoDismiss: false,
             tintColor: .signalError,
             hapticType: includeHaptic ? .error : nil,
@@ -93,21 +93,21 @@ public struct Notice {
 
     /// Creates a warning notice data struct
     /// - Parameters:
-    ///   - title: required title of the warning
-    ///   - explanation: (optional) explanation of the warning
+    ///   - title: (optional) title of the warning
+    ///   - message: required message of the warning
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func warning(
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
             icon: Image(systemName: "exclamationmark.triangle"),
             title: title,
-            explanation: explanation,
+            message: message,
             autoDismiss: autoDismiss,
             tintColor: .signalWarning,
             hapticType: includeHaptic ? .warning : nil
@@ -116,21 +116,21 @@ public struct Notice {
 
     /// Creates a success notice data struct
     /// - Parameters:
-    ///   - title: required title of the notice
-    ///   - explanation: (optional) explanation of the notice
+    ///   - title: (optional) title of the notice
+    ///   - message: required message of the notice
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func success(
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
             icon: Image(systemName: "checkmark.circle"),
             title: title,
-            explanation: explanation,
+            message: message,
             autoDismiss: autoDismiss,
             tintColor: .signalSuccess,
             hapticType: includeHaptic ? .success : nil
@@ -139,21 +139,21 @@ public struct Notice {
 
     /// Creates a info notice data struct
     /// - Parameters:
-    ///   - title: required title of the notice
-    ///   - explanation: (optional) explanation of the notice
+    ///   - title: (optional) title of the notice
+    ///   - message: required message of the notice
     ///   - autoDismiss: (default `true`) configures the auto dismiss behavior of a notice
     ///   - includeHaptic: (default `true`) enable or disable the haptic when showing this notice
     /// - Returns: a `Notice` instance that can be used with `NoticeView`
     public static func info(
-        title: String,
-        explanation: String? = nil,
+        title: String? = nil,
+        message: String,
         autoDismiss: Bool = true,
         includeHaptic: Bool = true
     ) -> Notice {
         Notice(
             icon: Image(systemName: "info.circle"),
             title: title,
-            explanation: explanation,
+            message: message,
             autoDismiss: autoDismiss,
             tintColor: .graphicalElements1,
             hapticType: includeHaptic ? .success : nil
