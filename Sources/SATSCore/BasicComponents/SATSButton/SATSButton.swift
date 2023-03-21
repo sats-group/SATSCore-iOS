@@ -50,7 +50,7 @@ public class SATSButton: UIButton {
     public override func layoutSubviews() {
         super.layoutSubviews()
 
-        layer.cornerRadius = bounds.height / 2
+        layer.cornerRadius = .cornerRadiusS
     }
 
     // MARK: Views
