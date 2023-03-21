@@ -43,7 +43,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
         })
         .background(backgroundColor(for: configuration))
         .foregroundColor(textColor)
-        .clipShape(Capsule())
+        .cornerRadius(.cornerRadiusS)
         .overlay(borderOverlay)
     }
 
@@ -89,7 +89,8 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     @ViewBuilder private var borderOverlay: some View {
         if let borderColor = borderColor {
-            Capsule().strokeBorder(borderColor, lineWidth: 1)
+            RoundedRectangle(cornerRadius: .cornerRadiusS)
+                .strokeBorder(borderColor, lineWidth: 1)
         }
     }
 }
