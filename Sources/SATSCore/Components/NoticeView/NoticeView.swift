@@ -62,7 +62,6 @@ public struct NoticeView: View {
 
             Text(notice.message)
                 .satsFont(.basic, weight: .medium)
-
         }
         .foregroundColor(.onSurfaceSecondary)
     }
