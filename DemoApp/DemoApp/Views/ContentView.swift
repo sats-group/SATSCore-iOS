@@ -28,16 +28,13 @@ struct ContentView: View {
                         NavigationLink("DatePickerView", destination: DatePickerDemoView())
                         NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
                         NavigationLink("ErrorView", destination: ErrorDemoView())
-                        NavigationLink("ExternalUrlView", destination: ExternalUrlDemoView())
                         NavigationLink("GradientView", destination: GradientDemoView())
-                        NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
                         NavigationLink("LoadingView", destination: LoadingDemoView())
                         NavigationLink("ModernErrorView", destination: ModernErrorDemoView())
                         NavigationLink("NoticeView", destination: NoticeDemoView())
                     }
 
                     Group {
-                        NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
                         NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
                         NavigationLink("ScrollViewOffsetReader", destination: ScrollViewOffsetReaderDemoView())
@@ -46,16 +43,6 @@ struct ContentView: View {
                         NavigationLink("RadioGroup", destination: RadioGroupDemoView())
                         NavigationLink("WheelPickerView", destination: WheelPickerDemoView())
                     }
-                }
-
-                Section(header: Text("SwiftUI Demo")) {
-                    NavigationLink("Header Concept", destination: DemoHeaderSampleView())
-                    NavigationLink("Discover Concept", destination: DemoDiscoverView())
-                }
-
-                Section(header: Text("UIKit Demo")) {
-                    NavigationLink("Basic Demo", destination: UIKitDemoView())
-                    NavigationLink("Treatments Demo", destination: TreatmentsDemoView())
                 }
             }
             .listStyle(SidebarListStyle())
