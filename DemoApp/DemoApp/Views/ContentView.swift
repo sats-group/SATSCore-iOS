@@ -28,7 +28,6 @@ struct ContentView: View {
                         NavigationLink("DatePickerView", destination: DatePickerDemoView())
                         NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
                         NavigationLink("ErrorView", destination: ErrorDemoView())
-                        NavigationLink("ExternalUrlView", destination: ExternalUrlDemoView())
                         NavigationLink("GradientView", destination: GradientDemoView())
                         NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
                         NavigationLink("LoadingView", destination: LoadingDemoView())
