@@ -36,7 +36,6 @@ struct ContentView: View {
                     }
 
                     Group {
-                        NavigationLink("ProgressLineView", destination: ProgressLineDemoView())
                         NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
                         NavigationLink("ScrollViewOffsetReader", destination: ScrollViewOffsetReaderDemoView())
