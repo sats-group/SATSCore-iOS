@@ -29,7 +29,6 @@ struct ContentView: View {
                         NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
                         NavigationLink("ErrorView", destination: ErrorDemoView())
                         NavigationLink("GradientView", destination: GradientDemoView())
-                        NavigationLink("InlineNoticeView", destination: InlineNoticeDemoView())
                         NavigationLink("LoadingView", destination: LoadingDemoView())
                         NavigationLink("ModernErrorView", destination: ModernErrorDemoView())
                         NavigationLink("NoticeView", destination: NoticeDemoView())
