@@ -36,7 +36,6 @@
 		9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
 		9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */; };
-		9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */; };
 		9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */; };
 		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
 		9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */; };
@@ -555,7 +554,6 @@
 				9B4083BD261DE66D00A3A718 /* TopBarDemoView.swift in Sources */,
 				9B2E8065266649E4000A657D /* ErrorDemoView.swift in Sources */,
 				2865CF5A261EDB9A00D6433F /* RoundLoadingDemoView.swift in Sources */,
-				9BCEE85A26035CB2001C8692 /* InlineNoticeDemoView.swift in Sources */,
 				9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */,
 				57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
