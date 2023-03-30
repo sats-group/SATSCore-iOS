@@ -45,16 +45,6 @@ struct ContentView: View {
                         NavigationLink("WheelPickerView", destination: WheelPickerDemoView())
                     }
                 }
-
-                Section(header: Text("SwiftUI Demo")) {
-                    NavigationLink("Header Concept", destination: DemoHeaderSampleView())
-                    NavigationLink("Discover Concept", destination: DemoDiscoverView())
-                }
-
-                Section(header: Text("UIKit Demo")) {
-                    NavigationLink("Basic Demo", destination: UIKitDemoView())
-                    NavigationLink("Treatments Demo", destination: TreatmentsDemoView())
-                }
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("SATS Core Demo")
