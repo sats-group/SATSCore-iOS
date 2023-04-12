@@ -10,6 +10,7 @@ public extension SATSCell {
         @ViewBuilder var action: ActionView
         var includeDivider: Bool = true
         var onClick: (() -> Void)?
+        let backgroundColor: Color
 
         public init(
             @ViewBuilder icon: () -> IconView = SATSCell.NoIcon.init,
@@ -18,7 +19,8 @@ public extension SATSCell {
             @ViewBuilder accessory: () -> AccessoryView = EmptyView.init,
             @ViewBuilder action: () -> ActionView = SATSCell.SystemChevron.init,
             includeDivider: Bool = true,
-            onClick: (() -> Void)? = nil
+            onClick: (() -> Void)? = nil,
+            backgroundColor: Color = .backgroundSurfacePrimary
         ) {
             self.icon = icon()
             self.title = title
@@ -27,6 +29,7 @@ public extension SATSCell {
             self.action = action()
             self.includeDivider = includeDivider
             self.onClick = onClick
+            self.backgroundColor = backgroundColor
         }
 
         public var body: some View {
@@ -54,7 +57,7 @@ public extension SATSCell {
                     }
                 }
                 .contentShape(Rectangle())
-                .background(Color.backgroundSurfacePrimary)
+                .background(backgroundColor)
             }
             .buttonStyle(.plain)
         }
