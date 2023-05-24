@@ -28,7 +28,7 @@ public struct ModernErrorView: View {
         .overlay { retryButtonContainer }
         .multilineTextAlignment(.center)
         .frame(maxWidth: .infinity)
-        .satsGradientBackground()
+        .background(Color.backgroundPrimary)
     }
 
     var icon: some View {
