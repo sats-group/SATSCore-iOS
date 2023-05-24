@@ -35,6 +35,10 @@ struct ContentView: View {
                     }
 
                     Group {
+                        NavigationLink("ProfilePictureView", destination: ProfilePictureDemoView())
+                    }
+
+                    Group {
                         NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
                         NavigationLink("ScrollViewOffsetReader", destination: ScrollViewOffsetReaderDemoView())
