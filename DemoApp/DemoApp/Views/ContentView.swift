@@ -25,6 +25,7 @@ struct ContentView: View {
                 Section(header: Text("Components")) {
                     Group {
                         NavigationLink("BannerImage", destination: BannerImageDemoView())
+                        NavigationLink("BannerNotice", destination: BannerNoticeDemoView())
                         NavigationLink("DatePickerView", destination: DatePickerDemoView())
                         NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
                         NavigationLink("ErrorView", destination: ErrorDemoView())
