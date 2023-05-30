@@ -40,6 +40,7 @@
 		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
 		9BFBDEF726DCC93C0066F1C8 /* TabSelectionDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */; };
 		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
+		CEB611C52A1DECE200C09FA1 /* BannerNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */; };
 		CEF5506729D577FE00108F8E /* FontWeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5506529D577FE00108F8E /* FontWeightPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,11 +89,11 @@
 		9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDemoView.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
 		9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernErrorDemoView.swift; sourceTree = "<group>"; };
-		9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineNoticeDemoView.swift; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
 		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
 		9BFBDEF626DCC93C0066F1C8 /* TabSelectionDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSelectionDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
+		CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNoticeDemoView.swift; sourceTree = "<group>"; };
 		CEF5506529D577FE00108F8E /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,11 +360,11 @@
 			isa = PBXGroup;
 			children = (
 				9B7F828E28E2FA25004D6ECA /* BannerImage */,
+				CEB611C32A1DECC300C09FA1 /* BannerNotice */,
 				28D0A16527A937FD001374D2 /* DatePickerView */,
 				9B75EC43264B1D3C00B160EF /* EmptyStateView */,
 				9B2E8063266649D8000A657D /* ErrorView */,
 				9B9D6D91261EF6E300450E67 /* GradientView */,
-				9BCEE85626035CB2001C8692 /* InlineNoticeView */,
 				9BA17B0E26666D2700BDAA9C /* LoadingView */,
 				9BCB6F0A294B208600202A52 /* ModernErrorView */,
 				9B8C11F226F23702007F5D0C /* NoticeView */,
@@ -376,14 +377,6 @@
 				28491B8E28B3AAB500E3C1D9 /* WheelPickerView */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		9BCEE85626035CB2001C8692 /* InlineNoticeView */ = {
-			isa = PBXGroup;
-			children = (
-				9BCEE85726035CB2001C8692 /* InlineNoticeDemoView.swift */,
-			);
-			path = InlineNoticeView;
 			sourceTree = "<group>";
 		};
 		9BF417162681D25B00E708FD /* ScrollReaderView */ = {
@@ -402,6 +395,14 @@
 			name = TabSelectionView;
 			path = DemoApp/Views/Components/TabSelectionView;
 			sourceTree = SOURCE_ROOT;
+		};
+		CEB611C32A1DECC300C09FA1 /* BannerNotice */ = {
+			isa = PBXGroup;
+			children = (
+				CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */,
+			);
+			path = BannerNotice;
+			sourceTree = "<group>";
 		};
 		CEF5506429D577FE00108F8E /* Internal */ = {
 			isa = PBXGroup;
@@ -565,6 +566,7 @@
 				9B75EC45264B1D5300B160EF /* EmptyStateDemoView.swift in Sources */,
 				28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
+				CEB611C52A1DECE200C09FA1 /* BannerNoticeDemoView.swift in Sources */,
 				9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */,
 				9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */,
 			);
