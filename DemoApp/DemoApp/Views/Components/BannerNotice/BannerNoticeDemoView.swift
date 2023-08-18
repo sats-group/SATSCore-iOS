@@ -7,14 +7,14 @@ struct BannerNoticeDemoView: View {
             BannerNotice(
                 viewData: .init(
                     message: "Banner with action and icon",
-                    action: .init(title: "Action", icon: Image(systemName: "link"), onClick: { })
+                    action: .init(title: "Action", icon: Image(systemName: "link"), onClick: {})
                 )
             )
 
             BannerNotice(
                 viewData: .init(
                     message: "Banner with action without icon",
-                    action: .init(title: "Action", onClick: { })
+                    action: .init(title: "Action", onClick: {})
                 )
             )
 

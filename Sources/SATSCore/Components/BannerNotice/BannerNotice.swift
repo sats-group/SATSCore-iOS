@@ -14,7 +14,7 @@ public extension BannerNoticeViewData {
     struct Action {
         let title: String
         let icon: Image?
-        let onClick: (() -> Void)
+        let onClick: () -> Void
 
         public init(title: String, icon: Image? = nil, onClick: @escaping () -> Void) {
             self.title = title
