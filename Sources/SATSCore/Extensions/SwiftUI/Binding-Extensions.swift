@@ -14,3 +14,4 @@ extension Binding {
         )
     }
 }
+// swiftlint:enable identifier_name
