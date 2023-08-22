@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.8
 import PackageDescription
 
 let package = Package(
@@ -11,16 +11,12 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(
-            name: "SATSType",
-            url: "https://github.com/sats-group/SATSType-iOS.git",
-            .upToNextMajor(from: "0.0.2")
-        ),
+        .package(url: "https://github.com/sats-group/SATSType-iOS.git", .upToNextMajor(from: "0.0.2")),
     ],
     targets: [
         .target(
             name: "SATSCore",
-            dependencies: ["SATSType"]
+            dependencies: [.product(name: "SATSType", package: "SATSType-iOS")]
         ),
         .testTarget(
             name: "SATSCoreTests",
