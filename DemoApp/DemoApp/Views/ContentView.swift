@@ -27,10 +27,8 @@ struct ContentView: View {
                         NavigationLink("BannerImage", destination: BannerImageDemoView())
                         NavigationLink("BannerNotice", destination: BannerNoticeDemoView())
                         NavigationLink("DatePickerView", destination: DatePickerDemoView())
-                        NavigationLink("EmptyStateView", destination: EmptyStateDemoView())
+                        // To remove
                         NavigationLink("ErrorView", destination: ErrorDemoView())
-                        NavigationLink("GradientView", destination: GradientDemoView())
-                        NavigationLink("LoadingView", destination: LoadingDemoView())
                         NavigationLink("ModernErrorView", destination: ModernErrorDemoView())
                         NavigationLink("NoticeView", destination: NoticeDemoView())
                     }
@@ -40,11 +38,8 @@ struct ContentView: View {
                     }
 
                     Group {
-                        NavigationLink("RoundLoadingView", destination: RoundLoadingDemoView())
                         NavigationLink("ScoreView", destination: ScoreDemoView())
                         NavigationLink("ScrollViewOffsetReader", destination: ScrollViewOffsetReaderDemoView())
-                        NavigationLink("TabSelectionView", destination: TabSelectionDemoView())
-                        NavigationLink("TopBar", destination: TopBarDemoView())
                         NavigationLink("RadioGroup", destination: RadioGroupDemoView())
                         NavigationLink("WheelPickerView", destination: WheelPickerDemoView())
                     }

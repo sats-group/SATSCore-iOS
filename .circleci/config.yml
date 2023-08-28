@@ -3,19 +3,22 @@ version: 2.1
 parameters:
   xcode-version:
     type: string
-    default: "14.1.0"
+    default: "14.3.1"
   simulator-version:
     type: string
-    default: "16.1"
+    default: "16.4"
   simulator-device:
     type: string
     default: "iPhone 14 Pro"
   ruby-version:
     type: string
-    default: "3.1.2"
+    default: "2.7.7"
+  resource-class:
+    type: string
+    default: "macos.x86.medium.gen2"
 
 orbs:
-  macos: circleci/macos@2
+  macos: circleci/macos@2.3.4
 
 commands:
   setup-and-run-lane:
@@ -38,6 +41,7 @@ commands:
 
 jobs:
   run-tests:
+    resource_class: << pipeline.parameters.resource-class >>
     macos:
       xcode: << pipeline.parameters.xcode-version >>
     environment:
@@ -56,6 +60,7 @@ jobs:
           path: DemoApp/fastlane/test_output
 
   build-and-deploy-demo-app:
+    resource_class: << pipeline.parameters.resource-class >>
     macos:
       xcode: << pipeline.parameters.xcode-version >>
     steps:

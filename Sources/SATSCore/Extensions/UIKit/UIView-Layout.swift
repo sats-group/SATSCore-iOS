@@ -85,30 +85,6 @@ public extension UIView {
     }
 }
 
-// Transition methods - used to idenfity deprecated variations of method
-
-public extension UIView {
-    @available(*, deprecated, message: "You should use `pin(to: view.layoutMarginsGuide)` instead")
-    func pin(to view: UIView, preserveMargins: Bool) {
-        NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor),
-            trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor),
-            topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
-            bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor),
-        ])
-    }
-
-    @available(*, deprecated, message: "You should use `pin(to: view.safeAreaLayoutGuide)` instead")
-    func pin(to view: UIView, includeSafeArea: Bool) {
-        NSLayoutConstraint.activate([
-            leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-        ])
-    }
-}
-
 /// A protocol to combine UIView and UILayoutGuide in order to define layout methods in an easier way
 public protocol Anchorable {
     var centerXAnchor: NSLayoutXAxisAnchor { get }
