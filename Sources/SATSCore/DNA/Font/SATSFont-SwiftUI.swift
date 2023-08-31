@@ -11,9 +11,6 @@ public extension View {
     }
 }
 
-public extension Text {
-    func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> Text {
-        font(.satsFont(style, weight: weight))
 /// Internal implementation of a scaled system font
 private struct FontContainerModifier: ViewModifier {
     let style: SATSFont.TextStyle
