@@ -19,7 +19,7 @@ public extension Font {
     }
 }
 
-extension Font.TextStyle {
+public extension Font.TextStyle {
     /// Convert an UIKit text style into a SwiftUI one
     static func from(_ uiFontStyle: UIFont.TextStyle) -> Self {
         switch uiFontStyle {
@@ -31,6 +31,19 @@ extension Font.TextStyle {
         case .subheadline: return .subheadline
         default:
             return .body
+        }
+    }
+}
+
+public extension Font.Weight {
+    static func from(_ weight: SATSFont.Weight) -> Self {
+        switch weight {
+        case .medium:
+            return .medium
+        case .emphasis:
+            return .semibold
+        default:
+            return .regular
         }
     }
 }
