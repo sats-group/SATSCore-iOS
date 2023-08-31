@@ -13,9 +13,37 @@ public extension Text {
     }
 }
 
+// MARK: - Font extension
+
 public extension Font {
-    static func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> Font {
-        Font.custom(weight.font.name, size: style.size, relativeTo: .from(style.nativeStyle))
+    /// This method uses `UIFontMetrics` to calculate the scaled size
+    /// of the font with dyamic type.
+    /// It's recommended to use `satsFont(_:scaledSize:weight:design)` instead
+    static func satsFont(
+        _ style: SATSFont.TextStyle,
+        weight: SATSFont.Weight = .default,
+        design: Font.Design = .default
+    ) -> Font {
+        let scaledFont = UIFontMetrics(forTextStyle: style.nativeStyle).scaledValue(for: style.size)
+        return satsFont(style, scaledSize: scaledFont, weight: weight, design: design)
+    }
+
+    /// Determines the SATS font with the right size to use
+    /// in case we use `.satsFeeling` as the `weight` value, we use a custom font
+    /// otherwise the default `SF Font` will be used.
+    ///
+    /// the `design` parameter is only to be inteded to be used for weights that are not `.satsFeeling`
+    static func satsFont(
+        _ style: SATSFont.TextStyle,
+        scaledSize: CGFloat,
+        weight: SATSFont.Weight = .default,
+        design: Font.Design = .default
+    ) -> Font {
+        if weight == .satsFeeling {
+            return .custom(weight.font.name, size: style.size, relativeTo: .from(style.nativeStyle))
+        } else {
+            return .system(size: scaledSize, weight: .from(weight), design: design)
+        }
     }
 }
 
