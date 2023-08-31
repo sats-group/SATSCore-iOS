@@ -2,14 +2,35 @@ import SwiftUI
 
 public extension View {
     @ViewBuilder
-    func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> some View {
-        font(.satsFont(style, weight: weight))
+    func satsFont(
+        _ style: SATSFont.TextStyle,
+        weight: SATSFont.Weight = .default,
+        design: Font.Design = .default
+    ) -> some View {
+        modifier(FontContainerModifier(style: style, weight: weight, design: design))
     }
 }
 
 public extension Text {
     func satsFont(_ style: SATSFont.TextStyle, weight: SATSFont.Weight = .default) -> Text {
         font(.satsFont(style, weight: weight))
+/// Internal implementation of a scaled system font
+private struct FontContainerModifier: ViewModifier {
+    let style: SATSFont.TextStyle
+    let weight: SATSFont.Weight
+    let design: Font.Design
+    @ScaledMetric var fontSize: CGFloat
+
+    init(style: SATSFont.TextStyle, weight: SATSFont.Weight, design: Font.Design) {
+        self.style = style
+        self.weight = weight
+        self.design = design
+        self._fontSize = ScaledMetric(wrappedValue: style.size, relativeTo: .from(style.nativeStyle))
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .font(.satsFont(style, scaledSize: fontSize, weight: weight, design: design))
     }
 }
 
