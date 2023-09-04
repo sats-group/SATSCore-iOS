@@ -32,13 +32,12 @@ public struct BannerNotice: View {
     }
 
     public var body: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: .spacingXS) {
             Text(viewData.message)
                 .satsFont(.basic)
                 .foregroundColor(.onPrimary)
                 .multilineTextAlignment(.leading)
-
-            Spacer()
+                .frame(maxWidth: .infinity, alignment: .leading)
 
             button
         }
