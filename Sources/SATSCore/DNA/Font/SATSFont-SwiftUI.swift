@@ -57,10 +57,10 @@ public extension Font {
         weight: SATSFont.Weight = .default,
         design: Font.Design = .default
     ) -> Font {
-        if weight == .satsFeeling {
-            return .custom(weight.font.name, size: style.size, relativeTo: .from(style.nativeStyle))
-        } else {
+        if weight.prefersSystemFont {
             return .system(size: scaledSize, weight: .from(weight), design: design)
+        } else {
+            return .custom(weight.font.name, size: style.size, relativeTo: .from(style.nativeStyle))
         }
     }
 }
