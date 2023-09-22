@@ -2,6 +2,10 @@
 
 # Fastlane
 DemoApp/fastlane/api-key.json
+DemoApp/fastlane/report.xml
+DemoApp/fastlane/test_output/*
+DemoApp/SATSCore.app.dSYM.zip
+DemoApp/SATSCore.ipa
 
 *.otf
 
