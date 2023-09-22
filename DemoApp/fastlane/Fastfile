@@ -25,7 +25,7 @@ platform :ios do
     )
     run_tests(
       scheme: "DemoApp",
-      device: "iPhone 14 Pro",
+      device: "iPhone 15 Pro",
       output_types: "",
       output_directory: "fastlane/test_output/DemoApp",
       result_bundle: true
@@ -52,7 +52,7 @@ platform :ios do
       initial_build_number: 1,
       version: version_tag
     )
-    
+
     # If build number is one, it means that this is a new version and we need
     # to fetch the build number from the previous version and increment that.
     if build_number == 1
