@@ -24,8 +24,6 @@
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
 		9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */; };
 		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
-		9B9633A226DCD37E00656D61 /* DemoAssetName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A126DCD37E00656D61 /* DemoAssetName.swift */; };
-		9B9633A426DCD39F00656D61 /* DemoAssetNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A326DCD39F00656D61 /* DemoAssetNameTests.swift */; };
 		9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */; };
 		9B9A765D2A1E408300655DDC /* ProfilePictureDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A765C2A1E408300655DDC /* ProfilePictureDemoView.swift */; };
 		9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */; };
@@ -72,8 +70,6 @@
 		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
 		9B96339626DCD36800656D61 /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96339A26DCD36800656D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B9633A126DCD37E00656D61 /* DemoAssetName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAssetName.swift; sourceTree = "<group>"; };
-		9B9633A326DCD39F00656D61 /* DemoAssetNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAssetNameTests.swift; sourceTree = "<group>"; };
 		9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAsyncImageDemoView.swift; sourceTree = "<group>"; };
 		9B9A765C2A1E408300655DDC /* ProfilePictureDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureDemoView.swift; sourceTree = "<group>"; };
 		9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingDemoView.swift; sourceTree = "<group>"; };
@@ -239,7 +235,6 @@
 		9B7C575F25B876B900A3C9A7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9B9633A026DCD37E00656D61 /* DemoAssetName */,
 				9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */,
 			);
 			path = Utils;
@@ -265,19 +260,9 @@
 			isa = PBXGroup;
 			children = (
 				9B96339A26DCD36800656D61 /* Info.plist */,
-				9B9633A326DCD39F00656D61 /* DemoAssetNameTests.swift */,
 			);
 			path = DemoAppTests;
 			sourceTree = "<group>";
-		};
-		9B9633A026DCD37E00656D61 /* DemoAssetName */ = {
-			isa = PBXGroup;
-			children = (
-				9B9633A126DCD37E00656D61 /* DemoAssetName.swift */,
-			);
-			name = DemoAssetName;
-			path = DemoApp/Utils/DemoAssetName;
-			sourceTree = SOURCE_ROOT;
 		};
 		9B9A765B2A1E406200655DDC /* ProfilePictureView */ = {
 			isa = PBXGroup;
@@ -406,7 +391,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					9B2BFBD525B719AD00383193 = {
 						CreatedOnToolsVersion = 12.3;
@@ -484,7 +469,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B9633A226DCD37E00656D61 /* DemoAssetName.swift in Sources */,
 				9B57208C26738BF100D12109 /* ScoreDemoView.swift in Sources */,
 				CEF5506729D577FE00108F8E /* FontWeightPicker.swift in Sources */,
 				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */,
@@ -516,7 +500,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B9633A426DCD39F00656D61 /* DemoAssetNameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -597,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -666,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = push;
+				MARKETING_VERSION = 7.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sats.satscore.demo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.sats.satscore.demo-app";
@@ -692,7 +677,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = push;
+				MARKETING_VERSION = 7.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sats.satscore.demo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.sats.satscore.demo-app";
