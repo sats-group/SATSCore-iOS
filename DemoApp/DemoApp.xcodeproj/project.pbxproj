@@ -12,6 +12,7 @@
 		57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57016DC32863527200874F53 /* RadioGroupDemoView.swift */; };
 		9B00E27325B9AE2600533641 /* SATSCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9B00E27225B9AE2600533641 /* SATSCore */; };
 		9B00E29725B9D12900533641 /* Demo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B00E29625B9D12900533641 /* Demo.xcassets */; };
+		9B1231AB2ABD81C100CAEFD9 /* DemoAppTestsCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1231AA2ABD81C100CAEFD9 /* DemoAppTestsCase.swift */; };
 		9B1CA89F297EAB4B006A63D1 /* SATSCellDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1CA89E297EAB4B006A63D1 /* SATSCellDemoView.swift */; };
 		9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBD925B719AD00383193 /* DemoApp.swift */; };
 		9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDB25B719AD00383193 /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 		28D0A16627A93846001374D2 /* DatePickerDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerDemoView.swift; sourceTree = "<group>"; };
 		57016DC32863527200874F53 /* RadioGroupDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupDemoView.swift; sourceTree = "<group>"; };
 		9B00E29625B9D12900533641 /* Demo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Demo.xcassets; sourceTree = "<group>"; };
+		9B1231AA2ABD81C100CAEFD9 /* DemoAppTestsCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppTestsCase.swift; sourceTree = "<group>"; };
 		9B1CA89E297EAB4B006A63D1 /* SATSCellDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSCellDemoView.swift; sourceTree = "<group>"; };
 		9B2BFBD625B719AD00383193 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B2BFBD925B719AD00383193 /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				9B96339A26DCD36800656D61 /* Info.plist */,
+				9B1231AA2ABD81C100CAEFD9 /* DemoAppTestsCase.swift */,
 			);
 			path = DemoAppTests;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 					};
 					9B96339526DCD36800656D61 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1500;
 						TestTargetID = 9B2BFBD525B719AD00383193;
 					};
 				};
@@ -500,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1231AB2ABD81C100CAEFD9 /* DemoAppTestsCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +695,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 373P57N79N;
@@ -703,6 +709,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sats.satscore.demo-app.DemoAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoApp.app/DemoApp";
@@ -713,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 373P57N79N;
