@@ -8,7 +8,7 @@ struct SizeReaderModifier: ViewModifier {
             Color.clear
                 .onAppear {
                     DispatchQueue.main.async {
-                        self.handler(geometry.size)
+                        handler(geometry.size)
                     }
                 }
         }
