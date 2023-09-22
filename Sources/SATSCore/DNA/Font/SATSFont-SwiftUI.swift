@@ -23,14 +23,14 @@ extension Font.TextStyle {
     /// Convert an UIKit text style into a SwiftUI one
     static func from(_ uiFontStyle: UIFont.TextStyle) -> Self {
         switch uiFontStyle {
-        case .title1: return .title
-        case .title2: return .title2
-        case .title3: return .title3
-        case .callout: return .callout
-        case .footnote: return .footnote
-        case .subheadline: return .subheadline
+        case .title1: .title
+        case .title2: .title2
+        case .title3: .title3
+        case .callout: .callout
+        case .footnote: .footnote
+        case .subheadline: .subheadline
         default:
-            return .body
+            .body
         }
     }
 }

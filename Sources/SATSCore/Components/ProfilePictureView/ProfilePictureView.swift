@@ -22,11 +22,11 @@ public struct ProfilePictureView: View {
 
     var spinnerSize: ControlSize {
         if size <= .spacingL {
-            return .mini
+            .mini
         } else if size <= .spacingXXXL {
-            return .regular
+            .regular
         } else {
-            return .large
+            .large
         }
     }
 }

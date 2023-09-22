@@ -18,15 +18,15 @@ public struct ColorTheme: Hashable {
     /// Given an static color name, return the appropriate value from the theme
     subscript(index: ColorName) -> UIColor? {
         switch index {
-        case .primary: return primary
-        case .primaryHighlight: return primaryHighlight
-        case .primaryDisabled: return primaryDisabled
-        case .selection: return selection
-        case .backgroundTopStart: return backgroundTopStart
-        case .backgroundTopEnd: return backgroundTopEnd
-        case .navigation: return navigation
+        case .primary: primary
+        case .primaryHighlight: primaryHighlight
+        case .primaryDisabled: primaryDisabled
+        case .selection: selection
+        case .backgroundTopStart: backgroundTopStart
+        case .backgroundTopEnd: backgroundTopEnd
+        case .navigation: navigation
         default:
-            return nil
+            nil
         }
     }
 }
@@ -42,10 +42,10 @@ public extension ColorTheme {
 
         public var titleName: String {
             switch self {
-            case .blue: return "Blue"
-            case .silver: return "Silver"
-            case .gold: return "Gold"
-            case .platinum: return "Platinum"
+            case .blue: "Blue"
+            case .silver: "Silver"
+            case .gold: "Gold"
+            case .platinum: "Platinum"
             }
         }
     }
@@ -77,10 +77,10 @@ public extension ColorTheme {
 
     static func from(name: ColorTheme.Name) -> ColorTheme {
         switch name {
-        case .blue: return .blue
-        case .silver: return .silver
-        case .gold: return .gold
-        case .platinum: return .platinum
+        case .blue: .blue
+        case .silver: .silver
+        case .gold: .gold
+        case .platinum: .platinum
         }
     }
 
