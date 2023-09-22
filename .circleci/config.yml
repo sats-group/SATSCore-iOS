@@ -3,16 +3,16 @@ version: 2.1
 parameters:
   xcode-version:
     type: string
-    default: "14.3.1"
+    default: "15.0.0"
   simulator-version:
     type: string
-    default: "16.4"
+    default: "17.0"
   simulator-device:
     type: string
-    default: "iPhone 14 Pro"
+    default: "iPhone 15 Pro"
   ruby-version:
     type: string
-    default: "2.7.7"
+    default: "3.1.4"
   resource-class:
     type: string
     default: "macos.x86.medium.gen2"
