@@ -54,7 +54,7 @@ struct ColorDemoView: View {
             name: "Clean",
             colors: [
                 ColorDemo(name: "clean", color: .clean),
-                ColorDemo(name: "cleanHighlightgithub", color: .cleanHighlight),
+                ColorDemo(name: "cleanHighlight", color: .cleanHighlight),
                 ColorDemo(name: "cleanDisabled", color: .cleanDisabled),
             ]
         ),
@@ -167,6 +167,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "graphicalElements7", color: .graphicalElements7),
                 ColorDemo(name: "shimmer", color: .shimmer),
                 ColorDemo(name: "tabs", color: .tabs),
+                ColorDemo(name: "navigation", color: .navigation),
             ]
         ),
         ColorSection(
@@ -179,7 +180,12 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
+            name: "Rewards",
             colors: [
+                ColorDemo(name: "rewardsBlue", color: .rewardsBlue),
+                ColorDemo(name: "rewardsSilver", color: .rewardsSilver),
+                ColorDemo(name: "rewardsGold", color: .rewardsGold),
+                ColorDemo(name: "rewardsPlatinum", color: .rewardsPlatinum),
             ]
         ),
     ]
@@ -220,7 +226,7 @@ struct ColorPillView: View {
     var body: some View {
         HStack(spacing: 0) {
             demo.color
-                .overlay(hexOverlayLight(demo.color))
+                .overlay(hexLabel(demo.color), alignment: .bottomLeading)
                 .colorScheme(.light)
 
             demo.color
@@ -231,26 +237,17 @@ struct ColorPillView: View {
         .cornerRadius(8)
     }
 
-    func hexOverlayLight(_ color: Color) -> some View {
-        VStack {
-            Spacer()
-            HStack {
-                hexLabel(color)
-                Spacer()
-            }
-        }
-        .padding(8)
-    }
-
     func hexLabel(_ color: Color) -> some View {
-        let text = UIColor(color).hexString ?? ""
+        let text = UIColor(color).hexString ?? "Unknown"
+
         return Text(text)
             .font(.caption2)
             .foregroundColor(.white)
             .frame(alignment: .bottomLeading)
-            .padding(4)
+            .padding(.spacingXXS)
             .background(Color.black.opacity(0.4))
             .cornerRadius(4)
+            .padding(.spacingXS)
     }
 
     func label() -> some View {
@@ -269,6 +266,5 @@ struct ColorDemoView_Previews: PreviewProvider {
         NavigationView {
             ColorDemoView()
         }
-        .colorScheme(.dark)
     }
 }
