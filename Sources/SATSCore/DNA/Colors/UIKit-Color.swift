@@ -1,6 +1,10 @@
 import UIKit
 
 public extension UIColor {
+    static var primary: UIColor { color(.primary) }
+    static var primaryHighlight: UIColor { color(.primaryHighlight) }
+    static var primaryDisabled: UIColor { color(.primaryDisabled) }
+
     // MARK: Background
 
     static var backgroundPrimary: UIColor { color(.backgroundPrimary) }
@@ -72,6 +76,7 @@ public extension UIColor {
     static var graphicalElements7: UIColor { color(.graphicalElements7) }
     static var shimmer: UIColor { color(.shimmer) }
     static var tabs: UIColor { color(.tabs) }
+    static var navigation: UIColor { color(.navigation) }
 
     // MARK: "On" colors
 
@@ -131,8 +136,14 @@ public extension UIColor {
     static var workoutGymfloor: UIColor { color(.workoutGymfloor) }
     static var workoutOwnTraining: UIColor { color(.workoutOwnTraining) }
 
+    // MARK: Rewards
 
+    static var rewardsBlue: UIColor { color(.rewardsBlue) }
+    static var rewardsSilver: UIColor { color(.rewardsSilver) }
+    static var rewardsGold: UIColor { color(.rewardsGold) }
+    static var rewardsPlatinum: UIColor { color(.rewardsPlatinum) }
 
+    // MARK: Private
 
     private static func color(_ name: ColorName) -> UIColor {
         guard let color = UIColor(named: name.rawValue, in: .module, compatibleWith: nil) else {

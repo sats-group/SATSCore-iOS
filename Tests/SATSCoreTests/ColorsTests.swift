@@ -113,6 +113,11 @@ class ColorsTests: XCTestCase {
             .workoutGx,
             .workoutGymfloor,
             .workoutOwnTraining,
+
+            .rewardsBlue,
+            .rewardsSilver,
+            .rewardsGold,
+            .rewardsPlatinum
         ]
     }
 }

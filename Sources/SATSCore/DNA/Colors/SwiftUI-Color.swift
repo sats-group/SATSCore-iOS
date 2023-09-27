@@ -1,6 +1,10 @@
 import SwiftUI
 
 public extension Color {
+    static var satsPrimary: Color { color(.primary) }
+    static var satsPrimaryHighlight: Color { color(.primaryHighlight) }
+    static var satsPrimaryDisabled: Color { color(.primaryDisabled) }
+
     // MARK: Background
 
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
@@ -74,6 +78,7 @@ public extension Color {
     static var graphicalElements7: Color { color(.graphicalElements7) }
     static var shimmer: Color { color(.shimmer) }
     static var tabs: Color { color(.tabs) }
+    static var navigation: Color { color(.navigation) }
 
     // MARK: "On" colors
 
@@ -133,7 +138,12 @@ public extension Color {
     static var workoutGymfloor: Color { color(.workoutGymfloor) }
     static var workoutOwnTraining: Color { color(.workoutOwnTraining) }
 
+    // MARK: Rewards
 
+    static var rewardsBlue: Color { color(.rewardsBlue) }
+    static var rewardsSilver: Color { color(.rewardsSilver) }
+    static var rewardsGold: Color { color(.rewardsGold) }
+    static var rewardsPlatinum: Color { color(.rewardsPlatinum) }
 
     private static func color(_ name: ColorName) -> Color {
         Color(name.rawValue, bundle: .module)
