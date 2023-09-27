@@ -98,9 +98,7 @@ struct SATSButtonDemoView: View {
 
 struct SATSButtonDemoView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorTheme.current = .blue
-
-        return NavigationView {
+        NavigationView {
             SATSButtonDemoView()
         }
     }

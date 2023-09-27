@@ -119,21 +119,6 @@ public extension Color {
     static var onGradientSecondary: Color { color(.onGradientSecondary) }
     static var onGradientDisabled: Color { color(.onGradientDisabled) }
 
-    // MARK: Theme dependant colors
-
-    // these colors are prefixed with "sats" as Color.secondary already exists
-    // in SwiftUI
-    static var satsPrimary: Color { themedColor(.primary) }
-    static var satsPrimaryHighlight: Color { themedColor(.primaryHighlight) }
-    static var satsPrimaryDisabled: Color { themedColor(.primaryDisabled) }
-
-    static var selection: Color { themedColor(.selection) }
-
-    static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
-    static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
-
-    static var navigationPrimary: Color { themedColor(.navigation) }
-
     // MARK: Challenge colors
 
     static var challengeFailed: Color { color(.challengeFailed) }
@@ -148,19 +133,7 @@ public extension Color {
     static var workoutGymfloor: Color { color(.workoutGymfloor) }
     static var workoutOwnTraining: Color { color(.workoutOwnTraining) }
 
-    // MARK: Private
 
-    private static func themedColor(_ name: ColorName) -> Color {
-        // we use colors with a dynamic provider to re-evaluate colors when the theme changes
-        let dynamicColor = UIColor { _ in
-            guard let uiColor = ColorTheme.current[name] else {
-                preconditionFailure("❌ \(name.rawValue) should be present in theme \(ColorTheme.current.name)")
-            }
-
-            return uiColor
-        }
-        return Color(dynamicColor)
-    }
 
     private static func color(_ name: ColorName) -> Color {
         Color(name.rawValue, bundle: .module)

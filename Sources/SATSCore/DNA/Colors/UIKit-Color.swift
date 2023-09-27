@@ -117,19 +117,6 @@ public extension UIColor {
     static var onGradientSecondary: UIColor { color(.onGradientSecondary) }
     static var onGradientDisabled: UIColor { color(.onGradientDisabled) }
 
-    // MARK: Theme dependant colors
-
-    static var primary: UIColor { themedColor(.primary) }
-    static var primaryHighlight: UIColor { themedColor(.primaryHighlight) }
-    static var primaryDisabled: UIColor { themedColor(.primaryDisabled) }
-
-    static var selection: UIColor { themedColor(.selection) }
-
-    static var backgroundTopStart: UIColor { themedColor(.backgroundTopStart) }
-    static var backgroundTopEnd: UIColor { themedColor(.backgroundTopEnd) }
-
-    static var navigation: UIColor { themedColor(.navigation) }
-
     // MARK: Challenge colors
 
     static var challengeFailed: UIColor { color(.challengeFailed) }
@@ -144,18 +131,8 @@ public extension UIColor {
     static var workoutGymfloor: UIColor { color(.workoutGymfloor) }
     static var workoutOwnTraining: UIColor { color(.workoutOwnTraining) }
 
-    // MARK: Private
 
-    private static func themedColor(_ name: ColorName) -> UIColor {
-        // we use colors with a dynamic provider to re-evaluate colors when the theme changes
-        UIColor { _ in
-            guard let uiColor = ColorTheme.current[name] else {
-                preconditionFailure("❌ \(name.rawValue) should be present in theme \(ColorTheme.current.name)")
-            }
 
-            return uiColor
-        }
-    }
 
     private static func color(_ name: ColorName) -> UIColor {
         guard let color = UIColor(named: name.rawValue, in: .module, compatibleWith: nil) else {

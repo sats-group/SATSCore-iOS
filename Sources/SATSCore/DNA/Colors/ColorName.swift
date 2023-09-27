@@ -92,19 +92,13 @@ enum ColorName: String, CaseIterable {
     case onGradientSecondary
     case onGradientDisabled
 
-    // Theme colors
-
     case primary
     case primaryHighlight
     case primaryDisabled
 
-    case selection
     case action
     case actionHighlight
     case actionDisabled
-
-    case backgroundTopStart
-    case backgroundTopEnd
 
     case navigation
 

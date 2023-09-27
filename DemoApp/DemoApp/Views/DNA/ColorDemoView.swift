@@ -179,68 +179,7 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
-            name: "🔵 Blue Theme",
             colors: [
-                ColorDemo(name: "bluePrimary", color: Color(ColorTheme.blue.primary)),
-                ColorDemo(name: "bluePrimaryHighlight", color: Color(ColorTheme.blue.primaryHighlight)),
-                ColorDemo(name: "bluePrimaryDisabled", color: Color(ColorTheme.blue.primaryDisabled)),
-
-                ColorDemo(name: "blueSelection", color: Color(ColorTheme.blue.selection)),
-
-                ColorDemo(name: "blueGradientStart", color: Color(ColorTheme.blue.backgroundTopStart)),
-                ColorDemo(name: "blueGradientEnd", color: Color(ColorTheme.blue.backgroundTopEnd)),
-
-                ColorDemo(name: "blueNavigation", color: Color(ColorTheme.blue.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🥈 Silver Theme",
-            colors: [
-                ColorDemo(name: "silverPrimary", color: Color(ColorTheme.silver.primary)),
-                ColorDemo(name: "silverPrimaryHighlight", color: Color(ColorTheme.silver.primaryHighlight)),
-                ColorDemo(name: "silverPrimaryDisabled", color: Color(ColorTheme.silver.primaryDisabled)),
-
-                ColorDemo(name: "silverSelection", color: Color(ColorTheme.silver.selection)),
-
-                ColorDemo(name: "silverGradientStart", color: Color(ColorTheme.silver.backgroundTopStart)),
-                ColorDemo(name: "silverGradientEnd", color: Color(ColorTheme.silver.backgroundTopEnd)),
-
-                ColorDemo(name: "silverNavigation", color: Color(ColorTheme.silver.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🥇 Gold Theme",
-            colors: [
-                ColorDemo(name: "goldPrimary", color: Color(ColorTheme.gold.primary)),
-                ColorDemo(name: "goldPrimaryHighlight", color: Color(ColorTheme.gold.primaryHighlight)),
-                ColorDemo(name: "goldPrimaryDisabled", color: Color(ColorTheme.gold.primaryDisabled)),
-
-                ColorDemo(name: "goldSelection", color: Color(ColorTheme.gold.selection)),
-
-                ColorDemo(name: "goldGradientStart", color: Color(ColorTheme.gold.backgroundTopStart)),
-                ColorDemo(name: "goldGradientEnd", color: Color(ColorTheme.gold.backgroundTopEnd)),
-
-                ColorDemo(name: "goldNavigation", color: Color(ColorTheme.gold.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🏆 Platinum Theme",
-            colors: [
-                ColorDemo(name: "platinumPrimary", color: Color(ColorTheme.platinum.primary)),
-                ColorDemo(
-                    name: "platinumPrimaryHighlight",
-                    color: Color(ColorTheme.platinum.primaryHighlight)
-                ),
-                ColorDemo(
-                    name: "platinumPrimaryDisabled",
-                    color: Color(ColorTheme.platinum.primaryDisabled)
-                ),
-
-                ColorDemo(name: "platinumSelection", color: Color(ColorTheme.platinum.selection)),
-                ColorDemo(name: "platinumGradientStart", color: Color(ColorTheme.platinum.backgroundTopStart)),
-                ColorDemo(name: "platinumGradientEnd", color: Color(ColorTheme.platinum.backgroundTopEnd)),
-
-                ColorDemo(name: "platinumNavigation", color: Color(ColorTheme.platinum.navigation)),
             ]
         ),
     ]
