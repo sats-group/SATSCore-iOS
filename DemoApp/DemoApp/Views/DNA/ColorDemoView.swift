@@ -144,6 +144,15 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
+            name: "Signal background",
+            colors: [
+                ColorDemo(name: "signalSuccessBackground", color: .signalSuccessBackground),
+                ColorDemo(name: "signalWarningBackground", color: .signalWarningBackground),
+                ColorDemo(name: "signalDeleteBackground", color: .signalDeleteBackground),
+                ColorDemo(name: "signalErrorBackground", color: .signalErrorBackground),
+            ]
+        ),
+        ColorSection(
             name: "Others",
             colors: [
                 ColorDemo(name: "waitlist", color: .waitlist),
