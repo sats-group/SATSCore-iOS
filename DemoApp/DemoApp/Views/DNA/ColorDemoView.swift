@@ -91,6 +91,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "onNonText", color: .onNonText),
                 ColorDemo(name: "onSignal", color: .onSignal),
                 ColorDemo(name: "onWaitlist", color: .onWaitlist),
+                ColorDemo(name: "onRewards", color: .onRewards),
             ]
         ),
         ColorSection(

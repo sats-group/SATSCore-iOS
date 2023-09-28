@@ -99,6 +99,7 @@ public extension UIColor {
 
     static var onNonText: UIColor { color(.onNonText) }
     static var onSignal: UIColor { color(.onSignal) }
+    static var onRewards: UIColor { color(.onRewards) }
     static var onWaitlist: UIColor { color(.onWaitlist) }
     static var onWaitlistDisabled: UIColor { color(.onWaitlistDisabled) }
 

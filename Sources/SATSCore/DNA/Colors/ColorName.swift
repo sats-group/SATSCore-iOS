@@ -69,6 +69,7 @@ enum ColorName: String, CaseIterable {
 
     case onNonText
     case onSignal
+    case onRewards
     case onWaitlist
     case onWaitlistDisabled
 

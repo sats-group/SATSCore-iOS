@@ -76,6 +76,7 @@ class ColorsTests: XCTestCase {
             .onNonText,
             .onSignal,
             .onWaitlist,
+            .onRewards,
             .onWaitlistDisabled,
 
             .onBackgroundEnabledOn,
