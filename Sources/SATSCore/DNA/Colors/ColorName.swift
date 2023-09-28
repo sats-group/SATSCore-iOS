@@ -28,6 +28,7 @@ enum ColorName: String, CaseIterable {
     case waitlistHighlight
     case waitlistDisabled
     case waitlistText
+    case waitlistBackground
 
     case signalSuccess
     case signalWarning
@@ -38,6 +39,11 @@ enum ColorName: String, CaseIterable {
     case signalWarningText
     case signalDeleteText
     case signalErrorText
+    
+    case signalSuccessBackground
+    case signalWarningBackground
+    case signalDeleteBackground
+    case signalErrorBackground
 
     case border
     case graphicalElements1
