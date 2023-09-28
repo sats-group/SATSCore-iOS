@@ -1,27 +1,43 @@
-import UIKit
+import SwiftUI
 
-public class SATSLabel: UILabel {
-    let style: SATSFont.TextStyle
-    let weight: SATSFont.Weight
+public extension SATSLabel.Style {
+    static let primary: Self = .init(background: .satsPrimary, foreground: .onPrimary)
+    static let secondary: Self = .init(background: .satsSecondary, foreground: .onSecondary)
+    static let coral: Self = .init(background: .cta, foreground: .onCta)
+}
 
-    /// Encapsulation of the base text styling for UIKit
-    /// - Parameters:
-    ///   - style: the semantic style of a label, H1, H2, Large, etc
-    ///   - weight: font variations: regular, emphasis, strong
-    ///   - withAutoLayout: to determine if to use auto layout or not (default `true`)
-    public init(style: SATSFont.TextStyle, weight: SATSFont.Weight = .default, withAutoLayout: Bool = true) {
+public struct SATSLabel: View {
+    let text: String
+    let style: Style
+
+    public init(_ text: String, style: Style) {
+        self.text = text
         self.style = style
-        self.weight = weight
-
-        super.init(frame: .zero)
-
-        self.font = SATSFont.font(style: style, weight: weight)
-        self.textColor = .onBackgroundPrimary
-        self.translatesAutoresizingMaskIntoConstraints = !withAutoLayout
-        self.adjustsFontForContentSizeCategory = true
     }
 
-    public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    public var body: some View {
+        Text(text)
+            .foregroundStyle(style.foreground)
+            .textCase(.uppercase)
+            .satsFont(.small)
+            .padding(.vertical, .spacingXXS)
+            .padding(.horizontal, .spacingS)
+            .background(style.background)
+            .cornerRadius(4)
+    }
+}
+
+public extension SATSLabel {
+     struct Style {
+        let background: Color
+        let foreground: Color
+    }
+}
+
+#Preview {
+    VStack(spacing: .spacingM) {
+        SATSLabel("Primary", style: .primary)
+        SATSLabel("Secondary", style: .secondary)
+        SATSLabel("Coral", style: .coral)
     }
 }
