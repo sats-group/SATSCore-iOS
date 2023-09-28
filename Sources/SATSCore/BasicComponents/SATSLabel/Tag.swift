@@ -1,12 +1,12 @@
 import SwiftUI
 
-public extension SATSLabel.Style {
+public extension Tag.Style {
     static let primary: Self = .init(background: .satsPrimary, foreground: .onPrimary)
     static let secondary: Self = .init(background: .satsSecondary, foreground: .onSecondary)
     static let coral: Self = .init(background: .cta, foreground: .onCta)
 }
 
-public struct SATSLabel: View {
+public struct Tag: View {
     let text: String
     let style: Style
 
@@ -27,7 +27,7 @@ public struct SATSLabel: View {
     }
 }
 
-public extension SATSLabel {
+public extension Tag {
     struct Style {
         let background: Color
         let foreground: Color
@@ -36,8 +36,8 @@ public extension SATSLabel {
 
 #Preview {
     VStack(spacing: .spacingM) {
-        SATSLabel("Primary", style: .primary)
-        SATSLabel("Secondary", style: .secondary)
-        SATSLabel("Coral", style: .coral)
+        Tag("Primary", style: .primary)
+        Tag("Secondary", style: .secondary)
+        Tag("Coral", style: .coral)
     }
 }
