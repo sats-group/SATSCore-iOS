@@ -56,14 +56,14 @@ public class ErrorView: UIView {
     }()
 
     private lazy var titleLabel: UILabel = {
-        let label = SATSLabelLegacy(style: .section, weight: .emphasis)
+        let label = SATSLabel(style: .section, weight: .emphasis)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()
 
     private lazy var messageLabel: UILabel = {
-        let label = SATSLabelLegacy(style: .basic)
+        let label = SATSLabel(style: .basic)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
