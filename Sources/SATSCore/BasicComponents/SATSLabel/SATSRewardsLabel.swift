@@ -30,7 +30,6 @@ public struct SATSRewardsLabel: View {
     }
 }
 
-
 public extension SATSRewardsLabel {
     enum Level {
         case blue

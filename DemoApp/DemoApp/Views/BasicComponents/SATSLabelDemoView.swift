@@ -11,7 +11,7 @@ struct SATSLabelDemoView: View {
             case .label: label
             case .rewards: rewards
             }
-            
+
             Spacer()
 
             Picker("Page", selection: $page) {

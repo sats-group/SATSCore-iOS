@@ -118,7 +118,7 @@ class ColorsTests: XCTestCase {
             .rewardsBlue,
             .rewardsSilver,
             .rewardsGold,
-            .rewardsPlatinum
+            .rewardsPlatinum,
         ]
     }
 }

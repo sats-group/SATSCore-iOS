@@ -28,7 +28,7 @@ public struct SATSLabel: View {
 }
 
 public extension SATSLabel {
-     struct Style {
+    struct Style {
         let background: Color
         let foreground: Color
     }
