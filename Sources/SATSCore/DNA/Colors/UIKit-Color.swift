@@ -60,7 +60,7 @@ public extension UIColor {
     static var signalWarningText: UIColor { color(.signalWarningText) }
     static var signalDeleteText: UIColor { color(.signalDeleteText) }
     static var signalErrorText: UIColor { color(.signalErrorText) }
-    
+
     // MARK: SignalBackground
 
     static var signalSuccessBackground: UIColor { color(.signalSuccessBackground) }

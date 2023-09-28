@@ -39,7 +39,7 @@ enum ColorName: String, CaseIterable {
     case signalWarningText
     case signalDeleteText
     case signalErrorText
-    
+
     case signalSuccessBackground
     case signalWarningBackground
     case signalDeleteBackground
