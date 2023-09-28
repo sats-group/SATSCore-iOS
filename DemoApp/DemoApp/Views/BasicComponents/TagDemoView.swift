@@ -10,3 +10,9 @@ struct TagDemoView: View {
         .navigationTitle("Tag")
     }
 }
+
+struct TagDemo_Previews: PreviewProvider {
+    static var previews: some View {
+        TagDemoView()
+    }
+}

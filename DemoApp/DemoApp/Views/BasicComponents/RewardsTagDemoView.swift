@@ -12,7 +12,3 @@ struct RewardsTagDemoView: View {
         .navigationTitle("Rewards Tag")
     }
 }
-
-#Preview {
-    RewardsTagDemoView()
-}

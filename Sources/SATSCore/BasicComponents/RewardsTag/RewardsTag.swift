@@ -19,12 +19,14 @@ public struct RewardsTag: View {
     }
 }
 
-#Preview {
-    VStack(spacing: .spacingM) {
-        RewardsTag(level: .blue)
-        RewardsTag(level: .silver)
-        RewardsTag(level: .gold)
-        RewardsTag(level: .platinum)
+struct RewardsTag_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: .spacingM) {
+            RewardsTag(level: .blue)
+            RewardsTag(level: .silver)
+            RewardsTag(level: .gold)
+            RewardsTag(level: .platinum)
+        }
     }
 }
 
