@@ -20,7 +20,6 @@
 		9B2E8065266649E4000A657D /* ErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E8064266649E4000A657D /* ErrorDemoView.swift */; };
 		9B57208C26738BF100D12109 /* ScoreDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57208B26738BF100D12109 /* ScoreDemoView.swift */; };
 		9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BC4F126E8F38700650862 /* NoticeDemoView.swift */; };
-		9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */; };
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
 		9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */; };
 		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
@@ -35,7 +34,9 @@
 		9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */; };
 		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
 		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
+		CE9429132AC2F1C9003E2D84 /* SATSLabelLeagcyDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9429122AC2F1C9003E2D84 /* SATSLabelLeagcyDemoView.swift */; };
 		CEB611C52A1DECE200C09FA1 /* BannerNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */; };
+		CECD32272AC46B1C000AB0E7 /* SATSLabelDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD32262AC46B1C000AB0E7 /* SATSLabelDemoView.swift */; };
 		CEF5506729D577FE00108F8E /* FontWeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5506529D577FE00108F8E /* FontWeightPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +67,6 @@
 		9B57208B26738BF100D12109 /* ScoreDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDemoView.swift; sourceTree = "<group>"; };
 		9B6BC4F126E8F38700650862 /* NoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDemoView.swift; sourceTree = "<group>"; };
 		9B78777825D68D9A00C69BB8 /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
-		9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSLabelDemoView.swift; sourceTree = "<group>"; };
 		9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWrapperView.swift; sourceTree = "<group>"; };
 		9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageDemoView.swift; sourceTree = "<group>"; };
 		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
@@ -83,7 +83,9 @@
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
 		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
+		CE9429122AC2F1C9003E2D84 /* SATSLabelLeagcyDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSLabelLeagcyDemoView.swift; sourceTree = "<group>"; };
 		CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNoticeDemoView.swift; sourceTree = "<group>"; };
+		CECD32262AC46B1C000AB0E7 /* SATSLabelDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSLabelDemoView.swift; sourceTree = "<group>"; };
 		CEF5506529D577FE00108F8E /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,8 +216,9 @@
 				9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */,
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
 				9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */,
-				9B7C575C25B875C500A3C9A7 /* SATSLabelDemoView.swift */,
+				CE9429122AC2F1C9003E2D84 /* SATSLabelLeagcyDemoView.swift */,
 				9B1CA89E297EAB4B006A63D1 /* SATSCellDemoView.swift */,
+				CECD32262AC46B1C000AB0E7 /* SATSLabelDemoView.swift */,
 			);
 			path = BasicComponents;
 			sourceTree = "<group>";
@@ -492,15 +495,16 @@
 				9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */,
+				CE9429132AC2F1C9003E2D84 /* SATSLabelLeagcyDemoView.swift in Sources */,
 				28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B1CA89F297EAB4B006A63D1 /* SATSCellDemoView.swift in Sources */,
 				9B2E8065266649E4000A657D /* ErrorDemoView.swift in Sources */,
+				CECD32272AC46B1C000AB0E7 /* SATSLabelDemoView.swift in Sources */,
 				9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */,
 				57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
-				9B7C575D25B875C500A3C9A7 /* SATSLabelDemoView.swift in Sources */,
 				9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */,
