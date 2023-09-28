@@ -1,87 +1,53 @@
 import SwiftUI
-import SATSCore
-
-typealias FontVariation = SATSFont.Weight
 
 struct SATSLabelDemoView: View {
-    @State var weight: FontVariation = .default
+    @State var page: Page = .label
 
     var body: some View {
         VStack {
-            FontWeightPicker(weight: $weight)
+            Spacer()
 
-            ScrollView(.vertical) {
-                VStack(alignment: .leading, spacing: 16) {
-                    ForEach(SATSFont.TextStyle.allCases, content: wrappedSATSLabel(for:))
-                }
-                .id(weight.name)
+            switch page {
+            case .label: label
+            case .rewards: rewards
             }
-            .padding()
+            
+            Spacer()
+
+            Picker("Page", selection: $page) {
+                Text("Label").tag(Page.label)
+                Text("Rewards").tag(Page.rewards)
+            }
+            .pickerStyle(.segmented)
         }
-        .navigationTitle("UIKit Labels")
-        .background(
-            Color(UIColor.systemBackground)
-                .ignoresSafeArea()
-        )
+        .padding(.spacingM)
     }
 
-    func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
-        let text = weight == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
-
-        let label = SATSLabel(style: textStyle, weight: weight)
-        label.text = text
-
-        return DemoWrapperView(view: label)
+    var label: some View {
+        VStack(spacing: .spacingM) {
+            SATSLabel("Primary", style: .primary)
+            SATSLabel("Secondary", style: .secondary)
+            SATSLabel("Coral", style: .coral)
+        }
     }
-}
 
-// MARK: - Preview
-
-struct SATSLabelDemoView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            NavigationView {
-                SATSLabelDemoView(weight: .medium)
-            }
-
-            NavigationView {
-                SATSLabelDemoView()
-            }
-            .environment(\.sizeCategory, .accessibilityExtraExtraLarge)
-
-            NavigationView {
-                SATSLabelDemoView()
-            }
-            .environment(\.colorScheme, .dark)
+    var rewards: some View {
+        VStack(spacing: .spacingM) {
+            SATSRewardsLabel(level: .blue)
+            SATSRewardsLabel(level: .silver)
+            SATSRewardsLabel(level: .gold)
+            SATSRewardsLabel(level: .platinum)
         }
     }
 }
 
-// MARK: - Extensions for demo
-
-extension SATSFont.TextStyle: Identifiable {
-    public var id: String { name }
-
-    static let allCases: [SATSFont.TextStyle] = [
-        .h1,
-        .h2,
-        .h3,
-        .large,
-        .basic,
-        .small,
-        .section,
-        .button,
-        .navigationTitle,
-    ]
+extension SATSLabelDemoView {
+    enum Page {
+        case label
+        case rewards
+    }
 }
 
-extension SATSFont.Weight: Identifiable {
-    public var id: String { name }
-
-    static let allCases: [SATSFont.Weight] = [
-        .default,
-        .medium,
-        .emphasis,
-        .satsFeeling,
-    ]
+#Preview {
+    SATSLabelDemoView()
 }

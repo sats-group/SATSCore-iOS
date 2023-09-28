@@ -20,6 +20,7 @@ struct ContentView: View {
                     NavigationLink("Button Styles", destination: SATSButtonSwftUIDemoView())
                     NavigationLink("Custom Async Image", destination: CustomAsyncDemoView())
                     NavigationLink("SATSCell", destination: SATSCellDemoView())
+                    NavigationLink("SATSLabel/Rewards", destination: SATSLabelDemoView())
                 }
 
                 Section(header: Text("Components")) {
