@@ -12,7 +12,7 @@ struct ContentView: View {
                 }
 
                 Section(header: Text("UIKit Basics")) {
-                    NavigationLink("SATSLabel", destination: SATSLabelDemoView())
+                    NavigationLink("SATSLabel (Legacy)", destination: SATSLabelLeagcyDemoView())
                     NavigationLink("SATSButton", destination: SATSButtonDemoView())
                 }
 

@@ -56,7 +56,7 @@ struct SwiftUIFontsDemoView: View {
     func wrappedSATSLabel(for textStyle: SATSFont.TextStyle) -> some View {
         let text = weight == .satsFeeling ? textStyle.name.uppercased() : textStyle.name
 
-        let label = SATSLabel(style: textStyle, weight: weight)
+        let label = SATSLabelLegacy(style: textStyle, weight: weight)
         label.text = text
 
         return DemoWrapperView(view: label)
