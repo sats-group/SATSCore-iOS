@@ -95,10 +95,6 @@ class ColorsTests: XCTestCase {
             .onSurfaceSecondary,
             .onSurfaceDisabled,
 
-            .onGradientPrimary,
-            .onGradientSecondary,
-            .onGradientDisabled,
-
             .primary,
             .primaryHighlight,
             .primaryDisabled,

@@ -121,10 +121,6 @@ public extension Color {
     static var onSurfaceSecondary: Color { color(.onSurfaceSecondary) }
     static var onSurfaceDisabled: Color { color(.onSurfaceDisabled) }
 
-    static var onGradientPrimary: Color { color(.onGradientPrimary) }
-    static var onGradientSecondary: Color { color(.onGradientSecondary) }
-    static var onGradientDisabled: Color { color(.onGradientDisabled) }
-
     // MARK: Challenge colors
 
     static var challengeFailed: Color { color(.challengeFailed) }

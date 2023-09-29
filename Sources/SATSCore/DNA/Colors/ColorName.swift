@@ -89,10 +89,6 @@ enum ColorName: String, CaseIterable {
     case onSurfaceSecondary
     case onSurfaceDisabled
 
-    case onGradientPrimary
-    case onGradientSecondary
-    case onGradientDisabled
-
     case primary
     case primaryHighlight
     case primaryDisabled
