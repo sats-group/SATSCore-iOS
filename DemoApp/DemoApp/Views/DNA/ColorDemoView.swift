@@ -119,14 +119,6 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
-            name: "\"On\" Gradient",
-            colors: [
-                ColorDemo(name: "onGradientPrimary", color: .onGradientPrimary),
-                ColorDemo(name: "onGradientSecondary", color: .onGradientSecondary),
-                ColorDemo(name: "onGradientDisabled", color: .onGradientDisabled),
-            ]
-        ),
-        ColorSection(
             name: "Signal",
             colors: [
                 ColorDemo(name: "signalSuccess", color: .signalSuccess),

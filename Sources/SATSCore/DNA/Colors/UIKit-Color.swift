@@ -119,10 +119,6 @@ public extension UIColor {
     static var onSurfaceSecondary: UIColor { color(.onSurfaceSecondary) }
     static var onSurfaceDisabled: UIColor { color(.onSurfaceDisabled) }
 
-    static var onGradientPrimary: UIColor { color(.onGradientPrimary) }
-    static var onGradientSecondary: UIColor { color(.onGradientSecondary) }
-    static var onGradientDisabled: UIColor { color(.onGradientDisabled) }
-
     // MARK: Challenge colors
 
     static var challengeFailed: UIColor { color(.challengeFailed) }
