@@ -3,6 +3,11 @@ import SwiftUI
 public struct TagViewData {
     let text: String
     let style: Style
+
+    public init(text: String, style: Style) {
+        self.text = text
+        self.style = style
+    }
 }
 
 public extension TagViewData {
