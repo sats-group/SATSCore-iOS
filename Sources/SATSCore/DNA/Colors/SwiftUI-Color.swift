@@ -1,6 +1,10 @@
 import SwiftUI
 
 public extension Color {
+    static var satsPrimary: Color { color(.primary) }
+    static var satsPrimaryHighlight: Color { color(.primaryHighlight) }
+    static var satsPrimaryDisabled: Color { color(.primaryDisabled) }
+
     // MARK: Background
 
     static var backgroundPrimary: Color { color(.backgroundPrimary) }
@@ -82,6 +86,7 @@ public extension Color {
     static var graphicalElements7: Color { color(.graphicalElements7) }
     static var shimmer: Color { color(.shimmer) }
     static var tabs: Color { color(.tabs) }
+    static var navigation: Color { color(.navigation) }
 
     // MARK: "On" colors
 
@@ -105,6 +110,7 @@ public extension Color {
     static var onNonText: Color { color(.onNonText) }
     static var onSignal: Color { color(.onSignal) }
     static var onWaitlist: Color { color(.onWaitlist) }
+    static var onRewards: Color { color(.onRewards) }
     static var onWaitlistDisabled: Color { color(.onWaitlistDisabled) }
 
     static var onBackgroundEnabledOn: Color { color(.onBackgroundEnabledOn) }
@@ -123,25 +129,6 @@ public extension Color {
     static var onSurfaceSecondary: Color { color(.onSurfaceSecondary) }
     static var onSurfaceDisabled: Color { color(.onSurfaceDisabled) }
 
-    static var onGradientPrimary: Color { color(.onGradientPrimary) }
-    static var onGradientSecondary: Color { color(.onGradientSecondary) }
-    static var onGradientDisabled: Color { color(.onGradientDisabled) }
-
-    // MARK: Theme dependant colors
-
-    // these colors are prefixed with "sats" as Color.secondary already exists
-    // in SwiftUI
-    static var satsPrimary: Color { themedColor(.primary) }
-    static var satsPrimaryHighlight: Color { themedColor(.primaryHighlight) }
-    static var satsPrimaryDisabled: Color { themedColor(.primaryDisabled) }
-
-    static var selection: Color { themedColor(.selection) }
-
-    static var backgroundTopStart: Color { themedColor(.backgroundTopStart) }
-    static var backgroundTopEnd: Color { themedColor(.backgroundTopEnd) }
-
-    static var navigationPrimary: Color { themedColor(.navigation) }
-
     // MARK: Challenge colors
 
     static var challengeFailed: Color { color(.challengeFailed) }
@@ -156,19 +143,12 @@ public extension Color {
     static var workoutGymfloor: Color { color(.workoutGymfloor) }
     static var workoutOwnTraining: Color { color(.workoutOwnTraining) }
 
-    // MARK: Private
+    // MARK: Rewards
 
-    private static func themedColor(_ name: ColorName) -> Color {
-        // we use colors with a dynamic provider to re-evaluate colors when the theme changes
-        let dynamicColor = UIColor { _ in
-            guard let uiColor = ColorTheme.current[name] else {
-                preconditionFailure("❌ \(name.rawValue) should be present in theme \(ColorTheme.current.name)")
-            }
-
-            return uiColor
-        }
-        return Color(dynamicColor)
-    }
+    static var rewardsBlue: Color { color(.rewardsBlue) }
+    static var rewardsSilver: Color { color(.rewardsSilver) }
+    static var rewardsGold: Color { color(.rewardsGold) }
+    static var rewardsPlatinum: Color { color(.rewardsPlatinum) }
 
     private static func color(_ name: ColorName) -> Color {
         Color(name.rawValue, bundle: .module)

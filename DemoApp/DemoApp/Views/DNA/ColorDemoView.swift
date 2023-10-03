@@ -54,7 +54,7 @@ struct ColorDemoView: View {
             name: "Clean",
             colors: [
                 ColorDemo(name: "clean", color: .clean),
-                ColorDemo(name: "cleanHighlightgithub", color: .cleanHighlight),
+                ColorDemo(name: "cleanHighlight", color: .cleanHighlight),
                 ColorDemo(name: "cleanDisabled", color: .cleanDisabled),
             ]
         ),
@@ -91,6 +91,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "onNonText", color: .onNonText),
                 ColorDemo(name: "onSignal", color: .onSignal),
                 ColorDemo(name: "onWaitlist", color: .onWaitlist),
+                ColorDemo(name: "onRewards", color: .onRewards),
             ]
         ),
         ColorSection(
@@ -115,14 +116,6 @@ struct ColorDemoView: View {
                 ColorDemo(name: "onSurfacePrimary", color: .onSurfacePrimary),
                 ColorDemo(name: "onSurfaceSecondary", color: .onSurfaceSecondary),
                 ColorDemo(name: "onSurfaceDisabled", color: .onSurfaceDisabled),
-            ]
-        ),
-        ColorSection(
-            name: "\"On\" Gradient",
-            colors: [
-                ColorDemo(name: "onGradientPrimary", color: .onGradientPrimary),
-                ColorDemo(name: "onGradientSecondary", color: .onGradientSecondary),
-                ColorDemo(name: "onGradientDisabled", color: .onGradientDisabled),
             ]
         ),
         ColorSection(
@@ -176,6 +169,7 @@ struct ColorDemoView: View {
                 ColorDemo(name: "graphicalElements7", color: .graphicalElements7),
                 ColorDemo(name: "shimmer", color: .shimmer),
                 ColorDemo(name: "tabs", color: .tabs),
+                ColorDemo(name: "navigation", color: .navigation),
             ]
         ),
         ColorSection(
@@ -188,68 +182,12 @@ struct ColorDemoView: View {
             ]
         ),
         ColorSection(
-            name: "🔵 Blue Theme",
+            name: "Rewards",
             colors: [
-                ColorDemo(name: "bluePrimary", color: Color(ColorTheme.blue.primary)),
-                ColorDemo(name: "bluePrimaryHighlight", color: Color(ColorTheme.blue.primaryHighlight)),
-                ColorDemo(name: "bluePrimaryDisabled", color: Color(ColorTheme.blue.primaryDisabled)),
-
-                ColorDemo(name: "blueSelection", color: Color(ColorTheme.blue.selection)),
-
-                ColorDemo(name: "blueGradientStart", color: Color(ColorTheme.blue.backgroundTopStart)),
-                ColorDemo(name: "blueGradientEnd", color: Color(ColorTheme.blue.backgroundTopEnd)),
-
-                ColorDemo(name: "blueNavigation", color: Color(ColorTheme.blue.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🥈 Silver Theme",
-            colors: [
-                ColorDemo(name: "silverPrimary", color: Color(ColorTheme.silver.primary)),
-                ColorDemo(name: "silverPrimaryHighlight", color: Color(ColorTheme.silver.primaryHighlight)),
-                ColorDemo(name: "silverPrimaryDisabled", color: Color(ColorTheme.silver.primaryDisabled)),
-
-                ColorDemo(name: "silverSelection", color: Color(ColorTheme.silver.selection)),
-
-                ColorDemo(name: "silverGradientStart", color: Color(ColorTheme.silver.backgroundTopStart)),
-                ColorDemo(name: "silverGradientEnd", color: Color(ColorTheme.silver.backgroundTopEnd)),
-
-                ColorDemo(name: "silverNavigation", color: Color(ColorTheme.silver.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🥇 Gold Theme",
-            colors: [
-                ColorDemo(name: "goldPrimary", color: Color(ColorTheme.gold.primary)),
-                ColorDemo(name: "goldPrimaryHighlight", color: Color(ColorTheme.gold.primaryHighlight)),
-                ColorDemo(name: "goldPrimaryDisabled", color: Color(ColorTheme.gold.primaryDisabled)),
-
-                ColorDemo(name: "goldSelection", color: Color(ColorTheme.gold.selection)),
-
-                ColorDemo(name: "goldGradientStart", color: Color(ColorTheme.gold.backgroundTopStart)),
-                ColorDemo(name: "goldGradientEnd", color: Color(ColorTheme.gold.backgroundTopEnd)),
-
-                ColorDemo(name: "goldNavigation", color: Color(ColorTheme.gold.navigation)),
-            ]
-        ),
-        ColorSection(
-            name: "🏆 Platinum Theme",
-            colors: [
-                ColorDemo(name: "platinumPrimary", color: Color(ColorTheme.platinum.primary)),
-                ColorDemo(
-                    name: "platinumPrimaryHighlight",
-                    color: Color(ColorTheme.platinum.primaryHighlight)
-                ),
-                ColorDemo(
-                    name: "platinumPrimaryDisabled",
-                    color: Color(ColorTheme.platinum.primaryDisabled)
-                ),
-
-                ColorDemo(name: "platinumSelection", color: Color(ColorTheme.platinum.selection)),
-                ColorDemo(name: "platinumGradientStart", color: Color(ColorTheme.platinum.backgroundTopStart)),
-                ColorDemo(name: "platinumGradientEnd", color: Color(ColorTheme.platinum.backgroundTopEnd)),
-
-                ColorDemo(name: "platinumNavigation", color: Color(ColorTheme.platinum.navigation)),
+                ColorDemo(name: "rewardsBlue", color: .rewardsBlue),
+                ColorDemo(name: "rewardsSilver", color: .rewardsSilver),
+                ColorDemo(name: "rewardsGold", color: .rewardsGold),
+                ColorDemo(name: "rewardsPlatinum", color: .rewardsPlatinum),
             ]
         ),
     ]
@@ -290,7 +228,7 @@ struct ColorPillView: View {
     var body: some View {
         HStack(spacing: 0) {
             demo.color
-                .overlay(hexOverlayLight(demo.color))
+                .overlay(hexLabel(demo.color), alignment: .bottomLeading)
                 .colorScheme(.light)
 
             demo.color
@@ -301,26 +239,17 @@ struct ColorPillView: View {
         .cornerRadius(8)
     }
 
-    func hexOverlayLight(_ color: Color) -> some View {
-        VStack {
-            Spacer()
-            HStack {
-                hexLabel(color)
-                Spacer()
-            }
-        }
-        .padding(8)
-    }
-
     func hexLabel(_ color: Color) -> some View {
-        let text = UIColor(color).hexString ?? ""
+        let text = UIColor(color).hexString ?? "Unknown"
+
         return Text(text)
             .font(.caption2)
             .foregroundColor(.white)
             .frame(alignment: .bottomLeading)
-            .padding(4)
+            .padding(.spacingXXS)
             .background(Color.black.opacity(0.4))
             .cornerRadius(4)
+            .padding(.spacingXS)
     }
 
     func label() -> some View {
@@ -339,6 +268,5 @@ struct ColorDemoView_Previews: PreviewProvider {
         NavigationView {
             ColorDemoView()
         }
-        .colorScheme(.dark)
     }
 }

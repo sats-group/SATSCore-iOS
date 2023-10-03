@@ -75,6 +75,7 @@ enum ColorName: String, CaseIterable {
 
     case onNonText
     case onSignal
+    case onRewards
     case onWaitlist
     case onWaitlistDisabled
 
@@ -94,23 +95,13 @@ enum ColorName: String, CaseIterable {
     case onSurfaceSecondary
     case onSurfaceDisabled
 
-    case onGradientPrimary
-    case onGradientSecondary
-    case onGradientDisabled
-
-    // Theme colors
-
     case primary
     case primaryHighlight
     case primaryDisabled
 
-    case selection
     case action
     case actionHighlight
     case actionDisabled
-
-    case backgroundTopStart
-    case backgroundTopEnd
 
     case navigation
 
@@ -127,4 +118,11 @@ enum ColorName: String, CaseIterable {
     case workoutGx
     case workoutGymfloor
     case workoutOwnTraining
+
+    // Rewards
+
+    case rewardsBlue
+    case rewardsSilver
+    case rewardsGold
+    case rewardsPlatinum
 }

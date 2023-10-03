@@ -8,16 +8,6 @@ class ColorsTests: XCTestCase {
         XCTAssertEqual(colorConstants().count, ColorName.allCases.count)
     }
 
-    func testColorResolutionWhenChangingTheme() {
-        let initialValue = UIColor.primary.hexString ?? ""
-
-        ColorTheme.current = .platinum
-
-        let newValue = UIColor.primary.hexString ?? ""
-
-        XCTAssertNotEqual(initialValue, newValue)
-    }
-
     // swiftlint:disable:next function_body_length
     private func colorConstants() -> [UIColor] {
         [
@@ -92,6 +82,7 @@ class ColorsTests: XCTestCase {
             .onNonText,
             .onSignal,
             .onWaitlist,
+            .onRewards,
             .onWaitlistDisabled,
 
             .onBackgroundEnabledOn,
@@ -110,18 +101,9 @@ class ColorsTests: XCTestCase {
             .onSurfaceSecondary,
             .onSurfaceDisabled,
 
-            .onGradientPrimary,
-            .onGradientSecondary,
-            .onGradientDisabled,
-
             .primary,
             .primaryHighlight,
             .primaryDisabled,
-
-            .selection,
-
-            .backgroundTopStart,
-            .backgroundTopEnd,
 
             .navigation,
 
@@ -134,6 +116,11 @@ class ColorsTests: XCTestCase {
             .workoutGx,
             .workoutGymfloor,
             .workoutOwnTraining,
+
+            .rewardsBlue,
+            .rewardsSilver,
+            .rewardsGold,
+            .rewardsPlatinum,
         ]
     }
 }
