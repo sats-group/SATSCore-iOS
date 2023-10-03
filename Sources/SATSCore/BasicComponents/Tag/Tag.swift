@@ -46,8 +46,6 @@ public struct Tag: View {
     }
 }
 
-
-
 struct Tag_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: .spacingM) {
