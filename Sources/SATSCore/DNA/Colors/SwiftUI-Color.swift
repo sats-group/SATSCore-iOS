@@ -47,6 +47,7 @@ public extension Color {
     static var waitlistHighlight: Color { color(.waitlistHighlight) }
     static var waitlistDisabled: Color { color(.waitlistDisabled) }
     static var waitlistText: Color { color(.waitlistText) }
+    static var waitlistBackground: Color { color(.waitlistBackground) }
 
     // MARK: Signal
 
@@ -61,6 +62,13 @@ public extension Color {
     static var signalWarningText: Color { color(.signalWarningText) }
     static var signalDeleteText: Color { color(.signalDeleteText) }
     static var signalErrorText: Color { color(.signalErrorText) }
+
+    // MARK: SignalBackground
+
+    static var signalSuccessBackground: Color { color(.signalSuccessBackground) }
+    static var signalWarningBackground: Color { color(.signalWarningBackground) }
+    static var signalDeleteBackground: Color { color(.signalDeleteBackground) }
+    static var signalErrorBackground: Color { color(.signalErrorBackground) }
 
     // MARK: UI
 
