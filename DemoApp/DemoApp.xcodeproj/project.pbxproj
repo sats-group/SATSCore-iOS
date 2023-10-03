@@ -219,8 +219,6 @@
 				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
 				9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */,
 				9B1CA89E297EAB4B006A63D1 /* SATSCellDemoView.swift */,
-				CED21C0E2AC58249002920DE /* RewardsTagDemoView.swift */,
-				CED21C102AC584A6002920DE /* TagDemoView.swift */,
 				CED21C122AC58A4B002920DE /* SATSLabelDemoView.swift */,
 			);
 			path = BasicComponents;
@@ -331,8 +329,10 @@
 				9B8C11F226F23702007F5D0C /* NoticeView */,
 				9B9A765B2A1E406200655DDC /* ProfilePictureView */,
 				57016DC0286349BA00874F53 /* RadioGroupView */,
+				D277A2A22ACC1FDC000317AE /* RewardsTag */,
 				9B57208A26738BD600D12109 /* ScoreView */,
 				9BF417162681D25B00E708FD /* ScrollReaderView */,
+				D277A2A32ACC1FE6000317AE /* Tag */,
 				28491B8E28B3AAB500E3C1D9 /* WheelPickerView */,
 			);
 			path = Components;
@@ -360,6 +360,22 @@
 				CEF5506529D577FE00108F8E /* FontWeightPicker.swift */,
 			);
 			path = Internal;
+			sourceTree = "<group>";
+		};
+		D277A2A22ACC1FDC000317AE /* RewardsTag */ = {
+			isa = PBXGroup;
+			children = (
+				CED21C0E2AC58249002920DE /* RewardsTagDemoView.swift */,
+			);
+			path = RewardsTag;
+			sourceTree = "<group>";
+		};
+		D277A2A32ACC1FE6000317AE /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				CED21C102AC584A6002920DE /* TagDemoView.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

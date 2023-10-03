@@ -19,17 +19,6 @@ public struct RewardsTag: View {
     }
 }
 
-struct RewardsTag_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack(spacing: .spacingM) {
-            RewardsTag(level: .blue)
-            RewardsTag(level: .silver)
-            RewardsTag(level: .gold)
-            RewardsTag(level: .platinum)
-        }
-    }
-}
-
 public extension RewardsTag {
     enum Level: String {
         case blue = "Blue"
@@ -44,6 +33,17 @@ public extension RewardsTag {
             case .gold: return .rewardsGold
             case .platinum: return .rewardsPlatinum
             }
+        }
+    }
+}
+
+struct RewardsTag_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: .spacingM) {
+            RewardsTag(level: .blue)
+            RewardsTag(level: .silver)
+            RewardsTag(level: .gold)
+            RewardsTag(level: .platinum)
         }
     }
 }
