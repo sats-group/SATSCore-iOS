@@ -31,6 +31,8 @@ struct ContentView: View {
                         NavigationLink("ErrorView", destination: ErrorDemoView())
                         NavigationLink("ModernErrorView", destination: ModernErrorDemoView())
                         NavigationLink("NoticeView", destination: NoticeDemoView())
+                        NavigationLink("Rewards Tag", destination: RewardsTagDemoView())
+                        NavigationLink("Tag", destination: TagDemoView())
                     }
 
                     Group {
