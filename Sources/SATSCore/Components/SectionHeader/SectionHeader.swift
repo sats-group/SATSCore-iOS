@@ -20,7 +20,7 @@ public struct SectionHeader<ActionView: View>: View {
         wrapInButtonIfNeeded {
             HStack {
                 Text(title)
-                    .satsFont(.basic)
+                    .satsFont(.large, weight: .medium)
                     .foregroundStyle(Color.onBackgroundPrimary)
 
                 Spacer()
