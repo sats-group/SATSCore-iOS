@@ -17,7 +17,7 @@ public struct SectionHeader<ActionView: View>: View {
     }
 
     public var body: some View {
-        Button(action: { onClick?() }) {
+        wrapInButtonIfNeeded {
             HStack {
                 Text(title)
                     .satsFont(.basic)
@@ -27,9 +27,19 @@ public struct SectionHeader<ActionView: View>: View {
 
                 actionView
             }
-
         }
         .frame(minHeight: 25)
+    }
+
+    @ViewBuilder
+    private func wrapInButtonIfNeeded<Content: View>(
+        content: () -> Content
+    ) -> some View {
+        if let onClick {
+            Button(action: onClick, label: content)
+        } else {
+            content()
+        }
     }
 }
 
