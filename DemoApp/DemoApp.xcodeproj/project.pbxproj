@@ -39,6 +39,7 @@
 		CED21C112AC584A6002920DE /* TagDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED21C102AC584A6002920DE /* TagDemoView.swift */; };
 		CED21C132AC58A4B002920DE /* SATSLabelDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED21C122AC58A4B002920DE /* SATSLabelDemoView.swift */; };
 		CEF5506729D577FE00108F8E /* FontWeightPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF5506529D577FE00108F8E /* FontWeightPicker.swift */; };
+		D2AC964D2AD68F0B007DC759 /* SectionHeaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AC964C2AD68F0B007DC759 /* SectionHeaderDemoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		CED21C102AC584A6002920DE /* TagDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDemoView.swift; sourceTree = "<group>"; };
 		CED21C122AC58A4B002920DE /* SATSLabelDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSLabelDemoView.swift; sourceTree = "<group>"; };
 		CEF5506529D577FE00108F8E /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
+		D2AC964C2AD68F0B007DC759 /* SectionHeaderDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderDemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 		9BCEE85526035C83001C8692 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D2AC964B2AD68EF6007DC759 /* SectionHeader */,
 				9B7F828E28E2FA25004D6ECA /* BannerImage */,
 				CEB611C32A1DECC300C09FA1 /* BannerNotice */,
 				28D0A16527A937FD001374D2 /* DatePickerView */,
@@ -376,6 +379,14 @@
 				CED21C102AC584A6002920DE /* TagDemoView.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		D2AC964B2AD68EF6007DC759 /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				D2AC964C2AD68F0B007DC759 /* SectionHeaderDemoView.swift */,
+			);
+			path = SectionHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,6 +537,7 @@
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */,
+				D2AC964D2AD68F0B007DC759 /* SectionHeaderDemoView.swift in Sources */,
 				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */,
 				28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */,

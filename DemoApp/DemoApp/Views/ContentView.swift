@@ -27,6 +27,7 @@ struct ContentView: View {
                         NavigationLink("BannerImage", destination: BannerImageDemoView())
                         NavigationLink("BannerNotice", destination: BannerNoticeDemoView())
                         NavigationLink("DatePickerView", destination: DatePickerDemoView())
+                        NavigationLink("SectionHeader", destination: SectionHeaderDemoView())
                         // To remove
                         NavigationLink("ErrorView", destination: ErrorDemoView())
                         NavigationLink("ModernErrorView", destination: ModernErrorDemoView())
