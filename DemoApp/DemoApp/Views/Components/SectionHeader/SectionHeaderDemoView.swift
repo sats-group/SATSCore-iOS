@@ -17,6 +17,7 @@ struct SectionHeaderDemoView: View {
             })
         }
         .padding(.spacingM)
+        .navigationTitle("Section Header")
     }
 }
 
