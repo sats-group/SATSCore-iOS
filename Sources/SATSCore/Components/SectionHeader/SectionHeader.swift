@@ -28,7 +28,7 @@ public struct SectionHeader<ActionView: View>: View {
                 actionView
             }
         }
-        .frame(minHeight: 25)
+        .frame(minHeight: .spacingL)
     }
 
     @ViewBuilder
