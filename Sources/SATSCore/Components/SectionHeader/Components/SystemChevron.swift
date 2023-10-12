@@ -5,6 +5,6 @@ public struct SystemChevron: View {
 
     public var body: some View {
         Image(systemName: "chevron.right")
-            .frame(size: 24)
+            .frame(size: .spacingL)
     }
 }
