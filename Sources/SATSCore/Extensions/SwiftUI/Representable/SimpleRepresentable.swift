@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 /** A simple wrapper for UIViews for SwiftUI
 
  This simple wrapper allows to use a UIKit view within SwiftUI without having to
@@ -32,3 +33,4 @@ public struct SimpleRepresentable<View: UIView>: UIViewRepresentable {
 
     public func updateUIView(_ uiView: View, context: Context) {}
 }
+#endif

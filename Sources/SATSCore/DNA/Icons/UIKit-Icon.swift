@@ -7,11 +7,13 @@ extension UIImage {
 
     // MARK: Private
 
+    #if canImport(UIKit)
     private static func icon(_ name: IconName) -> UIImage {
-        guard let icon = UIImage(named: name.rawValue, in: Bundle.module, compatibleWith: nil) else {
+        guard let icon = UIImage(named: name.rawValue, in: Bundle.module, with: nil) else {
             preconditionFailure("❌ \(name.rawValue) icon not found!")
         }
 
         return icon
     }
+    #endif
 }

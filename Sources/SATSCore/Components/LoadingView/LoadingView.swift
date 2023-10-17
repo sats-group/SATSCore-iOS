@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 /// Small view that adds a background and center an activity indicator
 ///
 /// It's quite common we use a "full screen" view to show the loading state
@@ -46,3 +47,4 @@ public class LoadingView: UIView {
         startAnimating()
     }
 }
+#endif

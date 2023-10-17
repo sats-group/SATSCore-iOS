@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 private extension SATSButton.Style {
     static let error = SATSButton.Style(
         name: "Error",
@@ -10,6 +11,7 @@ private extension SATSButton.Style {
         backgroundColorDisabled: .primaryDisabled
     )
 }
+#endif
 
 public struct ErrorViewData {
     public let title: String?
@@ -39,6 +41,7 @@ extension ErrorViewData {
     }
 }
 
+#if os(iOS)
 /// A view which displays a title, message and retry button
 public class ErrorView: UIView {
     // MARK: Public properties
@@ -123,3 +126,4 @@ public class ErrorView: UIView {
         onRetry()
     }
 }
+#endif

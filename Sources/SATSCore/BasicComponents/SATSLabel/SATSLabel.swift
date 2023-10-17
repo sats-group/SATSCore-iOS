@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public class SATSLabel: UILabel {
     let style: SATSFont.TextStyle
     let weight: SATSFont.Weight
@@ -25,3 +26,4 @@ public class SATSLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
 }
+#endif

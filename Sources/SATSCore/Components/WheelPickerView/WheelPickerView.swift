@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 public struct WheelPickerView: View {
     @Binding public var value: Int
 
@@ -154,3 +155,4 @@ private extension View {
         shadow(color: .black.opacity(0.12), radius: 12, x: 0, y: 0)
     }
 }
+#endif

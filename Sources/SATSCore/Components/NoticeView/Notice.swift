@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 /// Notice is a generic way to configure the `NoticeView` component
 /// This struct is available on its own to define custom styles if needed.
 /// Normally using `Notice.error`, `Notice.warning` or `Notice.success`
@@ -169,3 +170,4 @@ public extension Notice {
         public var id: String { rawValue }
     }
 }
+#endif

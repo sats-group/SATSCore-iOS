@@ -1,5 +1,8 @@
 import SwiftUI
 
+#if os(iOS)
+import UIKit
+
 public struct ShareSheet: UIViewControllerRepresentable {
     public typealias Callback = (
         _ activityType: UIActivity.ActivityType?, _ completed: Bool, _ returnedItems: [Any]?, _ error: Error?
@@ -34,3 +37,4 @@ public struct ShareSheet: UIViewControllerRepresentable {
         self.callback = completion
     }
 }
+#endif

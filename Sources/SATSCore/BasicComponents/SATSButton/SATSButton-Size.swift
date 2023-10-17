@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public extension SATSButton {
     /// Specifies a resizing behaviour of the button
     struct Size: Equatable {
@@ -60,3 +61,4 @@ public extension SATSButton.Size {
         contentHuggingPriority: .defaultHigh
     )
 }
+#endif

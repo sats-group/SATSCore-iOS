@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 public struct BannerNoticeViewData {
     let message: String
     let action: Action?
@@ -64,3 +65,4 @@ public struct BannerNotice: View {
         }
     }
 }
+#endif
