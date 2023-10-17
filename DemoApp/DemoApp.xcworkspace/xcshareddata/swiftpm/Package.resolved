@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SATSType",
+        "repositoryURL": "https://github.com/sats-group/SATSType-iOS.git",
+        "state": {
+          "branch": null,
+          "revision": "3ba28b89b06c6e241cc6615219acb94ea9cdba0e",
+          "version": "0.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
