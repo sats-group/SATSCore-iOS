@@ -1,7 +1,5 @@
 <p align="center"><img width=100% src="https://i.imgur.com/DI2AIpj.png"></p>
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/sats-group/SATSCore-iOS/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/sats-group/SATSCore-iOS/tree/main)
-
 The objective of this library is to provide all the utilities we need to create UI for the SATS member app by implementing the design system we use, then when building UI we just care of combining this basic elements rather than re-invent everything and also to provide a solid base that allows support to advanced UI features like: dark mode, dynamic types and so on.
 
 This library defines Fonts, Colors and other base components and configurations to create UI. This applies to both `UIKit` and `SwiftUI`based UI.
@@ -80,9 +78,7 @@ In order to release a new version of the package (and SATSCore iOS app)
 1. Create a PR for your improvements
 2. Merge your PR to main
 3. Get latest released version from the [releases section]
-
 4. Get the changelog from the latest version which in this case is `1.3.0`
-    
     - Remember to replace `1.3.0` for the last released version of the package.
     - If you have `pr_changelog` installed (`gem install pr_changelog`), you can run a command like
 

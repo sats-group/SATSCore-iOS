@@ -77,13 +77,13 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
 
     private func backgroundColor(for configuration: Configuration) -> Color {
         if isEnabled {
-            return Color(
+            Color(
                 configuration.isPressed ?
                     style.backgroundColorHighlighted :
                     style.backgroundColor
             )
         } else {
-            return Color(style.backgroundColorDisabled)
+            Color(style.backgroundColorDisabled)
         }
     }
 

@@ -28,10 +28,10 @@ public extension RewardsTag {
 
         var background: Color {
             switch self {
-            case .blue: return .rewardsBlue
-            case .silver: return .rewardsSilver
-            case .gold: return .rewardsGold
-            case .platinum: return .rewardsPlatinum
+            case .blue: .rewardsBlue
+            case .silver: .rewardsSilver
+            case .gold: .rewardsGold
+            case .platinum: .rewardsPlatinum
             }
         }
     }

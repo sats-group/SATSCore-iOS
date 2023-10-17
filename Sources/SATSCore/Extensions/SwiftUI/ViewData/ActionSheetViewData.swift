@@ -35,9 +35,9 @@ public extension ActionSheet {
         var buttons: [Button] = viewData.actions
             .map { action in
                 if action.isDestructive {
-                    return Button.destructive(Text(action.title), action: action.perform)
+                    Button.destructive(Text(action.title), action: action.perform)
                 } else {
-                    return Button.default(Text(action.title), action: action.perform)
+                    Button.default(Text(action.title), action: action.perform)
                 }
             }
         buttons.append(.cancel())

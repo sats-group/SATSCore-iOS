@@ -35,13 +35,13 @@ extension RadioGroupDemoView {
         var description: String {
             switch self {
             case .yoga:
-                return "Stretch and flexibility"
+                "Stretch and flexibility"
 
             case .indoorRunning:
-                return "Cardio"
+                "Cardio"
 
             case .studioTraining:
-                return "Strength"
+                "Strength"
             }
         }
     }
