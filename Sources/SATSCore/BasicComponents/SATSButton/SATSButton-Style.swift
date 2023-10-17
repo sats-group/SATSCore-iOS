@@ -40,20 +40,20 @@ public extension SATSButton {
         func backgroundColor(forState state: UIControl.State) -> UIColor {
             switch state {
             case .highlighted:
-                return backgroundColorHighlighted
+                backgroundColorHighlighted
             case .disabled:
-                return backgroundColorDisabled
+                backgroundColorDisabled
             default:
-                return backgroundColor
+                backgroundColor
             }
         }
 
         func borderColor(forState state: UIControl.State) -> UIColor? {
             switch state {
             case .disabled:
-                return borderColorDisabled
+                borderColorDisabled
             default:
-                return borderColor
+                borderColor
             }
         }
     }

@@ -32,10 +32,10 @@ public enum ImageViewData: Equatable {
 
     public var description: String {
         switch self {
-        case .empty: return "empty"
-        case .image: return "image(_)"
-        case let .remote(url): return "remote(url: \(url))"
-        case .loading: return "loading"
+        case .empty: "empty"
+        case .image: "image(_)"
+        case let .remote(url): "remote(url: \(url))"
+        case .loading: "loading"
         }
     }
 }

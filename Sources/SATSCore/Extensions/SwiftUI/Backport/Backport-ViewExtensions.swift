@@ -42,16 +42,16 @@ public extension Backport where Content: View {
         var mode: ScrollDismissesKeyboardMode {
             switch self {
             case .automatic:
-                return .automatic
+                .automatic
 
             case .immediately:
-                return .immediately
+                .immediately
 
             case .interactively:
-                return .interactively
+                .interactively
 
             case .never:
-                return .never
+                .never
             }
         }
     }

@@ -87,10 +87,10 @@ public extension Alert {
     ) -> Alert.Button {
         switch style {
         case .default:
-            return .default(Text(title), action: action)
+            .default(Text(title), action: action)
 
         case .destructive:
-            return .destructive(Text(title), action: action)
+            .destructive(Text(title), action: action)
         }
     }
 }

@@ -25,7 +25,7 @@ class DefaultImageClient: ImageClient {
 
         var errorDescription: String? {
             switch self {
-            case .decodeError: return "We got the image data but couldn't convert it to a proper image"
+            case .decodeError: "We got the image data but couldn't convert it to a proper image"
             }
         }
     }
