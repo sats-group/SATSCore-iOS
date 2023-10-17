@@ -83,6 +83,11 @@
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
 		9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernErrorDemoView.swift; sourceTree = "<group>"; };
 		9BD54ACB2ADE78B300DC63D9 /* BaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfig.xcconfig; sourceTree = "<group>"; };
+		9BD54AD62ADE947400DC63D9 /* set_changelog.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_changelog.sh; sourceTree = "<group>"; };
+		9BD54AD72ADE947400DC63D9 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
+		9BD54AD82ADE947400DC63D9 /* set_version.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_version.sh; sourceTree = "<group>"; };
+		9BD54AD92ADE947400DC63D9 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
+		9BD54ADC2ADE94C900DC63D9 /* DemoApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoApp.xctestplan; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
 		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
@@ -173,11 +178,13 @@
 			isa = PBXGroup;
 			children = (
 				9B2BFBF125B71A2800383193 /* SatsCore */,
+				9BD54AD52ADE947400DC63D9 /* ci_scripts */,
 				9BD54ACA2ADE789700DC63D9 /* Configuration */,
 				9B2BFBD825B719AD00383193 /* DemoApp */,
 				9B96339726DCD36800656D61 /* DemoAppTests */,
 				9B2BFBF325B71A3800383193 /* Frameworks */,
 				9B2BFBD725B719AD00383193 /* Products */,
+				9BD54ADB2ADE94C900DC63D9 /* TestPlans */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,6 +356,25 @@
 				9BD54ACB2ADE78B300DC63D9 /* BaseConfig.xcconfig */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		9BD54AD52ADE947400DC63D9 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				9BD54AD62ADE947400DC63D9 /* set_changelog.sh */,
+				9BD54AD72ADE947400DC63D9 /* ci_pre_xcodebuild.sh */,
+				9BD54AD82ADE947400DC63D9 /* set_version.sh */,
+				9BD54AD92ADE947400DC63D9 /* ci_post_clone.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = SOURCE_ROOT;
+		};
+		9BD54ADB2ADE94C900DC63D9 /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				9BD54ADC2ADE94C900DC63D9 /* DemoApp.xctestplan */,
+			);
+			path = TestPlans;
 			sourceTree = "<group>";
 		};
 		9BF417162681D25B00E708FD /* ScrollReaderView */ = {
