@@ -88,6 +88,7 @@
 		9BD54AD82ADE947400DC63D9 /* set_version.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_version.sh; sourceTree = "<group>"; };
 		9BD54AD92ADE947400DC63D9 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
 		9BD54ADC2ADE94C900DC63D9 /* DemoApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoApp.xctestplan; sourceTree = "<group>"; };
+		9BD54ADD2ADEACF900DC63D9 /* SATSCoreOnWatchOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SATSCoreOnWatchOS.xctestplan; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
 		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
 		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
@@ -373,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				9BD54ADC2ADE94C900DC63D9 /* DemoApp.xctestplan */,
+				9BD54ADD2ADEACF900DC63D9 /* SATSCoreOnWatchOS.xctestplan */,
 			);
 			path = TestPlans;
 			sourceTree = "<group>";
