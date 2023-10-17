@@ -1,4 +1,5 @@
 import XCTest
+import SwiftUI
 @testable import SATSCore
 
 class ColorsTests: XCTestCase {
@@ -9,16 +10,16 @@ class ColorsTests: XCTestCase {
     }
 
     // swiftlint:disable:next function_body_length
-    private func colorConstants() -> [UIColor] {
+    private func colorConstants() -> [Color] {
         [
             .backgroundPrimary,
             .backgroundSecondary,
             .backgroundSurfacePrimary,
             .backgroundSurfaceSecondary,
 
-            .secondary,
-            .secondaryHighlight,
-            .secondaryDisabled,
+            .satsSecondary,
+            .satsSecondaryHighlight,
+            .satsSecondaryDisabled,
 
             .clean,
             .cleanHighlight,
@@ -101,9 +102,9 @@ class ColorsTests: XCTestCase {
             .onSurfaceSecondary,
             .onSurfaceDisabled,
 
-            .primary,
-            .primaryHighlight,
-            .primaryDisabled,
+            .satsPrimary,
+            .satsPrimaryHighlight,
+            .satsPrimaryDisabled,
 
             .navigation,
 
