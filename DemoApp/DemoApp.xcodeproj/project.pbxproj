@@ -362,10 +362,10 @@
 		9BD54AD52ADE947400DC63D9 /* ci_scripts */ = {
 			isa = PBXGroup;
 			children = (
-				9BD54AD62ADE947400DC63D9 /* set_changelog.sh */,
-				9BD54AD72ADE947400DC63D9 /* ci_pre_xcodebuild.sh */,
-				9BD54AD82ADE947400DC63D9 /* set_version.sh */,
 				9BD54AD92ADE947400DC63D9 /* ci_post_clone.sh */,
+				9BD54AD72ADE947400DC63D9 /* ci_pre_xcodebuild.sh */,
+				9BD54AD62ADE947400DC63D9 /* set_changelog.sh */,
+				9BD54AD82ADE947400DC63D9 /* set_version.sh */,
 			);
 			path = ci_scripts;
 			sourceTree = SOURCE_ROOT;
