@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public extension SATSButton {
     /// Specifies a visual theme of the button
     struct Style: Equatable {
@@ -107,3 +108,4 @@ public extension SATSButton.Style {
         backgroundColorDisabled: .ctaDisabled
     )
 }
+#endif

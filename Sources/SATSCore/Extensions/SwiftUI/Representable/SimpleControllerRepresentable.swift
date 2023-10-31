@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 /// A way to wrap a UIView controller quickly for swiftUI
 public struct SimpleControllerRepresentable<ViewController: UIViewController>: UIViewControllerRepresentable {
     let factory: () -> ViewController
@@ -25,3 +26,4 @@ public struct SimpleControllerRepresentable<ViewController: UIViewController>: U
 
     public func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
 }
+#endif

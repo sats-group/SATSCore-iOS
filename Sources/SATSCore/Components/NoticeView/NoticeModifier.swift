@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 /// Internal modifier, it should only be used via the `View.inlineNotice` method
 struct NoticeModifier: ViewModifier {
     @Binding var notice: Notice?
@@ -86,3 +87,4 @@ public extension View {
         modifier(NoticeModifier(notice: notice, edge: edge))
     }
 }
+#endif

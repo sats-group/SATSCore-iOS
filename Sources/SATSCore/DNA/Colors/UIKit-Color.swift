@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public extension UIColor {
     static var primary: UIColor { color(.primary) }
     static var primaryHighlight: UIColor { color(.primaryHighlight) }
@@ -158,3 +159,4 @@ public extension UIColor {
         return color
     }
 }
+#endif

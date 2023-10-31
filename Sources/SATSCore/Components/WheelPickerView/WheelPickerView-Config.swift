@@ -1,5 +1,6 @@
 import CoreGraphics
 
+#if os(iOS)
 public extension WheelPickerView {
     struct WheelConfig {
         /// The minimum value the picker will allow
@@ -73,3 +74,4 @@ public extension WheelPickerView.WheelConfig {
         )
     }
 }
+#endif

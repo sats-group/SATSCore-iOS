@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 public struct ModernErrorView: View {
     let viewData: ErrorViewData
     var onRetry: (() async -> Void)?
@@ -92,3 +93,4 @@ struct ModernErrorView_Previews: PreviewProvider {
         }
     }
 }
+#endif

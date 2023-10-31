@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "7890582D-E979-4B5B-A1F1-F36F121FDC92",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "SATSCoreTests",
+        "name" : "SATSCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}

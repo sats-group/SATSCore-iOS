@@ -1,5 +1,6 @@
 import SwiftUI
 
+#if os(iOS)
 public struct NoticeView: View {
     let notice: Notice
     let onTap: (() -> Void)?
@@ -66,3 +67,4 @@ public struct NoticeView: View {
         .foregroundColor(.onSurfaceSecondary)
     }
 }
+#endif

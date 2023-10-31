@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public class RoundLoadingView: UIView {
     // MARK: Private properties
 
@@ -102,3 +103,4 @@ public class RoundLoadingView: UIView {
         trackColor = color.withAlphaComponent(0.1)
     }
 }
+#endif

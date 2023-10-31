@@ -1,5 +1,6 @@
 import UIKit
 
+#if os(iOS)
 public class SATSButton: UIButton {
     // MARK: Initializers
 
@@ -114,3 +115,4 @@ public class SATSButton: UIButton {
         imageView?.alpha = 1
     }
 }
+#endif
