@@ -103,7 +103,9 @@ public struct Notice {
         title: String? = nil,
         message: String,
         autoDismiss: Bool = true,
-        includeHaptic: Bool = true
+        includeHaptic: Bool = true,
+        actionTitle: String? = nil,
+        action: (() -> Void)? = nil
     ) -> Notice {
         Notice(
             icon: Image(systemName: "exclamationmark.triangle"),
@@ -111,7 +113,9 @@ public struct Notice {
             message: message,
             autoDismiss: autoDismiss,
             tintColor: .signalWarning,
-            hapticType: includeHaptic ? .warning : nil
+            hapticType: includeHaptic ? .warning : nil,
+            actionTitle: actionTitle,
+            action: action
         )
     }
 
