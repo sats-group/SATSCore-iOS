@@ -29,8 +29,10 @@ struct PrimitiveColorsView: View {
                         Text(colorPrimitive.name)
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .leading)
+                            .contentShape(Rectangle())
                             .gridColumnAlignment(.leading)
                     }
+                    .contentShape(Rectangle())
                     .contextMenu(ContextMenu(menuItems: {
                         Button("Copy Hex", action: {
                             UIPasteboard.general.string = colorPrimitive.rawValue
@@ -44,6 +46,7 @@ struct PrimitiveColorsView: View {
                     }))
                 }
             }
+            .inlineNotice($notice, edge: .bottom)
             .padding(.horizontal, .spacingM)
         }
     }

@@ -17,8 +17,11 @@ struct ColorDemoView: View {
                 .tabItem { Text("Primitives") }
                 .tag(1)
         }
-        .listStyle(.insetGrouped)
-        .searchable(text: $searchName, prompt: Text("Search by color name or hex code"))
+        .searchable(
+            text: $searchName,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: Text("Search by color name or hex code")
+        )
         .safeAreaInset(edge: .top, content: {
             Picker("Section", selection: $list) {
                 Text("Semantic").tag(0)

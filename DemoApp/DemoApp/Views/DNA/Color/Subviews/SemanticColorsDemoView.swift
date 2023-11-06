@@ -43,7 +43,6 @@ class SemanticColorsDemoViewModel: ObservableObject {
 
 struct SemanticColorsDemoView: View {
     @StateObject var viewModel: SemanticColorsDemoViewModel = .init()
-    @Environment(\.horizontalSizeClass) var horizontalSize // TODO
     @Binding var searchName: String
 
     var body: some View {
