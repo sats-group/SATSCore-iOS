@@ -6,7 +6,9 @@ struct ContentView: View {
             List {
                 Section(header: Text("DNA")) {
                     NavigationLink("Fonts", destination: SwiftUIFontsDemoView())
-                    NavigationLink("Colors", destination: ColorDemoView())
+                    if #available(iOS 16.0, *) {
+                        NavigationLink("Colors", destination: ColorDemoView())
+                    }
                     NavigationLink("Spacing", destination: SpacingDemoView())
                     NavigationLink("Corner Radius", destination: CornerRadiusDemoView())
                 }
