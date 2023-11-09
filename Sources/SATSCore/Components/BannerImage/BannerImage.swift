@@ -26,7 +26,7 @@ public struct BannerImage: View {
                             .aspectRatio(contentMode: .fill)
                     }
                 } else {
-                    Color.shimmer
+                    Color.skeleton
                 }
             }
             .frame(width: proxy.size.width)
@@ -46,7 +46,7 @@ public struct BannerImage: View {
             .textCase(.uppercase)
             .padding(.spacingXXS)
             .drawingGroup()
-            .foregroundColor(.onPrimary)
+            .foregroundColor(.onPrimaryButton)
             .multilineTextAlignment(.center)
             .padding(.spacingM)
             .frame(maxWidth: .readableWidthM, alignment: .center)

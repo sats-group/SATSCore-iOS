@@ -8,13 +8,13 @@ public class RoundLoadingView: UIView {
     private var trackLayer = CAShapeLayer()
     private var isAnimating = false
 
-    private var progressColor: UIColor = .onPrimary {
+    private var progressColor: UIColor = .onPrimaryButton {
         didSet {
             progressLayer.strokeColor = progressColor.cgColor
         }
     }
 
-    private var trackColor: UIColor = UIColor.onPrimary.withAlphaComponent(0.1) {
+    private var trackColor: UIColor = UIColor.onPrimaryButton.withAlphaComponent(0.1) {
         didSet {
             trackLayer.strokeColor = trackColor.cgColor
         }

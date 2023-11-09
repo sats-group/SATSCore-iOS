@@ -20,7 +20,7 @@ public extension SATSCell {
             @ViewBuilder action: () -> ActionView = SATSCell.SystemChevron.init,
             includeDivider: Bool = true,
             onClick: (() -> Void)? = nil,
-            backgroundColor: Color = .backgroundSurfacePrimary
+            backgroundColor: Color = .surfacePrimary
         ) {
             self.icon = icon()
             self.title = title

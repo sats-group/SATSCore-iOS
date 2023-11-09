@@ -45,7 +45,7 @@ public struct WheelPickerView: View {
 
     private var backgroundCircle: some View {
         Circle()
-            .fill(Color.backgroundSurfacePrimary)
+            .fill(Color.surfacePrimary)
             .frame(width: config.radius * 2, height: config.radius * 2)
             .scaleEffect(1.1)
     }

@@ -50,7 +50,7 @@ Color.backgroundSecondary
 Color.buttonPrimary
 Color.onPrimary // text or icons on top of button primary color
 Color.selection
-Color.waitlist
+Color.waitingListButton
 // etc.
 ```
 

@@ -9,7 +9,7 @@ extension DatePickerView {
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, .spacingXXS)
                 .satsFont(.small, weight: .emphasis)
-                .foregroundColor(.onSurfaceDisabled)
+                .foregroundColor(.onSurfacePrimaryDisabled)
         }
     }
 }

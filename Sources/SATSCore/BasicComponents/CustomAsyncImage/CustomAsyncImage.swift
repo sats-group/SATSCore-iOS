@@ -63,7 +63,7 @@ public struct CustomAsyncImage<Output: View>: View {
 
     var placeholder: some View {
         Rectangle()
-            .foregroundColor(.shimmer)
+            .foregroundColor(.skeleton)
     }
 }
 

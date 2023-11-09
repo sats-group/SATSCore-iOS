@@ -28,7 +28,7 @@ extension DatePickerView {
                     if day.isOutsideOfRange {
                         DayView(
                             day: helper.dateNotZeroPrefixed(date: day.date),
-                            textColor: .onSurfaceDisabled,
+                            textColor: .onSurfacePrimaryDisabled,
                             backgroundColor: .clear
                         )
                     } else {

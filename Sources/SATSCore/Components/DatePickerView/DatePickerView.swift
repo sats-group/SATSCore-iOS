@@ -45,7 +45,7 @@ public struct DatePickerView: View {
             }
         }
         .padding(.vertical, .spacingM)
-        .background(Color.backgroundSurfacePrimary)
+        .background(Color.surfacePrimary)
         .overlay(toggleViewButtonContainer)
         .foregroundColor(.onSurfacePrimary)
         .satsFont(.small)
@@ -62,7 +62,7 @@ public struct DatePickerView: View {
                     .padding(.spacingM)
                     .background(
                         Circle()
-                            .foregroundColor(.backgroundSurfacePrimary)
+                            .foregroundColor(.surfacePrimary)
                             .shadow(radius: 1)
                             .frame(size: toggleButtonHeight)
                     )
@@ -70,7 +70,7 @@ public struct DatePickerView: View {
             }
             .background(
                 Circle()
-                    .foregroundColor(.backgroundSurfacePrimary)
+                    .foregroundColor(.surfacePrimary)
                     .frame(size: toggleButtonHeight)
             )
             .offset(x: 0, y: toggleButtonHeight / 2)

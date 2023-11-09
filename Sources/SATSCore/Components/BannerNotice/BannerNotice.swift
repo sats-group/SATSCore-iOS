@@ -36,7 +36,7 @@ public struct BannerNotice: View {
         HStack(spacing: .spacingXS) {
             Text(viewData.message)
                 .satsFont(.basic)
-                .foregroundColor(.onPrimary)
+                .foregroundColor(.onPrimaryButton)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -45,7 +45,7 @@ public struct BannerNotice: View {
         .padding(.horizontal, .spacingM)
         .padding(.vertical, .spacingXS)
         .frame(maxWidth: .infinity, minHeight: 56)
-        .background(Color.satsPrimary)
+        .background(Color.primaryButton)
     }
 
     @ViewBuilder

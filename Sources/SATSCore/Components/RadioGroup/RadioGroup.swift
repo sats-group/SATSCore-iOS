@@ -45,7 +45,7 @@ extension RadioGroup {
     struct RadioButton: View {
         let isSelected: Bool
 
-        private var fill: Color { isSelected ? .onBackgroundEnabledOn : .graphicalElements1 }
+        private var fill: Color { isSelected ? .selectorSelected : .selectorUnselected }
         private var lineWidth: CGFloat = 2
 
         init(isSelected: Bool) {
@@ -93,8 +93,5 @@ struct RadioGroup_Previews: PreviewProvider {
 
     static var previews: some View {
         Demo()
-
-        Demo()
-            .preferredColorScheme(.dark)
     }
 }

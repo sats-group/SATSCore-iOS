@@ -18,7 +18,7 @@ public struct NoticeView: View {
             actionButton
         }
         .padding(16)
-        .background(Color.backgroundSurfacePrimary)
+        .background(Color.surfacePrimary)
         .cornerRadius(8)
         .padding(8)
         .onTapGesture(perform: performTap)

@@ -18,9 +18,9 @@ public extension TagViewData {
 }
 
 public extension TagViewData.Style {
-    static let primary: Self = .init(background: .satsPrimary, foreground: .onPrimary)
-    static let secondary: Self = .init(background: .satsSecondary, foreground: .onSecondary)
-    static let coral: Self = .init(background: .cta, foreground: .onCta)
+    static let primary: Self = .init(background: .tagPrimary, foreground: .onTagPrimary)
+    static let secondary: Self = .init(background: .tagSecondary, foreground: .onTagSecondary)
+    static let coral: Self = .init(background: .tagFeatured, foreground: .onTagFeatured)
 }
 
 public struct Tag: View {

@@ -4,11 +4,11 @@ import UIKit
 private extension SATSButton.Style {
     static let error = SATSButton.Style(
         name: "Error",
-        titleColor: .onSignal,
-        titleColorDisabled: .onPrimaryDisabled,
+        titleColor: .onSurfaceFixed,
+        titleColorDisabled: .onPrimaryButtonDisabled,
         backgroundColor: .signalError,
         backgroundColorHighlighted: UIColor.signalError.withAlphaComponent(0.8),
-        backgroundColorDisabled: .primaryDisabled
+        backgroundColorDisabled: .primaryButtonDisabled
     )
 }
 #endif

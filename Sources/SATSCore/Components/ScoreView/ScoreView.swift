@@ -6,8 +6,8 @@ public struct ScoreView: View {
     let title: String
     let score: Int
 
-    private let offColor = Color.onBackgroundDisabledOff
-    private let onColor = Color.onBackgroundEnabledOn
+    private let offColor = Color.progressBarBackground
+    private let onColor = Color.progressBarIndicator
     private let maxScore: Int
 
     public init(title: String, score: Int, maxScore: Int = 4) {
@@ -24,7 +24,7 @@ public struct ScoreView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text(title)
                 .satsFont(.basic)
-                .foregroundColor(.onSecondary)
+                .foregroundColor(.onBackgroundPrimaryAlternate)
 
             Rectangle()
                 .frame(height: 8)

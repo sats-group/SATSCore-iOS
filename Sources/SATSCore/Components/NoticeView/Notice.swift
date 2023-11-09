@@ -160,7 +160,7 @@ public struct Notice {
             title: title,
             message: message,
             autoDismiss: autoDismiss,
-            tintColor: .graphicalElements1,
+            tintColor: .iconSecondary,
             hapticType: includeHaptic ? .success : nil
         )
     }

@@ -70,11 +70,11 @@ public struct ModernErrorView: View {
 
     private let errorStyle: SATSButton.Style = .init(
         name: "ModernError",
-        titleColor: .onSignal,
-        titleColorDisabled: .onPrimaryDisabled,
+        titleColor: .onSurfaceFixed,
+        titleColorDisabled: .onPrimaryButtonDisabled,
         backgroundColor: .signalError,
         backgroundColorHighlighted: UIColor.signalError.withAlphaComponent(0.8),
-        backgroundColorDisabled: .primaryDisabled
+        backgroundColorDisabled: .primaryButtonDisabled
     )
 }
 

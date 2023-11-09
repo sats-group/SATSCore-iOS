@@ -69,10 +69,10 @@ public class DatePickerHelper {
 
     func circleBackgroundColor(date: Date, isSelected: Bool) -> Color {
         if isSelected {
-            return .satsPrimary
+            return .primaryButton
         }
         if isToday(date: date) {
-            return .satsPrimaryDisabled
+            return .primaryButtonDisabled
         }
         return .clear
     }
@@ -87,12 +87,12 @@ public class DatePickerHelper {
 
     func dateTextColor(date: Date, isSelected: Bool, isActive: Bool) -> Color {
         if isSelected {
-            return .onPrimary
+            return .onPrimaryButton
         }
         if isActive {
             return .onSurfacePrimary
         }
-        return .onSurfaceDisabled
+        return .onSurfacePrimaryDisabled
     }
 
     func getWeek(for date: Date) -> [Date] {

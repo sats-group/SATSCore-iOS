@@ -9,7 +9,7 @@ public struct RewardsTag: View {
 
     public var body: some View {
         Text(level.rawValue)
-            .foregroundStyle(Color.onRewards)
+            .foregroundStyle(Color.onReward)
             .textCase(.uppercase)
             .satsFont(.small)
             .padding(.vertical, .spacingXXS)
