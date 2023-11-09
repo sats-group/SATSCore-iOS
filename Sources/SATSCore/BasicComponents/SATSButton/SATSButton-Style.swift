@@ -69,7 +69,7 @@ public extension SATSButton.Style {
     static let primary = SATSButton.Style(
         name: "Primary",
         titleColor: .onPrimaryButton,
-        titleColorDisabled: .onPrimaryDisabled,
+        titleColorDisabled: .onPrimaryButtonDisabled,
         backgroundColor: .primaryButton,
         backgroundColorHighlighted: .primaryButtonHighlight,
         backgroundColorDisabled: .primaryButtonDisabled
@@ -79,12 +79,12 @@ public extension SATSButton.Style {
         name: "Secondary",
         titleColor: .onSecondaryButton,
         titleColorHighlight: .onSecondaryButton,
-        titleColorDisabled: .onSecondaryDisabled,
+        titleColorDisabled: .onSecondaryButtonDisabled,
         backgroundColor: .backgroundPrimary,
         backgroundColorHighlighted: .secondaryButtonHighlight,
         backgroundColorDisabled: .backgroundPrimary,
         borderColor: .onSecondaryButton,
-        borderColorDisabled: .onSecondaryDisabled
+        borderColorDisabled: .onSecondaryButtonDisabled
     )
 
     static let tertiary = SATSButton.Style(

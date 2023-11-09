@@ -53,7 +53,7 @@ public struct WheelPickerView: View {
     private var ticks: some View {
         Circle()
             .stroke(
-                Color.graphicalElements3,
+                Color.progressBarBackground,
                 style: .init(
                     lineWidth: config.sizeOfTicks,
                     lineCap: .round,
@@ -67,7 +67,7 @@ public struct WheelPickerView: View {
         Circle()
             .trim(from: 0.0, to: CGFloat(value) / config.totalValue)
             .stroke(
-                Color.graphicalElements5,
+                Color.progressBarIndicator,
                 style: .init(
                     lineWidth: lineWidth(),
                     lineCap: .round
@@ -80,7 +80,7 @@ public struct WheelPickerView: View {
 
     private var knob: some View {
         Circle()
-            .fill(Color.graphicalElements5)
+            .fill(Color.progressBarIndicator)
             .frame(width: config.knobRadius * 2, height: config.knobRadius * 2)
             .padding(knobPadding)
             .offset(y: -config.radius)

@@ -19,7 +19,7 @@ struct DatePickerDemoView: View {
             }
 
             Rectangle()
-                .foregroundColor(.border)
+                .foregroundColor(.divider)
                 .frame(height: 1)
 
             Spacer()

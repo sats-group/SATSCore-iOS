@@ -72,7 +72,7 @@ public extension SATSCell {
         @ViewBuilder var divider: some View {
             if includeDivider {
                 Divider()
-                    .background(Color.border)
+                    .background(Color.divider)
             }
         }
     }
