@@ -18,7 +18,7 @@ struct SpacingDemoView: View {
             }
             Spacer()
         }
-        .background(Color.backgroundSurfacePrimary)
+        .background(Color.surfacePrimary)
         .navigationTitle("Spacing")
     }
 

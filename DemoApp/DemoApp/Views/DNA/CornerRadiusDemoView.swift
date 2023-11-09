@@ -10,7 +10,7 @@ struct CornerRadiusDemoView: View {
             content(title: "cornerRadiusL", cornerRadius: .cornerRadiusL)
             Spacer()
         }
-        .background(Color.backgroundSurfacePrimary)
+        .background(Color.surfacePrimary)
         .navigationTitle("CornerRadius")
     }
 

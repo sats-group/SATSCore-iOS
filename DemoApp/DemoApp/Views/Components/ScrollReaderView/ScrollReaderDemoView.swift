@@ -6,7 +6,7 @@ struct ScrollViewOffsetReaderDemoView: View {
     var body: some View {
         ScrollViewOffsetReader(scrollValue: $scrollValue) {
             Rectangle()
-                .foregroundColor(.shimmer)
+                .foregroundColor(.skeleton)
                 .overlay(
                     VStack {
                         Text("Top").bold()
