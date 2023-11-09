@@ -250,6 +250,6 @@ extension Color {
 
 private extension Color {
     static func satsColor(for colorName: SATSColorName) -> Color {
-        SATSColor.definition(for: colorName).color
+        colorName.definition.color
     }
 }

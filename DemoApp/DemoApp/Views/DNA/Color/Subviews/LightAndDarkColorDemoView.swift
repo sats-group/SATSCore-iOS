@@ -1,13 +1,11 @@
 import SwiftUI
-// I'm using some internal types of the library for the demo
-// that shouldn't be exposed in the library as public types
-@testable import SATSCore
+import SATSCore
 
 struct LightAndDarkColorDemoView: View {
     let color: SATSColorName
 
     var definition: SemanticColorDefinition {
-        SATSColor.definition(for: color)
+        color.definition
     }
 
     var body: some View {

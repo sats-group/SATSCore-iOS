@@ -1,7 +1,5 @@
 import SwiftUI
-// I'm using some internal types of the library for the demo
-// that shouldn't be exposed in the library as public types
-@testable import SATSCore
+import SATSCore
 
 class SemanticColorsDemoViewModel: ObservableObject {
     @Published var colorNames: [SATSColorName] = SATSColorName.allCases
@@ -16,7 +14,7 @@ class SemanticColorsDemoViewModel: ObservableObject {
         let fixedSearch = searchText.lowercased()
 
         colorNames = SATSColorName.allCases.filter { colorName in
-            let definition = SATSColor.definition(for: colorName)
+            let definition = colorName.definition
 
             return colorName.rawValue.lowercased().contains(fixedSearch) ||
                 definition.light.rawValue.lowercased().contains(fixedSearch) ||
@@ -25,13 +23,13 @@ class SemanticColorsDemoViewModel: ObservableObject {
     }
 
     func copyLightHex(for colorName: SATSColorName) {
-        let definition = SATSColor.definition(for: colorName)
+        let definition = colorName.definition
         UIPasteboard.general.string = definition.light.rawValue
         notice = .success(message: "\(definition.light.rawValue) copied to your clipboard")
     }
 
     func copyDarkHex(for colorName: SATSColorName) {
-        let definition = SATSColor.definition(for: colorName)
+        let definition = colorName.definition
         UIPasteboard.general.string = definition.dark.rawValue
         notice = .success(message: "\(definition.dark.rawValue) copied to your clipboard")
     }
@@ -42,8 +40,8 @@ class SemanticColorsDemoViewModel: ObservableObject {
     }
 
     func copyFullDescription(for colorName: SATSColorName) {
-        let definition = SATSColor.definition(for: colorName)
-        UIPasteboard.general.string = "\(colorName) = [light: \(definition.light)][dark: \(definition.dark)]"
+        let definition = colorName.definition
+        UIPasteboard.general.string = "\(colorName) = \(definition.debugDescription)"
         notice = .success(message: "\(colorName)'s description copied")
     }
 }

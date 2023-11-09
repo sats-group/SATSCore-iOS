@@ -250,6 +250,6 @@ extension UIColor {
 
 private extension UIColor {
     static func satsColor(for colorName: SATSColorName) -> UIColor {
-        SATSColor.definition(for: colorName).uiColor
+        colorName.definition.uiColor
     }
 }

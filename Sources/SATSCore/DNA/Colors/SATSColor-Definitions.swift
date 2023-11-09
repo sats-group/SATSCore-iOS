@@ -249,13 +249,3 @@ extension SATSColor {
         .onSignalSurfaceNeutralAlternate: .init(light: .black60, dark: .black40),
     ]
 }
-
-extension SATSColor {
-    static func definition(for colorName: SATSColorName) -> SemanticColorDefinition {
-        guard let definition = SATSColor.definitions[colorName] else {
-            fatalError("❌ no color definition for \(colorName) found")
-        }
-
-        return definition
-    }
-}

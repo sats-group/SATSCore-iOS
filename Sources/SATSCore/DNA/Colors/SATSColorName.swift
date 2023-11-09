@@ -245,3 +245,13 @@ public enum SATSColorName: String, CaseIterable {
     case onSignalSurfaceNeutral
     case onSignalSurfaceNeutralAlternate
 }
+
+extension SATSColorName {
+    public var definition: SemanticColorDefinition {
+        guard let definition = SATSColor.definitions[self] else {
+            fatalError("❌ no color definition for \(self) found")
+        }
+
+        return definition
+    }
+}
