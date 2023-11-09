@@ -86,6 +86,15 @@ public extension SATSButton.Style {
         borderColor: .onSecondary,
         borderColorDisabled: .onSecondaryDisabled
     )
+
+    static let tertiary = SATSButton.Style(
+        name: "Tertiary",
+        titleColor: .action,
+        titleColorHighlight: .action.withAlphaComponent(0.3),
+        titleColorDisabled: .actionDisabled,
+        backgroundColor: .clear,
+        backgroundColorHighlighted: .clear,
+        backgroundColorDisabled: .clear
     )
 
     static let clean = SATSButton.Style(
