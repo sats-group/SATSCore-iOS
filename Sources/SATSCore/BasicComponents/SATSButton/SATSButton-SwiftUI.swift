@@ -43,7 +43,7 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
             label.frame(maxWidth: .infinity, alignment: .center)
         })
         .background(backgroundColor(for: configuration))
-        .foregroundColor(textColor)
+        .foregroundColor(textColor(for: configuration))
         .cornerRadius(.cornerRadiusS)
         .overlay(borderOverlay)
     }
@@ -55,7 +55,6 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
         configuration
             .label
             .satsFont(.button, weight: .emphasis)
-            .textCase(.uppercase)
     }
 
     var spinner: some View {
@@ -63,13 +62,20 @@ private struct SATSButtonSwiftUIStyle: ButtonStyle {
             loadingView.setLoaderColor(color: style.titleColor)
             loadingView.startAnimating()
         }
-        .frame(width: 20, height: 20, alignment: .center)
+        .frame(size: 20, alignment: .center)
     }
 
     // MARK: Private methods
 
-    private var textColor: Color {
-        Color(isEnabled ? style.titleColor : style.titleColorDisabled)
+    private func textColor(for configuration: Configuration) -> Color {
+        let highlightColor = style.titleColorHighlight ?? style.titleColor
+        return if isEnabled {
+            Color(
+                configuration.isPressed ? highlightColor : style.titleColor
+            )
+        } else {
+            Color(style.titleColorDisabled)
+        }
     }
 
     private var borderColor: Color? {
