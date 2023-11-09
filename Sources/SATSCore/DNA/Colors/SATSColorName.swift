@@ -60,8 +60,8 @@ public enum SATSColorName: String, CaseIterable {
 
     case graphBarPrimary
     case graphBarSecondary
-    case graphBackgroundPrimary
-    case graphBackgroundSecondary
+    case graphBarBackgroundPrimary
+    case graphBarBackgroundSecondary
     case graphUpwardsTrend
     case graphNeutralTrend
     case graphDownwardsTrend

@@ -61,8 +61,8 @@ extension Color {
 
     public static var graphBarPrimary: Color { satsColor(for: .graphBarPrimary) }
     public static var graphBarSecondary: Color { satsColor(for: .graphBarSecondary) }
-    public static var graphBackgroundPrimary: Color { satsColor(for: .graphBackgroundPrimary) }
-    public static var graphBackgroundSecondary: Color { satsColor(for: .graphBackgroundSecondary) }
+    public static var graphBarBackgroundPrimary: Color { satsColor(for: .graphBarBackgroundPrimary) }
+    public static var graphBarBackgroundSecondary: Color { satsColor(for: .graphBarBackgroundSecondary) }
     public static var graphUpwardsTrend: Color { satsColor(for: .graphUpwardsTrend) }
     public static var graphNeutralTrend: Color { satsColor(for: .graphNeutralTrend) }
     public static var graphDownwardsTrend: Color { satsColor(for: .graphDownwardsTrend) }

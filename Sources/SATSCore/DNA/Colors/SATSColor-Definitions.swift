@@ -63,8 +63,8 @@ extension SATSColor {
 
         .graphBarPrimary: .init(light: .satsCoral100, dark: .satsCoral90),
         .graphBarSecondary: .init(light: .satsBlue40, dark: .satsBlue40),
-        .graphBackgroundPrimary: .init(light: .satsLightGray15, dark: .black80),
-        .graphBackgroundSecondary: .init(light: .satsBlue5, dark: .black70),
+        .graphBarBackgroundPrimary: .init(light: .satsLightGray15, dark: .black80),
+        .graphBarBackgroundSecondary: .init(light: .satsBlue5, dark: .black70),
         .graphUpwardsTrend: .init(light: .springGreen80, dark: .springGreen80),
         .graphNeutralTrend: .init(light: .satsCoral40, dark: .satsCoral130),
         .graphDownwardsTrend: .init(light: .cardinal100, dark: .cardinal100),
