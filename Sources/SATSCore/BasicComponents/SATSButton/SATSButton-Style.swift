@@ -7,6 +7,7 @@ public extension SATSButton {
         public let name: String
 
         public let titleColor: UIColor
+        public let titleColorHighlight: UIColor?
         public let titleColorDisabled: UIColor
 
         public let backgroundColor: UIColor
@@ -19,6 +20,7 @@ public extension SATSButton {
         public init(
             name: String,
             titleColor: UIColor,
+            titleColorHighlight: UIColor? = nil,
             titleColorDisabled: UIColor,
             backgroundColor: UIColor,
             backgroundColorHighlighted: UIColor,
@@ -28,6 +30,7 @@ public extension SATSButton {
         ) {
             self.name = name
             self.titleColor = titleColor
+            self.titleColorHighlight = titleColorHighlight
             self.titleColorDisabled = titleColorDisabled
 
             self.backgroundColor = backgroundColor
