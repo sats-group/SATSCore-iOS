@@ -51,7 +51,7 @@ struct SATSButtonDemoContainer<Content: View>: View {
                     }
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.satsPrimary)
+                    .background(Color.backgroundFixed)
 
                     demoButton(.cta)
                 }
@@ -79,11 +79,11 @@ struct SATSButtonDemoContainer<Content: View>: View {
                     .pickerStyle(SegmentedPickerStyle())
                 }
                 .padding()
-                .background(Color.backgroundSurfacePrimary)
+                .background(Color.surfacePrimary)
                 .cornerRadius(.cornerRadiusM)
                 .overlay(
                     RoundedRectangle(cornerRadius: .cornerRadiusM)
-                        .stroke(Color.border, lineWidth: 1)
+                        .stroke(Color.divider, lineWidth: 1)
                 )
                 .padding()
             }
