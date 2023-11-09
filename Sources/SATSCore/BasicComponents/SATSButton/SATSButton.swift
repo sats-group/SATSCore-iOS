@@ -29,11 +29,6 @@ public class SATSButton: UIButton {
         didSet { updateSize() }
     }
 
-    /// Specifies the spacing between the image and title.
-    public var contentSpacing: CGFloat = 0 {
-        didSet { updateSize() }
-    }
-
     // MARK: UIButton overrides
 
     public override var isHighlighted: Bool {
@@ -50,8 +45,17 @@ public class SATSButton: UIButton {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
-
         layer.cornerRadius = .cornerRadiusS
+    }
+
+    public override func setTitle(_ title: String?, for state: UIControl.State) {
+        if let title {
+            var titleContainer = AttributeContainer()
+            titleContainer.font = SATSFont.font(style: .button, weight: .emphasis)
+            configuration?.attributedTitle = AttributedString(title, attributes: titleContainer)
+        } else {
+            super.setTitle(title, for: state)
+        }
     }
 
     // MARK: Views
@@ -67,27 +71,42 @@ public class SATSButton: UIButton {
     private func setup() {
         clipsToBounds = true
 
-        titleLabel?.font = SATSFont.font(style: .button, weight: .emphasis)
-
-        updateStyle()
+        self.configuration = styleConfiguration()
         updateSize()
+        updateStyle()
     }
 
     private func updateStyle() {
-        backgroundColor = style.backgroundColor(forState: state)
+        guard var background = configuration?.background else { return }
 
-        setTitleColor(style.titleColor, for: .normal)
-        setTitleColor(style.titleColorDisabled, for: .disabled)
+        background.strokeColor = style.borderColor
+        background.strokeWidth = style.borderColor != nil ? 1 : 0
+        background.cornerRadius = .cornerRadiusS
+
+        configuration?.background = background
+        configuration?.baseBackgroundColor = style.backgroundColor
+        configuration?.baseForegroundColor = style.titleColor
+
         loaderView.setLoaderColor(color: style.titleColor)
     }
 
     private func updateSize() {
-        contentEdgeInsets = size.adjustContentInsets(with: contentSpacing)
-        imageEdgeInsets = size.imageEdgeInsets
-        titleEdgeInsets = UIEdgeInsets(vertical: 0, horizontal: contentSpacing)
+        configuration?.buttonSize = size == .large ? .large : .medium
+
+        configuration?.imagePadding = size.imagePaddding
+        configuration?.titlePadding = 0
+        configuration?.contentInsets = size.contentEdgeInsets
 
         setContentHuggingPriority(size.contentHuggingPriority, for: .horizontal)
         setContentHuggingPriority(size.contentHuggingPriority, for: .vertical)
+    }
+
+    private func styleConfiguration() -> UIButton.Configuration {
+        switch style {
+        case .tertiary: .plain()
+        case .secondary: .bordered()
+        default: .filled()
+        }
     }
 
     // MARK: Public methods

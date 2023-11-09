@@ -7,6 +7,7 @@ public extension SATSButton {
         public let name: String
 
         public let titleColor: UIColor
+        public let titleColorHighlight: UIColor?
         public let titleColorDisabled: UIColor
 
         public let backgroundColor: UIColor
@@ -19,6 +20,7 @@ public extension SATSButton {
         public init(
             name: String,
             titleColor: UIColor,
+            titleColorHighlight: UIColor? = nil,
             titleColorDisabled: UIColor,
             backgroundColor: UIColor,
             backgroundColorHighlighted: UIColor,
@@ -28,6 +30,7 @@ public extension SATSButton {
         ) {
             self.name = name
             self.titleColor = titleColor
+            self.titleColorHighlight = titleColorHighlight
             self.titleColorDisabled = titleColorDisabled
 
             self.backgroundColor = backgroundColor
@@ -75,10 +78,23 @@ public extension SATSButton.Style {
     static let secondary = SATSButton.Style(
         name: "Secondary",
         titleColor: .onSecondary,
+        titleColorHighlight: .onPrimary,
         titleColorDisabled: .onSecondaryDisabled,
-        backgroundColor: .secondary,
-        backgroundColorHighlighted: .secondaryHighlight,
-        backgroundColorDisabled: .secondaryDisabled
+        backgroundColor: .backgroundPrimary,
+        backgroundColorHighlighted: .primary,
+        backgroundColorDisabled: .backgroundPrimary,
+        borderColor: .onSecondary,
+        borderColorDisabled: .onSecondaryDisabled
+    )
+
+    static let tertiary = SATSButton.Style(
+        name: "Tertiary",
+        titleColor: .action,
+        titleColorHighlight: .action.withAlphaComponent(0.3),
+        titleColorDisabled: .actionDisabled,
+        backgroundColor: .clear,
+        backgroundColorHighlighted: .clear,
+        backgroundColorDisabled: .clear
     )
 
     static let clean = SATSButton.Style(

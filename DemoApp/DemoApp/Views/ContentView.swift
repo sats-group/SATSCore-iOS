@@ -15,11 +15,11 @@ struct ContentView: View {
 
                 Section(header: Text("UIKit Basics")) {
                     NavigationLink("SATSLabel", destination: SATSLabelDemoView())
-                    NavigationLink("SATSButton", destination: SATSButtonDemoView())
+                    NavigationLink("SATSButton", destination: SATSButtonDemoView_UIKit())
                 }
 
                 Section(header: Text("SwiftUI Basics")) {
-                    NavigationLink("Button Styles", destination: SATSButtonSwftUIDemoView())
+                    NavigationLink("Button Styles", destination: SATSButtonDemoView_SwiftUI())
                     NavigationLink("Custom Async Image", destination: CustomAsyncDemoView())
                     NavigationLink("SATSCell", destination: SATSCellDemoView())
                 }
