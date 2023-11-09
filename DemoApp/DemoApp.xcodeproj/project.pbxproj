@@ -18,11 +18,15 @@
 		9B2BFBDE25B719AD00383193 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBDD25B719AD00383193 /* Assets.xcassets */; };
 		9B2BFBE125B719AD00383193 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B2BFBE025B719AD00383193 /* Preview Assets.xcassets */; };
 		9B2E8065266649E4000A657D /* ErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2E8064266649E4000A657D /* ErrorDemoView.swift */; };
+		9B52E8D82AF83A8F0085D6C4 /* SemanticColorsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52E8D72AF83A8F0085D6C4 /* SemanticColorsDemoView.swift */; };
+		9B52E8DA2AF83BBE0085D6C4 /* PrimitiveColorsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52E8D92AF83BBE0085D6C4 /* PrimitiveColorsDemoView.swift */; };
+		9B52E8DF2AF83CA00085D6C4 /* LightAndDarkColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52E8DE2AF83CA00085D6C4 /* LightAndDarkColorDemoView.swift */; };
+		9B52E8E12AF83D0F0085D6C4 /* SingleColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B52E8E02AF83D0F0085D6C4 /* SingleColorDemoView.swift */; };
 		9B57208C26738BF100D12109 /* ScoreDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B57208B26738BF100D12109 /* ScoreDemoView.swift */; };
+		9B6AB63E2AF4EA6F002D57DD /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6AB63D2AF4EA6F002D57DD /* ColorDemoView.swift */; };
 		9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6BC4F126E8F38700650862 /* NoticeDemoView.swift */; };
 		9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */; };
 		9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */; };
-		9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B86614625CD7AB40040F8CA /* ColorDemoView.swift */; };
 		9B9633A226DCD37E00656D61 /* DemoAssetName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A126DCD37E00656D61 /* DemoAssetName.swift */; };
 		9B9633A426DCD39F00656D61 /* DemoAssetNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9633A326DCD39F00656D61 /* DemoAssetNameTests.swift */; };
 		9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */; };
@@ -66,12 +70,16 @@
 		9B2BFBE225B719AD00383193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B2BFBF125B71A2800383193 /* SatsCore */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SatsCore; path = ..; sourceTree = "<group>"; };
 		9B2E8064266649E4000A657D /* ErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDemoView.swift; sourceTree = "<group>"; };
+		9B52E8D72AF83A8F0085D6C4 /* SemanticColorsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemanticColorsDemoView.swift; sourceTree = "<group>"; };
+		9B52E8D92AF83BBE0085D6C4 /* PrimitiveColorsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimitiveColorsDemoView.swift; sourceTree = "<group>"; };
+		9B52E8DE2AF83CA00085D6C4 /* LightAndDarkColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightAndDarkColorDemoView.swift; sourceTree = "<group>"; };
+		9B52E8E02AF83D0F0085D6C4 /* SingleColorDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleColorDemoView.swift; sourceTree = "<group>"; };
 		9B57208B26738BF100D12109 /* ScoreDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDemoView.swift; sourceTree = "<group>"; };
+		9B6AB63D2AF4EA6F002D57DD /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
 		9B6BC4F126E8F38700650862 /* NoticeDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDemoView.swift; sourceTree = "<group>"; };
 		9B78777825D68D9A00C69BB8 /* FontWeightPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontWeightPicker.swift; sourceTree = "<group>"; };
 		9B7C576025B876C400A3C9A7 /* DemoWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoWrapperView.swift; sourceTree = "<group>"; };
 		9B7F828F28E2FA3F004D6ECA /* BannerImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageDemoView.swift; sourceTree = "<group>"; };
-		9B86614625CD7AB40040F8CA /* ColorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDemoView.swift; sourceTree = "<group>"; };
 		9B96339626DCD36800656D61 /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96339A26DCD36800656D61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B9633A126DCD37E00656D61 /* DemoAssetName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoAssetName.swift; sourceTree = "<group>"; };
@@ -244,6 +252,26 @@
 			path = ErrorView;
 			sourceTree = "<group>";
 		};
+		9B52E8D42AF83A460085D6C4 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				9B52E8DB2AF83C0C0085D6C4 /* Subviews */,
+				9B6AB63D2AF4EA6F002D57DD /* ColorDemoView.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		9B52E8DB2AF83C0C0085D6C4 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				9B52E8DE2AF83CA00085D6C4 /* LightAndDarkColorDemoView.swift */,
+				9B52E8D92AF83BBE0085D6C4 /* PrimitiveColorsDemoView.swift */,
+				9B52E8D72AF83A8F0085D6C4 /* SemanticColorsDemoView.swift */,
+				9B52E8E02AF83D0F0085D6C4 /* SingleColorDemoView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		9B57208A26738BD600D12109 /* ScoreView */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,8 +334,8 @@
 		9BB6E2A825CC1B59009A6CCD /* DNA */ = {
 			isa = PBXGroup;
 			children = (
+				9B52E8D42AF83A460085D6C4 /* Color */,
 				9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */,
-				9B86614625CD7AB40040F8CA /* ColorDemoView.swift */,
 				9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */,
 				9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */,
 			);
@@ -561,10 +589,13 @@
 				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */,
 				9B9A765D2A1E408300655DDC /* ProfilePictureDemoView.swift in Sources */,
 				9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */,
+				9B52E8DF2AF83CA00085D6C4 /* LightAndDarkColorDemoView.swift in Sources */,
 				CED21C112AC584A6002920DE /* TagDemoView.swift in Sources */,
+				9B52E8D82AF83A8F0085D6C4 /* SemanticColorsDemoView.swift in Sources */,
 				CED21C132AC58A4B002920DE /* SATSLabelDemoView.swift in Sources */,
 				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
 				9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */,
+				9B6AB63E2AF4EA6F002D57DD /* ColorDemoView.swift in Sources */,
 				28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B1CA89F297EAB4B006A63D1 /* SATSCellDemoView.swift in Sources */,
@@ -573,16 +604,17 @@
 				9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */,
 				57016DC42863527200874F53 /* RadioGroupDemoView.swift in Sources */,
 				9B7C576125B876C400A3C9A7 /* DemoWrapperView.swift in Sources */,
+				9B52E8E12AF83D0F0085D6C4 /* SingleColorDemoView.swift in Sources */,
 				9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */,
 				9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */,
 				D2AC964D2AD68F0B007DC759 /* SectionHeaderDemoView.swift in Sources */,
-				9B86614725CD7AB40040F8CA /* ColorDemoView.swift in Sources */,
 				9B7F829028E2FA3F004D6ECA /* BannerImageDemoView.swift in Sources */,
 				28491B9028B3AAC800E3C1D9 /* WheelPickerDemoView.swift in Sources */,
 				9B2BFBDC25B719AD00383193 /* ContentView.swift in Sources */,
 				CEB611C52A1DECE200C09FA1 /* BannerNoticeDemoView.swift in Sources */,
 				9B2BFBDA25B719AD00383193 /* DemoApp.swift in Sources */,
 				9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */,
+				9B52E8DA2AF83BBE0085D6C4 /* PrimitiveColorsDemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
