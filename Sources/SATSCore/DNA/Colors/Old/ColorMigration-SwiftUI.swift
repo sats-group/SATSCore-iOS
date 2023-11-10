@@ -57,7 +57,7 @@ extension Color {
     public static var satsSecondary: Color { .green }
     public static var satsSecondaryDisabled: Color { .green }
     public static var satsSecondaryHighlight: Color { .green }
-    public static var shimmer: Color { .green }
+//    public static var skeleton: Color { .green }
     public static var signalDelete: Color { .green }
     public static var signalDeleteBackground: Color { .green }
     public static var signalDeleteText: Color { .green }

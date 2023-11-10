@@ -57,7 +57,7 @@ extension UIColor {
     public static var secondary: UIColor { .green }
     public static var secondaryDisabled: UIColor { .green }
     public static var secondaryHighlight: UIColor { .green }
-    public static var shimmer: UIColor { .green }
+//    public static var skeleton: UIColor { .green }
     public static var signalDelete: UIColor { .green }
     public static var signalDeleteBackground: UIColor { .green }
     public static var signalDeleteText: UIColor { .green }
