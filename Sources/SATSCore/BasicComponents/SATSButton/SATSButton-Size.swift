@@ -4,35 +4,27 @@ import UIKit
 public extension SATSButton {
     /// Specifies a resizing behaviour of the button
     struct Size: Equatable {
-        public let contentEdgeInsets: UIEdgeInsets
-        public let imageEdgeInsets: UIEdgeInsets
+        public let contentEdgeInsets: NSDirectionalEdgeInsets
+        public let imagePaddding: CGFloat
         public let contentHuggingPriority: UILayoutPriority
 
         public init(
-            contentEdgeInsets: UIEdgeInsets,
-            imageEdgeInsets: UIEdgeInsets,
+            contentEdgeInsets: NSDirectionalEdgeInsets,
+            imagePaddding: CGFloat,
             contentHuggingPriority: UILayoutPriority
         ) {
             self.contentEdgeInsets = contentEdgeInsets
-            self.imageEdgeInsets = imageEdgeInsets
+            self.imagePaddding = imagePaddding
             self.contentHuggingPriority = contentHuggingPriority
-        }
-
-        func adjustContentInsets(with contentSpacing: CGFloat) -> UIEdgeInsets {
-            UIEdgeInsets(
-                top: contentEdgeInsets.top,
-                left: contentEdgeInsets.left,
-                bottom: contentEdgeInsets.bottom,
-                right: contentEdgeInsets.right + contentSpacing
-            )
         }
     }
 }
 
 extension SATSButton.Size: Hashable {
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(contentEdgeInsets.left)
-        hasher.combine(imageEdgeInsets.left)
+        hasher.combine(contentEdgeInsets.top)
+        hasher.combine(contentEdgeInsets.leading)
+        hasher.combine(imagePaddding)
         hasher.combine(contentHuggingPriority.rawValue)
     }
 }
@@ -41,7 +33,7 @@ extension SATSButton.Size: Hashable {
 
 extension SATSButton.Size {
     var verticalPadding: CGFloat { contentEdgeInsets.top }
-    var horizontalPadding: CGFloat { contentEdgeInsets.left }
+    var horizontalPadding: CGFloat { contentEdgeInsets.leading }
 }
 
 // MARK: - Default Sizes
@@ -49,15 +41,15 @@ extension SATSButton.Size {
 public extension SATSButton.Size {
     /// Tall primary button, can grow horizontally.
     static let large = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(vertical: .spacingM, horizontal: .spacingM),
-        imageEdgeInsets: .zero,
+        contentEdgeInsets: .init(vertical: .spacingM, horizontal: .spacingM),
+        imagePaddding: .spacingXS,
         contentHuggingPriority: .defaultHigh
     )
 
     /// Small height but allowed to grow horizontally.
     static let basic = SATSButton.Size(
-        contentEdgeInsets: UIEdgeInsets(vertical: .spacingXS, horizontal: .spacingM),
-        imageEdgeInsets: .zero,
+        contentEdgeInsets: .init(vertical: .spacingXS, horizontal: .spacingM),
+        imagePaddding: .spacingXS,
         contentHuggingPriority: .defaultHigh
     )
 }

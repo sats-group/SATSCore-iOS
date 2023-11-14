@@ -29,11 +29,12 @@
 		9B9A765D2A1E408300655DDC /* ProfilePictureDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9A765C2A1E408300655DDC /* ProfilePictureDemoView.swift */; };
 		9BA42E59297FF86C00C3BF97 /* SpacingDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */; };
 		9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */; };
+		9BA76C102AFCE97B00A933FB /* SATSButtonDemoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA76C0F2AFCE97B00A933FB /* SATSButtonDemoContainer.swift */; };
 		9BB6E2AA25CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */; };
 		9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */; };
 		9BF417182681D25B00E708FD /* ScrollReaderDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */; };
-		9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */; };
-		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */; };
+		9BF8D1F92679E4A000D4430B /* SATSButtonDemoView_SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8D1F82679E4A000D4430B /* SATSButtonDemoView_SwiftUI.swift */; };
+		9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView_UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView_UIKit.swift */; };
 		CEB611C52A1DECE200C09FA1 /* BannerNoticeDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */; };
 		CED21C0F2AC5824A002920DE /* RewardsTagDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED21C0E2AC58249002920DE /* RewardsTagDemoView.swift */; };
 		CED21C112AC584A6002920DE /* TagDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED21C102AC584A6002920DE /* TagDemoView.swift */; };
@@ -80,6 +81,7 @@
 		9B9A765C2A1E408300655DDC /* ProfilePictureDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureDemoView.swift; sourceTree = "<group>"; };
 		9BA42E58297FF86C00C3BF97 /* SpacingDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingDemoView.swift; sourceTree = "<group>"; };
 		9BA42E5A297FFB0A00C3BF97 /* CornerRadiusDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusDemoView.swift; sourceTree = "<group>"; };
+		9BA76C0F2AFCE97B00A933FB /* SATSButtonDemoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoContainer.swift; sourceTree = "<group>"; };
 		9BB6E2A925CC1B6A009A6CCD /* SwiftUIFontsDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFontsDemoView.swift; sourceTree = "<group>"; };
 		9BCB6F0B294B209900202A52 /* ModernErrorDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernErrorDemoView.swift; sourceTree = "<group>"; };
 		9BD54ACB2ADE78B300DC63D9 /* BaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfig.xcconfig; sourceTree = "<group>"; };
@@ -90,8 +92,8 @@
 		9BD54ADC2ADE94C900DC63D9 /* DemoApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoApp.xctestplan; sourceTree = "<group>"; };
 		9BD54ADD2ADEACF900DC63D9 /* SATSCoreOnWatchOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SATSCoreOnWatchOS.xctestplan; sourceTree = "<group>"; };
 		9BF417172681D25B00E708FD /* ScrollReaderDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollReaderDemoView.swift; sourceTree = "<group>"; };
-		9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonSwiftUIDemoView.swift; sourceTree = "<group>"; };
-		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView.swift; sourceTree = "<group>"; };
+		9BF8D1F82679E4A000D4430B /* SATSButtonDemoView_SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView_SwiftUI.swift; sourceTree = "<group>"; };
+		9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView_UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATSButtonDemoView_UIKit.swift; sourceTree = "<group>"; };
 		CEB611C42A1DECE200C09FA1 /* BannerNoticeDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerNoticeDemoView.swift; sourceTree = "<group>"; };
 		CED21C0E2AC58249002920DE /* RewardsTagDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsTagDemoView.swift; sourceTree = "<group>"; };
 		CED21C102AC584A6002920DE /* TagDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDemoView.swift; sourceTree = "<group>"; };
@@ -227,9 +229,8 @@
 		9B2BFBFD25B7250B00383193 /* BasicComponents */ = {
 			isa = PBXGroup;
 			children = (
+				9BA76C0E2AFCE95A00A933FB /* SATSButton */,
 				9B9A539F267CC51400AE9266 /* CustomAsyncImageDemoView.swift */,
-				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView.swift */,
-				9BF8D1F82679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift */,
 				9B1CA89E297EAB4B006A63D1 /* SATSCellDemoView.swift */,
 				CED21C122AC58A4B002920DE /* SATSLabelDemoView.swift */,
 			);
@@ -301,6 +302,16 @@
 				9B9A765C2A1E408300655DDC /* ProfilePictureDemoView.swift */,
 			);
 			path = ProfilePictureView;
+			sourceTree = "<group>";
+		};
+		9BA76C0E2AFCE95A00A933FB /* SATSButton */ = {
+			isa = PBXGroup;
+			children = (
+				9BFEDCC825CC1F780010A3F6 /* SATSButtonDemoView_UIKit.swift */,
+				9BF8D1F82679E4A000D4430B /* SATSButtonDemoView_SwiftUI.swift */,
+				9BA76C0F2AFCE97B00A933FB /* SATSButtonDemoContainer.swift */,
+			);
+			path = SATSButton;
 			sourceTree = "<group>";
 		};
 		9BB6E2A825CC1B59009A6CCD /* DNA */ = {
@@ -558,16 +569,17 @@
 				9B9633A226DCD37E00656D61 /* DemoAssetName.swift in Sources */,
 				9B57208C26738BF100D12109 /* ScoreDemoView.swift in Sources */,
 				CEF5506729D577FE00108F8E /* FontWeightPicker.swift in Sources */,
-				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView.swift in Sources */,
+				9BFEDCC925CC1F780010A3F6 /* SATSButtonDemoView_UIKit.swift in Sources */,
 				9B9A765D2A1E408300655DDC /* ProfilePictureDemoView.swift in Sources */,
 				9BA42E5B297FFB0A00C3BF97 /* CornerRadiusDemoView.swift in Sources */,
 				CED21C112AC584A6002920DE /* TagDemoView.swift in Sources */,
 				CED21C132AC58A4B002920DE /* SATSLabelDemoView.swift in Sources */,
-				9BF8D1F92679E4A000D4430B /* SATSButtonSwiftUIDemoView.swift in Sources */,
+				9BF8D1F92679E4A000D4430B /* SATSButtonDemoView_SwiftUI.swift in Sources */,
 				9B6BC4F726E8F38700650862 /* NoticeDemoView.swift in Sources */,
 				28D0A16727A93846001374D2 /* DatePickerDemoView.swift in Sources */,
 				9B9A53A0267CC51500AE9266 /* CustomAsyncImageDemoView.swift in Sources */,
 				9B1CA89F297EAB4B006A63D1 /* SATSCellDemoView.swift in Sources */,
+				9BA76C102AFCE97B00A933FB /* SATSButtonDemoContainer.swift in Sources */,
 				9B2E8065266649E4000A657D /* ErrorDemoView.swift in Sources */,
 				CED21C0F2AC5824A002920DE /* RewardsTagDemoView.swift in Sources */,
 				9BCB6F0C294B209900202A52 /* ModernErrorDemoView.swift in Sources */,
