@@ -7,4 +7,17 @@ extension View {
     public func frame(size: CGFloat, alignment: Alignment = .center) -> some View {
         frame(width: size, height: size, alignment: alignment)
     }
+
+    // Temporary implementation of a card with or without shadow that will go in our design system
+    public func satsCard(withShadow: Bool = true, backgroundColor: Color = .backgroundSurfacePrimary) -> some View {
+        background(backgroundColor)
+            .foregroundColor(Color.onSurfacePrimary)
+            .cornerRadius(.cornerRadiusS)
+            .if(withShadow, transform: { $0.satsShadow() })
+    }
+
+    // Temporary implementation of a shadow that will go in our design system
+    public func satsShadow() -> some View {
+        shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 1)
+    }
 }
