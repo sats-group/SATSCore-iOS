@@ -8,6 +8,29 @@ extension View {
         frame(width: size, height: size, alignment: alignment)
     }
 
+    /// Easily add a rounded border on aview
+    /// - Parameters:
+    ///   - radius: cornerRadius
+    public func roundedBorder(radius: CGFloat, color: Color) -> some View {
+        overlay {
+            RoundedRectangle(cornerRadius: radius)
+                .strokeBorder()
+                .foregroundStyle(color)
+        }
+    }
+
+    /// Limits the width of the content while making the container taking all the available space
+    public func readableWidth() -> some View {
+        frame(maxWidth: .readableWidthM)
+            .frame(maxWidth: .infinity)
+    }
+
+    /// Hack to allow `Menu` placed in an area that contains a `onTapGesture`
+    /// call to ignore the container's tap gesture, then the `Menu` will open on tap
+    public func ignoreOtherTaps() -> some View {
+        onTapGesture(perform: {})
+    }
+
     // Temporary implementation of a card with or without shadow that will go in our design system
     public func satsCard(withShadow: Bool = true, backgroundColor: Color = .backgroundSurfacePrimary) -> some View {
         background(backgroundColor)
